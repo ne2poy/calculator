@@ -256,6 +256,13 @@
             this.dataGridViewTextBoxColumn119 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vivod_itog_2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.matrixDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn120 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn121 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn122 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn123 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn124 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matrixBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.dev2acc_Запрос1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button9 = new System.Windows.Forms.Button();
@@ -314,14 +321,7 @@
             this.vivod_itogTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.vivod_itogTableAdapter();
             this.button19 = new System.Windows.Forms.Button();
             this.vivod_itog_2TableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.vivod_itog_2TableAdapter();
-            this.matrixBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.matrixTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.matrixTableAdapter();
-            this.matrixDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn120 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn121 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn122 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn123 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn124 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -367,6 +367,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2BindingSource)).BeginInit();
             this.tabPage13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_Запрос1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryBindingSource)).BeginInit();
@@ -380,8 +382,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.viborBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -2343,6 +2343,58 @@
             this.tabPage13.Text = "matrix13";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
+            // matrixDataGridView
+            // 
+            this.matrixDataGridView.AutoGenerateColumns = false;
+            this.matrixDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.matrixDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn120,
+            this.dataGridViewTextBoxColumn121,
+            this.dataGridViewTextBoxColumn122,
+            this.dataGridViewTextBoxColumn123,
+            this.dataGridViewTextBoxColumn124});
+            this.matrixDataGridView.DataSource = this.matrixBindingSource;
+            this.matrixDataGridView.Location = new System.Drawing.Point(4, 3);
+            this.matrixDataGridView.Name = "matrixDataGridView";
+            this.matrixDataGridView.Size = new System.Drawing.Size(774, 223);
+            this.matrixDataGridView.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn120
+            // 
+            this.dataGridViewTextBoxColumn120.DataPropertyName = "id_matrix";
+            this.dataGridViewTextBoxColumn120.HeaderText = "id_matrix";
+            this.dataGridViewTextBoxColumn120.Name = "dataGridViewTextBoxColumn120";
+            // 
+            // dataGridViewTextBoxColumn121
+            // 
+            this.dataGridViewTextBoxColumn121.DataPropertyName = "model_dev";
+            this.dataGridViewTextBoxColumn121.HeaderText = "model_dev";
+            this.dataGridViewTextBoxColumn121.Name = "dataGridViewTextBoxColumn121";
+            this.dataGridViewTextBoxColumn121.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn122
+            // 
+            this.dataGridViewTextBoxColumn122.DataPropertyName = "cost_one_m";
+            this.dataGridViewTextBoxColumn122.HeaderText = "cost_one_m";
+            this.dataGridViewTextBoxColumn122.Name = "dataGridViewTextBoxColumn122";
+            // 
+            // dataGridViewTextBoxColumn123
+            // 
+            this.dataGridViewTextBoxColumn123.DataPropertyName = "cost_one_c";
+            this.dataGridViewTextBoxColumn123.HeaderText = "cost_one_c";
+            this.dataGridViewTextBoxColumn123.Name = "dataGridViewTextBoxColumn123";
+            // 
+            // dataGridViewTextBoxColumn124
+            // 
+            this.dataGridViewTextBoxColumn124.DataPropertyName = "per";
+            this.dataGridViewTextBoxColumn124.HeaderText = "per";
+            this.dataGridViewTextBoxColumn124.Name = "dataGridViewTextBoxColumn124";
+            // 
+            // matrixBindingSource
+            // 
+            this.matrixBindingSource.DataMember = "matrix";
+            this.matrixBindingSource.DataSource = this.database2_TESTDataSet;
+            // 
             // comboBox10
             // 
             this.comboBox10.FormattingEnabled = true;
@@ -2370,7 +2422,7 @@
             // 
             this.button9.BackColor = System.Drawing.Color.Red;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(672, 279);
+            this.button9.Location = new System.Drawing.Point(640, 275);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(181, 42);
             this.button9.TabIndex = 10;
@@ -2746,61 +2798,9 @@
             // 
             this.vivod_itog_2TableAdapter.ClearBeforeFill = true;
             // 
-            // matrixBindingSource
-            // 
-            this.matrixBindingSource.DataMember = "matrix";
-            this.matrixBindingSource.DataSource = this.database2_TESTDataSet;
-            // 
             // matrixTableAdapter
             // 
             this.matrixTableAdapter.ClearBeforeFill = true;
-            // 
-            // matrixDataGridView
-            // 
-            this.matrixDataGridView.AutoGenerateColumns = false;
-            this.matrixDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.matrixDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn120,
-            this.dataGridViewTextBoxColumn121,
-            this.dataGridViewTextBoxColumn122,
-            this.dataGridViewTextBoxColumn123,
-            this.dataGridViewTextBoxColumn124});
-            this.matrixDataGridView.DataSource = this.matrixBindingSource;
-            this.matrixDataGridView.Location = new System.Drawing.Point(4, 3);
-            this.matrixDataGridView.Name = "matrixDataGridView";
-            this.matrixDataGridView.Size = new System.Drawing.Size(774, 223);
-            this.matrixDataGridView.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn120
-            // 
-            this.dataGridViewTextBoxColumn120.DataPropertyName = "id_matrix";
-            this.dataGridViewTextBoxColumn120.HeaderText = "id_matrix";
-            this.dataGridViewTextBoxColumn120.Name = "dataGridViewTextBoxColumn120";
-            // 
-            // dataGridViewTextBoxColumn121
-            // 
-            this.dataGridViewTextBoxColumn121.DataPropertyName = "model_dev";
-            this.dataGridViewTextBoxColumn121.HeaderText = "model_dev";
-            this.dataGridViewTextBoxColumn121.Name = "dataGridViewTextBoxColumn121";
-            this.dataGridViewTextBoxColumn121.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn122
-            // 
-            this.dataGridViewTextBoxColumn122.DataPropertyName = "cost_one_m";
-            this.dataGridViewTextBoxColumn122.HeaderText = "cost_one_m";
-            this.dataGridViewTextBoxColumn122.Name = "dataGridViewTextBoxColumn122";
-            // 
-            // dataGridViewTextBoxColumn123
-            // 
-            this.dataGridViewTextBoxColumn123.DataPropertyName = "cost_one_c";
-            this.dataGridViewTextBoxColumn123.HeaderText = "cost_one_c";
-            this.dataGridViewTextBoxColumn123.Name = "dataGridViewTextBoxColumn123";
-            // 
-            // dataGridViewTextBoxColumn124
-            // 
-            this.dataGridViewTextBoxColumn124.DataPropertyName = "per";
-            this.dataGridViewTextBoxColumn124.HeaderText = "per";
-            this.dataGridViewTextBoxColumn124.Name = "dataGridViewTextBoxColumn124";
             // 
             // Form1
             // 
@@ -2879,6 +2879,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2BindingSource)).EndInit();
             this.tabPage13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.matrixDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_Запрос1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryBindingSource)).EndInit();
@@ -2892,8 +2894,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.viborBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
