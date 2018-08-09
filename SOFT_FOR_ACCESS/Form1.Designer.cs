@@ -336,8 +336,6 @@
             this.button19 = new System.Windows.Forms.Button();
             this.vivod_itog_2TableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.vivod_itog_2TableAdapter();
             this.proc_ЗапросTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.proc_ЗапросTableAdapter();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -543,6 +541,7 @@
             this.radioButton13.TabIndex = 29;
             this.radioButton13.Text = "standart13";
             this.radioButton13.UseVisualStyleBackColor = true;
+            this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton13_CheckedChanged);
             // 
             // radioButton14
             // 
@@ -2959,28 +2958,6 @@
             // 
             this.proc_ЗапросTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox12
-            // 
-            this.comboBox12.DataSource = this.proc_ЗапросBindingSource;
-            this.comboBox12.DisplayMember = "name_dev";
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(283, 317);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(311, 21);
-            this.comboBox12.TabIndex = 20;
-            this.comboBox12.TextChanged += new System.EventHandler(this.comboBox12_TextChanged);
-            // 
-            // comboBox13
-            // 
-            this.comboBox13.DataSource = this.proc_ЗапросBindingSource;
-            this.comboBox13.DisplayMember = "id_dev";
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(190, 317);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(87, 21);
-            this.comboBox13.TabIndex = 19;
-            this.comboBox13.TextChanged += new System.EventHandler(this.comboBox13_TextChanged);
-            // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(31, 317);
@@ -2995,8 +2972,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1390, 681);
             this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.comboBox12);
-            this.Controls.Add(this.comboBox13);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
@@ -3394,8 +3369,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn128;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn129;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.ComboBox comboBox13;
         private System.Windows.Forms.RadioButton radioButton13;
         private System.Windows.Forms.RadioButton radioButton14;
         private System.Windows.Forms.Label label25;

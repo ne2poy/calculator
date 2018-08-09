@@ -191,10 +191,11 @@ namespace SOFT_FOR_ACCESS
 
 
 
-            if (textBox1.Text.Length < 1 && textBox2.Text.Length < 1)
+            if (textBox1.Text.Length < 1 && textBox2.Text.Length < 1 && radioButton13.Checked == true)
             {
-                MessageBox.Show("УКАЖИТЕ ОБЪЁМ ПЕЧАТИ!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+
+                    MessageBox.Show("УКАЖИТЕ ОБЪЁМ ПЕЧАТИ!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
             }
             else
                 try
@@ -218,8 +219,12 @@ namespace SOFT_FOR_ACCESS
             {
                 if (Convert.ToString(printerDataGridView[11, i].Value) == "True")
                 {
-                    v_pech_mono = (Convert.ToDouble(printerDataGridView[10, i].Value) / 100) * Convert.ToDouble(comboBox14.Text);
-                    textBox8.Text = Convert.ToString(v_pech_mono);
+                    if (radioButton14.Checked == true)
+                    {
+                        v_pech_mono = (Convert.ToDouble(printerDataGridView[10, i].Value) / 100) * Convert.ToDouble(comboBox14.Text);
+                        textBox8.Text = Convert.ToString(v_pech_mono);
+                    }
+                    else
 
                     if (Convert.ToString(printerDataGridView[9, i].Value) == "mono" && textBox2.Text != "0")
                     {
@@ -1020,7 +1025,6 @@ namespace SOFT_FOR_ACCESS
         private void comboBox10_TextChanged(object sender, EventArgs e)
         {
             this.proc_ЗапросBindingSource.Filter = "[proc] LIKE'" + comboBox10.Text + "'";
-            //this.proc_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox12.Text + "%'";
         }
 
         void filter_gar()
@@ -1041,76 +1045,33 @@ namespace SOFT_FOR_ACCESS
 
         private void button20_Click(object sender, EventArgs e)
         {
-            try
-            {
-                for (int i = 0; i < proc_ЗапросDataGridView.RowCount - 1; i++)
-                {
-                    if (Convert.ToString(proc_ЗапросDataGridView[8, i].Value) == "True")
-                    {
-                        //if (Convert.ToString(printerDataGridView[9, i].Value) == "mono" && textBox2.Text != "0")
-                        //{
-                        //    MessageBox.Show("УКАЖИТЕ КОРРЕКТНЫЙ ОБЪЁМ ПЕЧАТИ!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //    return;
-                        //}
-
-                        for (int i1 = 0; i1 < printerDataGridView.RowCount - 1; i1++)
-                        {
-                            if (printerDataGridView[0, i1].Value == proc_ЗапросDataGridView[1, i].Value)
-                            {
-                                printerDataGridView[11, i1].Value = true;
-                                filtri();
-                            }
-                        }
-
-                        //    this.database2_TESTDataSet.vibor1.Rows.Add(null, proc_ЗапросDataGridView[9, i].Value, proc_ЗапросDataGridView[5, i].Value, proc_ЗапросDataGridView[6, i].Value, proc_ЗапросDataGridView[10, i].Value);
-                        //comboBox13.Text = Convert.ToString(proc_ЗапросDataGridView[9, i].Value);         // = АКТИВНАЯ МОДЕЛЬ ПРИНТЕРА
-                        //comboBox12.Text = Convert.ToString(proc_ЗапросDataGridView[5, i].Value);         // = АКТИВНАЯ МОДЕЛЬ ПРИНТЕРА
-                        //this.dev2care_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-                        //this.dev2sup_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-                        //this.dev2LLC_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-                        //this.dev2acc_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-                        //this.dev2soft_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-                        //this.dev2soft_serv_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-
-                        //sup_add();
-                        //LLC_add();
-                    }
-
-                }
-            }
-            catch
-            {
-                MessageBox.Show("ПРИНТЕР НЕ ДОБАВЛЕН!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            
         }
 
-        private void comboBox12_TextChanged(object sender, EventArgs e)
+        private void radioButton13_CheckedChanged(object sender, EventArgs e)
         {
-            this.dev2care_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-            this.dev2sup_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-            this.dev2LLC_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-            this.dev2acc_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-            this.dev2soft_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-            this.dev2soft_serv_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-        }
-
-        private void comboBox13_TextChanged(object sender, EventArgs e)
-        {
+            if (radioButton13.Checked == true)
             {
-                this.dev2care_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-                this.dev2sup_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-                this.dev2LLC_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-                this.dev2acc_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-                this.dev2soft_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
-                this.dev2soft_serv_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox13.Text + "%'";
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
+                comboBox1.Enabled = true;
+                comboBox2.Enabled = true;
+
+                comboBox14.Text = "";
+                comboBox14.Enabled = false;
             }
+            else
+            {
+                textBox1.Enabled = false;
+                textBox2.Enabled = false;
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
+                //----------------------------------
+                comboBox14.Text = "";
+                comboBox14.Enabled = false;
+            }
+
         }
-
-
-        //hello2
-        //hello3
-
     }
 
 
