@@ -58,6 +58,10 @@ namespace SOFT_FOR_ACCESS
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.matrix". При необходимости она может быть перемещена или удалена.
+            this.matrixTableAdapter.Fill(this.database2_TESTDataSet.matrix);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Accessory". При необходимости она может быть перемещена или удалена.
+            this.accessoryTableAdapter.Fill(this.database2_TESTDataSet.Accessory);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.proc_Запрос". При необходимости она может быть перемещена или удалена.
             this.proc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.proc_Запрос);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog_2". При необходимости она может быть перемещена или удалена.
@@ -70,7 +74,7 @@ namespace SOFT_FOR_ACCESS
 
             if (curDate > date1)
             {
-                MessageBox.Show("БЕТА-тест окончен!" + "\n Благодарим за участие в тестировании ПО", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("База данных повреждена!" + "\n Обратитесь к разработчику", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 //Application.Exit();
                 //Environment.FailFast();
                 Environment.Exit(0);
@@ -823,10 +827,7 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-        private void button15_Click(object sender, EventArgs e)
-        {
 
-        }
 
 
         private void button16_Click(object sender, EventArgs e)
@@ -961,11 +962,17 @@ namespace SOFT_FOR_ACCESS
             if (Convert.ToString(printerDataGridView[9, printerDataGridView.CurrentRow.Index].Value) == "mono")
             {
                 comboBox2.Enabled = false;
+                comboBox2.Text = "0";
+                textBox2.Enabled = false;
+                textBox2.Text = "0";
                 //MessageBox.Show("УКАЖИТЕ КОРРЕКТНЫЙ ОБЪЁМ ПЕЧАТИ!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //return;
             }
             else
+            {
                 comboBox2.Enabled = true;
+                textBox2.Enabled = true;
+            }
 
         }
 
