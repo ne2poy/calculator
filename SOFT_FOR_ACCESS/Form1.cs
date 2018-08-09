@@ -42,7 +42,6 @@ namespace SOFT_FOR_ACCESS
         {
             this.Validate();
             this.printerBindingSource.EndEdit();
-            //this.tableAdapterManager.UpdateAll(this.database2_TESTDataSet);
 
         }
         string model = null;
@@ -56,23 +55,11 @@ namespace SOFT_FOR_ACCESS
         double zatrati_arenda_p = 0;
         double all_zatrati = 0;
 
-        //int in_box1 = 1;
-        //Int32 vote_cost = 0;
-        //double qty_m = 0;
-        //double cost_qty_m = 0;
-        //double qty_c = 0;
-        //double cost_qty_c = 0;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.proc_Запрос". При необходимости она может быть перемещена или удалена.
             this.proc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.proc_Запрос);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.proc_Запрос". При необходимости она может быть перемещена или удалена.
-            this.proc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.proc_Запрос);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.matrix". При необходимости она может быть перемещена или удалена.
-            //this.matrixTableAdapter.Fill(this.database2_TESTDataSet.matrix);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.matrix". При необходимости она может быть перемещена или удалена.
-            //this.matrixTableAdapter.Fill(this.database2_TESTDataSet.matrix);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog_2". При необходимости она может быть перемещена или удалена.
             this.vivod_itog_2TableAdapter.Fill(this.database2_TESTDataSet.vivod_itog_2);
 
@@ -102,25 +89,6 @@ namespace SOFT_FOR_ACCESS
             this.dev2acc_Запрос1TableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос1);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor". При необходимости она может быть перемещена или удалена.
             this.viborTableAdapter.Fill(this.database2_TESTDataSet.vibor);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor". При необходимости она может быть перемещена или удалена.
-            this.viborTableAdapter.Fill(this.database2_TESTDataSet.vibor);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor". При необходимости она может быть перемещена или удалена.
-            this.viborTableAdapter.Fill(this.database2_TESTDataSet.vibor);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor". При необходимости она может быть перемещена или удалена.
-            this.viborTableAdapter.Fill(this.database2_TESTDataSet.vibor);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor". При необходимости она может быть перемещена или удалена.
-            this.viborTableAdapter.Fill(this.database2_TESTDataSet.vibor);
-
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor". При необходимости она может быть перемещена или удалена.
-            this.viborTableAdapter.Fill(this.database2_TESTDataSet.vibor);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor". При необходимости она может быть перемещена или удалена.
-            //this.viborTableAdapter.Fill(this.database2_TESTDataSet.vibor);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Trash_2". При необходимости она может быть перемещена или удалена.
-            this.trash_2TableAdapter.Fill(this.database2_TESTDataSet.Trash_2);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Trash_2". При необходимости она может быть перемещена или удалена.
-            this.trash_2TableAdapter.Fill(this.database2_TESTDataSet.Trash_2);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Trash_2". При необходимости она может быть перемещена или удалена.
-            this.trash_2TableAdapter.Fill(this.database2_TESTDataSet.Trash_2);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2acc_Запрос". При необходимости она может быть перемещена или удалена.
             this.dev2acc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC_Запрос". При необходимости она может быть перемещена или удалена.
@@ -144,21 +112,9 @@ namespace SOFT_FOR_ACCESS
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
             this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
         
-
             comboBox9.Text = "";
             comboBox11.Text = "";
-
-
-            //for (int i = 0; i < proc_ЗапросDataGridView.RowCount - 1; i++)
-            //{
-            //    proc_ЗапросDataGridView[3, i].Value = 
-            //}
-
-
-
-            //this.printerDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //this.printerDataGridView.MultiSelect = false;
-
+            comboBox14.Enabled = false;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -410,11 +366,7 @@ namespace SOFT_FOR_ACCESS
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (Convert.ToString(trashDataGridView[6, 0].Value) == "True")
-            {
-                MessageBox.Show("Будем считать с учётом этих значений!", "Отлично", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-                //this.database2_TESTDataSet.vibor1.Rows.Add(null, supplyDataGridView[1, i].Value, supplyDataGridView[2, i].Value, supplyDataGridView[4, i].Value, supplyDataGridView[9, i].Value);
-            }
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -1066,9 +1018,11 @@ namespace SOFT_FOR_ACCESS
                 textBox2.Enabled = false;
                 comboBox1.Enabled = false;
                 comboBox2.Enabled = false;
-                //----------------------------------
-                comboBox14.Text = "";
-                comboBox14.Enabled = false;
+                textBox1.Text = "";
+                textBox2.Text = "";
+                comboBox1.Text = "";
+                comboBox2.Text = "";
+                comboBox14.Enabled = true;
             }
 
         }

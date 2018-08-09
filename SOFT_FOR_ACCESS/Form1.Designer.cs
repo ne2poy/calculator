@@ -145,14 +145,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.trashDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.trashBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -178,15 +170,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button15 = new System.Windows.Forms.Button();
-            this.trash_2DataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn67 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn16 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.trash_2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -357,14 +340,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_ЗапросDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_ЗапросBindingSource)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trashDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trashBindingSource)).BeginInit();
             this.tabPage7.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trash_2DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trash_2BindingSource)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dev2soft_ЗапросDataGridView)).BeginInit();
@@ -535,10 +516,12 @@
             // radioButton13
             // 
             this.radioButton13.AutoSize = true;
+            this.radioButton13.Checked = true;
             this.radioButton13.Location = new System.Drawing.Point(94, 179);
             this.radioButton13.Name = "radioButton13";
             this.radioButton13.Size = new System.Drawing.Size(75, 17);
             this.radioButton13.TabIndex = 29;
+            this.radioButton13.TabStop = true;
             this.radioButton13.Text = "standart13";
             this.radioButton13.UseVisualStyleBackColor = true;
             this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton13_CheckedChanged);
@@ -546,12 +529,10 @@
             // radioButton14
             // 
             this.radioButton14.AutoSize = true;
-            this.radioButton14.Checked = true;
             this.radioButton14.Location = new System.Drawing.Point(94, 194);
             this.radioButton14.Name = "radioButton14";
             this.radioButton14.Size = new System.Drawing.Size(64, 17);
             this.radioButton14.TabIndex = 28;
-            this.radioButton14.TabStop = true;
             this.radioButton14.Text = "matrix14";
             this.radioButton14.UseVisualStyleBackColor = true;
             // 
@@ -1287,7 +1268,6 @@
             this.tabPage5.Controls.Add(this.textBox4);
             this.tabPage5.Controls.Add(this.textBox3);
             this.tabPage5.Controls.Add(this.button7);
-            this.tabPage5.Controls.Add(this.trashDataGridView);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(1375, 229);
@@ -1432,74 +1412,13 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(631, 203);
+            this.button7.Location = new System.Drawing.Point(1106, 76);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 1;
             this.button7.Text = "OK_Tr(7)";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // trashDataGridView
-            // 
-            this.trashDataGridView.AutoGenerateColumns = false;
-            this.trashDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.trashDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.trashDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewCheckBoxColumn8});
-            this.trashDataGridView.DataSource = this.trashBindingSource;
-            this.trashDataGridView.Location = new System.Drawing.Point(726, 3);
-            this.trashDataGridView.Name = "trashDataGridView";
-            this.trashDataGridView.Size = new System.Drawing.Size(621, 194);
-            this.trashDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "id_trash";
-            this.dataGridViewTextBoxColumn15.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "over_oboryd";
-            this.dataGridViewTextBoxColumn16.HeaderText = "НАЦЕНКА_ОБОРУДОВАНИЯ";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "over_mono";
-            this.dataGridViewTextBoxColumn17.HeaderText = "НАЦЕНКА_МОНО";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "over_color";
-            this.dataGridViewTextBoxColumn18.HeaderText = "НАЦЕНКА_ЦВЕТ";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "over_naklad";
-            this.dataGridViewTextBoxColumn19.HeaderText = "НАКЛАДНЫЕ";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "over_stavka";
-            this.dataGridViewTextBoxColumn20.HeaderText = "СТАВКА";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            // 
-            // dataGridViewCheckBoxColumn8
-            // 
-            this.dataGridViewCheckBoxColumn8.DataPropertyName = "vote_Trash";
-            this.dataGridViewCheckBoxColumn8.HeaderText = "В РАСЧЁТ";
-            this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
             // 
             // trashBindingSource
             // 
@@ -1516,7 +1435,6 @@
             this.tabPage7.Controls.Add(this.label11);
             this.tabPage7.Controls.Add(this.label10);
             this.tabPage7.Controls.Add(this.button15);
-            this.tabPage7.Controls.Add(this.trash_2DataGridView);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Size = new System.Drawing.Size(1375, 229);
@@ -1765,81 +1683,13 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(605, 203);
+            this.button15.Location = new System.Drawing.Point(638, 101);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(176, 23);
             this.button15.TabIndex = 1;
             this.button15.Text = "Выбрать условия контракта15";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // trash_2DataGridView
-            // 
-            this.trash_2DataGridView.AutoGenerateColumns = false;
-            this.trash_2DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.trash_2DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.trash_2DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn34,
-            this.dataGridViewTextBoxColumn35,
-            this.dataGridViewTextBoxColumn36,
-            this.dataGridViewTextBoxColumn56,
-            this.dataGridViewTextBoxColumn57,
-            this.dataGridViewTextBoxColumn65,
-            this.dataGridViewTextBoxColumn67,
-            this.dataGridViewCheckBoxColumn16});
-            this.trash_2DataGridView.DataSource = this.trash_2BindingSource;
-            this.trash_2DataGridView.Location = new System.Drawing.Point(483, 3);
-            this.trash_2DataGridView.Name = "trash_2DataGridView";
-            this.trash_2DataGridView.Size = new System.Drawing.Size(864, 194);
-            this.trash_2DataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "id_trash_2";
-            this.dataGridViewTextBoxColumn34.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "work_unit";
-            this.dataGridViewTextBoxColumn35.HeaderText = "РАБОТА НАША";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "work_podr";
-            this.dataGridViewTextBoxColumn36.HeaderText = "РАБОТА ПОДРЯДЧИК";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            // 
-            // dataGridViewTextBoxColumn56
-            // 
-            this.dataGridViewTextBoxColumn56.DataPropertyName = "SOFT";
-            this.dataGridViewTextBoxColumn56.HeaderText = "SOFT";
-            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
-            // 
-            // dataGridViewTextBoxColumn57
-            // 
-            this.dataGridViewTextBoxColumn57.DataPropertyName = "komand";
-            this.dataGridViewTextBoxColumn57.HeaderText = "КОМАНДИРОВОЧНЫЕ";
-            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
-            // 
-            // dataGridViewTextBoxColumn65
-            // 
-            this.dataGridViewTextBoxColumn65.DataPropertyName = "dop_ysl";
-            this.dataGridViewTextBoxColumn65.HeaderText = "ДОП УСЛУГИ";
-            this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
-            // 
-            // dataGridViewTextBoxColumn67
-            // 
-            this.dataGridViewTextBoxColumn67.DataPropertyName = "duration";
-            this.dataGridViewTextBoxColumn67.HeaderText = "ДЛИТ КОНТРАКТА";
-            this.dataGridViewTextBoxColumn67.Name = "dataGridViewTextBoxColumn67";
-            // 
-            // dataGridViewCheckBoxColumn16
-            // 
-            this.dataGridViewCheckBoxColumn16.DataPropertyName = "vote_trash_2";
-            this.dataGridViewCheckBoxColumn16.HeaderText = "ВЫБРАТЬ";
-            this.dataGridViewCheckBoxColumn16.Name = "dataGridViewCheckBoxColumn16";
             // 
             // trash_2BindingSource
             // 
@@ -3012,7 +2862,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_ЗапросBindingSource)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trashDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trashBindingSource)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
@@ -3024,7 +2873,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trash_2DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trash_2BindingSource)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
@@ -3147,14 +2995,6 @@
         private Database2_TESTDataSetTableAdapters.Dev2LLC_ЗапросTableAdapter dev2LLC_ЗапросTableAdapter;
         private System.Windows.Forms.DataGridView dev2LLC_ЗапросDataGridView;
         private System.Windows.Forms.BindingSource dev2acc_ЗапросBindingSource;
-        private System.Windows.Forms.DataGridView trashDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
@@ -3228,15 +3068,6 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.DataGridView trash_2DataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn56;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn57;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn65;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn67;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn16;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RadioButton radioButton6;
