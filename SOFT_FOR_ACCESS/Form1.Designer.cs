@@ -36,6 +36,11 @@
             this.button4 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.comboBox14 = new System.Windows.Forms.ComboBox();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.radioButton14 = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.durForCRFBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -256,13 +261,22 @@
             this.dataGridViewTextBoxColumn119 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vivod_itog_2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.matrixDataGridView = new System.Windows.Forms.DataGridView();
+            this.proc_ЗапросDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn120 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn121 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn122 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn123 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn124 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matrixBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn125 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn126 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn127 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn18 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn128 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn129 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proc_ЗапросBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button20 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.dev2acc_Запрос1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button9 = new System.Windows.Forms.Button();
@@ -321,7 +335,10 @@
             this.vivod_itogTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.vivod_itogTableAdapter();
             this.button19 = new System.Windows.Forms.Button();
             this.vivod_itog_2TableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.vivod_itog_2TableAdapter();
-            this.matrixTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.matrixTableAdapter();
+            this.proc_ЗапросTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.proc_ЗапросTableAdapter();
+            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.comboBox13 = new System.Windows.Forms.ComboBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -367,8 +384,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2BindingSource)).BeginInit();
             this.tabPage13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_Запрос1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryBindingSource)).BeginInit();
@@ -454,6 +471,11 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.label25);
+            this.tabPage1.Controls.Add(this.label26);
+            this.tabPage1.Controls.Add(this.comboBox14);
+            this.tabPage1.Controls.Add(this.radioButton13);
+            this.tabPage1.Controls.Add(this.radioButton14);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.comboBox11);
             this.tabPage1.Controls.Add(this.groupBox5);
@@ -474,6 +496,65 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ПРИНТЕР(1)";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(333, 192);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(15, 13);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "%";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(181, 192);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(67, 13);
+            this.label26.TabIndex = 31;
+            this.label26.Text = "НАГРУЗКА:";
+            // 
+            // comboBox14
+            // 
+            this.comboBox14.FormattingEnabled = true;
+            this.comboBox14.Items.AddRange(new object[] {
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "60",
+            "70",
+            "80",
+            "90",
+            "100"});
+            this.comboBox14.Location = new System.Drawing.Point(254, 189);
+            this.comboBox14.Name = "comboBox14";
+            this.comboBox14.Size = new System.Drawing.Size(76, 21);
+            this.comboBox14.TabIndex = 30;
+            // 
+            // radioButton13
+            // 
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.Location = new System.Drawing.Point(94, 179);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(75, 17);
+            this.radioButton13.TabIndex = 29;
+            this.radioButton13.Text = "standart13";
+            this.radioButton13.UseVisualStyleBackColor = true;
+            // 
+            // radioButton14
+            // 
+            this.radioButton14.AutoSize = true;
+            this.radioButton14.Checked = true;
+            this.radioButton14.Location = new System.Drawing.Point(94, 194);
+            this.radioButton14.Name = "radioButton14";
+            this.radioButton14.Size = new System.Drawing.Size(64, 17);
+            this.radioButton14.TabIndex = 28;
+            this.radioButton14.TabStop = true;
+            this.radioButton14.Text = "matrix14";
+            this.radioButton14.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -519,6 +600,7 @@
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(121, 21);
             this.comboBox9.TabIndex = 3;
+            this.comboBox9.TextChanged += new System.EventHandler(this.comboBox9_TextChanged);
             // 
             // label9
             // 
@@ -2334,7 +2416,10 @@
             // tabPage13
             // 
             this.tabPage13.AutoScroll = true;
-            this.tabPage13.Controls.Add(this.matrixDataGridView);
+            this.tabPage13.Controls.Add(this.proc_ЗапросDataGridView);
+            this.tabPage13.Controls.Add(this.button20);
+            this.tabPage13.Controls.Add(this.label24);
+            this.tabPage13.Controls.Add(this.label23);
             this.tabPage13.Controls.Add(this.comboBox10);
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
@@ -2343,57 +2428,126 @@
             this.tabPage13.Text = "matrix13";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
-            // matrixDataGridView
+            // proc_ЗапросDataGridView
             // 
-            this.matrixDataGridView.AutoGenerateColumns = false;
-            this.matrixDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.matrixDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.proc_ЗапросDataGridView.AutoGenerateColumns = false;
+            this.proc_ЗапросDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.proc_ЗапросDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn120,
             this.dataGridViewTextBoxColumn121,
             this.dataGridViewTextBoxColumn122,
             this.dataGridViewTextBoxColumn123,
-            this.dataGridViewTextBoxColumn124});
-            this.matrixDataGridView.DataSource = this.matrixBindingSource;
-            this.matrixDataGridView.Location = new System.Drawing.Point(4, 3);
-            this.matrixDataGridView.Name = "matrixDataGridView";
-            this.matrixDataGridView.Size = new System.Drawing.Size(774, 223);
-            this.matrixDataGridView.TabIndex = 2;
+            this.dataGridViewTextBoxColumn124,
+            this.dataGridViewTextBoxColumn125,
+            this.dataGridViewTextBoxColumn126,
+            this.dataGridViewTextBoxColumn127,
+            this.dataGridViewCheckBoxColumn18,
+            this.dataGridViewTextBoxColumn128,
+            this.dataGridViewTextBoxColumn129});
+            this.proc_ЗапросDataGridView.DataSource = this.proc_ЗапросBindingSource;
+            this.proc_ЗапросDataGridView.Location = new System.Drawing.Point(4, 3);
+            this.proc_ЗапросDataGridView.Name = "proc_ЗапросDataGridView";
+            this.proc_ЗапросDataGridView.Size = new System.Drawing.Size(1174, 211);
+            this.proc_ЗапросDataGridView.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn120
             // 
-            this.dataGridViewTextBoxColumn120.DataPropertyName = "id_matrix";
-            this.dataGridViewTextBoxColumn120.HeaderText = "id_matrix";
+            this.dataGridViewTextBoxColumn120.DataPropertyName = "id_connect";
+            this.dataGridViewTextBoxColumn120.HeaderText = "id_connect";
             this.dataGridViewTextBoxColumn120.Name = "dataGridViewTextBoxColumn120";
             // 
             // dataGridViewTextBoxColumn121
             // 
-            this.dataGridViewTextBoxColumn121.DataPropertyName = "model_dev";
-            this.dataGridViewTextBoxColumn121.HeaderText = "model_dev";
+            this.dataGridViewTextBoxColumn121.DataPropertyName = "id_dev";
+            this.dataGridViewTextBoxColumn121.HeaderText = "id_dev";
             this.dataGridViewTextBoxColumn121.Name = "dataGridViewTextBoxColumn121";
-            this.dataGridViewTextBoxColumn121.Width = 300;
             // 
             // dataGridViewTextBoxColumn122
             // 
-            this.dataGridViewTextBoxColumn122.DataPropertyName = "cost_one_m";
-            this.dataGridViewTextBoxColumn122.HeaderText = "cost_one_m";
+            this.dataGridViewTextBoxColumn122.DataPropertyName = "proc";
+            this.dataGridViewTextBoxColumn122.HeaderText = "proc";
             this.dataGridViewTextBoxColumn122.Name = "dataGridViewTextBoxColumn122";
             // 
             // dataGridViewTextBoxColumn123
             // 
-            this.dataGridViewTextBoxColumn123.DataPropertyName = "cost_one_c";
-            this.dataGridViewTextBoxColumn123.HeaderText = "cost_one_c";
+            this.dataGridViewTextBoxColumn123.DataPropertyName = "cost_one_m";
+            this.dataGridViewTextBoxColumn123.HeaderText = "cost_one_m";
             this.dataGridViewTextBoxColumn123.Name = "dataGridViewTextBoxColumn123";
             // 
             // dataGridViewTextBoxColumn124
             // 
-            this.dataGridViewTextBoxColumn124.DataPropertyName = "per";
-            this.dataGridViewTextBoxColumn124.HeaderText = "per";
+            this.dataGridViewTextBoxColumn124.DataPropertyName = "cost_one_c";
+            this.dataGridViewTextBoxColumn124.HeaderText = "cost_one_c";
             this.dataGridViewTextBoxColumn124.Name = "dataGridViewTextBoxColumn124";
             // 
-            // matrixBindingSource
+            // dataGridViewTextBoxColumn125
             // 
-            this.matrixBindingSource.DataMember = "matrix";
-            this.matrixBindingSource.DataSource = this.database2_TESTDataSet;
+            this.dataGridViewTextBoxColumn125.DataPropertyName = "name_dev";
+            this.dataGridViewTextBoxColumn125.HeaderText = "name_dev";
+            this.dataGridViewTextBoxColumn125.Name = "dataGridViewTextBoxColumn125";
+            // 
+            // dataGridViewTextBoxColumn126
+            // 
+            this.dataGridViewTextBoxColumn126.DataPropertyName = "cost";
+            this.dataGridViewTextBoxColumn126.HeaderText = "cost";
+            this.dataGridViewTextBoxColumn126.Name = "dataGridViewTextBoxColumn126";
+            // 
+            // dataGridViewTextBoxColumn127
+            // 
+            this.dataGridViewTextBoxColumn127.DataPropertyName = "nagryzka";
+            this.dataGridViewTextBoxColumn127.HeaderText = "nagryzka";
+            this.dataGridViewTextBoxColumn127.Name = "dataGridViewTextBoxColumn127";
+            // 
+            // dataGridViewCheckBoxColumn18
+            // 
+            this.dataGridViewCheckBoxColumn18.DataPropertyName = "vote";
+            this.dataGridViewCheckBoxColumn18.HeaderText = "vote";
+            this.dataGridViewCheckBoxColumn18.Name = "dataGridViewCheckBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn128
+            // 
+            this.dataGridViewTextBoxColumn128.DataPropertyName = "type";
+            this.dataGridViewTextBoxColumn128.HeaderText = "type";
+            this.dataGridViewTextBoxColumn128.Name = "dataGridViewTextBoxColumn128";
+            // 
+            // dataGridViewTextBoxColumn129
+            // 
+            this.dataGridViewTextBoxColumn129.DataPropertyName = "kol-vo";
+            this.dataGridViewTextBoxColumn129.HeaderText = "kol-vo";
+            this.dataGridViewTextBoxColumn129.Name = "dataGridViewTextBoxColumn129";
+            // 
+            // proc_ЗапросBindingSource
+            // 
+            this.proc_ЗапросBindingSource.DataMember = "proc Запрос";
+            this.proc_ЗапросBindingSource.DataSource = this.database2_TESTDataSet;
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(1244, 69);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(75, 23);
+            this.button20.TabIndex = 6;
+            this.button20.Text = "button20";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(1349, 146);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(15, 13);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "%";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(1197, 146);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(67, 13);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "НАГРУЗКА:";
             // 
             // comboBox10
             // 
@@ -2403,15 +2557,17 @@
             "20",
             "30",
             "40",
+            "50",
             "60",
             "70",
             "80",
             "90",
             "100"});
-            this.comboBox10.Location = new System.Drawing.Point(832, 76);
+            this.comboBox10.Location = new System.Drawing.Point(1270, 143);
             this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(121, 21);
+            this.comboBox10.Size = new System.Drawing.Size(76, 21);
             this.comboBox10.TabIndex = 2;
+            this.comboBox10.TextChanged += new System.EventHandler(this.comboBox10_TextChanged);
             // 
             // dev2acc_Запрос1BindingSource
             // 
@@ -2422,7 +2578,7 @@
             // 
             this.button9.BackColor = System.Drawing.Color.Red;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(640, 275);
+            this.button9.Location = new System.Drawing.Point(646, 279);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(181, 42);
             this.button9.TabIndex = 10;
@@ -2507,6 +2663,7 @@
             this.tableAdapterManager.matrixTableAdapter = null;
             this.tableAdapterManager.OB_SVTableAdapter = null;
             this.tableAdapterManager.PrinterTableAdapter = null;
+            this.tableAdapterManager.procTableAdapter = null;
             this.tableAdapterManager.soft_devTableAdapter = null;
             this.tableAdapterManager.soft_servTableAdapter = null;
             this.tableAdapterManager.supplyTableAdapter = null;
@@ -2798,15 +2955,48 @@
             // 
             this.vivod_itog_2TableAdapter.ClearBeforeFill = true;
             // 
-            // matrixTableAdapter
+            // proc_ЗапросTableAdapter
             // 
-            this.matrixTableAdapter.ClearBeforeFill = true;
+            this.proc_ЗапросTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox12
+            // 
+            this.comboBox12.DataSource = this.proc_ЗапросBindingSource;
+            this.comboBox12.DisplayMember = "name_dev";
+            this.comboBox12.FormattingEnabled = true;
+            this.comboBox12.Location = new System.Drawing.Point(283, 317);
+            this.comboBox12.Name = "comboBox12";
+            this.comboBox12.Size = new System.Drawing.Size(311, 21);
+            this.comboBox12.TabIndex = 20;
+            this.comboBox12.TextChanged += new System.EventHandler(this.comboBox12_TextChanged);
+            // 
+            // comboBox13
+            // 
+            this.comboBox13.DataSource = this.proc_ЗапросBindingSource;
+            this.comboBox13.DisplayMember = "id_dev";
+            this.comboBox13.FormattingEnabled = true;
+            this.comboBox13.Location = new System.Drawing.Point(190, 317);
+            this.comboBox13.Name = "comboBox13";
+            this.comboBox13.Size = new System.Drawing.Size(87, 21);
+            this.comboBox13.TabIndex = 19;
+            this.comboBox13.TextChanged += new System.EventHandler(this.comboBox13_TextChanged);
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(31, 317);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.TabIndex = 33;
+            this.textBox8.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1390, 681);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.comboBox12);
+            this.Controls.Add(this.comboBox13);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
@@ -2879,8 +3069,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2BindingSource)).EndInit();
             this.tabPage13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.matrixDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixBindingSource)).EndInit();
+            this.tabPage13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_Запрос1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryBindingSource)).EndInit();
@@ -2895,6 +3086,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -3185,14 +3377,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn119;
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.BindingSource matrixBindingSource;
-        private Database2_TESTDataSetTableAdapters.matrixTableAdapter matrixTableAdapter;
-        private System.Windows.Forms.DataGridView matrixDataGridView;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.BindingSource proc_ЗапросBindingSource;
+        private Database2_TESTDataSetTableAdapters.proc_ЗапросTableAdapter proc_ЗапросTableAdapter;
+        private System.Windows.Forms.DataGridView proc_ЗапросDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn120;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn121;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn122;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn123;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn124;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn125;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn126;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn127;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn128;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn129;
+        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox comboBox13;
+        private System.Windows.Forms.RadioButton radioButton13;
+        private System.Windows.Forms.RadioButton radioButton14;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox comboBox14;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }
 
