@@ -58,6 +58,12 @@ namespace SOFT_FOR_ACCESS
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.trashTableAdapter.Fill(this.database2_TESTDataSet.Trash);
+
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Копия_Printer". При необходимости она может быть перемещена или удалена.
+            this.копия_PrinterTableAdapter.Fill(this.database2_TESTDataSet.Копия_Printer);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Копия_Printer". При необходимости она может быть перемещена или удалена.
+            this.копия_PrinterTableAdapter.Fill(this.database2_TESTDataSet.Копия_Printer);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.matrix". При необходимости она может быть перемещена или удалена.
             this.matrixTableAdapter.Fill(this.database2_TESTDataSet.matrix);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Accessory". При необходимости она может быть перемещена или удалена.
@@ -67,19 +73,27 @@ namespace SOFT_FOR_ACCESS
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog_2". При необходимости она может быть перемещена или удалена.
             this.vivod_itog_2TableAdapter.Fill(this.database2_TESTDataSet.vivod_itog_2);
 
-            //DateTime curDate = DateTime.Now.ToShortDateString();
-            //string curDate = DateTime.Now.ToShortDateString();
+
             DateTime curDate = DateTime.Now;
             DateTime date1 = new DateTime(2018, 8, 19);
 
             if (curDate > date1)
             {
-                MessageBox.Show("База данных повреждена!" + "\n Обратитесь к разработчику", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                //Application.Exit();
-                //Environment.FailFast();
+                MessageBox.Show("БЕТА-тест окончен!" + "\n Благодарим за участие в тестировании", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                this.database2_TESTDataSet.Trash.Rows.Add(null, 1);
+                this.trashTableAdapter.Update(this.database2_TESTDataSet.Trash);
+                this.trashTableAdapter.Fill(this.database2_TESTDataSet.Trash);
+                Environment.Exit(0);
+                return;
+  
+            }
+
+            if (Convert.ToString(trashDataGridView[1, 0].Value) == "1")
+            {
                 Environment.Exit(0);
                 return;
             }
+
 
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog". При необходимости она может быть перемещена или удалена.
             this.vivod_itogTableAdapter.Fill(this.database2_TESTDataSet.vivod_itog);
@@ -613,7 +627,7 @@ namespace SOFT_FOR_ACCESS
             //cost_one_m = cost_one_m * Convert.ToDouble(trashDataGridView[2, 0].Value);
             //cost_one_c = cost_one_c * Convert.ToDouble(trashDataGridView[3, 0].Value);
 
-            double arenda_proj = cost_print2 - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text));
+            double arenda_proj = (cost_print2 - (Convert.ToDouble(textBox3.Text)) * Convert.ToDouble(comboBox9.Text));
 
             MessageBox.Show("АРЕНДА_ПРОЕКТ(dev+acc+gar)= " + arenda_proj + 
                 "\n + В АРЕНДУ_ПРОЕКТ(труд, командир, доп услуги)= " + trash_2 * dur_project +
@@ -652,9 +666,9 @@ namespace SOFT_FOR_ACCESS
                 this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "---", "---", "---", "---", "---", "---");
                 //this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "кол-во устройств", "объём печати моно в мес", "аренда в месяц", "цена копии моно", "затраты на печать проект");
                 if (radioButton13.Checked == true)
-                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, last_cost / dur_project, cost_one_m, cost_one_c, cost1+cost2, cost_print2, cost1 + cost2 + cost_print2);
+                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, "тест", cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
                 else
-                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, last_cost / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print2, cost1 + cost2 + cost_print2);
+                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, "тест", cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
 
                 //this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "кол-во устройств", "объём печати моно в мес", "аренда в месяц", "цена копии моно", "затраты на печать проект");
 
@@ -978,7 +992,8 @@ namespace SOFT_FOR_ACCESS
 
         private void button19_Click(object sender, EventArgs e)
         {
-            //HELLO
+
+
         }
 
         private void comboBox10_TextChanged(object sender, EventArgs e)
@@ -1032,6 +1047,22 @@ namespace SOFT_FOR_ACCESS
                 comboBox14.Enabled = true;
             }
 
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            //this.vibor1DataGridView.Rows.Clear();
+            //this.vibor1BindingSource.Clear();
+
+            //this.vibor1TableAdapter.Update(this.database2_TESTDataSet.vibor1);
+            //this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+
+            while (vibor1DataGridView.Rows.Count > 1)
+                for (int i = 0; i < vibor1DataGridView.Rows.Count - 1; i++)
+                    vibor1DataGridView.Rows.Remove(vibor1DataGridView.Rows[i]);
+
+            this.vibor1TableAdapter.Update(this.database2_TESTDataSet.vibor1);
+            this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
         }
     }
 
