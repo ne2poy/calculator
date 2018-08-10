@@ -2590,7 +2590,7 @@
             // 
             this.button9.BackColor = System.Drawing.Color.Red;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(646, 279);
+            this.button9.Location = new System.Drawing.Point(641, 279);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(181, 42);
             this.button9.TabIndex = 10;
@@ -3033,7 +3033,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1370, 766);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.button19);
