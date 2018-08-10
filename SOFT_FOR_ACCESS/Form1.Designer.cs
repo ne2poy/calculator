@@ -2986,6 +2986,7 @@
             this.button19.TabIndex = 18;
             this.button19.Text = "расчёт(2)19";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Visible = false;
             this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // vivod_itog_2TableAdapter
