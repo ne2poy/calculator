@@ -635,7 +635,7 @@ namespace SOFT_FOR_ACCESS
 
             try
                 
-            {       //ВРЕМЕННО!!!!!!!!!!!!!!!!!!!!!!!!!
+            {    //ВРЕМЕННО!!!!!!!!!!!!!!!!!!!!!!!!!
                 //ExportToExcel(1, textBox1.Text, textBox2.Text, last_cost / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print, cost_print + cost1 + cost2);
                 //vivod();
 
