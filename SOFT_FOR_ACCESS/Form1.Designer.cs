@@ -964,7 +964,6 @@
             this.dev2sup_ЗапросDataGridView.DataSource = this.dev2sup_ЗапросBindingSource;
             this.dev2sup_ЗапросDataGridView.Location = new System.Drawing.Point(3, 0);
             this.dev2sup_ЗапросDataGridView.Name = "dev2sup_ЗапросDataGridView";
-            this.dev2sup_ЗапросDataGridView.ReadOnly = true;
             this.dev2sup_ЗапросDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dev2sup_ЗапросDataGridView.Size = new System.Drawing.Size(1354, 186);
             this.dev2sup_ЗапросDataGridView.TabIndex = 1;
@@ -974,84 +973,72 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_svyaz";
             this.dataGridViewTextBoxColumn1.HeaderText = "id_svyaz";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "type";
             this.dataGridViewTextBoxColumn2.HeaderText = "type";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "name_sup";
             this.dataGridViewTextBoxColumn3.HeaderText = "name_sup";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "QTY_sup";
             this.dataGridViewTextBoxColumn4.HeaderText = "QTY_sup";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "cost_sup";
             this.dataGridViewTextBoxColumn5.HeaderText = "cost_sup";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "res_sup";
             this.dataGridViewTextBoxColumn6.HeaderText = "res_sup";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "inbox_sup";
             this.dataGridViewCheckBoxColumn1.HeaderText = "inbox_sup";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn2
             // 
             this.dataGridViewCheckBoxColumn2.DataPropertyName = "for_sup_mono";
             this.dataGridViewCheckBoxColumn2.HeaderText = "for_sup_mono";
             this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn3
             // 
             this.dataGridViewCheckBoxColumn3.DataPropertyName = "for_sup_color";
             this.dataGridViewCheckBoxColumn3.HeaderText = "for_sup_color";
             this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "kol-vo";
             this.dataGridViewTextBoxColumn7.HeaderText = "kol-vo";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn4
             // 
             this.dataGridViewCheckBoxColumn4.DataPropertyName = "vote_supl";
             this.dataGridViewCheckBoxColumn4.HeaderText = "vote_supl";
             this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
-            this.dataGridViewCheckBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn25
             // 
             this.dataGridViewTextBoxColumn25.DataPropertyName = "id_dev";
             this.dataGridViewTextBoxColumn25.HeaderText = "id_dev";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
             this.dataGridViewTextBoxColumn25.Visible = false;
             // 
             // dataGridViewTextBoxColumn33
@@ -1059,7 +1046,6 @@
             this.dataGridViewTextBoxColumn33.DataPropertyName = "id_sup";
             this.dataGridViewTextBoxColumn33.HeaderText = "id_sup";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.ReadOnly = true;
             this.dataGridViewTextBoxColumn33.Visible = false;
             // 
             // dev2sup_ЗапросBindingSource
@@ -1075,7 +1061,6 @@
             this.button5.TabIndex = 1;
             this.button5.Text = "добавить_сапли(5)";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // tabPage4
@@ -2806,7 +2791,7 @@
             this.vibor1DataGridView.Location = new System.Drawing.Point(4, 355);
             this.vibor1DataGridView.Name = "vibor1DataGridView";
             this.vibor1DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.vibor1DataGridView.Size = new System.Drawing.Size(1383, 323);
+            this.vibor1DataGridView.Size = new System.Drawing.Size(1363, 323);
             this.vibor1DataGridView.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn73

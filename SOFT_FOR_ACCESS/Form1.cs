@@ -337,7 +337,8 @@ namespace SOFT_FOR_ACCESS
                 copy_m_proj = v_pech_mono * Convert.ToDouble(comboBox9.Text);    //объём_печати_моно_проект = объём_печати_моно * срок_контракта
                 copy_c_proj = v_pech_mono * Convert.ToDouble(comboBox9.Text);    //объём печати_цвет_проект = объём_печати_цвет * срок_контракта
             }
-            for (int i = 0; i < dev2sup_ЗапросDataGridView.RowCount - 1; i++)
+
+            for (int i = 0; i <= dev2sup_ЗапросDataGridView.RowCount - 1; i++)
             {
                     dev2sup_ЗапросDataGridView[10, i].Value = "True";               //ставим галку выбора для supply
 
@@ -514,8 +515,8 @@ namespace SOFT_FOR_ACCESS
             {
 
                 if (Convert.ToString(vibor1DataGridView[1, i].Value) == "Printer" || Convert.ToString(vibor1DataGridView[1, i].Value) == "accessory" || Convert.ToString(vibor1DataGridView[1, i].Value) == "Garanty")
-                    cost_print = cost_print + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value) * Convert.ToDouble(comboBox11.Text) + (Convert.ToDouble(textBox3.Text)* Convert.ToDouble(comboBox9.Text)));      //* Convert.ToDouble(comboBox9.Text)
-                //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта * LRF(coef)
+                    cost_print = cost_print + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value) * Convert.ToDouble(comboBox11.Text) * Convert.ToDouble(comboBox9.Text) + (Convert.ToDouble(textBox3.Text)* Convert.ToDouble(comboBox9.Text)));      //* Convert.ToDouble(comboBox9.Text)
+                //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта * LRF(coef)                                //ТУТ БАГ???? входная строка неаерного формата (lrf= ,.)
 
                 if (Convert.ToString(vibor1DataGridView[1, i].Value) == "soft")
                     cost_soft = cost_soft + Convert.ToDouble(vibor1DataGridView[3, i].Value);
@@ -592,7 +593,7 @@ namespace SOFT_FOR_ACCESS
 
 
             double cost_print2 = cost_print + (trash_2 * dur_project);        //* total_copy  //  + накладные расходы на устройство //+ (Convert.ToDouble(textBox3.Text))
-            double last_cost = cost_print2 + trash_2;      //+ (Convert.ToDouble(textBox3.Text))
+            //cost_print2 = cost_print2 + trash_2;      //ПОЗЖЕ
             double total_copy = 0;
             if (radioButton13.Checked == true)
                 total_copy = (Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text)) * dur_project;
@@ -603,7 +604,7 @@ namespace SOFT_FOR_ACCESS
             cost_one_c = (cost_contract * dur_project / total_copy) + cost_one_c;
 
 
-            cost_print2 = (cost_print2 * (Convert.ToDouble(textBox5.Text) / 100) + 1);                                //наценка на оборудование 15%
+            cost_print2 = cost_print2 * ((Convert.ToDouble(textBox5.Text) / 100) + 1);                                //наценка на оборудование 15%
             cost_one_m = (cost_one_m * ((Convert.ToDouble(textBox6.Text) / 100) + 1) + (Convert.ToDouble(textBox4.Text)));       //+ накладные расходы на копию (в ПРОЦЕНТАХ)     //(Convert.ToDouble(textBox4.Text) * total_copy)
             cost_one_c = (cost_one_c * ((Convert.ToDouble(textBox7.Text) / 100) + 1) + (Convert.ToDouble(textBox4.Text)));
 
@@ -613,7 +614,7 @@ namespace SOFT_FOR_ACCESS
                 cost_one_c = (cost_soft / total_copy) + cost_one_c;
             }
             else
-            last_cost = last_cost + cost_soft;
+                cost_print2 = cost_print2 + cost_soft;
 
             if (radioButton4.Checked == true)
             {
@@ -621,7 +622,7 @@ namespace SOFT_FOR_ACCESS
                 cost_one_c = (cost_serv_soft / total_copy) + cost_one_c;
             }
             else
-                last_cost = last_cost + cost_serv_soft;
+                cost_print2 = cost_print2 + cost_serv_soft;
 
 
             //cost_one_m = cost_one_m * Convert.ToDouble(trashDataGridView[2, 0].Value);
@@ -629,12 +630,12 @@ namespace SOFT_FOR_ACCESS
 
             double arenda_proj = (cost_print2 - (Convert.ToDouble(textBox3.Text)) * Convert.ToDouble(comboBox9.Text));
 
-            MessageBox.Show("АРЕНДА_ПРОЕКТ(dev+acc+gar)= " + arenda_proj + 
+            MessageBox.Show("АРЕНДА_ПРОЕКТ(dev+acc+gar)*LRF= " + arenda_proj + 
                 "\n + В АРЕНДУ_ПРОЕКТ(труд, командир, доп услуги)= " + trash_2 * dur_project +
                 "\n + НАКЛАДНЫЕ_месяц(усл_контр)= " + textBox3.Text +
-                "\n = ИТОГ АРЕНДА ПРОЕКТ= " + last_cost +
+                "\n = ИТОГ АРЕНДА ПРОЕКТ= " + cost_print2 +
                 "\n" +
-                "\n аренда в месяц= " + last_cost/dur_project +
+                "\n аренда в месяц= " + cost_print2 / dur_project +
                 "\n" +
                 "\n kol-vo mono= " + qty1 + 
                 "\n cost_mono= " + cost1 + 
@@ -662,11 +663,12 @@ namespace SOFT_FOR_ACCESS
                 }
                 //this.database2_TESTDataSet.vivod.Rows.Add();
                 z++;
-
                 this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "---", "---", "---", "---", "---", "---");
+
                 //this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "кол-во устройств", "объём печати моно в мес", "аренда в месяц", "цена копии моно", "затраты на печать проект");
-                if (radioButton13.Checked == true)
-                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, "тест", cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
+
+                if (radioButton13.Checked == true)          //НАЦЕНКИ
+                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
                 else
                     this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, "тест", cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
 
@@ -993,7 +995,7 @@ namespace SOFT_FOR_ACCESS
         private void button19_Click(object sender, EventArgs e)
         {
 
-
+           // filter_gar();
         }
 
         private void comboBox10_TextChanged(object sender, EventArgs e)
@@ -1005,7 +1007,9 @@ namespace SOFT_FOR_ACCESS
         {
             //double boofer = Convert.ToDouble(comboBox9.Text) / 12;
             double boofer = Convert.ToDouble(comboBox9.Text) / 12;
-            this.dev2care_ЗапросBindingSource.Filter = "[dlit_gar] >='" + boofer + "%'";
+            this.dev2care_ЗапросBindingSource.Filter = "[dlit_gar] >='" + boofer + "%' and [id_dev] LIKE'" + comboBox3.Text + "%'";
+
+            //this.dev2care_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
         }
 
         private void comboBox9_TextChanged(object sender, EventArgs e)
