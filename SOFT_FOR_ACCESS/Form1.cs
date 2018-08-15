@@ -54,24 +54,83 @@ namespace SOFT_FOR_ACCESS
         double zatrati_pech_p = 0;
         double zatrati_arenda_p = 0;
         double all_zatrati = 0;
+        double absolut_mono = 0;
+        double absolut_color = 0;
+
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.trashTableAdapter.Fill(this.database2_TESTDataSet.Trash);
-
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Копия_Printer". При необходимости она может быть перемещена или удалена.
-            this.копия_PrinterTableAdapter.Fill(this.database2_TESTDataSet.Копия_Printer);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Копия_Printer". При необходимости она может быть перемещена или удалена.
-            this.копия_PrinterTableAdapter.Fill(this.database2_TESTDataSet.Копия_Printer);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.matrix". При необходимости она может быть перемещена или удалена.
-            this.matrixTableAdapter.Fill(this.database2_TESTDataSet.matrix);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Accessory". При необходимости она может быть перемещена или удалена.
-            this.accessoryTableAdapter.Fill(this.database2_TESTDataSet.Accessory);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.DurForCRF". При необходимости она может быть перемещена или удалена.
+            this.durForCRFTableAdapter.Fill(this.database2_TESTDataSet.DurForCRF);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.proc_Запрос". При необходимости она может быть перемещена или удалена.
             this.proc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.proc_Запрос);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog_2". При необходимости она может быть перемещена или удалена.
             this.vivod_itog_2TableAdapter.Fill(this.database2_TESTDataSet.vivod_itog_2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog". При необходимости она может быть перемещена или удалена.
+            this.vivod_itogTableAdapter.Fill(this.database2_TESTDataSet.vivod_itog);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod". При необходимости она может быть перемещена или удалена.
+            this.vivodTableAdapter.Fill(this.database2_TESTDataSet.vivod);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2soft_serv_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2soft_serv_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2soft_serv_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2soft_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2soft_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2soft_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Trash". При необходимости она может быть перемещена или удалена.
+            this.trashTableAdapter.Fill(this.database2_TESTDataSet.Trash);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2acc_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2acc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2sup_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2sup_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2sup_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2LLC_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2care_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2care_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2care_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor1". При необходимости она может быть перемещена или удалена.
+            this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
+            this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.proc". При необходимости она может быть перемещена или удалена.
+            //this.procTableAdapter.Fill(this.database2_TESTDataSet.proc);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor1". При необходимости она может быть перемещена или удалена.
+            //this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.proc_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.proc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.proc_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog_2". При необходимости она может быть перемещена или удалена.
+            //this.vivod_itog_2TableAdapter.Fill(this.database2_TESTDataSet.vivod_itog_2);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog". При необходимости она может быть перемещена или удалена.
+            //this.vivod_itogTableAdapter.Fill(this.database2_TESTDataSet.vivod_itog);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod". При необходимости она может быть перемещена или удалена.
+            //this.vivodTableAdapter.Fill(this.database2_TESTDataSet.vivod);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2soft_serv_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2soft_serv_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2soft_serv_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2soft_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2soft_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2soft_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Trash". При необходимости она может быть перемещена или удалена.
+            //this.trashTableAdapter.Fill(this.database2_TESTDataSet.Trash);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2acc_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2acc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2LLC_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2sup_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2sup_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2sup_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2care_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2care_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2care_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
+            //this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
+            ////this.trashTableAdapter.Fill(this.database2_TESTDataSet.Trash);
+
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Копия_Printer". При необходимости она может быть перемещена или удалена.
+            //this.копия_PrinterTableAdapter.Fill(this.database2_TESTDataSet.Копия_Printer);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Копия_Printer". При необходимости она может быть перемещена или удалена.
+            //this.копия_PrinterTableAdapter.Fill(this.database2_TESTDataSet.Копия_Printer);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.matrix". При необходимости она может быть перемещена или удалена.
+            //this.matrixTableAdapter.Fill(this.database2_TESTDataSet.matrix);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Accessory". При необходимости она может быть перемещена или удалена.
+            //this.accessoryTableAdapter.Fill(this.database2_TESTDataSet.Accessory);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.proc_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.proc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.proc_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog_2". При необходимости она может быть перемещена или удалена.
+            //this.vivod_itog_2TableAdapter.Fill(this.database2_TESTDataSet.vivod_itog_2);
 
 
             DateTime curDate = DateTime.Now;
@@ -95,40 +154,40 @@ namespace SOFT_FOR_ACCESS
             }
 
 
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog". При необходимости она может быть перемещена или удалена.
-            this.vivod_itogTableAdapter.Fill(this.database2_TESTDataSet.vivod_itog);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod". При необходимости она может быть перемещена или удалена.
-            this.vivodTableAdapter.Fill(this.database2_TESTDataSet.vivod);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.DurForCRF". При необходимости она может быть перемещена или удалена.
-            this.durForCRFTableAdapter.Fill(this.database2_TESTDataSet.DurForCRF);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor1". При необходимости она может быть перемещена или удалена.
-            this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2acc_Запрос1". При необходимости она может быть перемещена или удалена.
-            this.dev2acc_Запрос1TableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос1);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor". При необходимости она может быть перемещена или удалена.
-            this.viborTableAdapter.Fill(this.database2_TESTDataSet.vibor);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2acc_Запрос". При необходимости она может быть перемещена или удалена.
-            this.dev2acc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC_Запрос". При необходимости она может быть перемещена или удалена.
-            this.dev2LLC_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC_Запрос);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2soft_serv_Запрос". При необходимости она может быть перемещена или удалена.
-            this.dev2soft_serv_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2soft_serv_Запрос);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2soft_Запрос". При необходимости она может быть перемещена или удалена.
-            this.dev2soft_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2soft_Запрос);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.soft_serv". При необходимости она может быть перемещена или удалена.
-            this.soft_servTableAdapter.Fill(this.database2_TESTDataSet.soft_serv);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.soft_dev". При необходимости она может быть перемещена или удалена.
-            this.soft_devTableAdapter.Fill(this.database2_TESTDataSet.soft_dev);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2sup_Запрос". При необходимости она может быть перемещена или удалена.
-            this.dev2sup_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2sup_Запрос);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2sup_Запрос". При необходимости она может быть перемещена или удалена.
-            this.dev2sup_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2sup_Запрос);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2care_Запрос". При необходимости она может быть перемещена или удалена.
-            this.dev2care_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2care_Запрос);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Care_pack". При необходимости она может быть перемещена или удалена.
-            this.care_packTableAdapter.Fill(this.database2_TESTDataSet.Care_pack);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
-            this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog". При необходимости она может быть перемещена или удалена.
+            //this.vivod_itogTableAdapter.Fill(this.database2_TESTDataSet.vivod_itog);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod". При необходимости она может быть перемещена или удалена.
+            //this.vivodTableAdapter.Fill(this.database2_TESTDataSet.vivod);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.DurForCRF". При необходимости она может быть перемещена или удалена.
+            //this.durForCRFTableAdapter.Fill(this.database2_TESTDataSet.DurForCRF);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor1". При необходимости она может быть перемещена или удалена.
+            //this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2acc_Запрос1". При необходимости она может быть перемещена или удалена.
+            //this.dev2acc_Запрос1TableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос1);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor". При необходимости она может быть перемещена или удалена.
+            //this.viborTableAdapter.Fill(this.database2_TESTDataSet.vibor);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2acc_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2acc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2LLC_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2soft_serv_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2soft_serv_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2soft_serv_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2soft_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2soft_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2soft_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.soft_serv". При необходимости она может быть перемещена или удалена.
+            //this.soft_servTableAdapter.Fill(this.database2_TESTDataSet.soft_serv);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.soft_dev". При необходимости она может быть перемещена или удалена.
+            //this.soft_devTableAdapter.Fill(this.database2_TESTDataSet.soft_dev);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2sup_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2sup_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2sup_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2sup_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2sup_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2sup_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2care_Запрос". При необходимости она может быть перемещена или удалена.
+            //this.dev2care_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2care_Запрос);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Care_pack". При необходимости она может быть перемещена или удалена.
+            //this.care_packTableAdapter.Fill(this.database2_TESTDataSet.Care_pack);
+            //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
+            //this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
         
             comboBox9.Text = "";
             comboBox11.Text = "";
@@ -137,7 +196,7 @@ namespace SOFT_FOR_ACCESS
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.viborTableAdapter.Update(this.database2_TESTDataSet.vibor);
+           // this.viborTableAdapter.Update(this.database2_TESTDataSet.vibor);
         }
 
 
@@ -146,7 +205,7 @@ namespace SOFT_FOR_ACCESS
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void add_print_Button_Click(object sender, EventArgs e)
         {
             
 
@@ -195,7 +254,7 @@ namespace SOFT_FOR_ACCESS
                 {
                     if (radioButton14.Checked == true)
                     {
-                        v_pech_mono = (Convert.ToDouble(printerDataGridView[10, i].Value) / 100) * Convert.ToDouble(comboBox14.Text);
+                        //v_pech_mono = (Convert.ToDouble(printerDataGridView["format", i].Value) / 100) * Convert.ToDouble(comboBox14.Text);   //FIX IT
                         textBox8.Text = Convert.ToString(v_pech_mono);
                     }
                     else
@@ -223,13 +282,13 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void add_care_pack_Button_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dev2care_ЗапросDataGridView.RowCount - 1; i++)
             {
-                if (Convert.ToString(dev2care_ЗапросDataGridView[7, i].Value) == "True")
+                if (Convert.ToString(dev2care_ЗапросDataGridView[8, i].Value) == "True")            //если (vote_gar == true)
                 {
-                    this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2care_ЗапросDataGridView[1, i].Value, dev2care_ЗапросDataGridView[2, i].Value, dev2care_ЗапросDataGridView[3, i].Value, dev2care_ЗапросDataGridView[5, i].Value);
+                    this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2care_ЗапросDataGridView[2, i].Value, dev2care_ЗапросDataGridView[3, i].Value, dev2care_ЗапросDataGridView[4, i].Value, dev2care_ЗапросDataGridView[6, i].Value);
                 }
             }
         }
@@ -247,42 +306,7 @@ namespace SOFT_FOR_ACCESS
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            double qty_m = 0;
-            double qty_c = 0;
-
-            for (int i = 0; i < dev2sup_ЗапросDataGridView.RowCount - 1; i++)
-            {
-                if (Convert.ToString(dev2sup_ЗапросDataGridView[10, i].Value) == "True")
-                {
-
-                    if (Convert.ToString(dev2sup_ЗапросDataGridView[7, i].Value) == "True")            //     MONO
-                    {
-                        if (radioButton13.Checked == true)
-                            qty_m = Convert.ToDouble(textBox1.Text) / (Convert.ToDouble(dev2sup_ЗапросDataGridView[5, i].Value));        //qty_m +  
-                        else
-                            qty_m = v_pech_mono / (Convert.ToDouble(dev2sup_ЗапросDataGridView[5, i].Value));        //qty_m +  
-
-                    }
-                    else
-                        qty_m = 0;
-
-                    if (Convert.ToString(dev2sup_ЗапросDataGridView[8, i].Value) == "True")             //   COLOR
-                    {
-                        if (radioButton13.Checked == true)
-                            qty_c = Convert.ToDouble(textBox2.Text) / (Convert.ToDouble(dev2sup_ЗапросDataGridView[5, i].Value));
-                        else
-                            qty_c = v_pech_mono / (Convert.ToDouble(dev2sup_ЗапросDataGridView[5, i].Value));
-                    }
-                    else
-                        qty_c = 0;
-
-                    this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2sup_ЗапросDataGridView[1, i].Value, dev2sup_ЗапросDataGridView[2, i].Value, dev2sup_ЗапросDataGridView[4, i].Value, dev2sup_ЗапросDataGridView[9, i].Value, qty_m, qty_c, dev2sup_ЗапросDataGridView[3, i].Value, dev2sup_ЗапросDataGridView[6, i].Value);
-                }
-            }
-
-        }
+        
 
 
 
@@ -307,18 +331,25 @@ namespace SOFT_FOR_ACCESS
             {       
                     dev2LLC_ЗапросDataGridView[11, i].Value = "True";       //ставим галку выбора для LLC
 
-                    if (Convert.ToString(dev2LLC_ЗапросDataGridView[9, i].Value) == "True")                     //    если используется в MONO
-                        qty_m = copy_m_proj / (Convert.ToDouble(dev2LLC_ЗапросDataGridView[6, i].Value));           //кол-во_копий_напечатает_моно_этот_узел = объём_печати_моно_проект/ресурс_узла  
-                    else
-                        qty_m = 0;
-
-                    if (Convert.ToString(dev2LLC_ЗапросDataGridView[8, i].Value) == "True")                     //  если используется в COLOR
-                        qty_c = copy_c_proj / (Convert.ToDouble(dev2LLC_ЗапросDataGridView[6, i].Value));           //кол-во_копий_напечатает_цвет_этот_узел = объём_печати_цвет_проект/ресурс_узла
+                if (Convert.ToString(dev2LLC_ЗапросDataGridView[11, i].Value) == "True")                     //    если используется в MONO
+                {
+                    qty_m = copy_m_proj / (Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value));           //кол-во_копий_напечатает_моно_этот_узел = объём_печати_моно_проект/ресурс_узла  
+                    absolut_mono = absolut_mono + (Convert.ToDouble(dev2LLC_ЗапросDataGridView[7, i].Value) / Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value)); //абсолют=цена_ресурса/ресурс_этого_ресурса
+                }
                 else
-                        qty_c = 0;
+                    qty_m = 0;
 
-                    this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2LLC_ЗапросDataGridView[2, i].Value, dev2LLC_ЗапросDataGridView[3, i].Value, dev2LLC_ЗапросDataGridView[5, i].Value, dev2LLC_ЗапросDataGridView[10, i].Value, qty_m, qty_c, dev2LLC_ЗапросDataGridView[4, i].Value, dev2LLC_ЗапросDataGridView[7, i].Value, copy_m_proj, copy_c_proj);
+                if (Convert.ToString(dev2LLC_ЗапросDataGridView[10, i].Value) == "True")                     //  если используется в COLOR
+                {
+                    qty_c = copy_c_proj / (Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value));           //кол-во_копий_напечатает_цвет_этот_узел = объём_печати_цвет_проект/ресурс_узла
+                    absolut_color = absolut_color + (Convert.ToDouble(dev2LLC_ЗапросDataGridView[7, i].Value) / Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value));  //абсолют=цена_ресурса/ресурс_этого_ресурса
+                }
+                else
+                    qty_c = 0;
+
+                    this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2LLC_ЗапросDataGridView[4, i].Value, dev2LLC_ЗапросDataGridView[5, i].Value, dev2LLC_ЗапросDataGridView[7, i].Value, dev2LLC_ЗапросDataGridView[12, i].Value, qty_m, qty_c, dev2LLC_ЗапросDataGridView[6, i].Value, dev2LLC_ЗапросDataGridView[9, i].Value, copy_m_proj, copy_c_proj);
             }
+            
         }
 
         void sup_add()
@@ -338,66 +369,42 @@ namespace SOFT_FOR_ACCESS
                 copy_c_proj = v_pech_mono * Convert.ToDouble(comboBox9.Text);    //объём печати_цвет_проект = объём_печати_цвет * срок_контракта
             }
 
-            for (int i = 0; i <= dev2sup_ЗапросDataGridView.RowCount - 1; i++)
+            for (int i = 0; i < dev2sup_ЗапросDataGridView.RowCount - 1; i++)
             {
-                    dev2sup_ЗапросDataGridView[10, i].Value = "True";               //ставим галку выбора для supply
+                    dev2sup_ЗапросDataGridView[12, i].Value = "True";               //ставим галку выбора для supply
 
-                if (Convert.ToString(dev2sup_ЗапросDataGridView[7, i].Value) == "True")                     //  если используется в MONO
-                    qty_m = copy_m_proj / (Convert.ToDouble(dev2sup_ЗапросDataGridView[5, i].Value));       //штук(без_округл)_нужно_для_проекта_моно = объём_печати_моно_проект/ресурс_узла
+                if (Convert.ToString(dev2sup_ЗапросDataGridView[9, i].Value) == "True")                     //  если используется в MONO
+                {
+                    qty_m = copy_m_proj / (Convert.ToDouble(dev2sup_ЗапросDataGridView[7, i].Value));       //штук(без_округл)_нужно_для_проекта_моно = объём_печати_моно_проект/ресурс_узла
+                    absolut_mono = absolut_mono + (Convert.ToDouble(dev2sup_ЗапросDataGridView[6, i].Value) / Convert.ToDouble(dev2sup_ЗапросDataGridView[7, i].Value)); //абсолют=цена_ресурса/ресурс_этого_ресурса
+
+                }
                 else
-                        qty_m = 0;
+                    qty_m = 0;
 
-                    if (Convert.ToString(dev2sup_ЗапросDataGridView[8, i].Value) == "True")                 //  если используется в COLOR
-                    qty_c = copy_c_proj / (Convert.ToDouble(dev2sup_ЗапросDataGridView[5, i].Value));       ///штук(без_округл)_нужно_для_проекта_цвет = объём_печати_цвет_проект/ресурс_узла
+                if (Convert.ToString(dev2sup_ЗапросDataGridView[10, i].Value) == "True")                 //  если используется в COLOR
+                {
+                    qty_c = copy_c_proj / (Convert.ToDouble(dev2sup_ЗапросDataGridView[7, i].Value));       ///штук(без_округл)_нужно_для_проекта_цвет = объём_печати_цвет_проект/ресурс_узла
+                    absolut_color = absolut_color + (Convert.ToDouble(dev2sup_ЗапросDataGridView[6, i].Value) / Convert.ToDouble(dev2sup_ЗапросDataGridView[7, i].Value)); //абсолют=цена_ресурса/ресурс_этого_ресурса
+
+                }
                 else
                     qty_c = 0;
 
-                    this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2sup_ЗапросDataGridView[1, i].Value, dev2sup_ЗапросDataGridView[2, i].Value, dev2sup_ЗапросDataGridView[4, i].Value, dev2sup_ЗапросDataGridView[9, i].Value, qty_m, qty_c, dev2sup_ЗапросDataGridView[3, i].Value, dev2sup_ЗапросDataGridView[6, i].Value, copy_m_proj, copy_c_proj);
+                    this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2sup_ЗапросDataGridView[3, i].Value, dev2sup_ЗапросDataGridView[4, i].Value, dev2sup_ЗапросDataGridView[6, i].Value, dev2sup_ЗапросDataGridView[11, i].Value, qty_m, qty_c, dev2sup_ЗапросDataGridView[5, i].Value, dev2sup_ЗапросDataGridView[8, i].Value, copy_m_proj, copy_c_proj);
                 
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            double qty_m = 0;
-            double qty_c = 0;
+        
 
-            for (int i = 0; i < dev2LLC_ЗапросDataGridView.RowCount - 1; i++)
-            {
-                if (Convert.ToString(dev2LLC_ЗапросDataGridView[11, i].Value) == "True")
-                {
-                    if (Convert.ToString(dev2LLC_ЗапросDataGridView[9, i].Value) == "True")            //     MONO
-                        qty_m = Convert.ToDouble(textBox1.Text) / (Convert.ToDouble(dev2LLC_ЗапросDataGridView[6, i].Value));           //кол-во_моно = объём печати/ресурс узла                   
-                    else
-                        qty_m = 0;
-
-
-                    if (Convert.ToString(dev2LLC_ЗапросDataGridView[8, i].Value) == "True")             //   COLOR
-                        qty_c = v_pech_mono / (Convert.ToDouble(dev2LLC_ЗапросDataGridView[6, i].Value));
-                    else
-                        qty_c = 0;
-
-                    this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2LLC_ЗапросDataGridView[2, i].Value, dev2LLC_ЗапросDataGridView[3, i].Value, dev2LLC_ЗапросDataGridView[5, i].Value, dev2LLC_ЗапросDataGridView[10, i].Value, qty_m, qty_c, dev2LLC_ЗапросDataGridView[4, i].Value, dev2LLC_ЗапросDataGridView[7, i].Value);
-                }
-
-            }
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
+        private void add_acc_Button_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dev2acc_ЗапросDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(dev2acc_ЗапросDataGridView[9, i].Value) == "True")
                 {
-
                     this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2acc_ЗапросDataGridView[4, i].Value, dev2acc_ЗапросDataGridView[5, i].Value, dev2acc_ЗапросDataGridView[7, i].Value, dev2acc_ЗапросDataGridView[8, i].Value, 0, 0, 0, dev2acc_ЗапросDataGridView[6, i].Value);
-                    //this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2LLC_ЗапросDataGridView[2, i].Value, dev2LLC_ЗапросDataGridView[3, i].Value, dev2LLC_ЗапросDataGridView[5, i].Value, dev2LLC_ЗапросDataGridView[10, i].Value, qty_m, qty_c, dev2LLC_ЗапросDataGridView[4, i].Value, dev2LLC_ЗапросDataGridView[7, i].Value);
-
                 }
 
             }
@@ -550,8 +557,8 @@ namespace SOFT_FOR_ACCESS
                     vibor1DataGridView[9, i].Value = qty_m_p2;
                     vibor1DataGridView[10, i].Value = qty_c_p2;
 
-                    cost_m_proj = qty_m_p2 * Convert.ToInt32(vibor1DataGridView[3, i].Value);                 //стоимость_моно_проект = кол-во_моно_qty * cost
-                    cost_c_proj = qty_c_p2 * Convert.ToInt32(vibor1DataGridView[3, i].Value);                   //стоимость_цвет_проект = кол-во_моно_qty * cost
+                    cost_m_proj = qty_m_p2 * Convert.ToDouble(vibor1DataGridView[3, i].Value);                 //стоимость_моно_проект = кол-во_моно_qty * cost
+                    cost_c_proj = qty_c_p2 * Convert.ToDouble(vibor1DataGridView[3, i].Value);                   //стоимость_цвет_проект = кол-во_моно_qty * cost
 
 
 
@@ -688,15 +695,6 @@ namespace SOFT_FOR_ACCESS
 
        
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            //this.dev2care_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
-            //carepackBindingSource.Filter = "";
-            //carepackBindingSource.Filter
-            // this.database2_TESTDataSet.Care_pack
-            // this.care_packTableAdapter
-            //  .Fill(this.database2_TESTDataSet.Care_pack);
-        }
 
         private void button11_Click(object sender, EventArgs e)
         {
@@ -994,8 +992,23 @@ namespace SOFT_FOR_ACCESS
 
         private void button19_Click(object sender, EventArgs e)
         {
+            //for (int i = 0; i < vibor1DataGridView.RowCount - 1; i++)
+            {
 
-           // filter_gar();
+               // if (Convert.ToString(vibor1DataGridView[1, i].Value) == "LLC" || Convert.ToString(vibor1DataGridView[1, i].Value) == "supply")
+                {
+                    textBox9.Text = Convert.ToString(absolut_mono);
+                    textBox10.Text = Convert.ToString(absolut_color);
+
+
+
+                }
+
+                //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта * LRF(coef)  
+
+            }
+
+
         }
 
         private void comboBox10_TextChanged(object sender, EventArgs e)
@@ -1067,6 +1080,22 @@ namespace SOFT_FOR_ACCESS
 
             this.vibor1TableAdapter.Update(this.database2_TESTDataSet.vibor1);
             this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+        }
+
+        private void printerBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.printerBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.database2_TESTDataSet);
+
+        }
+
+        private void printerBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.printerBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.database2_TESTDataSet);
+
         }
     }
 
