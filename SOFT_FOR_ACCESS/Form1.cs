@@ -329,12 +329,12 @@ namespace SOFT_FOR_ACCESS
             }
             for (int i = 0; i < dev2LLC_ЗапросDataGridView.RowCount - 1; i++)
             {       
-                    dev2LLC_ЗапросDataGridView[11, i].Value = "True";       //ставим галку выбора для LLC
+                    dev2LLC_ЗапросDataGridView[13, i].Value = "True";       //ставим галку выбора для LLC
 
                 if (Convert.ToString(dev2LLC_ЗапросDataGridView[11, i].Value) == "True")                     //    если используется в MONO
                 {
                     qty_m = copy_m_proj / (Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value));           //кол-во_копий_напечатает_моно_этот_узел = объём_печати_моно_проект/ресурс_узла  
-                    absolut_mono = absolut_mono + (Convert.ToDouble(dev2LLC_ЗапросDataGridView[7, i].Value) / Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value)); //абсолют=цена_ресурса/ресурс_этого_ресурса
+                    absolut_mono = absolut_mono + ((Convert.ToDouble(dev2LLC_ЗапросDataGridView[7, i].Value) / Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value))* Convert.ToDouble(dev2LLC_ЗапросDataGridView[6, i].Value)); //абсолют=цена_ресурса/ресурс_этого_ресурса* qty
                 }
                 else
                     qty_m = 0;
@@ -342,8 +342,8 @@ namespace SOFT_FOR_ACCESS
                 if (Convert.ToString(dev2LLC_ЗапросDataGridView[10, i].Value) == "True")                     //  если используется в COLOR
                 {
                     qty_c = copy_c_proj / (Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value));           //кол-во_копий_напечатает_цвет_этот_узел = объём_печати_цвет_проект/ресурс_узла
-                    absolut_color = absolut_color + (Convert.ToDouble(dev2LLC_ЗапросDataGridView[7, i].Value) / Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value));  //абсолют=цена_ресурса/ресурс_этого_ресурса
-                }
+                    absolut_color = absolut_color + ((Convert.ToDouble(dev2LLC_ЗапросDataGridView[7, i].Value) / Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value)) * Convert.ToDouble(dev2LLC_ЗапросDataGridView[6, i].Value));  //абсолют=цена_ресурса/ресурс_этого_ресурса* qty
+        }
                 else
                     qty_c = 0;
 
