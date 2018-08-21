@@ -24,97 +24,225 @@ namespace SOFT_FOR_ACCESS
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod". При необходимости она может быть перемещена или удалена.
-            this.vivodTableAdapter.Fill(this.database2_TESTDataSet.vivod);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor". При необходимости она может быть перемещена или удалена.
-            //this.viborTableAdapter.Fill(this.database2_TESTDataSet.vibor);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Care_pack". При необходимости она может быть перемещена или удалена.
-            this.care_packTableAdapter.Fill(this.database2_TESTDataSet.Care_pack);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "LLC". При необходимости она может быть перемещена или удалена.
+            this.llcTableAdapter1.Fill(this.database2_TESTDataSet.LLC);
 
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
+            this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2LLC_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC". При необходимости она может быть перемещена или удалена.
+            this.dev2LLCTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2LLC_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC_Запрос);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void load_LLC_table()
         {
-            //for (int i = 0; i < care_packDataGridView.RowCount - 1; i++)
-            //{
-            //    if (Convert.ToString(care_packDataGridView[6, i].Value) == "True")
-            //    {
-            //        this.database2_TESTDataSet.vibor.Rows.Add(null, care_packDataGridView[1, i].Value, care_packDataGridView[2, i].Value, care_packDataGridView[3, i].Value, care_packDataGridView[5, i].Value);
-            //    }
-            //}
+            this.llcTableAdapter1.Update(this.database2_TESTDataSet.LLC);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2LLC_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC_Запрос);
+            this.dev2LLC_ЗапросBindingSource.Filter = "[Dev2LLC_id_LLC] LIKE'" + comboBox1.Text + "'";
+
+
+            for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+            {
+                printerDataGridView[9, i].Value = "False";
+                for (int j = 0; j < dev2LLC_ЗапросDataGridView.RowCount - 1; j++)
+                {
+                    
+                    if (Convert.ToString(printerDataGridView[0, i].Value) == Convert.ToString(dev2LLC_ЗапросDataGridView[1, j].Value))
+                        printerDataGridView[9, i].Value = "True";
+
+                }
+            }
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-           // this.viborTableAdapter.Update(this.database2_TESTDataSet.vibor);
-            
+            // this.viborTableAdapter.Update(this.database2_TESTDataSet.vibor);
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ExportToExcel();
-        }
 
-        private void ExportToExcel()
-        {
-            //Excel.Application exApp = new Excel.Application();
-            //exApp.Workbooks.Add();
-            //Worksheet workSheet = (Worksheet)exApp.ActiveSheet;
-            //workSheet.Cells[1, 1] = "ID";
-            //workSheet.Cells[1, 2] = "Type";
-            //workSheet.Cells[1, 3] = "Name";
-            //workSheet.Cells[1, 4] = "Duration";
-            //workSheet.Cells[1, 5] = "service1";
-            //workSheet.Cells[1, 6] = "service2";
-            //workSheet.Cells[1, 7] = "service3";
-            //workSheet.Cells[1, 8] = "service4";
-            //workSheet.Cells[1, 9] = "kol-vo_mono_for_proj";
-            //workSheet.Cells[1, 10] = "kol-vo_color_for_proj";
-            //workSheet.Cells[1, 11] = "cost_mono_for_proj";
-            //workSheet.Cells[1, 12] = "cost_color_for_proj";
-            //workSheet.Cells[1, 13] = "kol-vo_mono";
-            //workSheet.Cells[1, 14] = "kol-vo_color";
-
-            //int rowExcel = 2; //начать со второй строки.
-            //for (int i = 0; i < care_packDataGridView.Rows.Count; i++)
-            //{
-            //    //заполняем строку
-            //    workSheet.Cells[rowExcel, 1] = care_packDataGridView[0, i].Value;
-            //    workSheet.Cells[rowExcel, 2] = care_packDataGridView[1, i].Value;
-            //    workSheet.Cells[rowExcel, 3] = care_packDataGridView[2, i].Value;
-            //    workSheet.Cells[rowExcel, 4] = care_packDataGridView[3, i].Value;
-            //    workSheet.Cells[rowExcel, 5] = care_packDataGridView[4, i].Value;
-            //    workSheet.Cells[rowExcel, 6] = care_packDataGridView[5, i].Value;
-            //    workSheet.Cells[rowExcel, 7] = care_packDataGridView[6, i].Value;
-            //    workSheet.Cells[rowExcel, 8] = care_packDataGridView[7, i].Value;
-            //    workSheet.Cells[rowExcel, 9] = care_packDataGridView[8, i].Value;
-            //    workSheet.Cells[rowExcel, 10] = care_packDataGridView[9, i].Value;
-            //    workSheet.Cells[rowExcel, 11] = care_packDataGridView[10, i].Value;
-            //    workSheet.Cells[rowExcel, 12] = care_packDataGridView[11, i].Value;
-            //    workSheet.Cells[rowExcel, 13] = care_packDataGridView[12, i].Value;
-            //    workSheet.Cells[rowExcel, 14] = care_packDataGridView[13, i].Value;
-            //    workSheet.Cells[rowExcel, 15] = care_packDataGridView[14, i].Value;
-            //    // workSheet.Cells[rowExcel, 6] = care_packDataGridView[6, i].Value;
-            //    //workSheet.Cells[rowExcel, "C"] = care_packDataGridView[2, i].Value;
-            //    ++rowExcel;
-            //}
-
-
-            //    string pathToXmlFile;
-            //    pathToXmlFile = Environment.CurrentDirectory + "\\" + "MyFile.xls";
-            //    workSheet.SaveAs(pathToXmlFile);
-
-            //    exApp.Quit();
-            
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+            //ТУТ БАГ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //ЕСЛИ ДОБАВИТЬ и сразу удлаить одну и ту галку, то она не удаляется. хз поч.
+            try
+            {
+                double ch = 0;
+                for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+                {
+                    if (Convert.ToString(printerDataGridView[9, i].Value) == "True")
+                    {
+                        ch = 0;
+                        for (int j = 0; j < dev2LLC_ЗапросDataGridView.RowCount - 1; j++)
+                        {
+                            if (Convert.ToString(dev2LLC_ЗапросDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2LLC_ЗапросDataGridView[2, j].Value) == comboBox1.Text)
+                                ch = 1;
+                        }
+
+                        if (ch == 0)
+                        {
+                            this.database2_TESTDataSet.Dev2LLC.Rows.Add(null, printerDataGridView[0, i].Value, comboBox1.Text);
+                            this.dev2LLCTableAdapter.Update(this.database2_TESTDataSet.Dev2LLC);
+                            this.dev2LLC_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC_Запрос);
+                        }
+
+                    }
+                    else
+                    {
+                        for (int j = 0; j < dev2LLCDataGridView.RowCount - 1; j++)
+                        {
+                            if (Convert.ToString(dev2LLCDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2LLCDataGridView[2, j].Value) == comboBox1.Text)
+                            {
+                                // Convert.ToString(dev2LLC_ЗапросDataGridView[1, j].Value)
+
+
+                                this.database2_TESTDataSet.Dev2LLC.Rows[j].Delete();
+                                this.dev2LLCTableAdapter.Update(this.database2_TESTDataSet.Dev2LLC);
+                                this.dev2LLC_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC_Запрос);
+                            }
+                        }
+                    }
+
+
+                }
+                MessageBox.Show("Успех!", "Найс", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                load_LLC_table();
+            }
+            catch
+            {
+                MessageBox.Show("Не добавлена связь!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+
         }
 
-        
+        private void textBox_id_LLC_TextChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lLCDataGridView.RowCount - 1; i++)
+            {
+                if (Convert.ToString(lLCDataGridView[0, i].Value) == textBox_id_LLC.Text)
+                {
+                    MessageBox.Show("LLC с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    textBox_name_LLC.Text = Convert.ToString(lLCDataGridView[2, i].Value);
+                    textBox_qty_LLC.Text = Convert.ToString(lLCDataGridView[3, i].Value);
+                    textBox_cost_LLC.Text = Convert.ToString(lLCDataGridView[4, i].Value);
+                    textBox_res_LLC.Text = Convert.ToString(lLCDataGridView[5, i].Value);
+                    if (Convert.ToString(lLCDataGridView[6, i].Value) == "True") checkBox1.Checked = true;
+                    else checkBox1.Checked = false;
+                    if (Convert.ToString(lLCDataGridView[7, i].Value) == "True") checkBox2.Checked = true;
+                    else checkBox2.Checked = false;
+                    if (Convert.ToString(lLCDataGridView[8, i].Value) == "True") checkBox3.Checked = true;
+                    else checkBox2.Checked = false;
 
+                    //comboBox13.Text = Convert.ToString(dev2LLC_ЗапросDataGridView[1, i].Value);
+                    return;
+                }
+            }
+        }
+
+
+        private void add_new_LLC_button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < lLCDataGridView.RowCount - 1; i++)
+                {
+                    if (Convert.ToString(lLCDataGridView[0, i].Value) == textBox_id_LLC.Text)
+                    {
+                        lLCDataGridView[2, i].Value = textBox_name_LLC.Text;
+                        lLCDataGridView[3, i].Value = textBox_qty_LLC.Text;
+                        lLCDataGridView[4, i].Value = textBox_cost_LLC.Text;
+                        lLCDataGridView[5, i].Value = textBox_res_LLC.Text;
+                        lLCDataGridView[6, i].Value = checkBox1.Checked;
+                        lLCDataGridView[7, i].Value = checkBox2.Checked;
+                        lLCDataGridView[8, i].Value = checkBox3.Checked;
+                        this.llcTableAdapter1.Update(this.database2_TESTDataSet.LLC);
+                        this.llcTableAdapter1.Fill(this.database2_TESTDataSet.LLC);
+
+
+                        MessageBox.Show("LLC запись изменена!", "успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                        return;
+                    }
+                }
+
+
+
+                //id_svyaz,     id_dev,     id_LLC,             id_LLC,              type,      name_LLC,       QTY_LLC,                             cost_LLC,       res_LLC,                       inbox_LLC, for_color_LLC, for_mono_LLC, kol-vo, vote_gar
+
+
+                this.database2_TESTDataSet.LLC.Rows.Add(textBox_id_LLC.Text, "LLC", textBox_name_LLC.Text, Convert.ToDouble(textBox_qty_LLC.Text), textBox_cost_LLC.Text, Convert.ToDouble(textBox_res_LLC.Text), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, 1);
+                this.llcTableAdapter1.Update(this.database2_TESTDataSet.LLC);
+
+                MessageBox.Show("Запись добавлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                //if (comboBox13.Text.Length > 0)
+                //{
+                //    this.database2_TESTDataSet.Dev2LLC.Rows.Add(null, comboBox13.Text, textBox_id_LLC.Text);
+                //    this.dev2LLCTableAdapter.Update(this.database2_TESTDataSet.Dev2LLC);
+                //}
+                //else
+                //    MessageBox.Show("Не привязано к устройству!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch
+            {
+                MessageBox.Show("Не добавлено/отредактировано!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+
+        private void add_LLC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (add_LLC.Checked == true)
+            {
+                printerDataGridView.Enabled = false;
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
+                button3.Enabled = false;
+
+                //printerDataGridView.DefaultCellStyle.BackColor = "ControlDark";
+
+                add_new_LLC_button.Enabled = true;
+                textBox_id_LLC.Enabled = true;
+                textBox_name_LLC.Enabled = true;
+                textBox_qty_LLC.Enabled = true;
+                textBox_cost_LLC.Enabled = true;
+                textBox_res_LLC.Enabled = true;
+                checkBox1.Enabled = true;
+                checkBox2.Enabled = true;
+                checkBox3.Enabled = true;
+                //load_LLC_table();
+            }
+            else
+            {
+                printerDataGridView.Enabled = true;
+                comboBox1.Enabled = true;
+                comboBox2.Enabled = true;
+                button3.Enabled = true;
+
+
+                add_new_LLC_button.Enabled = false;
+                textBox_id_LLC.Enabled = false;
+                textBox_name_LLC.Enabled = false;
+                textBox_qty_LLC.Enabled = false;
+                textBox_cost_LLC.Enabled = false;
+                textBox_res_LLC.Enabled = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                load_LLC_table();
+            }
+
+            
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            load_LLC_table();
+        }
     }
-
 }

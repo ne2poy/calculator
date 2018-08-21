@@ -136,7 +136,7 @@ namespace SOFT_FOR_ACCESS
 
 
             DateTime curDate = DateTime.Now;
-            DateTime date1 = new DateTime(2018, 8, 19);
+            DateTime date1 = new DateTime(2018, 9, 19);
 
             if (curDate > date1)
             {
@@ -1100,57 +1100,47 @@ namespace SOFT_FOR_ACCESS
 
         }
 
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void add_new_LLC_button_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < dev2LLC_ЗапросDataGridView.RowCount - 1; i++)
-            {
-                if (Convert.ToString(dev2LLC_ЗапросDataGridView[3, i].Value) == textBox_id_LLC.Text)
-                {
-                    MessageBox.Show("LLC с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    return;
-                }
-            }
-
-
-
-                //id_svyaz,     id_dev,     id_LLC,             id_LLC,              type,      name_LLC,       QTY_LLC,                             cost_LLC,       res_LLC,                       inbox_LLC, for_color_LLC, for_mono_LLC, kol-vo, vote_gar
-
-
-                this.database2_TESTDataSet.LLC.Rows.Add(textBox_id_LLC.Text, "LLC", textBox_name_LLC.Text, Convert.ToDouble(textBox_qty_LLC.Text), textBox_cost_LLC.Text, Convert.ToDouble(textBox_res_LLC.Text), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, 1);
-            this.llcTableAdapter1.Update(this.database2_TESTDataSet.LLC);
-
-
-
-            if (comboBox13.Text.Length > 0)
-            {
-                this.database2_TESTDataSet.Dev2LLC.Rows.Add(null, comboBox13.Text, textBox_id_LLC.Text);
-                this.dev2LLCTableAdapter.Update(this.database2_TESTDataSet.Dev2LLC);
-            }
-            else
-                MessageBox.Show("Не привязано к устройству!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
-
-        private void comboBox13_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void printerDataGridView_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
-        {
-
-
-        }
 
         private void printerDataGridView_Click_1(object sender, EventArgs e)
         {
             int i = printerDataGridView.CurrentCell.RowIndex;
             comboBox3.Text = Convert.ToString(printerDataGridView[0, i].Value);         // = АКТИВНАЯ МОДЕЛЬ ПРИНТЕРА
             comboBox4.Text = Convert.ToString(printerDataGridView[2, i].Value);         // = АКТИВНАЯ МОДЕЛЬ ПРИНТЕРА
+        }
+
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            sup sup = new sup();
+            sup.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            print print = new print();
+            print.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            care_pack care_pack = new care_pack();
+            care_pack.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            acc acc = new acc();
+            acc.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
