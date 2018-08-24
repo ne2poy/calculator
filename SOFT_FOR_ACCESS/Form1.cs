@@ -353,7 +353,11 @@ namespace SOFT_FOR_ACCESS
             double cost_serv_soft = 0;
             double cost_contract = 0;
             double straxovka = 0;
-            double test_strax = 0;
+            double strax = 0;
+            double cost_vith_LRF = 0;
+            double LRF = 0;
+            double nacenka_oboryd_p = 0;
+            
 
             double cost_one_m = 0;
             double cost_one_c = 0;
@@ -408,12 +412,22 @@ namespace SOFT_FOR_ACCESS
                 if (Convert.ToString(vibor1DataGridView[1, i].Value) == "Printer" || Convert.ToString(vibor1DataGridView[1, i].Value) == "accessory" || Convert.ToString(vibor1DataGridView[1, i].Value) == "Garanty")
                 {
                     straxovka = (Convert.ToDouble(comboBox9.Text) / 12) * Convert.ToDouble(textBox11.Text);
-                    cost_print = cost_print + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value) * Convert.ToDouble(comboBox11.Text) * Convert.ToDouble(comboBox9.Text) + (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text)));      //* Convert.ToDouble(comboBox9.Text)
-                                                                                                                                                                                                                                                                                                        //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта * LRF(coef) * straxovka                                //ТУТ БАГ???? входная строка неаерного формата (lrf= ,.)
-                    test_strax = cost_print * straxovka;
+                    //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта + наценка_оборудов_месяц * срок контракта
+                    cost_print = cost_print + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value)); 
+                    //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта * LRf * dur_proj
+                    cost_vith_LRF =  cost_vith_LRF + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value) * Convert.ToDouble(comboBox11.Text) * Convert.ToDouble(comboBox9.Text));
+
+                              //ТУТ БАГ???? входная строка неверного формата (lrf= ,.)
+
+                    strax = strax + (cost_print * straxovka);
+                    //strax_na_vivod = strax_na_vivod + test_strax;
 
                     //cost_print = cost_print + test_strax;
                 }
+
+                //LRF = цена_с_ЛРФ - цена_без_ЛРФ
+                LRF = (cost_vith_LRF - cost_print);
+
 
                 if (Convert.ToString(vibor1DataGridView[1, i].Value) == "soft")
                     cost_soft = cost_soft + Convert.ToDouble(vibor1DataGridView[3, i].Value);
@@ -482,8 +496,10 @@ namespace SOFT_FOR_ACCESS
             }
 
             //double arenda_proj = cost_print2 - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text));
-            if (radioButton13.Checked == true)
-                this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, (cost_print - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text)) )/ dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text)), cost1 + cost2 + cost_print);
+
+            //ВЫВОД В БЕЗ НАЦЕНКИ
+            if (radioButton13.Checked == true)                           //   name                                      kol-vo          v_pech_mono    v_pech_color     cost_pech_month        цена_моно    цена_цвет  затраты_печать_п  затраты_аренд_п                 все_затраты
+                this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, cost_print/ dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print, LRF , strax, cost1 + cost2 + cost_vith_LRF + strax);
             else
                 this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, (cost_print - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text))) / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text)), cost1 + cost2 + cost_print);
 
@@ -524,7 +540,10 @@ namespace SOFT_FOR_ACCESS
             //cost_one_m = cost_one_m * Convert.ToDouble(trashDataGridView[2, 0].Value);
             //cost_one_c = cost_one_c * Convert.ToDouble(trashDataGridView[3, 0].Value);
 
-            double arenda_proj = (cost_print2 - (Convert.ToDouble(textBox3.Text)) * Convert.ToDouble(comboBox9.Text));
+
+            //наценка_оборуд_проект = наценка_оборудов_месяц * срок контракта
+            nacenka_oboryd_p = (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text));
+            double arenda_proj = cost_print2 - nacenka_oboryd_p;
 
             MessageBox.Show("АРЕНДА_ПРОЕКТ(dev+acc+gar)*LRF= " + arenda_proj + 
                 "\n + В АРЕНДУ_ПРОЕКТ(труд, командир, доп услуги)= " + trash_2 * dur_project +
@@ -540,7 +559,7 @@ namespace SOFT_FOR_ACCESS
                 "\n" +
                 "\n cost_one_mono + наценка= " + cost_one_m + 
                 "\n cost_one_color + наценка= " + cost_one_c +
-                "\n страховка= " + test_strax,
+                "\n страховка= " + strax,
                 "\n" +
                 //"\n ЗАТРАТЫ НА ПРОЕКТ= " + cost_one_m +
                 "Рассчитываем...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -565,7 +584,7 @@ namespace SOFT_FOR_ACCESS
                 //this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "кол-во устройств", "объём печати моно в мес", "аренда в месяц", "цена копии моно", "затраты на печать проект");
 
                 if (radioButton13.Checked == true)          //НАЦЕНКИ
-                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, "test", arenda_proj + test_strax, cost1 + cost2 + arenda_proj);
+                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, "test", arenda_proj + strax, cost1 + cost2 + arenda_proj + strax);
                 else
                     this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, "тест", cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
 
