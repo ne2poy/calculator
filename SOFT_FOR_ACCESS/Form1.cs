@@ -7,6 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//------------------------------------
+
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+using System.IO;
 
 //------------------------------------
 using System.Runtime.InteropServices;
@@ -410,20 +417,23 @@ namespace SOFT_FOR_ACCESS
             {
 
                 if (Convert.ToString(vibor1DataGridView[1, i].Value) == "Printer" || Convert.ToString(vibor1DataGridView[1, i].Value) == "accessory" || Convert.ToString(vibor1DataGridView[1, i].Value) == "Garanty")
-                {
-                    straxovka = (Convert.ToDouble(comboBox9.Text) / 12) * Convert.ToDouble(textBox11.Text);
+                {                                   //36*(0,1/12)
+
+                    straxovka = Convert.ToDouble(comboBox9.Text) * (Convert.ToDouble(textBox11.Text) / 12);     
+                    
                     //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта + наценка_оборудов_месяц * срок контракта
                     cost_print = cost_print + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value)); 
                     //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта * LRf * dur_proj
                     cost_vith_LRF =  cost_vith_LRF + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value) * Convert.ToDouble(comboBox11.Text) * Convert.ToDouble(comboBox9.Text));
 
-                              //ТУТ БАГ???? входная строка неверного формата (lrf= ,.)
-
-                    strax = strax + (cost_print * straxovka);
+                    //ТУТ БАГ???? входная строка неверного формата (lrf= ,.)
+                    //straxovka = (Convert.ToDouble(textBox11.Text) * cost_print );
+                    //strax = strax + (cost_print * straxovka);
                     //strax_na_vivod = strax_na_vivod + test_strax;
 
                     //cost_print = cost_print + test_strax;
                 }
+                strax = cost_print * straxovka;
 
                 //LRF = цена_с_ЛРФ - цена_без_ЛРФ
                 LRF = (cost_vith_LRF - cost_print);
@@ -504,7 +514,7 @@ namespace SOFT_FOR_ACCESS
                 this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, (cost_print - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text))) / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text)), cost1 + cost2 + cost_print);
 
 
-            double cost_print2 = cost_print + (trash_2 * dur_project);        //* total_copy  //  + накладные расходы на устройство //+ (Convert.ToDouble(textBox3.Text))
+            double cost_print2 = cost_vith_LRF + strax + (trash_2 * dur_project);        //* total_copy  //  + накладные расходы на устройство //+ (Convert.ToDouble(textBox3.Text))
             //cost_print2 = cost_print2 + trash_2;      //ПОЗЖЕ
             double total_copy = 0;
             if (radioButton13.Checked == true)
@@ -584,7 +594,7 @@ namespace SOFT_FOR_ACCESS
                 //this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "кол-во устройств", "объём печати моно в мес", "аренда в месяц", "цена копии моно", "затраты на печать проект");
 
                 if (radioButton13.Checked == true)          //НАЦЕНКИ
-                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, "test", arenda_proj + strax, cost1 + cost2 + arenda_proj + strax);
+                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
                 else
                     this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, "тест", cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
 
@@ -602,11 +612,34 @@ namespace SOFT_FOR_ACCESS
         }
 
 
-       
+
 
 
         private void button11_Click(object sender, EventArgs e)
         {
+            //File.Create("new_file.txt");
+            char[] array = {'h', 'e', 'l'};
+            string str =  new string(array);
+
+
+            FileStream file1 = new FileStream("new_file.txt", FileMode.Open); //открытие существующего файла
+            StreamReader reader = new StreamReader(file1); // создаем «потоковый читатель» и связываем его с файловым потоком 
+            //listBox1.Items.Add(reader.ReadLine());//считываем все данные с потока и выводим на экран
+            
+            //listBox1.Items.Add(reader.Read());//считываем все данные с потока и выводим на экран
+            //listBox1.Items.Add(reader.Read(array, 0, 3));//считываем все данные с потока и выводим на экран
+            reader.Read(array, 0, 5);//считываем все данные с потока и выводим на экран
+
+            //reader.Read(str);//считываем все данные с потока и выводим на экран
+
+            listBox1.Items.Add(str);//считываем все данные с потока и выводим на экран                //+ array[2] + array[4]
+            //listBox1.Items.Add(array[2]);//считываем все данные с потока и выводим на экран
+            //listBox1.Items.Add(array[4]);//считываем все данные с потока и выводим на экран
+            //listBox1.Items.Add(array[3]);//считываем все данные с потока и выводим на экран
+            //listBox1.Items.Add(array[3]);//считываем все данные с потока и выводим на экран
+
+            //listBox1.Items.Add(reader.Read(array, 0, 4));//считываем все данные с потока и выводим на экран
+            reader.Close(); //закрываем поток
 
         }
 
@@ -755,7 +788,7 @@ namespace SOFT_FOR_ACCESS
 
         private void button16_Click(object sender, EventArgs e)
         {
-            //ExportToExcel();
+            ExportToExcel(1,"2","3",4,5,6,7,8,9);
         }
 
         private void ExportToExcel(double kol_vo, string v_copy_m, string v_copy_c, double arenda_mes, double cost_one_copy_m, double cost_one_c, double cost_all_copy_project, double cost_arenda_project, double cost_all_project)

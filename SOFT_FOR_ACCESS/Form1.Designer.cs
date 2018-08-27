@@ -225,7 +225,35 @@
             this.dataGridViewCheckBoxColumn16 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.vivodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.vivod_itogDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn108 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn109 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn110 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn111 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn112 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn113 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn114 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn115 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn116 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn127 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn128 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vivod_itogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.vivod_itog_2DataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn95 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn96 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn97 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn98 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn99 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn100 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn101 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn102 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn103 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn104 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn105 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn106 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn107 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vivod_itog_2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.proc_ЗапросDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn117 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -244,8 +272,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.vivod_itogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vivod_itog_2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button9 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -300,33 +326,8 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.vivod_itog_2TableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.vivod_itog_2TableAdapter();
-            this.vivod_itog_2DataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn95 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn96 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn97 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn98 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn99 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn100 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn101 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn102 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn103 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn104 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn105 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn106 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn107 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vivod_itogTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.vivod_itogTableAdapter();
-            this.vivod_itogDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn108 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn109 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn110 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn111 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn112 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn113 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn114 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn115 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn116 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn127 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn128 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printerDataGridView)).BeginInit();
@@ -364,17 +365,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.vivodDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vivodBindingSource)).BeginInit();
             this.tabPage11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vivod_itogDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vivod_itogBindingSource)).BeginInit();
             this.tabPage12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2BindingSource)).BeginInit();
             this.tabPage13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vivod_itogBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.procBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2DataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vivod_itogDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // add_print_Button
@@ -1263,16 +1264,16 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label29.Location = new System.Drawing.Point(381, 209);
+            this.label29.Location = new System.Drawing.Point(275, 99);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(48, 20);
+            this.label29.Size = new System.Drawing.Size(23, 20);
             this.label29.TabIndex = 43;
-            this.label29.Text = "(руб.)";
+            this.label29.Text = "%";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(154, 214);
+            this.label30.Location = new System.Drawing.Point(48, 104);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(115, 13);
             this.label30.TabIndex = 42;
@@ -1280,7 +1281,7 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(275, 209);
+            this.textBox11.Location = new System.Drawing.Point(169, 99);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(100, 20);
             this.textBox11.TabIndex = 41;
@@ -1290,7 +1291,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(381, 177);
+            this.label22.Location = new System.Drawing.Point(359, 201);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(48, 20);
             this.label22.TabIndex = 40;
@@ -1300,7 +1301,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(381, 142);
+            this.label21.Location = new System.Drawing.Point(359, 166);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(48, 20);
             this.label21.TabIndex = 39;
@@ -1339,7 +1340,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(19, 76);
+            this.label17.Location = new System.Drawing.Point(29, 73);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(134, 13);
             this.label17.TabIndex = 35;
@@ -1356,7 +1357,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(19, 47);
+            this.label16.Location = new System.Drawing.Point(26, 47);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(137, 13);
             this.label16.TabIndex = 33;
@@ -1390,7 +1391,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(79, 180);
+            this.label14.Location = new System.Drawing.Point(57, 204);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(190, 13);
             this.label14.TabIndex = 29;
@@ -1399,7 +1400,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(111, 145);
+            this.label13.Location = new System.Drawing.Point(89, 169);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(158, 13);
             this.label13.TabIndex = 28;
@@ -1407,7 +1408,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(275, 177);
+            this.textBox4.Location = new System.Drawing.Point(253, 201);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 3;
@@ -1415,7 +1416,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(275, 142);
+            this.textBox3.Location = new System.Drawing.Point(253, 166);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 2;
@@ -2108,6 +2109,99 @@
             this.tabPage11.Text = "наценки11";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
+            // vivod_itogDataGridView
+            // 
+            this.vivod_itogDataGridView.AutoGenerateColumns = false;
+            this.vivod_itogDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vivod_itogDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn108,
+            this.dataGridViewTextBoxColumn109,
+            this.dataGridViewTextBoxColumn110,
+            this.dataGridViewTextBoxColumn111,
+            this.dataGridViewTextBoxColumn112,
+            this.dataGridViewTextBoxColumn113,
+            this.dataGridViewTextBoxColumn114,
+            this.dataGridViewTextBoxColumn115,
+            this.dataGridViewTextBoxColumn116,
+            this.dataGridViewTextBoxColumn127,
+            this.dataGridViewTextBoxColumn128});
+            this.vivod_itogDataGridView.DataSource = this.vivod_itogBindingSource;
+            this.vivod_itogDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.vivod_itogDataGridView.Name = "vivod_itogDataGridView";
+            this.vivod_itogDataGridView.Size = new System.Drawing.Size(1230, 220);
+            this.vivod_itogDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn108
+            // 
+            this.dataGridViewTextBoxColumn108.DataPropertyName = "id_vivod";
+            this.dataGridViewTextBoxColumn108.HeaderText = "id_vivod";
+            this.dataGridViewTextBoxColumn108.Name = "dataGridViewTextBoxColumn108";
+            // 
+            // dataGridViewTextBoxColumn109
+            // 
+            this.dataGridViewTextBoxColumn109.DataPropertyName = "model";
+            this.dataGridViewTextBoxColumn109.HeaderText = "model";
+            this.dataGridViewTextBoxColumn109.Name = "dataGridViewTextBoxColumn109";
+            // 
+            // dataGridViewTextBoxColumn110
+            // 
+            this.dataGridViewTextBoxColumn110.DataPropertyName = "kol-vo";
+            this.dataGridViewTextBoxColumn110.HeaderText = "kol-vo";
+            this.dataGridViewTextBoxColumn110.Name = "dataGridViewTextBoxColumn110";
+            // 
+            // dataGridViewTextBoxColumn111
+            // 
+            this.dataGridViewTextBoxColumn111.DataPropertyName = "v_pech_mono";
+            this.dataGridViewTextBoxColumn111.HeaderText = "v_pech_mono";
+            this.dataGridViewTextBoxColumn111.Name = "dataGridViewTextBoxColumn111";
+            // 
+            // dataGridViewTextBoxColumn112
+            // 
+            this.dataGridViewTextBoxColumn112.DataPropertyName = "v_pech_color";
+            this.dataGridViewTextBoxColumn112.HeaderText = "v_pech_color";
+            this.dataGridViewTextBoxColumn112.Name = "dataGridViewTextBoxColumn112";
+            // 
+            // dataGridViewTextBoxColumn113
+            // 
+            this.dataGridViewTextBoxColumn113.DataPropertyName = "arenda_month";
+            this.dataGridViewTextBoxColumn113.HeaderText = "arenda_month";
+            this.dataGridViewTextBoxColumn113.Name = "dataGridViewTextBoxColumn113";
+            // 
+            // dataGridViewTextBoxColumn114
+            // 
+            this.dataGridViewTextBoxColumn114.DataPropertyName = "copy_mono";
+            this.dataGridViewTextBoxColumn114.HeaderText = "copy_mono";
+            this.dataGridViewTextBoxColumn114.Name = "dataGridViewTextBoxColumn114";
+            // 
+            // dataGridViewTextBoxColumn115
+            // 
+            this.dataGridViewTextBoxColumn115.DataPropertyName = "copy_color";
+            this.dataGridViewTextBoxColumn115.HeaderText = "copy_color";
+            this.dataGridViewTextBoxColumn115.Name = "dataGridViewTextBoxColumn115";
+            // 
+            // dataGridViewTextBoxColumn116
+            // 
+            this.dataGridViewTextBoxColumn116.DataPropertyName = "zatrati_pech_p";
+            this.dataGridViewTextBoxColumn116.HeaderText = "zatrati_pech_p";
+            this.dataGridViewTextBoxColumn116.Name = "dataGridViewTextBoxColumn116";
+            // 
+            // dataGridViewTextBoxColumn127
+            // 
+            this.dataGridViewTextBoxColumn127.DataPropertyName = "zatrati_arenda_p";
+            this.dataGridViewTextBoxColumn127.HeaderText = "zatrati_arenda_p";
+            this.dataGridViewTextBoxColumn127.Name = "dataGridViewTextBoxColumn127";
+            // 
+            // dataGridViewTextBoxColumn128
+            // 
+            this.dataGridViewTextBoxColumn128.DataPropertyName = "all_zatrati";
+            this.dataGridViewTextBoxColumn128.HeaderText = "all_zatrati";
+            this.dataGridViewTextBoxColumn128.Name = "dataGridViewTextBoxColumn128";
+            // 
+            // vivod_itogBindingSource
+            // 
+            this.vivod_itogBindingSource.DataMember = "vivod_itog";
+            this.vivod_itogBindingSource.DataSource = this.database2_TESTDataSet;
+            // 
             // tabPage12
             // 
             this.tabPage12.AutoScroll = true;
@@ -2118,6 +2212,113 @@
             this.tabPage12.TabIndex = 11;
             this.tabPage12.Text = "без_наценки12";
             this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // vivod_itog_2DataGridView
+            // 
+            this.vivod_itog_2DataGridView.AutoGenerateColumns = false;
+            this.vivod_itog_2DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vivod_itog_2DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn95,
+            this.dataGridViewTextBoxColumn96,
+            this.dataGridViewTextBoxColumn97,
+            this.dataGridViewTextBoxColumn98,
+            this.dataGridViewTextBoxColumn99,
+            this.dataGridViewTextBoxColumn100,
+            this.dataGridViewTextBoxColumn101,
+            this.dataGridViewTextBoxColumn102,
+            this.dataGridViewTextBoxColumn103,
+            this.dataGridViewTextBoxColumn104,
+            this.dataGridViewTextBoxColumn105,
+            this.dataGridViewTextBoxColumn106,
+            this.dataGridViewTextBoxColumn107});
+            this.vivod_itog_2DataGridView.DataSource = this.vivod_itog_2BindingSource;
+            this.vivod_itog_2DataGridView.Location = new System.Drawing.Point(6, 3);
+            this.vivod_itog_2DataGridView.Name = "vivod_itog_2DataGridView";
+            this.vivod_itog_2DataGridView.Size = new System.Drawing.Size(1348, 220);
+            this.vivod_itog_2DataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn95
+            // 
+            this.dataGridViewTextBoxColumn95.DataPropertyName = "id_vivod";
+            this.dataGridViewTextBoxColumn95.HeaderText = "id_vivod";
+            this.dataGridViewTextBoxColumn95.Name = "dataGridViewTextBoxColumn95";
+            // 
+            // dataGridViewTextBoxColumn96
+            // 
+            this.dataGridViewTextBoxColumn96.DataPropertyName = "model";
+            this.dataGridViewTextBoxColumn96.HeaderText = "model";
+            this.dataGridViewTextBoxColumn96.Name = "dataGridViewTextBoxColumn96";
+            // 
+            // dataGridViewTextBoxColumn97
+            // 
+            this.dataGridViewTextBoxColumn97.DataPropertyName = "kol-vo";
+            this.dataGridViewTextBoxColumn97.HeaderText = "kol-vo";
+            this.dataGridViewTextBoxColumn97.Name = "dataGridViewTextBoxColumn97";
+            // 
+            // dataGridViewTextBoxColumn98
+            // 
+            this.dataGridViewTextBoxColumn98.DataPropertyName = "v_pech_mono";
+            this.dataGridViewTextBoxColumn98.HeaderText = "v_pech_mono";
+            this.dataGridViewTextBoxColumn98.Name = "dataGridViewTextBoxColumn98";
+            // 
+            // dataGridViewTextBoxColumn99
+            // 
+            this.dataGridViewTextBoxColumn99.DataPropertyName = "v_pech_color";
+            this.dataGridViewTextBoxColumn99.HeaderText = "v_pech_color";
+            this.dataGridViewTextBoxColumn99.Name = "dataGridViewTextBoxColumn99";
+            // 
+            // dataGridViewTextBoxColumn100
+            // 
+            this.dataGridViewTextBoxColumn100.DataPropertyName = "arenda_month";
+            this.dataGridViewTextBoxColumn100.HeaderText = "arenda_month";
+            this.dataGridViewTextBoxColumn100.Name = "dataGridViewTextBoxColumn100";
+            // 
+            // dataGridViewTextBoxColumn101
+            // 
+            this.dataGridViewTextBoxColumn101.DataPropertyName = "copy_mono";
+            this.dataGridViewTextBoxColumn101.HeaderText = "copy_mono";
+            this.dataGridViewTextBoxColumn101.Name = "dataGridViewTextBoxColumn101";
+            // 
+            // dataGridViewTextBoxColumn102
+            // 
+            this.dataGridViewTextBoxColumn102.DataPropertyName = "copy_color";
+            this.dataGridViewTextBoxColumn102.HeaderText = "copy_color";
+            this.dataGridViewTextBoxColumn102.Name = "dataGridViewTextBoxColumn102";
+            // 
+            // dataGridViewTextBoxColumn103
+            // 
+            this.dataGridViewTextBoxColumn103.DataPropertyName = "zatrati_pech_p";
+            this.dataGridViewTextBoxColumn103.HeaderText = "zatrati_pech_p";
+            this.dataGridViewTextBoxColumn103.Name = "dataGridViewTextBoxColumn103";
+            // 
+            // dataGridViewTextBoxColumn104
+            // 
+            this.dataGridViewTextBoxColumn104.DataPropertyName = "zatrati_arenda_p";
+            this.dataGridViewTextBoxColumn104.HeaderText = "zatrati_arenda_p";
+            this.dataGridViewTextBoxColumn104.Name = "dataGridViewTextBoxColumn104";
+            // 
+            // dataGridViewTextBoxColumn105
+            // 
+            this.dataGridViewTextBoxColumn105.DataPropertyName = "LRF";
+            this.dataGridViewTextBoxColumn105.HeaderText = "LRF";
+            this.dataGridViewTextBoxColumn105.Name = "dataGridViewTextBoxColumn105";
+            // 
+            // dataGridViewTextBoxColumn106
+            // 
+            this.dataGridViewTextBoxColumn106.DataPropertyName = "straxovka";
+            this.dataGridViewTextBoxColumn106.HeaderText = "straxovka";
+            this.dataGridViewTextBoxColumn106.Name = "dataGridViewTextBoxColumn106";
+            // 
+            // dataGridViewTextBoxColumn107
+            // 
+            this.dataGridViewTextBoxColumn107.DataPropertyName = "all_zatrati";
+            this.dataGridViewTextBoxColumn107.HeaderText = "all_zatrati";
+            this.dataGridViewTextBoxColumn107.Name = "dataGridViewTextBoxColumn107";
+            // 
+            // vivod_itog_2BindingSource
+            // 
+            this.vivod_itog_2BindingSource.DataMember = "vivod_itog_2";
+            this.vivod_itog_2BindingSource.DataSource = this.database2_TESTDataSet;
             // 
             // tabPage13
             // 
@@ -2279,16 +2480,6 @@
             this.comboBox10.Visible = false;
             this.comboBox10.TextChanged += new System.EventHandler(this.comboBox10_TextChanged);
             // 
-            // vivod_itogBindingSource
-            // 
-            this.vivod_itogBindingSource.DataMember = "vivod_itog";
-            this.vivod_itogBindingSource.DataSource = this.database2_TESTDataSet;
-            // 
-            // vivod_itog_2BindingSource
-            // 
-            this.vivod_itog_2BindingSource.DataMember = "vivod_itog_2";
-            this.vivod_itog_2BindingSource.DataSource = this.database2_TESTDataSet;
-            // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.Red;
@@ -2321,13 +2512,12 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(1114, 260);
+            this.button11.Location = new System.Drawing.Point(532, 341);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(146, 23);
+            this.button11.Size = new System.Drawing.Size(62, 23);
             this.button11.TabIndex = 13;
-            this.button11.Text = "ДОБАВИТЬ_ВСЁ_11";
+            this.button11.Text = "file_11";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Visible = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button14
@@ -2343,7 +2533,6 @@
             // 
             // button16
             // 
-            this.button16.Enabled = false;
             this.button16.Location = new System.Drawing.Point(987, 288);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(104, 23);
@@ -2702,199 +2891,17 @@
             // 
             this.vivod_itog_2TableAdapter.ClearBeforeFill = true;
             // 
-            // vivod_itog_2DataGridView
-            // 
-            this.vivod_itog_2DataGridView.AutoGenerateColumns = false;
-            this.vivod_itog_2DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vivod_itog_2DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn95,
-            this.dataGridViewTextBoxColumn96,
-            this.dataGridViewTextBoxColumn97,
-            this.dataGridViewTextBoxColumn98,
-            this.dataGridViewTextBoxColumn99,
-            this.dataGridViewTextBoxColumn100,
-            this.dataGridViewTextBoxColumn101,
-            this.dataGridViewTextBoxColumn102,
-            this.dataGridViewTextBoxColumn103,
-            this.dataGridViewTextBoxColumn104,
-            this.dataGridViewTextBoxColumn105,
-            this.dataGridViewTextBoxColumn106,
-            this.dataGridViewTextBoxColumn107});
-            this.vivod_itog_2DataGridView.DataSource = this.vivod_itog_2BindingSource;
-            this.vivod_itog_2DataGridView.Location = new System.Drawing.Point(6, 3);
-            this.vivod_itog_2DataGridView.Name = "vivod_itog_2DataGridView";
-            this.vivod_itog_2DataGridView.Size = new System.Drawing.Size(1348, 220);
-            this.vivod_itog_2DataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn95
-            // 
-            this.dataGridViewTextBoxColumn95.DataPropertyName = "id_vivod";
-            this.dataGridViewTextBoxColumn95.HeaderText = "id_vivod";
-            this.dataGridViewTextBoxColumn95.Name = "dataGridViewTextBoxColumn95";
-            // 
-            // dataGridViewTextBoxColumn96
-            // 
-            this.dataGridViewTextBoxColumn96.DataPropertyName = "model";
-            this.dataGridViewTextBoxColumn96.HeaderText = "model";
-            this.dataGridViewTextBoxColumn96.Name = "dataGridViewTextBoxColumn96";
-            // 
-            // dataGridViewTextBoxColumn97
-            // 
-            this.dataGridViewTextBoxColumn97.DataPropertyName = "kol-vo";
-            this.dataGridViewTextBoxColumn97.HeaderText = "kol-vo";
-            this.dataGridViewTextBoxColumn97.Name = "dataGridViewTextBoxColumn97";
-            // 
-            // dataGridViewTextBoxColumn98
-            // 
-            this.dataGridViewTextBoxColumn98.DataPropertyName = "v_pech_mono";
-            this.dataGridViewTextBoxColumn98.HeaderText = "v_pech_mono";
-            this.dataGridViewTextBoxColumn98.Name = "dataGridViewTextBoxColumn98";
-            // 
-            // dataGridViewTextBoxColumn99
-            // 
-            this.dataGridViewTextBoxColumn99.DataPropertyName = "v_pech_color";
-            this.dataGridViewTextBoxColumn99.HeaderText = "v_pech_color";
-            this.dataGridViewTextBoxColumn99.Name = "dataGridViewTextBoxColumn99";
-            // 
-            // dataGridViewTextBoxColumn100
-            // 
-            this.dataGridViewTextBoxColumn100.DataPropertyName = "arenda_month";
-            this.dataGridViewTextBoxColumn100.HeaderText = "arenda_month";
-            this.dataGridViewTextBoxColumn100.Name = "dataGridViewTextBoxColumn100";
-            // 
-            // dataGridViewTextBoxColumn101
-            // 
-            this.dataGridViewTextBoxColumn101.DataPropertyName = "copy_mono";
-            this.dataGridViewTextBoxColumn101.HeaderText = "copy_mono";
-            this.dataGridViewTextBoxColumn101.Name = "dataGridViewTextBoxColumn101";
-            // 
-            // dataGridViewTextBoxColumn102
-            // 
-            this.dataGridViewTextBoxColumn102.DataPropertyName = "copy_color";
-            this.dataGridViewTextBoxColumn102.HeaderText = "copy_color";
-            this.dataGridViewTextBoxColumn102.Name = "dataGridViewTextBoxColumn102";
-            // 
-            // dataGridViewTextBoxColumn103
-            // 
-            this.dataGridViewTextBoxColumn103.DataPropertyName = "zatrati_pech_p";
-            this.dataGridViewTextBoxColumn103.HeaderText = "zatrati_pech_p";
-            this.dataGridViewTextBoxColumn103.Name = "dataGridViewTextBoxColumn103";
-            // 
-            // dataGridViewTextBoxColumn104
-            // 
-            this.dataGridViewTextBoxColumn104.DataPropertyName = "zatrati_arenda_p";
-            this.dataGridViewTextBoxColumn104.HeaderText = "zatrati_arenda_p";
-            this.dataGridViewTextBoxColumn104.Name = "dataGridViewTextBoxColumn104";
-            // 
-            // dataGridViewTextBoxColumn105
-            // 
-            this.dataGridViewTextBoxColumn105.DataPropertyName = "LRF";
-            this.dataGridViewTextBoxColumn105.HeaderText = "LRF";
-            this.dataGridViewTextBoxColumn105.Name = "dataGridViewTextBoxColumn105";
-            // 
-            // dataGridViewTextBoxColumn106
-            // 
-            this.dataGridViewTextBoxColumn106.DataPropertyName = "straxovka";
-            this.dataGridViewTextBoxColumn106.HeaderText = "straxovka";
-            this.dataGridViewTextBoxColumn106.Name = "dataGridViewTextBoxColumn106";
-            // 
-            // dataGridViewTextBoxColumn107
-            // 
-            this.dataGridViewTextBoxColumn107.DataPropertyName = "all_zatrati";
-            this.dataGridViewTextBoxColumn107.HeaderText = "all_zatrati";
-            this.dataGridViewTextBoxColumn107.Name = "dataGridViewTextBoxColumn107";
-            // 
             // vivod_itogTableAdapter
             // 
             this.vivod_itogTableAdapter.ClearBeforeFill = true;
             // 
-            // vivod_itogDataGridView
+            // listBox1
             // 
-            this.vivod_itogDataGridView.AutoGenerateColumns = false;
-            this.vivod_itogDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vivod_itogDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn108,
-            this.dataGridViewTextBoxColumn109,
-            this.dataGridViewTextBoxColumn110,
-            this.dataGridViewTextBoxColumn111,
-            this.dataGridViewTextBoxColumn112,
-            this.dataGridViewTextBoxColumn113,
-            this.dataGridViewTextBoxColumn114,
-            this.dataGridViewTextBoxColumn115,
-            this.dataGridViewTextBoxColumn116,
-            this.dataGridViewTextBoxColumn127,
-            this.dataGridViewTextBoxColumn128});
-            this.vivod_itogDataGridView.DataSource = this.vivod_itogBindingSource;
-            this.vivod_itogDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.vivod_itogDataGridView.Name = "vivod_itogDataGridView";
-            this.vivod_itogDataGridView.Size = new System.Drawing.Size(1230, 220);
-            this.vivod_itogDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn108
-            // 
-            this.dataGridViewTextBoxColumn108.DataPropertyName = "id_vivod";
-            this.dataGridViewTextBoxColumn108.HeaderText = "id_vivod";
-            this.dataGridViewTextBoxColumn108.Name = "dataGridViewTextBoxColumn108";
-            // 
-            // dataGridViewTextBoxColumn109
-            // 
-            this.dataGridViewTextBoxColumn109.DataPropertyName = "model";
-            this.dataGridViewTextBoxColumn109.HeaderText = "model";
-            this.dataGridViewTextBoxColumn109.Name = "dataGridViewTextBoxColumn109";
-            // 
-            // dataGridViewTextBoxColumn110
-            // 
-            this.dataGridViewTextBoxColumn110.DataPropertyName = "kol-vo";
-            this.dataGridViewTextBoxColumn110.HeaderText = "kol-vo";
-            this.dataGridViewTextBoxColumn110.Name = "dataGridViewTextBoxColumn110";
-            // 
-            // dataGridViewTextBoxColumn111
-            // 
-            this.dataGridViewTextBoxColumn111.DataPropertyName = "v_pech_mono";
-            this.dataGridViewTextBoxColumn111.HeaderText = "v_pech_mono";
-            this.dataGridViewTextBoxColumn111.Name = "dataGridViewTextBoxColumn111";
-            // 
-            // dataGridViewTextBoxColumn112
-            // 
-            this.dataGridViewTextBoxColumn112.DataPropertyName = "v_pech_color";
-            this.dataGridViewTextBoxColumn112.HeaderText = "v_pech_color";
-            this.dataGridViewTextBoxColumn112.Name = "dataGridViewTextBoxColumn112";
-            // 
-            // dataGridViewTextBoxColumn113
-            // 
-            this.dataGridViewTextBoxColumn113.DataPropertyName = "arenda_month";
-            this.dataGridViewTextBoxColumn113.HeaderText = "arenda_month";
-            this.dataGridViewTextBoxColumn113.Name = "dataGridViewTextBoxColumn113";
-            // 
-            // dataGridViewTextBoxColumn114
-            // 
-            this.dataGridViewTextBoxColumn114.DataPropertyName = "copy_mono";
-            this.dataGridViewTextBoxColumn114.HeaderText = "copy_mono";
-            this.dataGridViewTextBoxColumn114.Name = "dataGridViewTextBoxColumn114";
-            // 
-            // dataGridViewTextBoxColumn115
-            // 
-            this.dataGridViewTextBoxColumn115.DataPropertyName = "copy_color";
-            this.dataGridViewTextBoxColumn115.HeaderText = "copy_color";
-            this.dataGridViewTextBoxColumn115.Name = "dataGridViewTextBoxColumn115";
-            // 
-            // dataGridViewTextBoxColumn116
-            // 
-            this.dataGridViewTextBoxColumn116.DataPropertyName = "zatrati_pech_p";
-            this.dataGridViewTextBoxColumn116.HeaderText = "zatrati_pech_p";
-            this.dataGridViewTextBoxColumn116.Name = "dataGridViewTextBoxColumn116";
-            // 
-            // dataGridViewTextBoxColumn127
-            // 
-            this.dataGridViewTextBoxColumn127.DataPropertyName = "zatrati_arenda_p";
-            this.dataGridViewTextBoxColumn127.HeaderText = "zatrati_arenda_p";
-            this.dataGridViewTextBoxColumn127.Name = "dataGridViewTextBoxColumn127";
-            // 
-            // dataGridViewTextBoxColumn128
-            // 
-            this.dataGridViewTextBoxColumn128.DataPropertyName = "all_zatrati";
-            this.dataGridViewTextBoxColumn128.HeaderText = "all_zatrati";
-            this.dataGridViewTextBoxColumn128.Name = "dataGridViewTextBoxColumn128";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(146, 220);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(370, 225);
+            this.listBox1.TabIndex = 44;
             // 
             // Form1
             // 
@@ -2902,6 +2909,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1538, 861);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -2975,18 +2983,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.vivodDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vivodBindingSource)).EndInit();
             this.tabPage11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vivod_itogDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vivod_itogBindingSource)).EndInit();
             this.tabPage12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2BindingSource)).EndInit();
             this.tabPage13.ResumeLayout(false);
             this.tabPage13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vivod_itogBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.procBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vivod_itog_2DataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vivod_itogDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3261,7 +3269,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.DataGridView vivod_itogDataGridView;
@@ -3292,6 +3299,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn107;
         private Database2_TESTDataSetTableAdapters.vivod_itog_2TableAdapter vivod_itog_2TableAdapter;
         private Database2_TESTDataSetTableAdapters.vivod_itogTableAdapter vivod_itogTableAdapter;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
