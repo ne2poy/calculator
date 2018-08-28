@@ -328,6 +328,8 @@
             this.vivod_itog_2TableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.vivod_itog_2TableAdapter();
             this.vivod_itogTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.vivod_itogTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.quantity_textBox = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printerDataGridView)).BeginInit();
@@ -390,7 +392,7 @@
             // 
             // add_care_pack_Button
             // 
-            this.add_care_pack_Button.Location = new System.Drawing.Point(653, 200);
+            this.add_care_pack_Button.Location = new System.Drawing.Point(652, 200);
             this.add_care_pack_Button.Name = "add_care_pack_Button";
             this.add_care_pack_Button.Size = new System.Drawing.Size(128, 23);
             this.add_care_pack_Button.TabIndex = 5;
@@ -2898,10 +2900,28 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(146, 220);
+            this.listBox1.Location = new System.Drawing.Point(1373, 38);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(370, 225);
             this.listBox1.TabIndex = 44;
+            // 
+            // quantity_textBox
+            // 
+            this.quantity_textBox.Location = new System.Drawing.Point(695, 352);
+            this.quantity_textBox.Name = "quantity_textBox";
+            this.quantity_textBox.Size = new System.Drawing.Size(127, 20);
+            this.quantity_textBox.TabIndex = 33;
+            this.quantity_textBox.Text = "2";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(638, 355);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(51, 13);
+            this.label31.TabIndex = 33;
+            this.label31.Text = "КОЛ-ВО:";
+            this.label31.Visible = false;
             // 
             // Form1
             // 
@@ -2909,6 +2929,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1538, 861);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.quantity_textBox);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button8);
@@ -3301,6 +3323,8 @@
         private Database2_TESTDataSetTableAdapters.vivod_itogTableAdapter vivod_itogTableAdapter;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox quantity_textBox;
+        private System.Windows.Forms.Label label31;
     }
 }
 
