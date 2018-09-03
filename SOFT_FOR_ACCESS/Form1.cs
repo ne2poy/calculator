@@ -29,7 +29,8 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 //------------------------
 using ClosedXML.Excel;
-
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace SOFT_FOR_ACCESS
 {
@@ -608,7 +609,7 @@ namespace SOFT_FOR_ACCESS
                 "\n страховка= " + strax,
                 "\n" +
                 //"\n ЗАТРАТЫ НА ПРОЕКТ= " + cost_one_m +
-                "Рассчитываем...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                "ТЕСТОВОЕ ОКНО!!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             try
                 
@@ -627,10 +628,13 @@ namespace SOFT_FOR_ACCESS
                 z++;
                 this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "---", "---", "---", "---", "---", "---");
 
+
+
+                double zatrati_print_nac = (cost1 * ((Convert.ToDouble(textBox6.Text) / 100) + 1) + (Convert.ToDouble(textBox4.Text) * Convert.ToDouble(textBox1.Text))) + (cost2 * ((Convert.ToDouble(textBox7.Text) / 100) + 1) + (Convert.ToDouble(textBox4.Text) * Convert.ToDouble(textBox2.Text)));
                 //this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "кол-во устройств", "объём печати моно в мес", "аренда в месяц", "цена копии моно", "затраты на печать проект");
 
                 if (radioButton13.Checked == true)          //НАЦЕНКИ
-                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
+                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, quantity_textBox.Text, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, Convert.ToString(zatrati_print_nac) , arenda_proj, (zatrati_print_nac + arenda_proj) );
                 else
                     this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, "тест", cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
 
@@ -645,7 +649,43 @@ namespace SOFT_FOR_ACCESS
                 return;
             }
 
-            //clear_vibor();
+            clear_vibor();
+
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC". При необходимости она может быть перемещена или удалена.
+            this.dev2LLCTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.DurForCRF". При необходимости она может быть перемещена или удалена.
+            this.durForCRFTableAdapter.Fill(this.database2_TESTDataSet.DurForCRF);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.proc_Запрос". При необходимости она может быть перемещена или удалена.
+            this.proc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.proc_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog_2". При необходимости она может быть перемещена или удалена.
+            //this.vivod_itog_2TableAdapter.Fill(this.database2_TESTDataSet.vivod_itog_2);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod_itog". При необходимости она может быть перемещена или удалена.
+            //this.vivod_itogTableAdapter.Fill(this.database2_TESTDataSet.vivod_itog);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vivod". При необходимости она может быть перемещена или удалена.
+            //this.vivodTableAdapter.Fill(this.database2_TESTDataSet.vivod);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2soft_serv_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2soft_serv_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2soft_serv_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2soft_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2soft_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2soft_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Trash". При необходимости она может быть перемещена или удалена.
+            this.trashTableAdapter.Fill(this.database2_TESTDataSet.Trash);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2acc_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2acc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2sup_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2sup_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2sup_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2LLC_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2care_Запрос". При необходимости она может быть перемещена или удалена.
+            this.dev2care_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2care_Запрос);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.vibor1". При необходимости она может быть перемещена или удалена.
+            this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
+            this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
+
+
+            textBox1.Clear();
+            textBox2.Clear();
+            comboBox9.Text = "";
         }
 
 
@@ -1122,6 +1162,9 @@ namespace SOFT_FOR_ACCESS
         private void button15_Click(object sender, EventArgs e)
         {
             clear_vibor();
+            textBox1.Clear();
+            textBox2.Clear();
+            comboBox9.Text = "";
 
             
         }
@@ -1222,6 +1265,174 @@ namespace SOFT_FOR_ACCESS
             //public List<Note> Notes = new List<Note>();
         }
 
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+
+
+            //PdfWriter.GetInstance(doc, new FileStream(path + "/Doc2.pdf", FileMode.Create));
+
+
+            // var doc = new Document();
+            var doc = new Document(PageSize.A4, 0, 0, 20, 20);
+            doc.SetPageSize(PageSize.A4.Rotate());      //albom arientation
+            //doc.SetPageSize(PageSize.A4, 0, 0, 0, 0);
+            PdfWriter.GetInstance(doc, new FileStream(System.Windows.Forms.Application.StartupPath + @"\Document.pdf", FileMode.Create));
+            doc.Open();
+            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(System.Windows.Forms.Application.StartupPath + @"/123.jpg");
+            jpg.Alignment = Element.ALIGN_CENTER;
+            doc.Add(jpg);
+
+
+            PdfPTable table = new PdfPTable(10);     //col-vo stolbov
+            PdfPCell cell = new PdfPCell(new Phrase("type_dev", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 16,  iTextSharp.text.Font.NORMAL, new BaseColor(Color.DarkBlue))));
+
+            //cell.BackgroundColor = new BaseColor(Color.Red);
+            //cell.Padding = 5;               //visota in pix
+            //cell.Colspan = 4;               //shirina in cells
+            //cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            //table.TotalWidth = 800;
+            //cell.MinimumHeight = LAST_CELL_HEIGHT;
+            //table.AddCell(cell);        //vstavili 1 simple_table
+            float[] widths = new float[] { 30, 10, 10, 10, 10, 10, 10, 10, 10, 10  };
+            table.SetWidths(widths);
+
+
+            table.AddCell("type_dev");
+            table.AddCell("kol-vo");
+            table.AddCell("v_pech_mono");
+            table.AddCell("v_pech_color");
+            table.AddCell("abon in month");
+            table.AddCell("cost mono copy");
+            table.AddCell("cost color copy");
+            table.AddCell("zatrati pech_p");
+            table.AddCell("zatrati arend_p");
+            table.AddCell("all cost");
+
+
+            //Math.Round(Convert.ToDouble(vivod_itogDataGridView[1, 0].Value), 2);
+
+            for (int i = 0; i < vivod_itogDataGridView.RowCount - 1; i++)
+            {
+
+                table.AddCell(Convert.ToString(vivod_itogDataGridView[1, i].Value));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[2, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[3, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[4, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[5, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[6, i].Value), 2)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[7, i].Value), 2)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[8, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[9, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[10, i].Value), 0)));
+
+            }
+
+            //jpg = iTextSharp.text.Image.GetInstance(System.Windows.Forms.Application.StartupPath + @"/left.jpg");
+            //cell = new PdfPCell(jpg);
+            //cell.Padding = 5;
+            //cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+            //table.AddCell(cell);
+            //cell = new PdfPCell(new Phrase("Col 2 Row 3"));
+            //cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+            //cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+            //table.AddCell(cell);
+            //jpg = iTextSharp.text.Image.GetInstance(System.Windows.Forms.Application.StartupPath + @"/right.jpg");
+            //cell = new PdfPCell(jpg);
+            //cell.Padding = 5;
+            //cell.HorizontalAlignment = PdfPCell.ALIGN_RIGHT;
+            //table.AddCell(cell);
+            doc.Add(table);
+            doc.Close();
+
+
+
+
+
+            // Document document = new Document();
+            //PdfCopy copy = new PdfSmartCopy(document, new FileStream("1.pdf", FileMode.Create));
+            //document.Open();
+            //PdfReader reader;
+            //String line = readLine();
+            //// loop over readers
+            //// add the PDF to PdfCopy
+            //reader = new PdfReader(baos.toByteArray());
+            //copy.addDocument(reader);
+            //reader.close();
+            //// end loop
+            //document.close();
+
+            AppendToDocument("2.pdf", "Document.pdf", "TEST.pdf");
+            AppendToDocument("TEST.pdf", "3.pdf", "Commercial_offer.pdf");
+
+
+            MessageBox.Show("commercial offer was created!", "Good", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            
+        }
+
+
+
+
+
+
+
+
+        private static void AppendToDocument(string sourcePdfPath1, string sourcePdfPath2, string outputPdfPath)
+        {
+            using (var sourceDocumentStream1 = new FileStream(sourcePdfPath1, FileMode.Open))
+            {
+                using (var sourceDocumentStream2 = new FileStream(sourcePdfPath2, FileMode.Open))
+                {
+                    using (var destinationDocumentStream = new FileStream(outputPdfPath, FileMode.Create ))
+                    {
+                        var pdfConcat = new PdfConcatenate(destinationDocumentStream);
+                        var pdfReader = new PdfReader(sourceDocumentStream1);
+
+                        var pages = new List<int>();
+                        //for (int i = 0; i < pdfReader.NumberOfPages; i++)
+                        {
+                            pages.Add(0);
+                            pages.Add(1);
+                            pages.Add(2);
+                            pages.Add(3);
+                            pages.Add(4);
+                            pages.Add(5);
+                            pages.Add(6);
+                            pages.Add(7);
+                            pages.Add(8);
+                        }
+
+                        pdfReader.SelectPages(pages);
+                        pdfConcat.AddPages(pdfReader);
+
+                        pdfReader = new PdfReader(sourceDocumentStream2);
+
+                        pages = new List<int>();
+                        //for (int i = 0; i < pdfReader.NumberOfPages; i++)
+                        {
+                            //pages.Add(i);
+                            pages.Add(0);
+                            pages.Add(1);
+
+                        }
+
+                        pdfReader.SelectPages(pages);
+                        pdfConcat.AddPages(pdfReader);
+
+                        pdfReader.Close();
+                        pdfConcat.Close();
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AppendToDocument("2.pdf", "Document.pdf", "TEST.pdf");
+            AppendToDocument("TEST.pdf", "3.pdf", "kp.pdf");
+        }
     }
 
 

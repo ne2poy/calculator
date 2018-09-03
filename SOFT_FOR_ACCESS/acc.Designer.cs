@@ -43,9 +43,10 @@
             this.connect_acc = new System.Windows.Forms.RadioButton();
             this.add_acc = new System.Windows.Forms.RadioButton();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.accessoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database2_TESTDataSet = new SOFT_FOR_ACCESS.Database2_TESTDataSet();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.database2_TESTDataSet = new SOFT_FOR_ACCESS.Database2_TESTDataSet();
             this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printerTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.PrinterTableAdapter();
             this.tableAdapterManager = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.TableAdapterManager();
@@ -95,7 +96,6 @@
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.accessoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accessoryDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,6 +104,7 @@
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.accessoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingNavigator)).BeginInit();
@@ -113,7 +114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dev2accDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_ЗапросBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_ЗапросDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accessoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -239,6 +239,16 @@
             this.comboBox2.TabIndex = 106;
             this.comboBox2.ValueMember = "id_sup";
             // 
+            // accessoryBindingSource
+            // 
+            this.accessoryBindingSource.DataMember = "Accessory";
+            this.accessoryBindingSource.DataSource = this.database2_TESTDataSet;
+            // 
+            // database2_TESTDataSet
+            // 
+            this.database2_TESTDataSet.DataSetName = "Database2_TESTDataSet";
+            this.database2_TESTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.accessoryBindingSource;
@@ -261,11 +271,6 @@
             this.button3.Text = "сохранить связь3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // database2_TESTDataSet
-            // 
-            this.database2_TESTDataSet.DataSetName = "Database2_TESTDataSet";
-            this.database2_TESTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // printerBindingSource
             // 
@@ -667,11 +672,6 @@
             this.dataGridViewCheckBoxColumn3.HeaderText = "vote_dop";
             this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
             // 
-            // accessoryBindingSource
-            // 
-            this.accessoryBindingSource.DataMember = "Accessory";
-            this.accessoryBindingSource.DataSource = this.database2_TESTDataSet;
-            // 
             // accessoryDataGridView
             // 
             this.accessoryDataGridView.AutoGenerateColumns = false;
@@ -758,9 +758,11 @@
             this.Controls.Add(this.label52);
             this.Controls.Add(this.label53);
             this.Controls.Add(this.label54);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "acc";
             this.Text = "acc";
             this.Load += new System.EventHandler(this.acc_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.accessoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingNavigator)).EndInit();
@@ -771,7 +773,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dev2accDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_ЗапросBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2acc_ЗапросDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accessoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -147,10 +147,81 @@
   <metadata name="dev2sup_ЗапросTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
-  <metadata name="supplyBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>233, 56</value>
-  </metadata>
-  <metadata name="database2_TESTDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAE1NTURNTU1ER0dH/0dHR/9HR0f/R0dH/0dHR/9HR0f/R0dH/0dHR/9HR0f/R0dH/0dH
+        R/9HR0f/R0dH/0dHR/9HR0f/R0dH/0dHR/9HR0f/R0dH/0dHR/9HR0f/R0dH/01NTURNTU1EAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAATU1NRE1NTURHR0f/R0dH/0dHR/9HR0f/R0dH/0dHR/9HR0f/R0dH/0dH
+        R/9HR0f/R0dH/0dHR/9HR0f/R0dH/0dHR/9HR0f/R0dH/0dHR/9HR0f/R0dH/0dHR/9HR0f/TU1NRE1N
+        TUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHR0f/R0dH/4yMjP+MjIz/ycnJ/8nJyf/Jycn/ycnJ/8nJ
+        yf/Jycn/ycnJ/8nJyf/Jycn/ycnJ/8nJyf/Jycn/ycnJ/8nJyf/Jycn/ycnJ/8nJyf/Jycn/jIyM/4yM
+        jP9HR0f/R0dH/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEdHR/9HR0f/jIyM/4yMjP/Jycn/ycnJ/8nJ
+        yf/Jycn/ycnJ/8nJyf/Jycn/ycnJ/8nJyf/Jycn/ycnJ/8nJyf/Jycn/ycnJ/8nJyf/Jycn/ycnJ/8nJ
+        yf+MjIz/jIyM/0dHR/9HR0f/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEhI/0hISP/MzMz/zMzM/8zM
+        zP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zM
+        zP/Ly8v/y8vL/8zMzP/MzMz/SEhI/0hISP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABISEj/SEhI/8zM
+        zP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zMzP/MzMz/zMzM/8zM
+        zP/MzMz/zMzM/8vLy//Ly8v/zMzM/8zMzP9ISEj/SEhI/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAElJ
+        Sf9JSUn/0NDQ/9DQ0P/Q0ND/0NDQ/1NTU/9TU1P/0NDQ/9DQ0P9TU1P/U1NT/9DQ0P/Q0ND/U1NT/1NT
+        U//Q0ND/0NDQ/1NTU/9TU1P/0NDQ/9DQ0P/Q0ND/0NDQ/0pKSv9KSkr/AAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAASUlJ/0lJSf/Q0ND/0NDQ/9DQ0P/Q0ND/U1NT/1NTU//Q0ND/0NDQ/1NTU/9TU1P/0NDQ/9DQ
+        0P9TU1P/U1NT/9DQ0P/Q0ND/U1NT/1NTU//Q0ND/0NDQ/9DQ0P/Q0ND/SkpK/0pKSv8AAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAABLS0v/S0tL/9TU1P/U1NT/1NTU/9TU1P/U1NT/1NTU/9TU1P/U1NT/1NTU/9TU
+        1P/U1NT/1NTU/9TU1P/U1NT/1NTU/9TU1P/U1NT/1NTU/9TU1P/U1NT/1NTU/9TU1P9LS0v/S0tL/wAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEtLS/9LS0v/1NTU/9TU1P/U1NT/1NTU/9TU1P/U1NT/1NTU/9TU
+        1P/U1NT/1NTU/9TU1P/U1NT/1NTU/9TU1P/U1NT/1NTU/9TU1P/U1NT/1NTU/9TU1P/U1NT/1NTU/0tL
+        S/9LS0v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATU1N/01NTf/Z2dn/2dnZ/9nZ2f/Z2dn/U1NT/1NT
+        U//Z2dn/2dnZ/1NTU/9TU1P/2dnZ/9nZ2f9TU1P/U1NT/9nZ2f/Z2dn/U1NT/1NTU//Z2dn/2dnZ/9nZ
+        2f/Z2dn/TU1N/01NTf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABNTU3/TU1N/9nZ2f/Z2dn/2dnZ/9nZ
+        2f9TU1P/U1NT/9nZ2f/Z2dn/U1NT/1NTU//Z2dn/2dnZ/1NTU/9TU1P/2dnZ/9nZ2f9TU1P/U1NT/9nZ
+        2f/Z2dn/2dnZ/9nZ2f9NTU3/TU1N/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE9PT/9PT0//3t7e/97e
+        3v/d3d3/3d3d/97e3v/e3t7/3t7e/97e3v/e3t7/3t7e/97e3v/e3t7/3t7e/97e3v/e3t7/3t7e/97e
+        3v/e3t7/3t7e/97e3v/d3d3/3d3d/09PT/9PT0//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAT09P/09P
+        T//e3t7/3t7e/93d3f/d3d3/3t7e/97e3v/e3t7/3t7e/97e3v/e3t7/3t7e/97e3v/e3t7/3t7e/97e
+        3v/e3t7/3t7e/97e3v/e3t7/3t7e/93d3f/d3d3/T09P/09PT/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABRUVH/UVFR/+Pj4//j4+P/4uLi/+Li4v9TU1P/U1NT/+Li4v/i4uL/U1NT/1NTU//i4uL/4uLi/1NT
+        U/9TU1P/4uLi/+Li4v9TU1P/U1NT/+Li4v/i4uL/4+Pj/+Pj4/9RUVH/UVFR/wAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAFFRUf9RUVH/4+Pj/+Pj4//i4uL/4uLi/1NTU/9TU1P/4uLi/+Li4v9TU1P/U1NT/+Li
+        4v/i4uL/U1NT/1NTU//i4uL/4uLi/1NTU/9TU1P/4uLi/+Li4v/j4+P/4+Pj/1FRUf9RUVH/AAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAU1NT/1NTU//n5+f/5+fn/+fn5//n5+f/5+fn/+fn5//o6Oj/6Ojo/+fn
+        5//n5+f/5+fn/+fn5//o6Oj/6Ojo/+jo6P/o6Oj/6Ojo/+jo6P/n5+f/5+fn/+fn5//n5+f/U1NT/1NT
+        U/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABTU1P/U1NT/+fn5//n5+f/5+fn/+fn5//n5+f/5+fn/+jo
+        6P/o6Oj/5+fn/+fn5//n5+f/5+fn/+jo6P/o6Oj/6Ojo/+jo6P/o6Oj/6Ojo/+fn5//n5+f/5+fn/+fn
+        5/9TU1P/U1NT/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFVVVf9VVVX/7Ozs/+zs7P/s7Oz/7Ozs/+zs
+        7P/s7Oz/7Ozs/+zs7P/s7Oz/7Ozs/+zs7P/s7Oz/7Ozs/+zs7P/s7Oz/7Ozs/+zs7P/s7Oz/7Ozs/+zs
+        7P/s7Oz/7Ozs/1VVVf9VVVX/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVVVV/1VVVf/s7Oz/7Ozs/+zs
+        7P/s7Oz/7Ozs/+zs7P/s7Oz/7Ozs/+zs7P/s7Oz/7Ozs/+zs7P/s7Oz/7Ozs/+zs7P/s7Oz/7Ozs/+zs
+        7P/s7Oz/7Ozs/+zs7P/s7Oz/VVVV/1VVVf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABXV1f/V1dX//Hx
+        8f/x8fH/8vLy//Ly8v9jY2P/Y2Nj/2NjY/9jY2P/Y2Nj/2NjY/9jY2P/Y2Nj/2NjY/9jY2P/Y2Nj/2Nj
+        Y/9jY2P/Y2Nj//Hx8f/x8fH/8fHx//Hx8f9XV1f/V1dX/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFdX
+        V/9XV1f/8fHx//Hx8f/y8vL/8vLy/2NjY/9jY2P/Y2Nj/2NjY/9jY2P/Y2Nj/2NjY/9jY2P/Y2Nj/2Nj
+        Y/9jY2P/Y2Nj/2NjY/9jY2P/8fHx//Hx8f/x8fH/8fHx/1dXV/9XV1f/AAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAWVlZ/1lZWf/19fX/9fX1//X19f/19fX/goKC/4KCgv+CgoL/goKC/4KCgv+CgoL/goKC/4KC
+        gv+CgoL/goKC/4KCgv+CgoL/goKC/4KCgv/19fX/9fX1//X19f/19fX/WVlZ/1lZWf8AAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAABZWVn/WVlZ//X19f/19fX/9fX1//X19f+CgoL/goKC/4KCgv+CgoL/goKC/4KC
+        gv+CgoL/goKC/4KCgv+CgoL/goKC/4KCgv+CgoL/goKC//X19f/19fX/9fX1//X19f9ZWVn/WVlZ/wAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAFpaWv9aWlr/+fn5//n5+f/5+fn/+fn5/52dnf+dnZ3/nZ2d/52d
+        nf+dnZ3/nZ2d/52dnf+dnZ3/nZ2d/52dnf+dnZ3/nZ2d/52dnf+dnZ3/+vr6//r6+v/5+fn/+fn5/1pa
+        Wv9aWlr/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWlpa/1paWv/5+fn/+fn5//n5+f/5+fn/nZ2d/52d
+        nf+dnZ3/nZ2d/52dnf+dnZ3/nZ2d/52dnf+dnZ3/nZ2d/52dnf+dnZ3/nZ2d/52dnf/6+vr/+vr6//n5
+        +f/5+fn/Wlpa/1paWv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABbW1v/W1tb//z8/P/8/Pz//Pz8//z8
+        /P/8/Pz//Pz8//z8/P/8/Pz//f39//39/f/9/f3//f39//z8/P/8/Pz//f39//39/f/8/Pz//Pz8//z8
+        /P/8/Pz//Pz8//z8/P9bW1v/W1tb/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFtbW/9bW1v//Pz8//z8
+        /P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/9/f3//f39//39/f/9/f3//Pz8//z8/P/9/f3//f39//z8
+        /P/8/Pz//Pz8//z8/P/8/Pz//Pz8/1tbW/9bW1v/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAW1tb/1tb
+        W//Nzc3/zc3N////////////////////////////////////////////////////////////////////
+        /////////////////////////////83Nzf/Nzc3/W1tb/1tbW/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AABbW1v/W1tb/83Nzf/Nzc3/////////////////////////////////////////////////////////
+        ////////////////////////////////////////zc3N/83Nzf9bW1v/W1tb/wAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAE1NTURNTU1EW1tb/1tbW/9bW1v/W1tb/1tbW/9bW1v/W1tb/1tbW/9bW1v/W1tb/1tb
+        W/9bW1v/W1tb/1tbW/9bW1v/W1tb/1tbW/9bW1v/W1tb/1tbW/9bW1v/W1tb/01NTURNTU1EAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAATU1NRE1NTURbW1v/W1tb/1tbW/9bW1v/W1tb/1tbW/9bW1v/W1tb/1tb
+        W/9bW1v/W1tb/1tbW/9bW1v/W1tb/1tbW/9bW1v/W1tb/1tbW/9bW1v/W1tb/1tbW/9bW1v/TU1NRE1N
+        TUQAAAAAAAAAAAAAAAAAAAAA8AAAP/AAAD/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AA
+        AA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AA
+        AA/AAAAPwAAAD8AAAA/AAAAP8AAAP/AAAD8=
+</value>
+  </data>
 </root>

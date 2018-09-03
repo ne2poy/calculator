@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(care_pack));
             this.add_new_gar_button = new System.Windows.Forms.Button();
             this.textBox_id_gar = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
@@ -619,6 +620,7 @@
             this.Controls.Add(this.label42);
             this.Controls.Add(this.label43);
             this.Controls.Add(this.label44);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "care_pack";
             this.Text = "care_pack";
             this.Load += new System.EventHandler(this.care_pack_Load);

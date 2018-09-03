@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sup));
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.label45 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -48,11 +49,12 @@
             this.textBox_res_sup = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.supplyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database2_TESTDataSet = new SOFT_FOR_ACCESS.Database2_TESTDataSet();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.connect_sup = new System.Windows.Forms.RadioButton();
             this.add_sup = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
-            this.database2_TESTDataSet = new SOFT_FOR_ACCESS.Database2_TESTDataSet();
             this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printerTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.PrinterTableAdapter();
             this.tableAdapterManager = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.TableAdapterManager();
@@ -92,7 +94,6 @@
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.supplyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplyDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,6 +106,7 @@
             this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.supplyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerDataGridView)).BeginInit();
@@ -112,7 +114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dev2supDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2sup_ЗапросBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2sup_ЗапросDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplyDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -285,6 +286,16 @@
             this.comboBox2.TabIndex = 103;
             this.comboBox2.ValueMember = "id_sup";
             // 
+            // supplyBindingSource
+            // 
+            this.supplyBindingSource.DataMember = "supply";
+            this.supplyBindingSource.DataSource = this.database2_TESTDataSet;
+            // 
+            // database2_TESTDataSet
+            // 
+            this.database2_TESTDataSet.DataSetName = "Database2_TESTDataSet";
+            this.database2_TESTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.supplyBindingSource;
@@ -330,11 +341,6 @@
             this.button3.Text = "сохранить связь3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // database2_TESTDataSet
-            // 
-            this.database2_TESTDataSet.DataSetName = "Database2_TESTDataSet";
-            this.database2_TESTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // printerBindingSource
             // 
@@ -634,11 +640,6 @@
             this.dataGridViewCheckBoxColumn5.HeaderText = "vote_supl";
             this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
             // 
-            // supplyBindingSource
-            // 
-            this.supplyBindingSource.DataMember = "supply";
-            this.supplyBindingSource.DataSource = this.database2_TESTDataSet;
-            // 
             // supplyDataGridView
             // 
             this.supplyDataGridView.AutoGenerateColumns = false;
@@ -760,9 +761,11 @@
             this.Controls.Add(this.label43);
             this.Controls.Add(this.textBox_res_sup);
             this.Controls.Add(this.label44);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "sup";
             this.Text = "sup";
             this.Load += new System.EventHandler(this.sup_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.supplyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerDataGridView)).EndInit();
@@ -770,7 +773,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dev2supDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2sup_ЗапросBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2sup_ЗапросDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplyDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
