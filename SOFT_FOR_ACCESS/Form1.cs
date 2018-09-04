@@ -26,6 +26,7 @@ using SD = System.Data;
 using Excel = Microsoft.Office.Interop.Excel;
 //using Excel = Microsoft.Office.Interop.Excel;
 //using Word = Microsoft.Office.Interop.Word;
+using ExcelObj = Microsoft.Office.Interop.Excel;
 
 //------------------------
 using ClosedXML.Excel;
@@ -75,6 +76,8 @@ namespace SOFT_FOR_ACCESS
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Care_pack". При необходимости она может быть перемещена или удалена.
+            this.care_packTableAdapter.Fill(this.database2_TESTDataSet.Care_pack);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC". При необходимости она может быть перемещена или удалена.
             this.dev2LLCTableAdapter.Fill(this.database2_TESTDataSet.Dev2LLC);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.DurForCRF". При необходимости она может быть перемещена или удалена.
@@ -841,24 +844,24 @@ namespace SOFT_FOR_ACCESS
 
             //Access.Application oAccess = null;
 
-            string sAccPath = null; //path to msaccess.exe
-            Process p = null;
+            //string sAccPath = null; //path to msaccess.exe
+            //Process p = null;
 
             // Start a new instance of Access for Automation:
             //oAccess = new Access.ApplicationClass();         //ApplicationClass();
 
             // Open a database in exclusive mode:
             //oAccess.OpenCurrentDatabase(
-              // "C:\\Users\\evgeniy.barabash\\source\\repos\\SOFT_FOR_ACCESS\\SOFT_FOR_ACCESS\\Database2_TEST.accdb", //filepath
-              // true //Exclusive
-             //  );
+            // "C:\\Users\\evgeniy.barabash\\source\\repos\\SOFT_FOR_ACCESS\\SOFT_FOR_ACCESS\\Database2_TEST.accdb", //filepath
+            // true //Exclusive
+            //  );
 
 
             // Preview a report named Sales:
             //oAccess.DoCmd.OpenReport(
-              // "Access", //ReportName
-               //Access.AcView.acViewPreview, //View
-             //  System.Reflection.Missing.Value, //FilterName
+            // "Access", //ReportName
+            //Access.AcView.acViewPreview, //View
+            //  System.Reflection.Missing.Value, //FilterName
             //   System.Reflection.Missing.Value //WhereCondition
             //   );
 
@@ -885,6 +888,110 @@ namespace SOFT_FOR_ACCESS
 
 
 
+            //OpenFileDialog ofd = new OpenFileDialog();
+            //ofd.DefaultExt = "*.xls;*.xlsx";
+            //ofd.Filter = "Excel 2003(*.xls)|*.xls|Excel 2007(*.xlsx)|*.xlsx";
+            //ofd.Title = "Выберите документ для загрузки данных";
+
+            //if (ofd.ShowDialog() == DialogResult.OK)
+            //{
+            //    textBox1.Text = ofd.FileName;
+
+            //    String constr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + ofd.FileName + ";Extended Properties='Excel 12.0 XML;HDR=NO;IMEX = 1;';";
+
+            //    System.Data.OleDb.OleDbConnection con = new System.Data.OleDb.OleDbConnection(constr);
+            //    con.Open();
+
+            //    DataSet ds = new DataSet();
+            //    SD.DataTable schemaTable = con.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+
+            //    string sheet1 = (string)schemaTable.Rows[0].ItemArray[2];
+            //    string select = String.Format("SELECT * FROM [{0}]", sheet1);
+
+            //    System.Data.OleDb.OleDbDataAdapter ad =    new System.Data.OleDb.OleDbDataAdapter(select, con);
+
+            //    ad.Fill(ds);
+
+            //    SD.DataTable tb = ds.Tables[0];
+            //    con.Close();
+            //    dataGridView1.DataSource = tb;
+            //    con.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Вы не выбрали файл для открытия",
+            //            "Загрузка данных...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
+
+
+
+
+
+
+
+            OpenFileDialog ofd = new OpenFileDialog();
+            //Задаем расширение имени файла по умолчанию.
+            ofd.DefaultExt = "*.xls;*.xlsx";
+            //Задаем строку фильтра имен файлов, которая определяет
+            //варианты, доступные в поле "Файлы типа" диалогового
+            //окна.
+            ofd.Filter = "Excel Sheet(*.xls)|*.xls";
+            //Задаем заголовок диалогового окна.
+            ofd.Title = "Выберите документ для загрузки данных";
+            ExcelObj.Application app = new ExcelObj.Application();
+            ExcelObj.Workbook workbook;
+            ExcelObj.Worksheet NwSheet;
+            ExcelObj.Range ShtRange;
+            SD.DataTable dt = new SD.DataTable();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = ofd.FileName;
+
+                workbook = app.Workbooks.Open(ofd.FileName, Missing.Value,
+                Missing.Value, Missing.Value, Missing.Value, Missing.Value,
+                Missing.Value, Missing.Value, Missing.Value, Missing.Value,
+                Missing.Value, Missing.Value, Missing.Value, Missing.Value,
+                Missing.Value);
+
+                //Устанавливаем номер листа из котрого будут извлекаться данные
+                //Листы нумеруются от 1
+                NwSheet = (ExcelObj.Worksheet)workbook.Sheets.get_Item(1);
+                ShtRange = NwSheet.UsedRange;
+                for (int Cnum = 1; Cnum <= ShtRange.Columns.Count; Cnum++)
+                {
+                    dt.Columns.Add( new DataColumn((ShtRange.Cells[1, Cnum] as ExcelObj.Range).Value2.ToString()));
+                }
+                dt.AcceptChanges();
+
+                string[] columnNames = new String[dt.Columns.Count];
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    columnNames[0] = dt.Columns[i].ColumnName;
+                }
+
+                for (int Rnum = 2; Rnum <= ShtRange.Rows.Count; Rnum++)
+                {
+                    DataRow dr = dt.NewRow();
+                    for (int Cnum = 1; Cnum <= ShtRange.Columns.Count; Cnum++)
+                    {
+                        if ((ShtRange.Cells[Rnum, Cnum] as ExcelObj.Range).Value2 != null)
+                        {
+                            dr[Cnum - 1] =
+                (ShtRange.Cells[Rnum, Cnum] as ExcelObj.Range).Value2.ToString();
+                        }
+                    }
+                    dt.Rows.Add(dr);
+                    dt.AcceptChanges();
+                }
+
+                dataGridView1.DataSource = dt;
+                app.Quit();
+            }
+            else
+                System.Windows.Forms.Application.Exit();
+
+
 
 
 
@@ -892,11 +999,25 @@ namespace SOFT_FOR_ACCESS
 
         private void button17_Click(object sender, EventArgs e)
         {
+
+            //string filename = opf.FileName;
             //Excel.Application exApp = new Excel.Application();
             //Создаём приложение.
             Microsoft.Office.Interop.Excel.Application ObjExcel = new Microsoft.Office.Interop.Excel.Application();
-            //Открываем книгу.                                                                                                                                                        
-            Microsoft.Office.Interop.Excel.Workbook ObjWorkBook = ObjExcel.Workbooks.Open(@"C:\file.xls", 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+            //Открываем книгу.     
+
+
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Filter = "Файл Excel|*.XLSX;*.XLS";
+            openDialog.ShowDialog();
+
+
+
+            //Microsoft.Office.Interop.Excel._Workbook ExcelWorkBook = 
+               // ObjExcel.Workbooks.Open(filename, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+
+
+            //Microsoft.Office.Interop.Excel.Workbook ObjWorkBook = ObjExcel.Workbooks.Open(@"C:\file.xls", 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
             //Выбираем таблицу(лист).
             Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet;
             //ObjWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBook.Sheets[1];
@@ -922,7 +1043,7 @@ namespace SOFT_FOR_ACCESS
                 //Microsoft.Office.Interop.Excel.Range range = 
                 //Добавляем полученный из ячейки текст.
                 //Telephons[i - 1] = range.Text.ToString();
-                //this.database2_TESTDataSet.Care_pack.Rows.Add(null, workSheet.Cells[1, 1], workSheet.Cells[2, 1], workSheet.Cells[3, 1], workSheet.Cells[4, 1]);
+                this.database2_TESTDataSet.Care_pack.Rows.Add(null, workSheet.Cells[1, 1], workSheet.Cells[2, 1], workSheet.Cells[3, 1], workSheet.Cells[4, 1]);
                 //this.database2_TESTDataSet2.Care_pack.Rows.Add()
 
                // this.dev2care_ЗапросDataGridView[1, i].Value = workSheet.Cells[i, 1];
@@ -1433,6 +1554,104 @@ namespace SOFT_FOR_ACCESS
             AppendToDocument("2.pdf", "Document.pdf", "TEST.pdf");
             AppendToDocument("TEST.pdf", "3.pdf", "kp.pdf");
         }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            //OpenFileDialog opf = new OpenFileDialog();
+            //opf.Filter = "Файл Excel|*.XLSX;*.XLS";
+            //opf.ShowDialog();
+            //System.Data.DataTable tb = new System.Data.DataTable();
+            //string filename = opf.FileName;
+
+            //Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
+            //Microsoft.Office.Interop.Excel._Workbook ExcelWorkBook;
+            //Microsoft.Office.Interop.Excel.Worksheet ExcelWorkSheet;
+
+            //ExcelWorkBook = ExcelApp.Workbooks.Open(filename, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false,
+            //    false, 0, true, 1, 0);
+            //ExcelWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ExcelWorkBook.Worksheets.get_Item(1);
+
+            //printerDataGridView.Rows.Add(1);
+
+            //printerDataGridView.Rows[0].Cells[0].Value = ExcelApp.Cells[1, 1].Value;
+
+
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Filter = "Файл Excel|*.XLSX;*.XLS";
+            openDialog.ShowDialog();
+
+
+            Microsoft.Office.Interop.Excel.Application ObjExcel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook ObjWorkBook = ObjExcel.Workbooks.Open(openDialog.FileName);
+            Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet = ObjExcel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
+            Microsoft.Office.Interop.Excel.Range rg = null;
+
+            try
+            {
+                ObjExcel = new Microsoft.Office.Interop.Excel.Application();
+                ObjWorkBook = ObjExcel.Workbooks.Open(openDialog.FileName);
+                ObjWorkSheet = ObjExcel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
+                rg = null;
+
+
+                //------------------------------
+
+
+
+
+               // this.database2_TESTDataSet.Care_pack.Rows.Add(ObjWorkSheet.Cells[0, 1], ObjWorkSheet.Cells[1, 1], ObjWorkSheet.Cells[2, 1], ObjWorkSheet.Cells[3, 1], ObjWorkSheet.Cells[4, 1]);
+
+               // this.database2_TESTDataSet.Care_pack.
+
+
+
+
+
+
+
+
+
+                //---------------------------------
+
+                //Int32 row = 1;
+                ////printerDataGridView.Rows.Clear();
+                //List<String> arr = new List<string>();
+                //while (ObjWorkSheet.get_Range("a" + row, "a" + row).Value != null)
+                //{
+                //    rg = ObjWorkSheet.get_Range("a" + row, "u" + row);
+                //    foreach (Microsoft.Office.Interop.Excel.Range item in rg)
+                //    {
+                //        try
+                //        {
+                //            arr.Add(item.Value.ToString().Trim());
+                //        }
+                //        catch { arr.Add(""); }
+                //    }
+                //    printerDataGridView.Rows.Add(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]);
+                //    arr.Clear();
+                //    row++;
+                //}
+                //MessageBox.Show("Файл успешно считан!", "Считывание файла", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) { MessageBox.Show("Ошибка: " + ex.Message, "Ошибка при считывании excel файла", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            {
+
+                ObjWorkBook.Close(false, "", null);
+                ObjExcel.Quit();
+                ObjWorkBook = null;
+                ObjWorkSheet = null;
+                ObjExcel = null;
+            }
+            ObjWorkBook.Close(false, "", null);
+            ObjExcel.Quit();
+            ObjWorkBook = null;
+            ObjWorkSheet = null;
+            ObjExcel = null;
+
+
+
+        }
+    
     }
 
 

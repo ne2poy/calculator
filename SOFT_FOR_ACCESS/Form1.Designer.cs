@@ -72,6 +72,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dev2care_ЗапросDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dev2care_ЗапросBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dev2sup_ЗапросDataGridView = new System.Windows.Forms.DataGridView();
@@ -108,6 +118,16 @@
             this.dev2LLC_ЗапросBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dev2acc_ЗапросDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn12 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dev2acc_ЗапросBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.add_acc_Button = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -195,6 +215,15 @@
             this.button13 = new System.Windows.Forms.Button();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.vivodDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn87 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn88 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn89 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn90 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn91 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn92 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn93 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn94 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn16 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.vivodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.vivod_itogDataGridView = new System.Windows.Forms.DataGridView();
@@ -303,35 +332,17 @@
             this.label31 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn11 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn12 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn87 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn88 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn89 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn90 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn91 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn92 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn93 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn94 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn16 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button5 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.carepackBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.care_packTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.Care_packTableAdapter();
+            this.idgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dlitgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolvoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.votegarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printerDataGridView)).BeginInit();
@@ -380,6 +391,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.procBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carepackBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // add_print_Button
@@ -447,6 +460,7 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.printerDataGridView);
             this.tabPage1.Controls.Add(this.label25);
             this.tabPage1.Controls.Add(this.label26);
@@ -830,6 +844,70 @@
             this.dev2care_ЗапросDataGridView.Size = new System.Drawing.Size(1079, 191);
             this.dev2care_ЗапросDataGridView.TabIndex = 7;
             // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "id_svyaz";
+            this.dataGridViewTextBoxColumn27.HeaderText = "id_svyaz";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Care_pack_id_gar";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Care_pack_id_gar";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "type";
+            this.dataGridViewTextBoxColumn29.HeaderText = "type";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "tip_gar";
+            this.dataGridViewTextBoxColumn30.HeaderText = "tip_gar";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "cost_gar";
+            this.dataGridViewTextBoxColumn31.HeaderText = "cost_gar";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "dlit_gar";
+            this.dataGridViewTextBoxColumn32.HeaderText = "dlit_gar";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "kol-vo";
+            this.dataGridViewTextBoxColumn33.HeaderText = "kol-vo";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "id_dev";
+            this.dataGridViewTextBoxColumn34.HeaderText = "id_dev";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.Visible = false;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "vote_gar";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "vote_gar";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "Dev2care_id_gar";
+            this.dataGridViewTextBoxColumn35.HeaderText = "Dev2care_id_gar";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.Visible = false;
+            // 
             // dev2care_ЗапросBindingSource
             // 
             this.dev2care_ЗапросBindingSource.DataMember = "Dev2care Запрос";
@@ -1113,6 +1191,69 @@
             this.dev2acc_ЗапросDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dev2acc_ЗапросDataGridView.Size = new System.Drawing.Size(1200, 211);
             this.dev2acc_ЗапросDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn55
+            // 
+            this.dataGridViewTextBoxColumn55.DataPropertyName = "id_connect";
+            this.dataGridViewTextBoxColumn55.HeaderText = "id_connect";
+            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+            // 
+            // dataGridViewTextBoxColumn56
+            // 
+            this.dataGridViewTextBoxColumn56.DataPropertyName = "id_dev";
+            this.dataGridViewTextBoxColumn56.HeaderText = "id_dev";
+            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
+            this.dataGridViewTextBoxColumn56.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn57
+            // 
+            this.dataGridViewTextBoxColumn57.DataPropertyName = "Dev2acc_id_acc";
+            this.dataGridViewTextBoxColumn57.HeaderText = "Dev2acc_id_acc";
+            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
+            this.dataGridViewTextBoxColumn57.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn58
+            // 
+            this.dataGridViewTextBoxColumn58.DataPropertyName = "Accessory_id_acc";
+            this.dataGridViewTextBoxColumn58.HeaderText = "Accessory_id_acc";
+            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
+            // 
+            // dataGridViewTextBoxColumn59
+            // 
+            this.dataGridViewTextBoxColumn59.DataPropertyName = "type";
+            this.dataGridViewTextBoxColumn59.HeaderText = "type";
+            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
+            // 
+            // dataGridViewTextBoxColumn60
+            // 
+            this.dataGridViewTextBoxColumn60.DataPropertyName = "name_dop";
+            this.dataGridViewTextBoxColumn60.HeaderText = "name_dop";
+            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
+            this.dataGridViewTextBoxColumn60.Width = 400;
+            // 
+            // dataGridViewCheckBoxColumn11
+            // 
+            this.dataGridViewCheckBoxColumn11.DataPropertyName = "inbox_dop";
+            this.dataGridViewCheckBoxColumn11.HeaderText = "inbox_dop";
+            this.dataGridViewCheckBoxColumn11.Name = "dataGridViewCheckBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn61
+            // 
+            this.dataGridViewTextBoxColumn61.DataPropertyName = "cost";
+            this.dataGridViewTextBoxColumn61.HeaderText = "cost";
+            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
+            // 
+            // dataGridViewTextBoxColumn62
+            // 
+            this.dataGridViewTextBoxColumn62.DataPropertyName = "kol-vo";
+            this.dataGridViewTextBoxColumn62.HeaderText = "kol-vo";
+            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
+            // 
+            // dataGridViewCheckBoxColumn12
+            // 
+            this.dataGridViewCheckBoxColumn12.DataPropertyName = "vote_dop";
+            this.dataGridViewCheckBoxColumn12.HeaderText = "vote_dop";
+            this.dataGridViewCheckBoxColumn12.Name = "dataGridViewCheckBoxColumn12";
             // 
             // dev2acc_ЗапросBindingSource
             // 
@@ -1937,6 +2078,61 @@
             this.vivodDataGridView.Size = new System.Drawing.Size(1122, 228);
             this.vivodDataGridView.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn87
+            // 
+            this.dataGridViewTextBoxColumn87.DataPropertyName = "id_vivod";
+            this.dataGridViewTextBoxColumn87.HeaderText = "id_vivod";
+            this.dataGridViewTextBoxColumn87.Name = "dataGridViewTextBoxColumn87";
+            // 
+            // dataGridViewTextBoxColumn88
+            // 
+            this.dataGridViewTextBoxColumn88.DataPropertyName = "type_viv";
+            this.dataGridViewTextBoxColumn88.HeaderText = "type_viv";
+            this.dataGridViewTextBoxColumn88.Name = "dataGridViewTextBoxColumn88";
+            // 
+            // dataGridViewTextBoxColumn89
+            // 
+            this.dataGridViewTextBoxColumn89.DataPropertyName = "name_viv";
+            this.dataGridViewTextBoxColumn89.HeaderText = "name_viv";
+            this.dataGridViewTextBoxColumn89.Name = "dataGridViewTextBoxColumn89";
+            this.dataGridViewTextBoxColumn89.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn90
+            // 
+            this.dataGridViewTextBoxColumn90.DataPropertyName = "cost";
+            this.dataGridViewTextBoxColumn90.HeaderText = "cost";
+            this.dataGridViewTextBoxColumn90.Name = "dataGridViewTextBoxColumn90";
+            // 
+            // dataGridViewTextBoxColumn91
+            // 
+            this.dataGridViewTextBoxColumn91.DataPropertyName = "kol-vo";
+            this.dataGridViewTextBoxColumn91.HeaderText = "kol-vo";
+            this.dataGridViewTextBoxColumn91.Name = "dataGridViewTextBoxColumn91";
+            // 
+            // dataGridViewTextBoxColumn92
+            // 
+            this.dataGridViewTextBoxColumn92.DataPropertyName = "service1";
+            this.dataGridViewTextBoxColumn92.HeaderText = "service1";
+            this.dataGridViewTextBoxColumn92.Name = "dataGridViewTextBoxColumn92";
+            // 
+            // dataGridViewTextBoxColumn93
+            // 
+            this.dataGridViewTextBoxColumn93.DataPropertyName = "service2";
+            this.dataGridViewTextBoxColumn93.HeaderText = "service2";
+            this.dataGridViewTextBoxColumn93.Name = "dataGridViewTextBoxColumn93";
+            // 
+            // dataGridViewTextBoxColumn94
+            // 
+            this.dataGridViewTextBoxColumn94.DataPropertyName = "service3";
+            this.dataGridViewTextBoxColumn94.HeaderText = "service3";
+            this.dataGridViewTextBoxColumn94.Name = "dataGridViewTextBoxColumn94";
+            // 
+            // dataGridViewCheckBoxColumn16
+            // 
+            this.dataGridViewCheckBoxColumn16.DataPropertyName = "service4";
+            this.dataGridViewCheckBoxColumn16.HeaderText = "service4";
+            this.dataGridViewCheckBoxColumn16.Name = "dataGridViewCheckBoxColumn16";
+            // 
             // vivodBindingSource
             // 
             this.vivodBindingSource.DataMember = "vivod";
@@ -2401,7 +2597,6 @@
             this.button14.TabIndex = 14;
             this.button14.Text = "button14";
             this.button14.UseVisualStyleBackColor = true;
-            this.button14.Visible = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button16
@@ -2423,7 +2618,6 @@
             this.button17.TabIndex = 16;
             this.button17.Text = "ИЗ ЕКСЕЛЬ17";
             this.button17.UseVisualStyleBackColor = true;
-            this.button17.Visible = false;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button18
@@ -2825,187 +3019,84 @@
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dataGridViewTextBoxColumn55
+            // button5
             // 
-            this.dataGridViewTextBoxColumn55.DataPropertyName = "id_connect";
-            this.dataGridViewTextBoxColumn55.HeaderText = "id_connect";
-            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+            this.button5.Location = new System.Drawing.Point(442, 313);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(106, 23);
+            this.button5.TabIndex = 47;
+            this.button5.Text = "из ексельки_5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
-            // dataGridViewTextBoxColumn56
+            // dataGridView1
             // 
-            this.dataGridViewTextBoxColumn56.DataPropertyName = "id_dev";
-            this.dataGridViewTextBoxColumn56.HeaderText = "id_dev";
-            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
-            this.dataGridViewTextBoxColumn56.Visible = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idgarDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.tipgarDataGridViewTextBoxColumn,
+            this.costgarDataGridViewTextBoxColumn,
+            this.dlitgarDataGridViewTextBoxColumn,
+            this.kolvoDataGridViewTextBoxColumn,
+            this.votegarDataGridViewCheckBoxColumn});
+            this.dataGridView1.DataSource = this.carepackBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(223, 7);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(845, 245);
+            this.dataGridView1.TabIndex = 33;
             // 
-            // dataGridViewTextBoxColumn57
+            // carepackBindingSource
             // 
-            this.dataGridViewTextBoxColumn57.DataPropertyName = "Dev2acc_id_acc";
-            this.dataGridViewTextBoxColumn57.HeaderText = "Dev2acc_id_acc";
-            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
-            this.dataGridViewTextBoxColumn57.Visible = false;
+            this.carepackBindingSource.DataMember = "Care_pack";
+            this.carepackBindingSource.DataSource = this.database2_TESTDataSet;
             // 
-            // dataGridViewTextBoxColumn58
+            // care_packTableAdapter
             // 
-            this.dataGridViewTextBoxColumn58.DataPropertyName = "Accessory_id_acc";
-            this.dataGridViewTextBoxColumn58.HeaderText = "Accessory_id_acc";
-            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
+            this.care_packTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn59
+            // idgarDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn59.DataPropertyName = "type";
-            this.dataGridViewTextBoxColumn59.HeaderText = "type";
-            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
+            this.idgarDataGridViewTextBoxColumn.DataPropertyName = "id_gar";
+            this.idgarDataGridViewTextBoxColumn.HeaderText = "id_gar";
+            this.idgarDataGridViewTextBoxColumn.Name = "idgarDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn60
+            // typeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn60.DataPropertyName = "name_dop";
-            this.dataGridViewTextBoxColumn60.HeaderText = "name_dop";
-            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
-            this.dataGridViewTextBoxColumn60.Width = 400;
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
             // 
-            // dataGridViewCheckBoxColumn11
+            // tipgarDataGridViewTextBoxColumn
             // 
-            this.dataGridViewCheckBoxColumn11.DataPropertyName = "inbox_dop";
-            this.dataGridViewCheckBoxColumn11.HeaderText = "inbox_dop";
-            this.dataGridViewCheckBoxColumn11.Name = "dataGridViewCheckBoxColumn11";
+            this.tipgarDataGridViewTextBoxColumn.DataPropertyName = "tip_gar";
+            this.tipgarDataGridViewTextBoxColumn.HeaderText = "tip_gar";
+            this.tipgarDataGridViewTextBoxColumn.Name = "tipgarDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn61
+            // costgarDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn61.DataPropertyName = "cost";
-            this.dataGridViewTextBoxColumn61.HeaderText = "cost";
-            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
+            this.costgarDataGridViewTextBoxColumn.DataPropertyName = "cost_gar";
+            this.costgarDataGridViewTextBoxColumn.HeaderText = "cost_gar";
+            this.costgarDataGridViewTextBoxColumn.Name = "costgarDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn62
+            // dlitgarDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn62.DataPropertyName = "kol-vo";
-            this.dataGridViewTextBoxColumn62.HeaderText = "kol-vo";
-            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
+            this.dlitgarDataGridViewTextBoxColumn.DataPropertyName = "dlit_gar";
+            this.dlitgarDataGridViewTextBoxColumn.HeaderText = "dlit_gar";
+            this.dlitgarDataGridViewTextBoxColumn.Name = "dlitgarDataGridViewTextBoxColumn";
             // 
-            // dataGridViewCheckBoxColumn12
+            // kolvoDataGridViewTextBoxColumn
             // 
-            this.dataGridViewCheckBoxColumn12.DataPropertyName = "vote_dop";
-            this.dataGridViewCheckBoxColumn12.HeaderText = "vote_dop";
-            this.dataGridViewCheckBoxColumn12.Name = "dataGridViewCheckBoxColumn12";
+            this.kolvoDataGridViewTextBoxColumn.DataPropertyName = "kol-vo";
+            this.kolvoDataGridViewTextBoxColumn.HeaderText = "kol-vo";
+            this.kolvoDataGridViewTextBoxColumn.Name = "kolvoDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn27
+            // votegarDataGridViewCheckBoxColumn
             // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "id_svyaz";
-            this.dataGridViewTextBoxColumn27.HeaderText = "id_svyaz";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Care_pack_id_gar";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Care_pack_id_gar";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "type";
-            this.dataGridViewTextBoxColumn29.HeaderText = "type";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "tip_gar";
-            this.dataGridViewTextBoxColumn30.HeaderText = "tip_gar";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "cost_gar";
-            this.dataGridViewTextBoxColumn31.HeaderText = "cost_gar";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "dlit_gar";
-            this.dataGridViewTextBoxColumn32.HeaderText = "dlit_gar";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "kol-vo";
-            this.dataGridViewTextBoxColumn33.HeaderText = "kol-vo";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "id_dev";
-            this.dataGridViewTextBoxColumn34.HeaderText = "id_dev";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "vote_gar";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "vote_gar";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "Dev2care_id_gar";
-            this.dataGridViewTextBoxColumn35.HeaderText = "Dev2care_id_gar";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            this.dataGridViewTextBoxColumn35.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn87
-            // 
-            this.dataGridViewTextBoxColumn87.DataPropertyName = "id_vivod";
-            this.dataGridViewTextBoxColumn87.HeaderText = "id_vivod";
-            this.dataGridViewTextBoxColumn87.Name = "dataGridViewTextBoxColumn87";
-            // 
-            // dataGridViewTextBoxColumn88
-            // 
-            this.dataGridViewTextBoxColumn88.DataPropertyName = "type_viv";
-            this.dataGridViewTextBoxColumn88.HeaderText = "type_viv";
-            this.dataGridViewTextBoxColumn88.Name = "dataGridViewTextBoxColumn88";
-            // 
-            // dataGridViewTextBoxColumn89
-            // 
-            this.dataGridViewTextBoxColumn89.DataPropertyName = "name_viv";
-            this.dataGridViewTextBoxColumn89.HeaderText = "name_viv";
-            this.dataGridViewTextBoxColumn89.Name = "dataGridViewTextBoxColumn89";
-            this.dataGridViewTextBoxColumn89.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn90
-            // 
-            this.dataGridViewTextBoxColumn90.DataPropertyName = "cost";
-            this.dataGridViewTextBoxColumn90.HeaderText = "cost";
-            this.dataGridViewTextBoxColumn90.Name = "dataGridViewTextBoxColumn90";
-            // 
-            // dataGridViewTextBoxColumn91
-            // 
-            this.dataGridViewTextBoxColumn91.DataPropertyName = "kol-vo";
-            this.dataGridViewTextBoxColumn91.HeaderText = "kol-vo";
-            this.dataGridViewTextBoxColumn91.Name = "dataGridViewTextBoxColumn91";
-            // 
-            // dataGridViewTextBoxColumn92
-            // 
-            this.dataGridViewTextBoxColumn92.DataPropertyName = "service1";
-            this.dataGridViewTextBoxColumn92.HeaderText = "service1";
-            this.dataGridViewTextBoxColumn92.Name = "dataGridViewTextBoxColumn92";
-            // 
-            // dataGridViewTextBoxColumn93
-            // 
-            this.dataGridViewTextBoxColumn93.DataPropertyName = "service2";
-            this.dataGridViewTextBoxColumn93.HeaderText = "service2";
-            this.dataGridViewTextBoxColumn93.Name = "dataGridViewTextBoxColumn93";
-            // 
-            // dataGridViewTextBoxColumn94
-            // 
-            this.dataGridViewTextBoxColumn94.DataPropertyName = "service3";
-            this.dataGridViewTextBoxColumn94.HeaderText = "service3";
-            this.dataGridViewTextBoxColumn94.Name = "dataGridViewTextBoxColumn94";
-            // 
-            // dataGridViewCheckBoxColumn16
-            // 
-            this.dataGridViewCheckBoxColumn16.DataPropertyName = "service4";
-            this.dataGridViewCheckBoxColumn16.HeaderText = "service4";
-            this.dataGridViewCheckBoxColumn16.Name = "dataGridViewCheckBoxColumn16";
+            this.votegarDataGridViewCheckBoxColumn.DataPropertyName = "vote_gar";
+            this.votegarDataGridViewCheckBoxColumn.HeaderText = "vote_gar";
+            this.votegarDataGridViewCheckBoxColumn.Name = "votegarDataGridViewCheckBoxColumn";
             // 
             // Form1
             // 
@@ -3013,6 +3104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1306, 687);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label31);
@@ -3103,6 +3195,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.procBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carepackBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3412,6 +3506,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn93;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn94;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn16;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource carepackBindingSource;
+        private Database2_TESTDataSetTableAdapters.Care_packTableAdapter care_packTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idgarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipgarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costgarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dlitgarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kolvoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn votegarDataGridViewCheckBoxColumn;
     }
 }
 
