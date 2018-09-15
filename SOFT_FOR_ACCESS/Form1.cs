@@ -67,6 +67,8 @@ namespace SOFT_FOR_ACCESS
         double all_zatrati = 0;
         double absolut_mono = 0;
         double absolut_color = 0;
+        bool tab_ch = false;
+        double count_sup = 0;
 
         //List<Note> Notes;
         //Notes = new List<Note>;
@@ -192,6 +194,7 @@ namespace SOFT_FOR_ACCESS
                         return;
                     }
 
+                    //if (printerDataGridView[1, i].Value)
                     this.database2_TESTDataSet.vibor1.Rows.Add(null, printerDataGridView[1, i].Value, printerDataGridView[2, i].Value, printerDataGridView[7, i].Value, printerDataGridView[8, i].Value);
 
                     //List<Note> Notes;
@@ -206,6 +209,8 @@ namespace SOFT_FOR_ACCESS
                     this.dev2soft_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
                     this.dev2soft_serv_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
                     LLC_add();
+
+                    //if ()
                     sup_add();
                     
                 }
@@ -805,6 +810,8 @@ namespace SOFT_FOR_ACCESS
             this.dev2acc_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
             this.dev2soft_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
             this.dev2soft_serv_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
+            
+
         }
 
         private void comboBox3_TextChanged(object sender, EventArgs e)
@@ -1651,7 +1658,36 @@ namespace SOFT_FOR_ACCESS
 
 
         }
-    
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            //Data.Value1 = comboBox3.Text;
+            //vote_sup vote_sup = new vote_sup();
+            //vote_sup.ShowDialog();
+            tabControl1.SelectTab(2);
+            tab_ch = true;
+
+
+
+            //this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+
+            
+            
+
+
+
+        }
+
+        
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex != 2 && tab_ch == true)
+            {
+                tabControl1.SelectTab(2);
+                MessageBox.Show("Сначала выберите расходники!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);              
+            }
+        }
     }
 
 
@@ -1665,6 +1701,12 @@ namespace SOFT_FOR_ACCESS
         public int Beta { get; set; }
         public int Gamma { get; set; }
         public int Delta { get; set; }
+    }
+
+
+    static class Data
+    {
+        public static string Value1 { get; set; }
     }
 
 

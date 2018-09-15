@@ -273,6 +273,15 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dlitgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kolvoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.votegarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.carepackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button9 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -333,16 +342,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.carepackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.care_packTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.Care_packTableAdapter();
-            this.idgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dlitgarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolvoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.votegarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button21 = new System.Windows.Forms.Button();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printerDataGridView)).BeginInit();
@@ -388,11 +390,11 @@
             this.tabPage13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carepackBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.procBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carepackBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // add_print_Button
@@ -455,12 +457,12 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1296, 284);
             this.tabControl1.TabIndex = 9;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.printerDataGridView);
             this.tabPage1.Controls.Add(this.label25);
             this.tabPage1.Controls.Add(this.label26);
@@ -2548,6 +2550,71 @@
             this.comboBox10.Visible = false;
             this.comboBox10.TextChanged += new System.EventHandler(this.comboBox10_TextChanged);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idgarDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.tipgarDataGridViewTextBoxColumn,
+            this.costgarDataGridViewTextBoxColumn,
+            this.dlitgarDataGridViewTextBoxColumn,
+            this.kolvoDataGridViewTextBoxColumn,
+            this.votegarDataGridViewCheckBoxColumn});
+            this.dataGridView1.DataSource = this.carepackBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(274, 415);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(845, 245);
+            this.dataGridView1.TabIndex = 33;
+            // 
+            // idgarDataGridViewTextBoxColumn
+            // 
+            this.idgarDataGridViewTextBoxColumn.DataPropertyName = "id_gar";
+            this.idgarDataGridViewTextBoxColumn.HeaderText = "id_gar";
+            this.idgarDataGridViewTextBoxColumn.Name = "idgarDataGridViewTextBoxColumn";
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            // 
+            // tipgarDataGridViewTextBoxColumn
+            // 
+            this.tipgarDataGridViewTextBoxColumn.DataPropertyName = "tip_gar";
+            this.tipgarDataGridViewTextBoxColumn.HeaderText = "tip_gar";
+            this.tipgarDataGridViewTextBoxColumn.Name = "tipgarDataGridViewTextBoxColumn";
+            // 
+            // costgarDataGridViewTextBoxColumn
+            // 
+            this.costgarDataGridViewTextBoxColumn.DataPropertyName = "cost_gar";
+            this.costgarDataGridViewTextBoxColumn.HeaderText = "cost_gar";
+            this.costgarDataGridViewTextBoxColumn.Name = "costgarDataGridViewTextBoxColumn";
+            // 
+            // dlitgarDataGridViewTextBoxColumn
+            // 
+            this.dlitgarDataGridViewTextBoxColumn.DataPropertyName = "dlit_gar";
+            this.dlitgarDataGridViewTextBoxColumn.HeaderText = "dlit_gar";
+            this.dlitgarDataGridViewTextBoxColumn.Name = "dlitgarDataGridViewTextBoxColumn";
+            // 
+            // kolvoDataGridViewTextBoxColumn
+            // 
+            this.kolvoDataGridViewTextBoxColumn.DataPropertyName = "kol-vo";
+            this.kolvoDataGridViewTextBoxColumn.HeaderText = "kol-vo";
+            this.kolvoDataGridViewTextBoxColumn.Name = "kolvoDataGridViewTextBoxColumn";
+            // 
+            // votegarDataGridViewCheckBoxColumn
+            // 
+            this.votegarDataGridViewCheckBoxColumn.DataPropertyName = "vote_gar";
+            this.votegarDataGridViewCheckBoxColumn.HeaderText = "vote_gar";
+            this.votegarDataGridViewCheckBoxColumn.Name = "votegarDataGridViewCheckBoxColumn";
+            // 
+            // carepackBindingSource
+            // 
+            this.carepackBindingSource.DataMember = "Care_pack";
+            this.carepackBindingSource.DataSource = this.database2_TESTDataSet;
+            // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.Red;
@@ -3029,74 +3096,26 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idgarDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn,
-            this.tipgarDataGridViewTextBoxColumn,
-            this.costgarDataGridViewTextBoxColumn,
-            this.dlitgarDataGridViewTextBoxColumn,
-            this.kolvoDataGridViewTextBoxColumn,
-            this.votegarDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.carepackBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(223, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(845, 245);
-            this.dataGridView1.TabIndex = 33;
-            // 
-            // carepackBindingSource
-            // 
-            this.carepackBindingSource.DataMember = "Care_pack";
-            this.carepackBindingSource.DataSource = this.database2_TESTDataSet;
-            // 
             // care_packTableAdapter
             // 
             this.care_packTableAdapter.ClearBeforeFill = true;
             // 
-            // idgarDataGridViewTextBoxColumn
+            // button21
             // 
-            this.idgarDataGridViewTextBoxColumn.DataPropertyName = "id_gar";
-            this.idgarDataGridViewTextBoxColumn.HeaderText = "id_gar";
-            this.idgarDataGridViewTextBoxColumn.Name = "idgarDataGridViewTextBoxColumn";
+            this.button21.Location = new System.Drawing.Point(929, 317);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(75, 23);
+            this.button21.TabIndex = 48;
+            this.button21.Text = "vote_sup";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
-            // typeDataGridViewTextBoxColumn
+            // textBox12
             // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            // 
-            // tipgarDataGridViewTextBoxColumn
-            // 
-            this.tipgarDataGridViewTextBoxColumn.DataPropertyName = "tip_gar";
-            this.tipgarDataGridViewTextBoxColumn.HeaderText = "tip_gar";
-            this.tipgarDataGridViewTextBoxColumn.Name = "tipgarDataGridViewTextBoxColumn";
-            // 
-            // costgarDataGridViewTextBoxColumn
-            // 
-            this.costgarDataGridViewTextBoxColumn.DataPropertyName = "cost_gar";
-            this.costgarDataGridViewTextBoxColumn.HeaderText = "cost_gar";
-            this.costgarDataGridViewTextBoxColumn.Name = "costgarDataGridViewTextBoxColumn";
-            // 
-            // dlitgarDataGridViewTextBoxColumn
-            // 
-            this.dlitgarDataGridViewTextBoxColumn.DataPropertyName = "dlit_gar";
-            this.dlitgarDataGridViewTextBoxColumn.HeaderText = "dlit_gar";
-            this.dlitgarDataGridViewTextBoxColumn.Name = "dlitgarDataGridViewTextBoxColumn";
-            // 
-            // kolvoDataGridViewTextBoxColumn
-            // 
-            this.kolvoDataGridViewTextBoxColumn.DataPropertyName = "kol-vo";
-            this.kolvoDataGridViewTextBoxColumn.HeaderText = "kol-vo";
-            this.kolvoDataGridViewTextBoxColumn.Name = "kolvoDataGridViewTextBoxColumn";
-            // 
-            // votegarDataGridViewCheckBoxColumn
-            // 
-            this.votegarDataGridViewCheckBoxColumn.DataPropertyName = "vote_gar";
-            this.votegarDataGridViewCheckBoxColumn.HeaderText = "vote_gar";
-            this.votegarDataGridViewCheckBoxColumn.Name = "votegarDataGridViewCheckBoxColumn";
+            this.textBox12.Location = new System.Drawing.Point(442, 358);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(100, 20);
+            this.textBox12.TabIndex = 49;
             // 
             // Form1
             // 
@@ -3104,6 +3123,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1306, 687);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.button21);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -3192,11 +3214,11 @@
             this.tabPage13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proc_ЗапросBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carepackBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.procBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carepackBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3517,6 +3539,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dlitgarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kolvoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn votegarDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.TextBox textBox12;
     }
 }
 

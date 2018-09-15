@@ -7581,6 +7581,8 @@ namespace SOFT_FOR_ACCESS {
             
             private global::System.Data.DataColumn columnvote_supl;
             
+            private global::System.Data.DataColumn columnmanufacturer;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public supplyDataTable() {
@@ -7704,6 +7706,14 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn manufacturerColumn {
+                get {
+                    return this.columnmanufacturer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7739,7 +7749,7 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public supplyRow AddsupplyRow(string id_sup, string type, string name_sup, int QTY_sup, string cost_sup, int res_sup, bool inbox_sup, bool for_sup_mono, bool for_sup_color, int _kol_vo, bool vote_supl) {
+            public supplyRow AddsupplyRow(string id_sup, string type, string name_sup, int QTY_sup, string cost_sup, int res_sup, bool inbox_sup, bool for_sup_mono, bool for_sup_color, int _kol_vo, bool vote_supl, string manufacturer) {
                 supplyRow rowsupplyRow = ((supplyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_sup,
@@ -7752,7 +7762,8 @@ namespace SOFT_FOR_ACCESS {
                         for_sup_mono,
                         for_sup_color,
                         _kol_vo,
-                        vote_supl};
+                        vote_supl,
+                        manufacturer};
                 rowsupplyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsupplyRow);
                 return rowsupplyRow;
@@ -7793,6 +7804,7 @@ namespace SOFT_FOR_ACCESS {
                 this.columnfor_sup_color = base.Columns["for_sup_color"];
                 this._columnkol_vo = base.Columns["kol-vo"];
                 this.columnvote_supl = base.Columns["vote_supl"];
+                this.columnmanufacturer = base.Columns["manufacturer"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7822,6 +7834,8 @@ namespace SOFT_FOR_ACCESS {
                 base.Columns.Add(this._columnkol_vo);
                 this.columnvote_supl = new global::System.Data.DataColumn("vote_supl", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvote_supl);
+                this.columnmanufacturer = new global::System.Data.DataColumn("manufacturer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmanufacturer);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_sup}, true));
                 this.columnid_sup.AllowDBNull = false;
@@ -7830,6 +7844,7 @@ namespace SOFT_FOR_ACCESS {
                 this.columntype.MaxLength = 255;
                 this.columnname_sup.MaxLength = 255;
                 this.columncost_sup.MaxLength = 255;
+                this.columnmanufacturer.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13524,6 +13539,8 @@ namespace SOFT_FOR_ACCESS {
             
             private global::System.Data.DataColumn columnvote_supl;
             
+            private global::System.Data.DataColumn columnmanufacturer;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Dev2sup_ЗапросDataTable() {
@@ -13663,6 +13680,14 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn manufacturerColumn {
+                get {
+                    return this.columnmanufacturer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -13698,7 +13723,7 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Dev2sup_ЗапросRow AddDev2sup_ЗапросRow(string id_dev, string id_sup, string type, string name_sup, int QTY_sup, string cost_sup, int res_sup, bool inbox_sup, bool for_sup_mono, bool for_sup_color, int _kol_vo, bool vote_supl) {
+            public Dev2sup_ЗапросRow AddDev2sup_ЗапросRow(string id_dev, string id_sup, string type, string name_sup, int QTY_sup, string cost_sup, int res_sup, bool inbox_sup, bool for_sup_mono, bool for_sup_color, int _kol_vo, bool vote_supl, string manufacturer) {
                 Dev2sup_ЗапросRow rowDev2sup_ЗапросRow = ((Dev2sup_ЗапросRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -13713,7 +13738,8 @@ namespace SOFT_FOR_ACCESS {
                         for_sup_mono,
                         for_sup_color,
                         _kol_vo,
-                        vote_supl};
+                        vote_supl,
+                        manufacturer};
                 rowDev2sup_ЗапросRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDev2sup_ЗапросRow);
                 return rowDev2sup_ЗапросRow;
@@ -13749,6 +13775,7 @@ namespace SOFT_FOR_ACCESS {
                 this.columnfor_sup_color = base.Columns["for_sup_color"];
                 this._columnkol_vo = base.Columns["kol-vo"];
                 this.columnvote_supl = base.Columns["vote_supl"];
+                this.columnmanufacturer = base.Columns["manufacturer"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13782,6 +13809,8 @@ namespace SOFT_FOR_ACCESS {
                 base.Columns.Add(this._columnkol_vo);
                 this.columnvote_supl = new global::System.Data.DataColumn("vote_supl", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvote_supl);
+                this.columnmanufacturer = new global::System.Data.DataColumn("manufacturer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmanufacturer);
                 this.columnid_svyaz.AutoIncrement = true;
                 this.columnid_svyaz.AutoIncrementSeed = -1;
                 this.columnid_svyaz.AutoIncrementStep = -1;
@@ -13790,6 +13819,7 @@ namespace SOFT_FOR_ACCESS {
                 this.columntype.MaxLength = 255;
                 this.columnname_sup.MaxLength = 255;
                 this.columncost_sup.MaxLength = 255;
+                this.columnmanufacturer.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19197,6 +19227,22 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string manufacturer {
+                get {
+                    try {
+                        return ((string)(this[this.tablesupply.manufacturerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'manufacturer\' в таблице \'supply\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesupply.manufacturerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IstypeNull() {
                 return this.IsNull(this.tablesupply.typeColumn);
             }
@@ -19313,6 +19359,18 @@ namespace SOFT_FOR_ACCESS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setvote_suplNull() {
                 this[this.tablesupply.vote_suplColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmanufacturerNull() {
+                return this.IsNull(this.tablesupply.manufacturerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmanufacturerNull() {
+                this[this.tablesupply.manufacturerColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23263,6 +23321,22 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string manufacturer {
+                get {
+                    try {
+                        return ((string)(this[this.tableDev2sup_Запрос.manufacturerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'manufacturer\' в таблице \'Dev2sup Запрос\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDev2sup_Запрос.manufacturerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isid_svyazNull() {
                 return this.IsNull(this.tableDev2sup_Запрос.id_svyazColumn);
             }
@@ -23415,6 +23489,18 @@ namespace SOFT_FOR_ACCESS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setvote_suplNull() {
                 this[this.tableDev2sup_Запрос.vote_suplColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmanufacturerNull() {
+                return this.IsNull(this.tableDev2sup_Запрос.manufacturerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmanufacturerNull() {
+                this[this.tableDev2sup_Запрос.manufacturerColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -34207,10 +34293,11 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("for_sup_color", "for_sup_color");
             tableMapping.ColumnMappings.Add("kol-vo", "kol-vo");
             tableMapping.ColumnMappings.Add("vote_supl", "vote_supl");
+            tableMapping.ColumnMappings.Add("manufacturer", "manufacturer");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `supply` WHERE ((`id_sup` = ?) AND ((? = 1 AND `type` IS NULL) OR (`type` = ?)) AND ((? = 1 AND `name_sup` IS NULL) OR (`name_sup` = ?)) AND ((? = 1 AND `QTY_sup` IS NULL) OR (`QTY_sup` = ?)) AND ((? = 1 AND `cost_sup` IS NULL) OR (`cost_sup` = ?)) AND ((? = 1 AND `res_sup` IS NULL) OR (`res_sup` = ?)) AND ((? = 1 AND `inbox_sup` IS NULL) OR (`inbox_sup` = ?)) AND ((? = 1 AND `for_sup_mono` IS NULL) OR (`for_sup_mono` = ?)) AND ((? = 1 AND `for_sup_color` IS NULL) OR (`for_sup_color` = ?)) AND ((? = 1 AND `kol-vo` IS NULL) OR (`kol-vo` = ?)) AND ((? = 1 AND `vote_supl` IS NULL) OR (`vote_supl` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `supply` WHERE ((`id_sup` = ?) AND ((? = 1 AND `type` IS NULL) OR (`type` = ?)) AND ((? = 1 AND `name_sup` IS NULL) OR (`name_sup` = ?)) AND ((? = 1 AND `QTY_sup` IS NULL) OR (`QTY_sup` = ?)) AND ((? = 1 AND `cost_sup` IS NULL) OR (`cost_sup` = ?)) AND ((? = 1 AND `res_sup` IS NULL) OR (`res_sup` = ?)) AND ((? = 1 AND `inbox_sup` IS NULL) OR (`inbox_sup` = ?)) AND ((? = 1 AND `for_sup_mono` IS NULL) OR (`for_sup_mono` = ?)) AND ((? = 1 AND `for_sup_color` IS NULL) OR (`for_sup_color` = ?)) AND ((? = 1 AND `kol-vo` IS NULL) OR (`kol-vo` = ?)) AND ((? = 1 AND `vote_supl` IS NULL) OR (`vote_supl` = ?)) AND ((? = 1 AND `manufacturer` IS NULL) OR (`manufacturer` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id_sup", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_sup", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Original, true, null));
@@ -34233,11 +34320,13 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_kol-vo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "kol-vo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_vote_supl", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "vote_supl", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_vote_supl", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "vote_supl", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_manufacturer", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "manufacturer", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_manufacturer", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "manufacturer", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `supply` (`id_sup`, `type`, `name_sup`, `QTY_sup`, `cost_sup`, `res_s" +
-                "up`, `inbox_sup`, `for_sup_mono`, `for_sup_color`, `kol-vo`, `vote_supl`) VALUES" +
-                " (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "up`, `inbox_sup`, `for_sup_mono`, `for_sup_color`, `kol-vo`, `vote_supl`, `manuf" +
+                "acturer`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_sup", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_sup", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
@@ -34250,9 +34339,10 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("for_sup_color", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "for_sup_color", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("kol-vo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "kol-vo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("vote_supl", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "vote_supl", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("manufacturer", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "manufacturer", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `supply` SET `id_sup` = ?, `type` = ?, `name_sup` = ?, `QTY_sup` = ?, `cost_sup` = ?, `res_sup` = ?, `inbox_sup` = ?, `for_sup_mono` = ?, `for_sup_color` = ?, `kol-vo` = ?, `vote_supl` = ? WHERE ((`id_sup` = ?) AND ((? = 1 AND `type` IS NULL) OR (`type` = ?)) AND ((? = 1 AND `name_sup` IS NULL) OR (`name_sup` = ?)) AND ((? = 1 AND `QTY_sup` IS NULL) OR (`QTY_sup` = ?)) AND ((? = 1 AND `cost_sup` IS NULL) OR (`cost_sup` = ?)) AND ((? = 1 AND `res_sup` IS NULL) OR (`res_sup` = ?)) AND ((? = 1 AND `inbox_sup` IS NULL) OR (`inbox_sup` = ?)) AND ((? = 1 AND `for_sup_mono` IS NULL) OR (`for_sup_mono` = ?)) AND ((? = 1 AND `for_sup_color` IS NULL) OR (`for_sup_color` = ?)) AND ((? = 1 AND `kol-vo` IS NULL) OR (`kol-vo` = ?)) AND ((? = 1 AND `vote_supl` IS NULL) OR (`vote_supl` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `supply` SET `id_sup` = ?, `type` = ?, `name_sup` = ?, `QTY_sup` = ?, `cost_sup` = ?, `res_sup` = ?, `inbox_sup` = ?, `for_sup_mono` = ?, `for_sup_color` = ?, `kol-vo` = ?, `vote_supl` = ?, `manufacturer` = ? WHERE ((`id_sup` = ?) AND ((? = 1 AND `type` IS NULL) OR (`type` = ?)) AND ((? = 1 AND `name_sup` IS NULL) OR (`name_sup` = ?)) AND ((? = 1 AND `QTY_sup` IS NULL) OR (`QTY_sup` = ?)) AND ((? = 1 AND `cost_sup` IS NULL) OR (`cost_sup` = ?)) AND ((? = 1 AND `res_sup` IS NULL) OR (`res_sup` = ?)) AND ((? = 1 AND `inbox_sup` IS NULL) OR (`inbox_sup` = ?)) AND ((? = 1 AND `for_sup_mono` IS NULL) OR (`for_sup_mono` = ?)) AND ((? = 1 AND `for_sup_color` IS NULL) OR (`for_sup_color` = ?)) AND ((? = 1 AND `kol-vo` IS NULL) OR (`kol-vo` = ?)) AND ((? = 1 AND `vote_supl` IS NULL) OR (`vote_supl` = ?)) AND ((? = 1 AND `manufacturer` IS NULL) OR (`manufacturer` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id_sup", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_sup", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
@@ -34265,6 +34355,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("for_sup_color", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "for_sup_color", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("kol-vo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "kol-vo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("vote_supl", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "vote_supl", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("manufacturer", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "manufacturer", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id_sup", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id_sup", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_type", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_type", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Original, false, null));
@@ -34286,6 +34377,8 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_kol-vo", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "kol-vo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_vote_supl", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "vote_supl", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_vote_supl", global::System.Data.OleDb.OleDbType.Boolean, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "vote_supl", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_manufacturer", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "manufacturer", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_manufacturer", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "manufacturer", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -34302,7 +34395,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_sup, type, name_sup, QTY_sup, cost_sup, res_sup, inbox_sup, for_sup_mon" +
-                "o, for_sup_color, [kol-vo], vote_supl FROM supply";
+                "o, for_sup_color, [kol-vo], vote_supl, manufacturer FROM supply";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -34363,7 +34456,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_id_sup, string Original_type, string Original_name_sup, global::System.Nullable<int> Original_QTY_sup, string Original_cost_sup, global::System.Nullable<int> Original_res_sup, bool Original_inbox_sup, bool Original_for_sup_mono, bool Original_for_sup_color, global::System.Nullable<int> _Original_kol_vo, bool Original_vote_supl) {
+        public virtual int Delete(string Original_id_sup, string Original_type, string Original_name_sup, global::System.Nullable<int> Original_QTY_sup, string Original_cost_sup, global::System.Nullable<int> Original_res_sup, bool Original_inbox_sup, bool Original_for_sup_mono, bool Original_for_sup_color, global::System.Nullable<int> _Original_kol_vo, bool Original_vote_supl, string Original_manufacturer) {
             if ((Original_id_sup == null)) {
                 throw new global::System.ArgumentNullException("Original_id_sup");
             }
@@ -34426,6 +34519,14 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             }
             this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
             this.Adapter.DeleteCommand.Parameters[20].Value = ((bool)(Original_vote_supl));
+            if ((Original_manufacturer == null)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_manufacturer));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -34446,7 +34547,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string id_sup, string type, string name_sup, global::System.Nullable<int> QTY_sup, string cost_sup, global::System.Nullable<int> res_sup, bool inbox_sup, bool for_sup_mono, bool for_sup_color, global::System.Nullable<int> _kol_vo, bool vote_supl) {
+        public virtual int Insert(string id_sup, string type, string name_sup, global::System.Nullable<int> QTY_sup, string cost_sup, global::System.Nullable<int> res_sup, bool inbox_sup, bool for_sup_mono, bool for_sup_color, global::System.Nullable<int> _kol_vo, bool vote_supl, string manufacturer) {
             if ((id_sup == null)) {
                 throw new global::System.ArgumentNullException("id_sup");
             }
@@ -34493,6 +34594,12 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             this.Adapter.InsertCommand.Parameters[10].Value = ((bool)(vote_supl));
+            if ((manufacturer == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(manufacturer));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -34525,6 +34632,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
                     bool for_sup_color, 
                     global::System.Nullable<int> _kol_vo, 
                     bool vote_supl, 
+                    string manufacturer, 
                     string Original_id_sup, 
                     string Original_type, 
                     string Original_name_sup, 
@@ -34535,7 +34643,8 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
                     bool Original_for_sup_mono, 
                     bool Original_for_sup_color, 
                     global::System.Nullable<int> _Original_kol_vo, 
-                    bool Original_vote_supl) {
+                    bool Original_vote_supl, 
+                    string Original_manufacturer) {
             if ((id_sup == null)) {
                 throw new global::System.ArgumentNullException("id_sup");
             }
@@ -34582,68 +34691,82 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(vote_supl));
+            if ((manufacturer == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(manufacturer));
+            }
             if ((Original_id_sup == null)) {
                 throw new global::System.ArgumentNullException("Original_id_sup");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_id_sup));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_id_sup));
             }
             if ((Original_type == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_type));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_type));
             }
             if ((Original_name_sup == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_name_sup));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_name_sup));
             }
             if ((Original_QTY_sup.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_QTY_sup.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_QTY_sup.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_cost_sup == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_cost_sup));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_cost_sup));
             }
             if ((Original_res_sup.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_res_sup.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_res_sup.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((bool)(Original_inbox_sup));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((bool)(Original_for_sup_mono));
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((bool)(Original_for_sup_color));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((bool)(Original_inbox_sup));
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((bool)(Original_for_sup_mono));
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((bool)(Original_for_sup_color));
             if ((_Original_kol_vo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(_Original_kol_vo.Value));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(_Original_kol_vo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((bool)(Original_vote_supl));
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[32].Value = ((bool)(Original_vote_supl));
+            if ((Original_manufacturer == null)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_manufacturer));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -34675,6 +34798,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
                     bool for_sup_color, 
                     global::System.Nullable<int> _kol_vo, 
                     bool vote_supl, 
+                    string manufacturer, 
                     string Original_id_sup, 
                     string Original_type, 
                     string Original_name_sup, 
@@ -34685,8 +34809,9 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
                     bool Original_for_sup_mono, 
                     bool Original_for_sup_color, 
                     global::System.Nullable<int> _Original_kol_vo, 
-                    bool Original_vote_supl) {
-            return this.Update(Original_id_sup, type, name_sup, QTY_sup, cost_sup, res_sup, inbox_sup, for_sup_mono, for_sup_color, _kol_vo, vote_supl, Original_id_sup, Original_type, Original_name_sup, Original_QTY_sup, Original_cost_sup, Original_res_sup, Original_inbox_sup, Original_for_sup_mono, Original_for_sup_color, _Original_kol_vo, Original_vote_supl);
+                    bool Original_vote_supl, 
+                    string Original_manufacturer) {
+            return this.Update(Original_id_sup, type, name_sup, QTY_sup, cost_sup, res_sup, inbox_sup, for_sup_mono, for_sup_color, _kol_vo, vote_supl, manufacturer, Original_id_sup, Original_type, Original_name_sup, Original_QTY_sup, Original_cost_sup, Original_res_sup, Original_inbox_sup, Original_for_sup_mono, Original_for_sup_color, _Original_kol_vo, Original_vote_supl, Original_manufacturer);
         }
     }
     
@@ -40129,6 +40254,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("for_sup_color", "for_sup_color");
             tableMapping.ColumnMappings.Add("kol-vo", "kol-vo");
             tableMapping.ColumnMappings.Add("vote_supl", "vote_supl");
+            tableMapping.ColumnMappings.Add("manufacturer", "manufacturer");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -40146,7 +40272,8 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_svyaz, id_dev, id_sup, type, name_sup, QTY_sup, cost_sup, res_sup, inbo" +
-                "x_sup, for_sup_mono, for_sup_color, [kol-vo], vote_supl FROM [Dev2sup Запрос]";
+                "x_sup, for_sup_mono, for_sup_color, [kol-vo], vote_supl, manufacturer FROM [Dev2" +
+                "sup Запрос]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
