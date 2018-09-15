@@ -84,6 +84,7 @@
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dev2care_ЗапросBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button22 = new System.Windows.Forms.Button();
             this.dev2sup_ЗапросDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -918,6 +919,7 @@
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.button22);
             this.tabPage3.Controls.Add(this.dev2sup_ЗапросDataGridView);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -925,6 +927,16 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "РАСХОДНИКИ(3)";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(476, 186);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(75, 23);
+            this.button22.TabIndex = 2;
+            this.button22.Text = "button22";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // dev2sup_ЗапросDataGridView
             // 
@@ -2567,6 +2579,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(845, 245);
             this.dataGridView1.TabIndex = 33;
+            this.dataGridView1.Visible = false;
             // 
             // idgarDataGridViewTextBoxColumn
             // 
@@ -3541,6 +3554,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn votegarDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Button button22;
     }
 }
 

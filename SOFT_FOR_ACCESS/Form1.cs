@@ -35,14 +35,14 @@ using iTextSharp.text;
 
 namespace SOFT_FOR_ACCESS
 {
-    
+
 
 
 
     public partial class Form1 : Form
     {
 
-        
+
 
         public Form1()
         {
@@ -120,7 +120,7 @@ namespace SOFT_FOR_ACCESS
                 this.trashTableAdapter.Update(this.database2_TESTDataSet.Trash);
                 this.trashTableAdapter.Fill(this.database2_TESTDataSet.Trash);
                 Environment.Exit(0);
-                return;  
+                return;
             }
 
             if (Convert.ToString(trashDataGridView[1, 0].Value) == "1")
@@ -133,8 +133,8 @@ namespace SOFT_FOR_ACCESS
             comboBox14.Enabled = false;             //% нагрузки для матрицы
 
 
-            Notes.Add(new Note(null, null, null, null, null, null, null, null, null, null, null, null, null, null ));
-            Notes.Add(new Note(null, null, null, null, null, null, null, null, null, null, null, null, null, null ));
+            Notes.Add(new Note(null, null, null, null, null, null, null, null, null, null, null, null, null, null));
+            Notes.Add(new Note(null, null, null, null, null, null, null, null, null, null, null, null, null, null));
             //Notes.Add(new Note(Convert.ToString(dev2care_ЗапросDataGridView[2, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[3, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[6, i].Value), null, null, null, null, null, null, null, null, null, null));
 
         }
@@ -157,8 +157,8 @@ namespace SOFT_FOR_ACCESS
 
             if (textBox1.Text.Length < 1 && textBox2.Text.Length < 1 && radioButton13.Checked == true)
             {
-                    MessageBox.Show("УКАЖИТЕ ОБЪЁМ ПЕЧАТИ!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                MessageBox.Show("УКАЖИТЕ ОБЪЁМ ПЕЧАТИ!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             else
                 try
@@ -194,7 +194,10 @@ namespace SOFT_FOR_ACCESS
                         return;
                     }
 
-                    //if (printerDataGridView[1, i].Value)
+                    if (Convert.ToString(printerDataGridView[9, i].Value) == "mono") count_sup = 1;
+                    if (Convert.ToString(printerDataGridView[9, i].Value) == "color") count_sup = 4;
+
+
                     this.database2_TESTDataSet.vibor1.Rows.Add(null, printerDataGridView[1, i].Value, printerDataGridView[2, i].Value, printerDataGridView[7, i].Value, printerDataGridView[8, i].Value);
 
                     //List<Note> Notes;
@@ -210,9 +213,16 @@ namespace SOFT_FOR_ACCESS
                     this.dev2soft_serv_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
                     LLC_add();
 
-                    //if ()
+
+
+                    if (dev2sup_ЗапросDataGridView.RowCount-1 > count_sup)
+                    {
+                        tabControl1.SelectTab(2);
+                        tab_ch = true;
+                    }
+                    else
                     sup_add();
-                    
+
                 }
             }
         }
@@ -228,7 +238,7 @@ namespace SOFT_FOR_ACCESS
                     this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2care_ЗапросDataGridView[2, i].Value, dev2care_ЗапросDataGridView[3, i].Value, dev2care_ЗапросDataGridView[4, i].Value, dev2care_ЗапросDataGridView[6, i].Value);
                     //List<Note> Notes;
                     //Notes = new List<Note>();
-                    Notes.Add(new Note ( Convert.ToString(dev2care_ЗапросDataGridView[2, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[3, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[6, i].Value), null, null, null, null, null, null, null, null, null, null));
+                    Notes.Add(new Note(Convert.ToString(dev2care_ЗапросDataGridView[2, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[3, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[6, i].Value), null, null, null, null, null, null, null, null, null, null));
 
                 }
 
@@ -247,7 +257,7 @@ namespace SOFT_FOR_ACCESS
             this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
         }
 
-        
+
 
 
 
@@ -269,13 +279,13 @@ namespace SOFT_FOR_ACCESS
                 copy_c_proj = v_pech_mono * Convert.ToDouble(comboBox9.Text);    //объём печати_цвет_проект = объём_печати_цвет * срок_контракта
             }
             for (int i = 0; i < dev2LLC_ЗапросDataGridView.RowCount - 1; i++)
-            {       
+            {
                 dev2LLC_ЗапросDataGridView[13, i].Value = "True";       //ставим галку выбора для LLC
 
                 if (Convert.ToString(dev2LLC_ЗапросDataGridView[11, i].Value) == "True")                     //    если используется в MONO
                 {
                     qty_m = copy_m_proj / (Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value));           //кол-во_копий_напечатает_моно_этот_узел = объём_печати_моно_проект/ресурс_узла  
-                    absolut_mono = absolut_mono + ((Convert.ToDouble(dev2LLC_ЗапросDataGridView[7, i].Value) / Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value))* Convert.ToDouble(dev2LLC_ЗапросDataGridView[6, i].Value)); //абсолют=цена_ресурса/ресурс_этого_ресурса* qty
+                    absolut_mono = absolut_mono + ((Convert.ToDouble(dev2LLC_ЗапросDataGridView[7, i].Value) / Convert.ToDouble(dev2LLC_ЗапросDataGridView[8, i].Value)) * Convert.ToDouble(dev2LLC_ЗапросDataGridView[6, i].Value)); //абсолют=цена_ресурса/ресурс_этого_ресурса* qty
                 }
                 else
                     qty_m = 0;
@@ -292,7 +302,7 @@ namespace SOFT_FOR_ACCESS
 
                 //List<Note> Notes;
                 //Notes = new List<Note>();
-                Notes.Add(new Note( Convert.ToString(dev2LLC_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[5, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[7, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[12, i].Value), Convert.ToString(qty_m), Convert.ToString(qty_c), Convert.ToString(dev2LLC_ЗапросDataGridView[6, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[9, i].Value), Convert.ToString(copy_m_proj), Convert.ToString(copy_c_proj), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text), null, null ));
+                Notes.Add(new Note(Convert.ToString(dev2LLC_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[5, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[7, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[12, i].Value), Convert.ToString(qty_m), Convert.ToString(qty_c), Convert.ToString(dev2LLC_ЗапросDataGridView[6, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[9, i].Value), Convert.ToString(copy_m_proj), Convert.ToString(copy_c_proj), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text), null, null));
 
             }
 
@@ -317,7 +327,7 @@ namespace SOFT_FOR_ACCESS
 
             for (int i = 0; i < dev2sup_ЗапросDataGridView.RowCount - 1; i++)
             {
-                    dev2sup_ЗапросDataGridView[12, i].Value = "True";               //ставим галку выбора для supply
+                dev2sup_ЗапросDataGridView[12, i].Value = "True";               //ставим галку выбора для supply
 
                 if (Convert.ToString(dev2sup_ЗапросDataGridView[9, i].Value) == "True")                     //  если используется в MONO
                 {
@@ -341,7 +351,7 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-        
+
 
         private void add_acc_Button_Click(object sender, EventArgs e)           //добавить акс
         {
@@ -403,67 +413,67 @@ namespace SOFT_FOR_ACCESS
             double cost_vith_LRF = 0;
             double LRF = 0;
             double nacenka_oboryd_p = 0;
-            
+
 
             double cost_one_m = 0;
             double cost_one_c = 0;
             double trash_2 = 0;
             double dur_project = 0;
 
-                try
+            try
+            {
+                if (radioButton5.Checked == true && comboBox6.Text.Length > 0)
+                    trash_2 = trash_2 + Convert.ToDouble(comboBox6.Text);              //добавили косты нашей работы в АРЕНДУ
+
+                if (radioButton7.Checked == true && comboBox5.Text.Length > 0)
+                    trash_2 = trash_2 + Convert.ToDouble(comboBox5.Text);              //добавили косты подряд работы в АРЕНДУ
+
+                if ((radioButton9.Checked == true && comboBox7.Text.Length > 0))
+                    trash_2 = trash_2 + Convert.ToDouble(comboBox7.Text);                //добавили косты командировочные в АРЕНДУ
+
+                if ((radioButton11.Checked == true && comboBox8.Text.Length > 0))
+                    trash_2 = trash_2 + Convert.ToDouble(comboBox8.Text);                //добавили косты доп услуг в АРЕНДУ
+
+                if ((radioButton6.Checked == true && comboBox6.Text.Length > 0))
+                    cost_contract = cost_contract + Convert.ToDouble(comboBox6.Text);   //добавили косты нашей работы в ОТПЕЧАТОК
+
+                if ((radioButton8.Checked == true && comboBox5.Text.Length > 0))
+                    cost_contract = cost_contract + Convert.ToDouble(comboBox5.Text);    //добавили косты подряд работы в ОТПЕЧАТОК
+
+                if ((radioButton10.Checked == true && comboBox7.Text.Length > 0))
+                    cost_contract = cost_contract + Convert.ToDouble(comboBox7.Text);        //добавили косты командировочные в ОТПЕЧАТОК
+
+                if ((radioButton12.Checked == true && comboBox8.Text.Length > 0))
+                    cost_contract = cost_contract + Convert.ToDouble(comboBox8.Text);        //добавили косты доп услуг в ОТПЕЧАТОК
+
+                if (comboBox9.Text.Length > 0)
+                    dur_project = Convert.ToDouble(comboBox9.Text);
+                else
                 {
-                    if (radioButton5.Checked == true && comboBox6.Text.Length > 0)
-                        trash_2 = trash_2 + Convert.ToDouble(comboBox6.Text);              //добавили косты нашей работы в АРЕНДУ
-
-                    if (radioButton7.Checked == true && comboBox5.Text.Length > 0)
-                        trash_2 = trash_2 + Convert.ToDouble(comboBox5.Text);              //добавили косты подряд работы в АРЕНДУ
-
-                    if ((radioButton9.Checked == true && comboBox7.Text.Length > 0))
-                        trash_2 = trash_2 + Convert.ToDouble(comboBox7.Text);                //добавили косты командировочные в АРЕНДУ
-
-                    if ((radioButton11.Checked == true && comboBox8.Text.Length > 0))
-                        trash_2 = trash_2 + Convert.ToDouble(comboBox8.Text);                //добавили косты доп услуг в АРЕНДУ
-
-                    if ((radioButton6.Checked == true && comboBox6.Text.Length > 0))
-                        cost_contract = cost_contract + Convert.ToDouble(comboBox6.Text);   //добавили косты нашей работы в ОТПЕЧАТОК
-
-                    if ((radioButton8.Checked == true && comboBox5.Text.Length > 0))
-                        cost_contract = cost_contract + Convert.ToDouble(comboBox5.Text);    //добавили косты подряд работы в ОТПЕЧАТОК
-
-                    if ((radioButton10.Checked == true && comboBox7.Text.Length > 0))
-                        cost_contract = cost_contract + Convert.ToDouble(comboBox7.Text);        //добавили косты командировочные в ОТПЕЧАТОК
-
-                    if ((radioButton12.Checked == true && comboBox8.Text.Length > 0))
-                        cost_contract = cost_contract + Convert.ToDouble(comboBox8.Text);        //добавили косты доп услуг в ОТПЕЧАТОК
-
-                    if (comboBox9.Text.Length > 0)
-                        dur_project = Convert.ToDouble(comboBox9.Text);
-                    else
-                    {
-                        MessageBox.Show("Не выбран срок контракта!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        return;
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("Ошибка ввода!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Не выбран срок контракта!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка ввода!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
 
             //-------------------------------------
 
-            for (int i = 0; i < vibor1DataGridView.RowCount - 1; i++)  
+            for (int i = 0; i < vibor1DataGridView.RowCount - 1; i++)
             {
 
                 if (Convert.ToString(vibor1DataGridView[1, i].Value) == "Printer" || Convert.ToString(vibor1DataGridView[1, i].Value) == "accessory" || Convert.ToString(vibor1DataGridView[1, i].Value) == "Garanty")
                 {                                   //36*(0,1/12)
 
-                    straxovka = Convert.ToDouble(comboBox9.Text) * (Convert.ToDouble(textBox11.Text) / 12);     
-                    
+                    straxovka = Convert.ToDouble(comboBox9.Text) * (Convert.ToDouble(textBox11.Text) / 12);
+
                     //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта + наценка_оборудов_месяц * срок контракта
-                    cost_print = cost_print + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value)); 
+                    cost_print = cost_print + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value));
                     //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта * LRf * dur_proj
-                    cost_vith_LRF =  cost_vith_LRF + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value) * Convert.ToDouble(comboBox11.Text) * Convert.ToDouble(comboBox9.Text));
+                    cost_vith_LRF = cost_vith_LRF + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value) * Convert.ToDouble(comboBox11.Text) * Convert.ToDouble(comboBox9.Text));
 
                     //ТУТ БАГ???? входная строка неверного формата (lrf= ,.)
                     //straxovka = (Convert.ToDouble(textBox11.Text) * cost_print );
@@ -481,7 +491,7 @@ namespace SOFT_FOR_ACCESS
                 if (Convert.ToString(vibor1DataGridView[1, i].Value) == "soft")
                     cost_soft = cost_soft + Convert.ToDouble(vibor1DataGridView[3, i].Value);
 
-                if ( Convert.ToString(vibor1DataGridView[1, i].Value) == "soft_serv")
+                if (Convert.ToString(vibor1DataGridView[1, i].Value) == "soft_serv")
                     cost_serv_soft = cost_serv_soft + Convert.ToDouble(vibor1DataGridView[3, i].Value);
 
 
@@ -515,7 +525,7 @@ namespace SOFT_FOR_ACCESS
 
 
 
-                    vibor1DataGridView[11, i].Value = cost_m_proj; 
+                    vibor1DataGridView[11, i].Value = cost_m_proj;
                     vibor1DataGridView[12, i].Value = cost_c_proj;
 
                     qty1 = qty1 + qty_m_p2;        //кол-во всего моно LLC + supply для проекта
@@ -551,8 +561,8 @@ namespace SOFT_FOR_ACCESS
 
             {
                 //for (int i = 0; i < Convert.ToDouble(quantity_textBox.Text); i++)
-                                                                                      //   name                                      kol-vo          v_pech_mono    v_pech_color     cost_pech_month        цена_моно    цена_цвет  затраты_печать_п  затраты_аренд_п                 все_затраты
-                    this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, Convert.ToDouble(quantity_textBox.Text), textBox1.Text, textBox2.Text, cost_print / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print, LRF, strax, cost1 + cost2 + cost_vith_LRF + strax);
+                //   name                                      kol-vo          v_pech_mono    v_pech_color     cost_pech_month        цена_моно    цена_цвет  затраты_печать_п  затраты_аренд_п                 все_затраты
+                this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, Convert.ToDouble(quantity_textBox.Text), textBox1.Text, textBox2.Text, cost_print / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print, LRF, strax, cost1 + cost2 + cost_vith_LRF + strax);
 
             }
             else
@@ -567,7 +577,7 @@ namespace SOFT_FOR_ACCESS
             else
                 total_copy = (v_pech_mono) * dur_project;
 
-            cost_one_m = ((cost_contract * dur_project) / total_copy) + cost_one_m; 
+            cost_one_m = ((cost_contract * dur_project) / total_copy) + cost_one_m;
             cost_one_c = (cost_contract * dur_project / total_copy) + cost_one_c;
 
 
@@ -600,19 +610,19 @@ namespace SOFT_FOR_ACCESS
             nacenka_oboryd_p = (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text));
             double arenda_proj = cost_print2 - nacenka_oboryd_p;
 
-            MessageBox.Show("АРЕНДА_ПРОЕКТ(dev+acc+gar)*LRF= " + arenda_proj + 
+            MessageBox.Show("АРЕНДА_ПРОЕКТ(dev+acc+gar)*LRF= " + arenda_proj +
                 "\n + В АРЕНДУ_ПРОЕКТ(труд, командир, доп услуги)= " + trash_2 * dur_project +
                 "\n + НАКЛАДНЫЕ_месяц(усл_контр)= " + textBox3.Text +
                 "\n = ИТОГ АРЕНДА ПРОЕКТ= " + cost_print2 +
                 "\n" +
                 "\n аренда в месяц= " + cost_print2 / dur_project +
                 "\n" +
-                "\n kol-vo mono= " + qty1 + 
-                "\n cost_mono= " + cost1 + 
-                "\n kol-vo color= " + qty2 + 
+                "\n kol-vo mono= " + qty1 +
+                "\n cost_mono= " + cost1 +
+                "\n kol-vo color= " + qty2 +
                 "\n cost_color= " + cost2 +
                 "\n" +
-                "\n cost_one_mono + наценка= " + cost_one_m + 
+                "\n cost_one_mono + наценка= " + cost_one_m +
                 "\n cost_one_color + наценка= " + cost_one_c +
                 "\n страховка= " + strax,
                 "\n" +
@@ -620,7 +630,7 @@ namespace SOFT_FOR_ACCESS
                 "ТЕСТОВОЕ ОКНО!!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             try
-                
+
             {    //ВРЕМЕННО!!!!!!!!!!!!!!!!!!!!!!!!!
                 //ExportToExcel(1, textBox1.Text, textBox2.Text, last_cost / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print, cost_print + cost1 + cost2);
                 //vivod();
@@ -642,7 +652,7 @@ namespace SOFT_FOR_ACCESS
                 //this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "кол-во устройств", "объём печати моно в мес", "аренда в месяц", "цена копии моно", "затраты на печать проект");
 
                 if (radioButton13.Checked == true)          //НАЦЕНКИ
-                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, quantity_textBox.Text, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, Convert.ToString(zatrati_print_nac) , arenda_proj, (zatrati_print_nac + arenda_proj) );
+                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, quantity_textBox.Text, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, Convert.ToString(zatrati_print_nac), arenda_proj, (zatrati_print_nac + arenda_proj));
                 else
                     this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, "тест", cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
 
@@ -784,7 +794,7 @@ namespace SOFT_FOR_ACCESS
 
 
             //listBox1.Items.Add(reader.ReadLine());//считываем все данные с потока и выводим на экран
-            
+
             //listBox1.Items.Add(reader.Read());//считываем все данные с потока и выводим на экран
             //listBox1.Items.Add(reader.Read(array, 0, 3));//считываем все данные с потока и выводим на экран
             ////reader.Read(array, 0, 3);//считываем все данные с потока и выводим на экран
@@ -810,7 +820,7 @@ namespace SOFT_FOR_ACCESS
             this.dev2acc_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
             this.dev2soft_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
             this.dev2soft_serv_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
-            
+
 
         }
 
@@ -967,7 +977,7 @@ namespace SOFT_FOR_ACCESS
                 ShtRange = NwSheet.UsedRange;
                 for (int Cnum = 1; Cnum <= ShtRange.Columns.Count; Cnum++)
                 {
-                    dt.Columns.Add( new DataColumn((ShtRange.Cells[1, Cnum] as ExcelObj.Range).Value2.ToString()));
+                    dt.Columns.Add(new DataColumn((ShtRange.Cells[1, Cnum] as ExcelObj.Range).Value2.ToString()));
                 }
                 dt.AcceptChanges();
 
@@ -1021,7 +1031,7 @@ namespace SOFT_FOR_ACCESS
 
 
             //Microsoft.Office.Interop.Excel._Workbook ExcelWorkBook = 
-               // ObjExcel.Workbooks.Open(filename, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+            // ObjExcel.Workbooks.Open(filename, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
 
 
             //Microsoft.Office.Interop.Excel.Workbook ObjWorkBook = ObjExcel.Workbooks.Open(@"C:\file.xls", 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
@@ -1053,9 +1063,9 @@ namespace SOFT_FOR_ACCESS
                 this.database2_TESTDataSet.Care_pack.Rows.Add(null, workSheet.Cells[1, 1], workSheet.Cells[2, 1], workSheet.Cells[3, 1], workSheet.Cells[4, 1]);
                 //this.database2_TESTDataSet2.Care_pack.Rows.Add()
 
-               // this.dev2care_ЗапросDataGridView[1, i].Value = workSheet.Cells[i, 1];
-               // this.dev2care_ЗапросDataGridView[2, i].Value = workSheet.Cells[i, 2];
-               // this.dev2care_ЗапросDataGridView[3, i].Value = workSheet.Cells[i, 3];
+                // this.dev2care_ЗапросDataGridView[1, i].Value = workSheet.Cells[i, 1];
+                // this.dev2care_ЗапросDataGridView[2, i].Value = workSheet.Cells[i, 2];
+                // this.dev2care_ЗапросDataGridView[3, i].Value = workSheet.Cells[i, 3];
                 //this.dev2care_ЗапросDataGridView[4, i].Value = workSheet.Cells[i, 4];
                 //this.dev2care_ЗапросDataGridView[5, i].Value = workSheet.Cells[i, 5];
                 //this.dev2care_ЗапросDataGridView[6, i].Value = workSheet.Cells[i, 6];
@@ -1188,7 +1198,7 @@ namespace SOFT_FOR_ACCESS
         {
             var metrics = EnumerateMetrics("Data.xlsx");
             //foreach (var m in metrics)
-               // Console.WriteLine("Альфа: {0}; Бета: {1}; Гамма: {2}; Дельта: {3}", m.Alpha, m.Beta, m.Gamma, m.Delta);
+            // Console.WriteLine("Альфа: {0}; Бета: {1}; Гамма: {2}; Дельта: {3}", m.Alpha, m.Beta, m.Gamma, m.Delta);
             //Console.ReadKey();
         }
 
@@ -1216,7 +1226,7 @@ namespace SOFT_FOR_ACCESS
             //for (int i = 0; i < vibor1DataGridView.RowCount - 1; i++)
             {
 
-               // if (Convert.ToString(vibor1DataGridView[1, i].Value) == "LLC" || Convert.ToString(vibor1DataGridView[1, i].Value) == "supply")
+                // if (Convert.ToString(vibor1DataGridView[1, i].Value) == "LLC" || Convert.ToString(vibor1DataGridView[1, i].Value) == "supply")
                 {
                     textBox9.Text = Convert.ToString(absolut_mono);
                     textBox10.Text = Convert.ToString(absolut_color);
@@ -1257,7 +1267,7 @@ namespace SOFT_FOR_ACCESS
 
         private void button20_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void radioButton13_CheckedChanged(object sender, EventArgs e)
@@ -1294,7 +1304,7 @@ namespace SOFT_FOR_ACCESS
             textBox2.Clear();
             comboBox9.Text = "";
 
-            
+
         }
 
         void clear_vibor()
@@ -1372,7 +1382,7 @@ namespace SOFT_FOR_ACCESS
         {
             //public int x, y, z;
             public string n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14;
-            public Note (string n1, string n2, string n3, string n4, string n5, string n6, string n7, string n8, string n9, string n10, string n11, string n12, string n13, string n14)
+            public Note(string n1, string n2, string n3, string n4, string n5, string n6, string n7, string n8, string n9, string n10, string n11, string n12, string n13, string n14)
             {
                 this.n1 = n1;
                 this.n2 = n2;
@@ -1414,7 +1424,7 @@ namespace SOFT_FOR_ACCESS
 
 
             PdfPTable table = new PdfPTable(10);     //col-vo stolbov
-            PdfPCell cell = new PdfPCell(new Phrase("type_dev", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 16,  iTextSharp.text.Font.NORMAL, new BaseColor(Color.DarkBlue))));
+            PdfPCell cell = new PdfPCell(new Phrase("type_dev", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 16, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DarkBlue))));
 
             //cell.BackgroundColor = new BaseColor(Color.Red);
             //cell.Padding = 5;               //visota in pix
@@ -1423,7 +1433,7 @@ namespace SOFT_FOR_ACCESS
             //table.TotalWidth = 800;
             //cell.MinimumHeight = LAST_CELL_HEIGHT;
             //table.AddCell(cell);        //vstavili 1 simple_table
-            float[] widths = new float[] { 30, 10, 10, 10, 10, 10, 10, 10, 10, 10  };
+            float[] widths = new float[] { 30, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
             table.SetWidths(widths);
 
 
@@ -1497,7 +1507,7 @@ namespace SOFT_FOR_ACCESS
 
             MessageBox.Show("commercial offer was created!", "Good", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-            
+
         }
 
 
@@ -1513,7 +1523,7 @@ namespace SOFT_FOR_ACCESS
             {
                 using (var sourceDocumentStream2 = new FileStream(sourcePdfPath2, FileMode.Open))
                 {
-                    using (var destinationDocumentStream = new FileStream(outputPdfPath, FileMode.Create ))
+                    using (var destinationDocumentStream = new FileStream(outputPdfPath, FileMode.Create))
                     {
                         var pdfConcat = new PdfConcatenate(destinationDocumentStream);
                         var pdfReader = new PdfReader(sourceDocumentStream1);
@@ -1606,9 +1616,9 @@ namespace SOFT_FOR_ACCESS
 
 
 
-               // this.database2_TESTDataSet.Care_pack.Rows.Add(ObjWorkSheet.Cells[0, 1], ObjWorkSheet.Cells[1, 1], ObjWorkSheet.Cells[2, 1], ObjWorkSheet.Cells[3, 1], ObjWorkSheet.Cells[4, 1]);
+                // this.database2_TESTDataSet.Care_pack.Rows.Add(ObjWorkSheet.Cells[0, 1], ObjWorkSheet.Cells[1, 1], ObjWorkSheet.Cells[2, 1], ObjWorkSheet.Cells[3, 1], ObjWorkSheet.Cells[4, 1]);
 
-               // this.database2_TESTDataSet.Care_pack.
+                // this.database2_TESTDataSet.Care_pack.
 
 
 
@@ -1671,22 +1681,66 @@ namespace SOFT_FOR_ACCESS
 
             //this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
 
-            
-            
+
+
 
 
 
         }
 
-        
+
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex != 2 && tab_ch == true)
             {
                 tabControl1.SelectTab(2);
-                MessageBox.Show("Сначала выберите расходники!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);              
+                MessageBox.Show("Сначала выберите расходники!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {      
+                double qty_m = 0;
+                double qty_c = 0;
+                double copy_m_proj = 0;
+                double copy_c_proj = 0;
+                if (radioButton13.Checked == true)
+                {
+                    copy_m_proj = Convert.ToDouble(textBox1.Text) * Convert.ToDouble(comboBox9.Text);    //объём_печати_моно_проект = объём_печати_моно * срок_контракта
+                    copy_c_proj = Convert.ToDouble(textBox2.Text) * Convert.ToDouble(comboBox9.Text);    //объём печати_цвет_проект = объём_печати_цвет * срок_контракта
+                }
+                else
+                {
+                    copy_m_proj = v_pech_mono * Convert.ToDouble(comboBox9.Text);    //объём_печати_моно_проект = объём_печати_моно * срок_контракта
+                    copy_c_proj = v_pech_mono * Convert.ToDouble(comboBox9.Text);    //объём печати_цвет_проект = объём_печати_цвет * срок_контракта
+                }
+
+                for (int i = 0; i < dev2sup_ЗапросDataGridView.RowCount - 1; i++)
+                {
+                if (Convert.ToString(dev2sup_ЗапросDataGridView[12, i].Value) == "True")
+                  { 
+                    if (Convert.ToString(dev2sup_ЗапросDataGridView[9, i].Value) == "True")                     //  если используется в MONO
+                    {
+                        qty_m = copy_m_proj / (Convert.ToDouble(dev2sup_ЗапросDataGridView[7, i].Value));       //штук(без_округл)_нужно_для_проекта_моно = объём_печати_моно_проект/ресурс_узла
+                        absolut_mono = absolut_mono + (Convert.ToDouble(dev2sup_ЗапросDataGridView[6, i].Value) / Convert.ToDouble(dev2sup_ЗапросDataGridView[7, i].Value)); //абсолют=цена_ресурса/ресурс_этого_ресурса
+                    }
+                    else
+                        qty_m = 0;
+
+                    if (Convert.ToString(dev2sup_ЗапросDataGridView[10, i].Value) == "True")                 //  если используется в COLOR
+                    {
+                        qty_c = copy_c_proj / (Convert.ToDouble(dev2sup_ЗапросDataGridView[7, i].Value));       ///штук(без_округл)_нужно_для_проекта_цвет = объём_печати_цвет_проект/ресурс_узла
+                        absolut_color = absolut_color + (Convert.ToDouble(dev2sup_ЗапросDataGridView[6, i].Value) / Convert.ToDouble(dev2sup_ЗапросDataGridView[7, i].Value)); //абсолют=цена_ресурса/ресурс_этого_ресурса
+                    }
+                    else
+                        qty_c = 0;
+
+                    this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2sup_ЗапросDataGridView[3, i].Value, dev2sup_ЗапросDataGridView[4, i].Value, dev2sup_ЗапросDataGridView[6, i].Value, dev2sup_ЗапросDataGridView[11, i].Value, qty_m, qty_c, dev2sup_ЗапросDataGridView[5, i].Value, dev2sup_ЗапросDataGridView[8, i].Value, copy_m_proj, copy_c_proj);
+                    Notes.Add(new Note(Convert.ToString(dev2sup_ЗапросDataGridView[3, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[6, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[11, i].Value), Convert.ToString(qty_m), Convert.ToString(qty_c), Convert.ToString(dev2sup_ЗапросDataGridView[5, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[8, i].Value), Convert.ToString(copy_m_proj), Convert.ToString(copy_c_proj), null, null, null, null));
+                  }
+                }
+            
         }
     }
 
@@ -1704,12 +1758,32 @@ namespace SOFT_FOR_ACCESS
     }
 
 
-    static class Data
+    public class Data
     {
         public static string Value1 { get; set; }
+        public static string zap1 { get; set; }
+        public static string zap2 { get; set; }
+        public static string zap3 { get; set; }
+        public static string zap4 { get; set; }
+        public static string zap5 { get; set; }
+        public string[] perenos { get; set; }
+
     }
+    public class Note2
+    {
+        public string n1, n2, n3, n4, n5;
+        public Note2(string n1, string n2, string n3, string n4, string n5)
+        {
+            this.n1 = n1;
+            this.n2 = n2;
+            this.n3 = n3;
+            this.n4 = n4;
+            this.n5 = n5;
+        }
 
 
 
 
+
+    }
 }
