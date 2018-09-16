@@ -164,8 +164,13 @@ namespace SOFT_FOR_ACCESS
                         this.llcTableAdapter1.Update(this.database2_TESTDataSet.LLC);
                         this.llcTableAdapter1.Fill(this.database2_TESTDataSet.LLC);
 
-
                         MessageBox.Show("LLC запись изменена!", "успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        //textBox_id_LLC.Clear();
+                        //textBox_name_LLC.Clear();
+                        //textBox_qty_LLC.Clear();
+                        //textBox_cost_LLC.Clear();
+                        //textBox_res_LLC.Clear();
+                        //checkBox2.Checked = true;
 
                         return;
                     }
@@ -178,16 +183,9 @@ namespace SOFT_FOR_ACCESS
 
                 this.database2_TESTDataSet.LLC.Rows.Add(textBox_id_LLC.Text, "LLC", textBox_name_LLC.Text, Convert.ToDouble(textBox_qty_LLC.Text), textBox_cost_LLC.Text, Convert.ToDouble(textBox_res_LLC.Text), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, 1);
                 this.llcTableAdapter1.Update(this.database2_TESTDataSet.LLC);
-
+                checkBox2.Checked = true;
                 MessageBox.Show("Запись добавлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-                //if (comboBox13.Text.Length > 0)
-                //{
-                //    this.database2_TESTDataSet.Dev2LLC.Rows.Add(null, comboBox13.Text, textBox_id_LLC.Text);
-                //    this.dev2LLCTableAdapter.Update(this.database2_TESTDataSet.Dev2LLC);
-                //}
-                //else
-                //    MessageBox.Show("Не привязано к устройству!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             catch
             {

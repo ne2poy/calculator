@@ -39,11 +39,7 @@ namespace SOFT_FOR_ACCESS
                         this.printerTableAdapter.Update(this.database2_TESTDataSet.Printer);
                         this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
 
-
                         MessageBox.Show("printer запись изменена!", "успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-
-                    
                         return;
                     }
                 }

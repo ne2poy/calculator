@@ -137,6 +137,7 @@ namespace SOFT_FOR_ACCESS
             Notes.Add(new Note(null, null, null, null, null, null, null, null, null, null, null, null, null, null ));
             //Notes.Add(new Note(Convert.ToString(dev2care_ЗапросDataGridView[2, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[3, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[6, i].Value), null, null, null, null, null, null, null, null, null, null));
 
+            clear_vibor();
         }
 
         private void printer()              //ПОКА НЕ ЮЗАЕМ!!
@@ -146,6 +147,7 @@ namespace SOFT_FOR_ACCESS
 
         private void add_print_Button_Click(object sender, EventArgs e)
         {
+            clear_vibor();
             double dur_project = 0;
             if (comboBox9.Text.Length > 0)
                 dur_project = Convert.ToDouble(comboBox9.Text);
@@ -194,7 +196,8 @@ namespace SOFT_FOR_ACCESS
                         return;
                     }
 
-                    //if (printerDataGridView[1, i].Value)
+                    if (Convert.ToString(printerDataGridView[9, i].Value) == "mono") count_sup = 1;
+                    if (Convert.ToString(printerDataGridView[9, i].Value) == "color") count_sup = 4;
                     this.database2_TESTDataSet.vibor1.Rows.Add(null, printerDataGridView[1, i].Value, printerDataGridView[2, i].Value, printerDataGridView[7, i].Value, printerDataGridView[8, i].Value);
 
                     //List<Note> Notes;
@@ -210,8 +213,10 @@ namespace SOFT_FOR_ACCESS
                     this.dev2soft_serv_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
                     LLC_add();
 
-                    //if ()
-                    sup_add();
+                    if (dev2sup_ЗапросDataGridView.RowCount - 1 > count_sup)
+                        sup_add1();
+                    else
+                        sup_add();
                     
                 }
             }
@@ -235,11 +240,6 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -297,6 +297,28 @@ namespace SOFT_FOR_ACCESS
             }
 
         }
+
+
+        void sup_add1()
+        {
+            Data.copy_m_proj = Convert.ToDouble(textBox1.Text) * Convert.ToDouble(comboBox9.Text);    //объём_печати_моно_проект = объём_печати_моно * срок_контракта
+            Data.copy_c_proj = Convert.ToDouble(textBox2.Text) * Convert.ToDouble(comboBox9.Text);    //объём печати_цвет_проект = объём_печати_цвет * срок_контракта
+            this.vibor1TableAdapter.Update(this.database2_TESTDataSet.vibor1);
+            this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+            Data.Value1 = comboBox3.Text;
+            Data.Value2 = comboBox4.Text;
+            vote_sup vote_sup = new vote_sup();
+            vote_sup.ShowDialog();
+            if (vote_sup.DialogResult == DialogResult.OK)
+            {
+                this.vibor1TableAdapter.Update(this.database2_TESTDataSet.vibor1);
+                this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+            }
+            else
+                 MessageBox.Show("Ничего не добавлено!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+        }
+
 
         void sup_add()
         {
@@ -1331,31 +1353,6 @@ namespace SOFT_FOR_ACCESS
             comboBox4.Text = Convert.ToString(printerDataGridView[2, i].Value);         // = АКТИВНАЯ МОДЕЛЬ ПРИНТЕРА
         }
 
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            sup sup = new sup();
-            sup.Show();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            print print = new print();
-            print.Show();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            care_pack care_pack = new care_pack();
-            care_pack.Show();
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            acc acc = new acc();
-            acc.Show();
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
 
@@ -1661,18 +1658,24 @@ namespace SOFT_FOR_ACCESS
 
         private void button21_Click(object sender, EventArgs e)
         {
-            //Data.Value1 = comboBox3.Text;
-            //vote_sup vote_sup = new vote_sup();
-            //vote_sup.ShowDialog();
-            tabControl1.SelectTab(2);
-            tab_ch = true;
+            Data.Value1 = comboBox3.Text;
+            Data.Value2 = comboBox4.Text;
+            vote_sup vote_sup = new vote_sup();
+            vote_sup.ShowDialog();
+
+
+
+
+
+            //tabControl1.SelectTab(2);
+            //tab_ch = true;
 
 
 
             //this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
 
-            
-            
+
+
 
 
 
@@ -1687,6 +1690,41 @@ namespace SOFT_FOR_ACCESS
                 tabControl1.SelectTab(2);
                 MessageBox.Show("Сначала выберите расходники!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);              
             }
+        }
+
+        private void printerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            print print = new print();
+            print.Show();
+        }
+
+        private void supplyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sup sup = new sup();
+            sup.Show();
+        }
+
+        private void lLCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
+
+        private void carepackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            care_pack care_pack = new care_pack();
+            care_pack.Show();
+        }
+
+        private void accessoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            acc acc = new acc();
+            acc.Show();
+        }
+
+        private void dev2acc_ЗапросDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 
@@ -1707,6 +1745,10 @@ namespace SOFT_FOR_ACCESS
     static class Data
     {
         public static string Value1 { get; set; }
+        public static string Value2 { get; set; }
+        public static double copy_m_proj { get; set; }
+        public static double copy_c_proj { get; set; }
+
     }
 
 
