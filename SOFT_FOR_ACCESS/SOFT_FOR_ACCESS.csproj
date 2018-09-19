@@ -136,6 +136,18 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="import_LLC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="import_LLC.Designer.cs">
+      <DependentUpon>import_LLC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="import_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="import_print.Designer.cs">
+      <DependentUpon>import_print.cs</DependentUpon>
+    </Compile>
     <Compile Include="print.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="import_LLC.resx">
+      <DependentUpon>import_LLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="import_print.resx">
+      <DependentUpon>import_print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="print.resx">
       <DependentUpon>print.cs</DependentUpon>

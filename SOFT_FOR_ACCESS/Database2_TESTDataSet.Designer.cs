@@ -15308,6 +15308,8 @@ namespace SOFT_FOR_ACCESS {
             
             private global::System.Data.DataColumn columnall_zatrati;
             
+            private global::System.Data.DataColumn columntype;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vivod_itogDataTable() {
@@ -15431,6 +15433,14 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn typeColumn {
+                get {
+                    return this.columntype;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15466,7 +15476,7 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vivod_itogRow Addvivod_itogRow(string model, string _kol_vo, string v_pech_mono, string v_pech_color, string arenda_month, string copy_mono, string copy_color, string zatrati_pech_p, string zatrati_arenda_p, string all_zatrati) {
+            public vivod_itogRow Addvivod_itogRow(string model, string _kol_vo, string v_pech_mono, string v_pech_color, string arenda_month, string copy_mono, string copy_color, string zatrati_pech_p, string zatrati_arenda_p, string all_zatrati, string type) {
                 vivod_itogRow rowvivod_itogRow = ((vivod_itogRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -15479,7 +15489,8 @@ namespace SOFT_FOR_ACCESS {
                         copy_color,
                         zatrati_pech_p,
                         zatrati_arenda_p,
-                        all_zatrati};
+                        all_zatrati,
+                        type};
                 rowvivod_itogRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvivod_itogRow);
                 return rowvivod_itogRow;
@@ -15520,6 +15531,7 @@ namespace SOFT_FOR_ACCESS {
                 this.columnzatrati_pech_p = base.Columns["zatrati_pech_p"];
                 this.columnzatrati_arenda_p = base.Columns["zatrati_arenda_p"];
                 this.columnall_zatrati = base.Columns["all_zatrati"];
+                this.columntype = base.Columns["type"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15549,6 +15561,8 @@ namespace SOFT_FOR_ACCESS {
                 base.Columns.Add(this.columnzatrati_arenda_p);
                 this.columnall_zatrati = new global::System.Data.DataColumn("all_zatrati", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnall_zatrati);
+                this.columntype = new global::System.Data.DataColumn("type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntype);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_vivod}, true));
                 this.columnid_vivod.AutoIncrement = true;
@@ -15566,6 +15580,7 @@ namespace SOFT_FOR_ACCESS {
                 this.columnzatrati_pech_p.MaxLength = 255;
                 this.columnzatrati_arenda_p.MaxLength = 255;
                 this.columnall_zatrati.MaxLength = 255;
+                this.columntype.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15725,6 +15740,8 @@ namespace SOFT_FOR_ACCESS {
             
             private global::System.Data.DataColumn columnall_zatrati;
             
+            private global::System.Data.DataColumn columntype;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public vivod_itog_2DataTable() {
@@ -15864,6 +15881,14 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn typeColumn {
+                get {
+                    return this.columntype;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15899,7 +15924,7 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public vivod_itog_2Row Addvivod_itog_2Row(string model, string _kol_vo, string v_pech_mono, string v_pech_color, string arenda_month, string copy_mono, string copy_color, string zatrati_pech_p, string zatrati_arenda_p, string LRF, string straxovka, string all_zatrati) {
+            public vivod_itog_2Row Addvivod_itog_2Row(string model, string _kol_vo, string v_pech_mono, string v_pech_color, string arenda_month, string copy_mono, string copy_color, string zatrati_pech_p, string zatrati_arenda_p, string LRF, string straxovka, string all_zatrati, string type) {
                 vivod_itog_2Row rowvivod_itog_2Row = ((vivod_itog_2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -15914,7 +15939,8 @@ namespace SOFT_FOR_ACCESS {
                         zatrati_arenda_p,
                         LRF,
                         straxovka,
-                        all_zatrati};
+                        all_zatrati,
+                        type};
                 rowvivod_itog_2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvivod_itog_2Row);
                 return rowvivod_itog_2Row;
@@ -15957,6 +15983,7 @@ namespace SOFT_FOR_ACCESS {
                 this.columnLRF = base.Columns["LRF"];
                 this.columnstraxovka = base.Columns["straxovka"];
                 this.columnall_zatrati = base.Columns["all_zatrati"];
+                this.columntype = base.Columns["type"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15990,6 +16017,8 @@ namespace SOFT_FOR_ACCESS {
                 base.Columns.Add(this.columnstraxovka);
                 this.columnall_zatrati = new global::System.Data.DataColumn("all_zatrati", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnall_zatrati);
+                this.columntype = new global::System.Data.DataColumn("type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntype);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_vivod}, true));
                 this.columnid_vivod.AutoIncrement = true;
@@ -16009,6 +16038,7 @@ namespace SOFT_FOR_ACCESS {
                 this.columnLRF.MaxLength = 255;
                 this.columnstraxovka.MaxLength = 255;
                 this.columnall_zatrati.MaxLength = 255;
+                this.columntype.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24867,6 +24897,22 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string type {
+                get {
+                    try {
+                        return ((string)(this[this.tablevivod_itog.typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'type\' в таблице \'vivod_itog\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevivod_itog.typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsmodelNull() {
                 return this.IsNull(this.tablevivod_itog.modelColumn);
             }
@@ -24983,6 +25029,18 @@ namespace SOFT_FOR_ACCESS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setall_zatratiNull() {
                 this[this.tablevivod_itog.all_zatratiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstypeNull() {
+                return this.IsNull(this.tablevivod_itog.typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettypeNull() {
+                this[this.tablevivod_itog.typeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -25205,6 +25263,22 @@ namespace SOFT_FOR_ACCESS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string type {
+                get {
+                    try {
+                        return ((string)(this[this.tablevivod_itog_2.typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'type\' в таблице \'vivod_itog_2\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevivod_itog_2.typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsmodelNull() {
                 return this.IsNull(this.tablevivod_itog_2.modelColumn);
             }
@@ -25345,6 +25419,18 @@ namespace SOFT_FOR_ACCESS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setall_zatratiNull() {
                 this[this.tablevivod_itog_2.all_zatratiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstypeNull() {
+                return this.IsNull(this.tablevivod_itog_2.typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettypeNull() {
+                this[this.tablevivod_itog_2.typeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -40977,12 +41063,13 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("zatrati_pech_p", "zatrati_pech_p");
             tableMapping.ColumnMappings.Add("zatrati_arenda_p", "zatrati_arenda_p");
             tableMapping.ColumnMappings.Add("all_zatrati", "all_zatrati");
+            tableMapping.ColumnMappings.Add("type", "type");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `vivod_itog` (`model`, `kol-vo`, `v_pech_mono`, `v_pech_color`, `aren" +
                 "da_month`, `copy_mono`, `copy_color`, `zatrati_pech_p`, `zatrati_arenda_p`, `all" +
-                "_zatrati`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "_zatrati`, `type`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("model", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "model", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("kol-vo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "kol-vo", global::System.Data.DataRowVersion.Current, false, null));
@@ -40994,6 +41081,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("zatrati_pech_p", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "zatrati_pech_p", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("zatrati_arenda_p", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "zatrati_arenda_p", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("all_zatrati", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "all_zatrati", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -41010,7 +41098,8 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_vivod, model, [kol-vo], v_pech_mono, v_pech_color, arenda_month, copy_m" +
-                "ono, copy_color, zatrati_pech_p, zatrati_arenda_p, all_zatrati FROM vivod_itog";
+                "ono, copy_color, zatrati_pech_p, zatrati_arenda_p, all_zatrati, type FROM vivod_" +
+                "itog";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -41071,7 +41160,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string model, string _kol_vo, string v_pech_mono, string v_pech_color, string arenda_month, string copy_mono, string copy_color, string zatrati_pech_p, string zatrati_arenda_p, string all_zatrati) {
+        public virtual int Insert(string model, string _kol_vo, string v_pech_mono, string v_pech_color, string arenda_month, string copy_mono, string copy_color, string zatrati_pech_p, string zatrati_arenda_p, string all_zatrati, string type) {
             if ((model == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -41131,6 +41220,12 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = ((string)(all_zatrati));
+            }
+            if ((type == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(type));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -41283,12 +41378,14 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("LRF", "LRF");
             tableMapping.ColumnMappings.Add("straxovka", "straxovka");
             tableMapping.ColumnMappings.Add("all_zatrati", "all_zatrati");
+            tableMapping.ColumnMappings.Add("type", "type");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `vivod_itog_2` (`model`, `kol-vo`, `v_pech_mono`, `v_pech_color`, `ar" +
                 "enda_month`, `copy_mono`, `copy_color`, `zatrati_pech_p`, `zatrati_arenda_p`, `L" +
-                "RF`, `straxovka`, `all_zatrati`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "RF`, `straxovka`, `all_zatrati`, `type`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?" +
+                ", ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("model", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "model", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("kol-vo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "kol-vo", global::System.Data.DataRowVersion.Current, false, null));
@@ -41302,6 +41399,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("LRF", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "LRF", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("straxovka", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "straxovka", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("all_zatrati", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "all_zatrati", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("type", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "type", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -41318,8 +41416,8 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_vivod, model, [kol-vo], v_pech_mono, v_pech_color, arenda_month, copy_m" +
-                "ono, copy_color, zatrati_pech_p, zatrati_arenda_p, LRF, straxovka, all_zatrati F" +
-                "ROM vivod_itog_2";
+                "ono, copy_color, zatrati_pech_p, zatrati_arenda_p, LRF, straxovka, all_zatrati, " +
+                "type FROM vivod_itog_2";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -41380,7 +41478,7 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string model, string _kol_vo, string v_pech_mono, string v_pech_color, string arenda_month, string copy_mono, string copy_color, string zatrati_pech_p, string zatrati_arenda_p, string LRF, string straxovka, string all_zatrati) {
+        public virtual int Insert(string model, string _kol_vo, string v_pech_mono, string v_pech_color, string arenda_month, string copy_mono, string copy_color, string zatrati_pech_p, string zatrati_arenda_p, string LRF, string straxovka, string all_zatrati, string type) {
             if ((model == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -41452,6 +41550,12 @@ namespace SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = ((string)(all_zatrati));
+            }
+            if ((type == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(type));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

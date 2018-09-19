@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //------------------------------------
-
 //using System;
 //using System.Collections.Generic;
 //using System.Linq;
@@ -111,8 +110,11 @@ namespace SOFT_FOR_ACCESS
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
             this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
 
+            //trashDataGridView.Rows.Remove(trashDataGridView.Rows[0]);
+            //this.trashTableAdapter.Update(this.database2_TESTDataSet.Trash);
+
             DateTime curDate = DateTime.Now;
-            DateTime date1 = new DateTime(2018, 9, 19);
+            DateTime date1 = new DateTime(2018, 10, 19);
             if (curDate > date1)
             {
                 MessageBox.Show("БЕТА-тест окончен!" + "\n Благодарим за участие в тестировании", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -664,7 +666,17 @@ namespace SOFT_FOR_ACCESS
                 //this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "кол-во устройств", "объём печати моно в мес", "аренда в месяц", "цена копии моно", "затраты на печать проект");
 
                 if (radioButton13.Checked == true)          //НАЦЕНКИ
-                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, quantity_textBox.Text, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, Convert.ToString(zatrati_print_nac) , arenda_proj, (zatrati_print_nac + arenda_proj) );
+                {
+                    this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, quantity_textBox.Text, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, Convert.ToString(zatrati_print_nac), arenda_proj, (zatrati_print_nac + arenda_proj), vibor1DataGridView[1, 0].Value);
+                    for (int i = 0; i < vibor1DataGridView.RowCount - 1; i++)
+                    {
+                        if (Convert.ToString(vibor1DataGridView[1, i].Value) == "accessory")
+                        {
+
+                            this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, i].Value, vibor1DataGridView[4, i].Value, 0, 0, 0, 0, 0, 0, vibor1DataGridView[3, i].Value, 0, vibor1DataGridView[1, i].Value);   //, 0, 0, 0, 0, 0, 0, 0
+                        }
+                    }
+                }
                 else
                     this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, "тест", cost_one_m, cost_one_c, "test", arenda_proj, cost1 + cost2 + arenda_proj);
 
@@ -768,16 +780,6 @@ namespace SOFT_FOR_ACCESS
             Notes[1].n6 = Convert.ToString(comboBox7.Text);
             Notes[1].n7 = Convert.ToString(more_service);
             Notes[1].n8 = Convert.ToString(comboBox8.Text);
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1087,97 +1089,6 @@ namespace SOFT_FOR_ACCESS
 
 
 
-        private void button16_Click(object sender, EventArgs e)
-        {
-            //ExportToExcel(1,"2","3",4,5,6,7,8,9);
-        }
-
-        private void ExportToExcel(double kol_vo, string v_copy_m, string v_copy_c, double arenda_mes, double cost_one_copy_m, double cost_one_c, double cost_all_copy_project, double cost_arenda_project, double cost_all_project)
-        {
-            Excel.Application exApp = new Excel.Application();
-            exApp.Workbooks.Add();
-            Worksheet workSheet = (Worksheet)exApp.ActiveSheet;
-            workSheet.Cells[1, 1] = "ID";
-            workSheet.Cells[1, 2] = "Type";
-            workSheet.Cells[1, 3] = "Name";
-            workSheet.Cells[1, 4] = "Duration";
-            workSheet.Cells[1, 5] = "service1";
-            workSheet.Cells[1, 6] = "service2";
-            workSheet.Cells[1, 7] = "service3";
-            workSheet.Cells[1, 8] = "service4";
-            workSheet.Cells[1, 9] = "kol-vo_mono_for_proj";
-            workSheet.Cells[1, 10] = "kol-vo_color_for_proj";
-            workSheet.Cells[1, 11] = "cost_mono_for_proj";
-            workSheet.Cells[1, 12] = "cost_color_for_proj";
-            workSheet.Cells[1, 13] = "kol-vo_mono";
-            workSheet.Cells[1, 14] = "kol-vo_color";
-
-            //
-
-            int rowExcel = 2; //начать со второй строки.
-                              //Worksheet workSheet = (Worksheet)exApp.ActiveSheet;
-                              //while (workSheet.Cells[rowExcel, 1] != "---")
-                              //rowExcel++;
-
-            //rowExcel = workSheet.Cells.Find("*", workSheet.Cells[1, 1], Excel.XlFindLookIn.xlFormulas, Excel.XlLookAt.xlPart, Excel.XlSearchOrder.xlByRows, Excel.XlSearchDirection.xlPrevious).Row + 1;
-
-
-            for (int i = 0; i < vibor1DataGridView.Rows.Count; i++)
-            {
-                //заполняем строку
-                workSheet.Cells[rowExcel, 1] = vibor1DataGridView[0, i].Value;
-                workSheet.Cells[rowExcel, 2] = vibor1DataGridView[1, i].Value;
-                workSheet.Cells[rowExcel, 3] = vibor1DataGridView[2, i].Value;
-                workSheet.Cells[rowExcel, 4] = vibor1DataGridView[3, i].Value;
-                workSheet.Cells[rowExcel, 5] = vibor1DataGridView[4, i].Value;
-                workSheet.Cells[rowExcel, 6] = vibor1DataGridView[5, i].Value;
-                workSheet.Cells[rowExcel, 7] = vibor1DataGridView[6, i].Value;
-                workSheet.Cells[rowExcel, 8] = vibor1DataGridView[7, i].Value;
-                workSheet.Cells[rowExcel, 9] = vibor1DataGridView[8, i].Value;
-                workSheet.Cells[rowExcel, 10] = vibor1DataGridView[9, i].Value;
-                workSheet.Cells[rowExcel, 11] = vibor1DataGridView[10, i].Value;
-                workSheet.Cells[rowExcel, 12] = vibor1DataGridView[11, i].Value;
-                workSheet.Cells[rowExcel, 13] = vibor1DataGridView[12, i].Value;
-                workSheet.Cells[rowExcel, 14] = vibor1DataGridView[13, i].Value;
-                workSheet.Cells[rowExcel, 15] = vibor1DataGridView[14, i].Value;
-                // workSheet.Cells[rowExcel, 6] = care_packDataGridView[6, i].Value;
-                //workSheet.Cells[rowExcel, "C"] = care_packDataGridView[2, i].Value;
-                ++rowExcel;
-            }
-
-            //MessageBox.Show("Аренда= " + cost_print + " + " + trash_2 + " = " + last_cost + "\n kol-vo mono= " + qty1 + "\n cost_mono= " + cost1 + "\n kol-vo color= " + qty2 + "\n cost_color= " + cost2 + "\n cost_one_mono= " + cost_one_m + "\n cost_one_color= " + cost_one_c, "Рассчитываем...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-            workSheet.Cells[rowExcel, 1] = "кол-во устройств";
-            workSheet.Cells[rowExcel, 2] = "объём печати моно в мес";
-            workSheet.Cells[rowExcel, 3] = "объём печати цвет в мес";
-            workSheet.Cells[rowExcel, 4] = "аренда в месяц";
-            workSheet.Cells[rowExcel, 5] = "цена копии моно";
-            workSheet.Cells[rowExcel, 6] = "цена копии цвет";
-            workSheet.Cells[rowExcel, 7] = "затраты на печать проект";
-            workSheet.Cells[rowExcel, 8] = "затраты на аренду проект";
-            workSheet.Cells[rowExcel, 9] = "всего затрат";
-
-            workSheet.Cells[rowExcel + 1, 1] = kol_vo;
-            workSheet.Cells[rowExcel + 1, 2] = v_copy_m;
-            workSheet.Cells[rowExcel + 1, 3] = v_copy_c;
-            workSheet.Cells[rowExcel + 1, 4] = arenda_mes;
-            workSheet.Cells[rowExcel + 1, 5] = cost_one_copy_m;
-            workSheet.Cells[rowExcel + 1, 6] = cost_one_c;
-            workSheet.Cells[rowExcel + 1, 7] = cost_all_copy_project;
-            workSheet.Cells[rowExcel + 1, 8] = cost_arenda_project;
-            workSheet.Cells[rowExcel + 1, 9] = cost_all_project;
-
-
-
-            string pathToXmlFile;
-            pathToXmlFile = Environment.CurrentDirectory + "\\" + "MyFile.xls";
-            workSheet.SaveAs(pathToXmlFile);
-
-            exApp.Quit();
-
-        }
-
-
 
         static IEnumerable<Metric> EnumerateMetrics(string xlsxpath)
         {
@@ -1203,16 +1114,6 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-
-
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            var metrics = EnumerateMetrics("Data.xlsx");
-            //foreach (var m in metrics)
-               // Console.WriteLine("Альфа: {0}; Бета: {1}; Гамма: {2}; Дельта: {3}", m.Alpha, m.Beta, m.Gamma, m.Delta);
-            //Console.ReadKey();
-        }
 
         private void printerDataGridView_Click(object sender, EventArgs e)
         {
@@ -1358,10 +1259,6 @@ namespace SOFT_FOR_ACCESS
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
 
@@ -1393,108 +1290,6 @@ namespace SOFT_FOR_ACCESS
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
-
-
-            //PdfWriter.GetInstance(doc, new FileStream(path + "/Doc2.pdf", FileMode.Create));
-
-
-            // var doc = new Document();
-            var doc = new Document(PageSize.A4, 0, 0, 20, 20);
-            doc.SetPageSize(PageSize.A4.Rotate());      //albom arientation
-            //doc.SetPageSize(PageSize.A4, 0, 0, 0, 0);
-            PdfWriter.GetInstance(doc, new FileStream(System.Windows.Forms.Application.StartupPath + @"\Document.pdf", FileMode.Create));
-            doc.Open();
-            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(System.Windows.Forms.Application.StartupPath + @"/123.jpg");
-            jpg.Alignment = Element.ALIGN_CENTER;
-            doc.Add(jpg);
-
-
-            PdfPTable table = new PdfPTable(10);     //col-vo stolbov
-            PdfPCell cell = new PdfPCell(new Phrase("type_dev", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 16,  iTextSharp.text.Font.NORMAL, new BaseColor(Color.DarkBlue))));
-
-            //cell.BackgroundColor = new BaseColor(Color.Red);
-            //cell.Padding = 5;               //visota in pix
-            //cell.Colspan = 4;               //shirina in cells
-            //cell.HorizontalAlignment = Element.ALIGN_CENTER;
-            //table.TotalWidth = 800;
-            //cell.MinimumHeight = LAST_CELL_HEIGHT;
-            //table.AddCell(cell);        //vstavili 1 simple_table
-            float[] widths = new float[] { 30, 10, 10, 10, 10, 10, 10, 10, 10, 10  };
-            table.SetWidths(widths);
-
-
-            table.AddCell("type_dev");
-            table.AddCell("kol-vo");
-            table.AddCell("v_pech_mono");
-            table.AddCell("v_pech_color");
-            table.AddCell("abon in month");
-            table.AddCell("cost mono copy");
-            table.AddCell("cost color copy");
-            table.AddCell("zatrati pech_p");
-            table.AddCell("zatrati arend_p");
-            table.AddCell("all cost");
-
-
-            //Math.Round(Convert.ToDouble(vivod_itogDataGridView[1, 0].Value), 2);
-
-            for (int i = 0; i < vivod_itogDataGridView.RowCount - 1; i++)
-            {
-
-                table.AddCell(Convert.ToString(vivod_itogDataGridView[1, i].Value));
-                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[2, i].Value), 0)));
-                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[3, i].Value), 0)));
-                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[4, i].Value), 0)));
-                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[5, i].Value), 0)));
-                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[6, i].Value), 2)));
-                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[7, i].Value), 2)));
-                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[8, i].Value), 0)));
-                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[9, i].Value), 0)));
-                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[10, i].Value), 0)));
-
-            }
-
-            //jpg = iTextSharp.text.Image.GetInstance(System.Windows.Forms.Application.StartupPath + @"/left.jpg");
-            //cell = new PdfPCell(jpg);
-            //cell.Padding = 5;
-            //cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-            //table.AddCell(cell);
-            //cell = new PdfPCell(new Phrase("Col 2 Row 3"));
-            //cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
-            //cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-            //table.AddCell(cell);
-            //jpg = iTextSharp.text.Image.GetInstance(System.Windows.Forms.Application.StartupPath + @"/right.jpg");
-            //cell = new PdfPCell(jpg);
-            //cell.Padding = 5;
-            //cell.HorizontalAlignment = PdfPCell.ALIGN_RIGHT;
-            //table.AddCell(cell);
-            doc.Add(table);
-            doc.Close();
-
-
-
-
-
-            // Document document = new Document();
-            //PdfCopy copy = new PdfSmartCopy(document, new FileStream("1.pdf", FileMode.Create));
-            //document.Open();
-            //PdfReader reader;
-            //String line = readLine();
-            //// loop over readers
-            //// add the PDF to PdfCopy
-            //reader = new PdfReader(baos.toByteArray());
-            //copy.addDocument(reader);
-            //reader.close();
-            //// end loop
-            //document.close();
-
-            AppendToDocument("2.pdf", "Document.pdf", "TEST.pdf");
-            AppendToDocument("TEST.pdf", "3.pdf", "Commercial_offer.pdf");
-
-
-            MessageBox.Show("commercial offer was created!", "Good", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-            
         }
 
 
@@ -1559,6 +1354,8 @@ namespace SOFT_FOR_ACCESS
             AppendToDocument("TEST.pdf", "3.pdf", "kp.pdf");
         }
 
+
+
         private void button5_Click_1(object sender, EventArgs e)
         {
             //OpenFileDialog opf = new OpenFileDialog();
@@ -1597,45 +1394,33 @@ namespace SOFT_FOR_ACCESS
                 ObjWorkSheet = ObjExcel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
                 rg = null;
 
-
                 //------------------------------
 
+                this.database2_TESTDataSet.Care_pack.Rows.Add(ObjWorkSheet.Cells[0, 1], ObjWorkSheet.Cells[1, 1], ObjWorkSheet.Cells[2, 1], ObjWorkSheet.Cells[3, 1], ObjWorkSheet.Cells[4, 1]);
 
-
-
-               // this.database2_TESTDataSet.Care_pack.Rows.Add(ObjWorkSheet.Cells[0, 1], ObjWorkSheet.Cells[1, 1], ObjWorkSheet.Cells[2, 1], ObjWorkSheet.Cells[3, 1], ObjWorkSheet.Cells[4, 1]);
-
-               // this.database2_TESTDataSet.Care_pack.
-
-
-
-
-
-
-
-
+                //this.database2_TESTDataSet.Care_pack.
 
                 //---------------------------------
 
-                //Int32 row = 1;
-                ////printerDataGridView.Rows.Clear();
-                //List<String> arr = new List<string>();
-                //while (ObjWorkSheet.get_Range("a" + row, "a" + row).Value != null)
-                //{
-                //    rg = ObjWorkSheet.get_Range("a" + row, "u" + row);
-                //    foreach (Microsoft.Office.Interop.Excel.Range item in rg)
-                //    {
-                //        try
-                //        {
-                //            arr.Add(item.Value.ToString().Trim());
-                //        }
-                //        catch { arr.Add(""); }
-                //    }
-                //    printerDataGridView.Rows.Add(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]);
-                //    arr.Clear();
-                //    row++;
-                //}
-                //MessageBox.Show("Файл успешно считан!", "Считывание файла", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Int32 row = 1;
+                //printerDataGridView.Rows.Clear();
+                List<String> arr = new List<string>();
+                while (ObjWorkSheet.get_Range("a" + row, "a" + row).Value != null)
+                {
+                    rg = ObjWorkSheet.get_Range("a" + row, "u" + row);
+                    foreach (Microsoft.Office.Interop.Excel.Range item in rg)
+                    {
+                        try
+                        {
+                            arr.Add(item.Value.ToString().Trim());
+                        }
+                        catch { arr.Add(""); }
+                    }
+                    printerDataGridView.Rows.Add(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]);
+                    arr.Clear();
+                    row++;
+                }
+                MessageBox.Show("Файл успешно считан!", "Считывание файла", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex) { MessageBox.Show("Ошибка: " + ex.Message, "Ошибка при считывании excel файла", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             {
@@ -1651,34 +1436,6 @@ namespace SOFT_FOR_ACCESS
             ObjWorkBook = null;
             ObjWorkSheet = null;
             ObjExcel = null;
-
-
-
-        }
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-            Data.Value1 = comboBox3.Text;
-            Data.Value2 = comboBox4.Text;
-            vote_sup vote_sup = new vote_sup();
-            vote_sup.ShowDialog();
-
-
-
-
-
-            //tabControl1.SelectTab(2);
-            //tab_ch = true;
-
-
-
-            //this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-
-
-
-
-
-
         }
 
         
@@ -1726,7 +1483,161 @@ namespace SOFT_FOR_ACCESS
         {
 
         }
+
+        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //PdfWriter.GetInstance(doc, new FileStream(path + "/Doc2.pdf", FileMode.Create));
+            string myFont = @"C:\\Windows\\Fonts\\arial.ttf";
+            iTextSharp.text.pdf.BaseFont bfR;
+            bfR = iTextSharp.text.pdf.BaseFont.CreateFont(myFont, iTextSharp.text.pdf.BaseFont.IDENTITY_H, iTextSharp.text.pdf.BaseFont.EMBEDDED);
+            // var doc = new Document();
+            //var doc = new Document(PageSize.A4, 0, 0, 20, 20);
+            //var doc = new Document( 0, 0, 20, 20);
+            var pgSize = new iTextSharp.text.Rectangle(960, 540);
+            var doc = new iTextSharp.text.Document(pgSize, -70, -70, 0, 0);
+            //doc.SetPageSize(PageSize.A4.Rotate());      //albom arientation
+            //doc.SetPageSize(PageSize.A4, 0, 0, 0, 0);
+            PdfWriter.GetInstance(doc, new FileStream(System.Windows.Forms.Application.StartupPath + @"\Document.pdf", FileMode.Create));
+            doc.Open();
+            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(System.Windows.Forms.Application.StartupPath + @"/prim_ras.jpg");
+            jpg.Alignment = Element.ALIGN_CENTER;
+            doc.Add(jpg);
+            PdfPTable table = new PdfPTable(12);     //col-vo stolbov
+            PdfPCell cell01 = new PdfPCell(new Phrase("№", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell0 = new PdfPCell(new Phrase("Тип", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell1 = new PdfPCell(new Phrase("Название", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell2 = new PdfPCell(new Phrase("Кол-во", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell3 = new PdfPCell(new Phrase("V моно печати", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell4 = new PdfPCell(new Phrase("V цвет печати", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell5 = new PdfPCell(new Phrase("Абон в месяц", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell6 = new PdfPCell(new Phrase("Цена моно копии", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell7 = new PdfPCell(new Phrase("Цена цвет копии", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell8 = new PdfPCell(new Phrase("Затраты на печать", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell9 = new PdfPCell(new Phrase("Затраты на аренду", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell10 = new PdfPCell(new Phrase("Все затраты", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            //iTextSharp.text.Font fntHead = new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, clrBlack);
+            //cell.BackgroundColor = new BaseColor(Color.Red);
+            //cell.Padding = 5;               //visota in pix
+            //cell.Colspan = 4;               //shirina in cells
+            //cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            //table.TotalWidth = 800;
+            //cell.MinimumHeight = LAST_CELL_HEIGHT;
+            //table.AddCell(cell);        //vstavili 1 simple_table
+            float[] widths = new float[] { 4, 10, 30, 7, 10, 10, 10, 10, 10, 10, 10, 10 };
+            table.SetWidths(widths);
+
+            table.AddCell(cell01);
+            table.AddCell(cell0);
+            table.AddCell(cell1);
+            table.AddCell(cell2);
+            table.AddCell(cell3);
+            table.AddCell(cell4);
+            table.AddCell(cell5);
+            table.AddCell(cell6);
+            table.AddCell(cell7);
+            table.AddCell(cell8);
+            table.AddCell(cell9);
+            table.AddCell(cell10);
+            //table.AddCell("type_dev");
+            //table.AddCell("kol-vo");
+            //table.AddCell("v_pech_mono");
+            //table.AddCell("v_pech_color");
+            //table.AddCell("abon in month");
+            //table.AddCell("cost mono copy");
+            //table.AddCell("cost color copy");
+            //table.AddCell("zatrati pech_p");
+            //table.AddCell("zatrati arend_p");
+            //table.AddCell("all cost");
+
+            //Math.Round(Convert.ToDouble(vivod_itogDataGridView[1, 0].Value), 2);
+            int k = 1;
+            for (int i = 0; i < vivod_itogDataGridView.RowCount - 1; i++)
+            {
+                if (Convert.ToString(vivod_itogDataGridView[1, i].Value) == "Printer" && i > 0)
+                {
+                    table.AddCell("");
+                    table.AddCell("---");
+                    table.AddCell("---");
+                    table.AddCell("---");
+                    table.AddCell("---");
+                    table.AddCell("---");
+                    table.AddCell("---");
+                    table.AddCell("---");
+                    table.AddCell("---");
+                    table.AddCell("---");
+                    table.AddCell("---");
+                    table.AddCell("---");
+                }
+
+                if (Convert.ToString(vivod_itogDataGridView[1, i].Value) == "Printer")
+                    table.AddCell(Convert.ToString(k++));
+                else
+                    table.AddCell("");
+
+                table.AddCell(Convert.ToString(vivod_itogDataGridView[1, i].Value));
+                table.AddCell(Convert.ToString(vivod_itogDataGridView[2, i].Value));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[3, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[4, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[5, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[6, i].Value), 2)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[7, i].Value), 2)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[8, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[9, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[10, i].Value), 0)));
+                table.AddCell(Convert.ToString(Math.Round(Convert.ToDouble(vivod_itogDataGridView[11, i].Value), 0)));
+            }
+
+            //jpg = iTextSharp.text.Image.GetInstance(System.Windows.Forms.Application.StartupPath + @"/left.jpg");
+            //cell = new PdfPCell(jpg);
+            //cell.Padding = 5;
+            //cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+            //table.AddCell(cell);
+            //cell = new PdfPCell(new Phrase("Col 2 Row 3"));
+            //cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
+            //cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+            //table.AddCell(cell);
+            //jpg = iTextSharp.text.Image.GetInstance(System.Windows.Forms.Application.StartupPath + @"/right.jpg");
+            //cell = new PdfPCell(jpg);
+            //cell.Padding = 5;
+            //cell.HorizontalAlignment = PdfPCell.ALIGN_RIGHT;
+            //table.AddCell(cell);
+            doc.Add(table);
+            doc.Close();
+
+            // Document document = new Document();
+            //PdfCopy copy = new PdfSmartCopy(document, new FileStream("1.pdf", FileMode.Create));
+            //document.Open();
+            //PdfReader reader;
+            //String line = readLine();
+            //// loop over readers
+            //// add the PDF to PdfCopy
+            //reader = new PdfReader(baos.toByteArray());
+            //copy.addDocument(reader);
+            //reader.close();
+            //// end loop
+            //document.close();
+
+            AppendToDocument("2.pdf", "Document.pdf", "TEST.pdf");
+            AppendToDocument("TEST.pdf", "3.pdf", "Commercial_offer.pdf");
+
+            MessageBox.Show("commercial offer was created!", "Good", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            import_print import_print = new import_print();
+            import_print.Show();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            import_LLC import_LLC = new import_LLC();
+            import_LLC.Show();
+        }
     }
+
 
 
 
