@@ -42,7 +42,7 @@ namespace SOFT_FOR_ACCESS
         {
             try
             {
-                for (int i = 0; i < supplyDataGridView.RowCount - 1; i++)
+                for (int i = 0; i <= supplyDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(supplyDataGridView[0, i].Value) == textBox_id_sup.Text)
                     {
@@ -86,12 +86,12 @@ namespace SOFT_FOR_ACCESS
             try
             {
                 double ch = 0;
-                for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+                for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(printerDataGridView[9, i].Value) == "True")
                     {
                         ch = 0;
-                        for (int j = 0; j < dev2sup_ЗапросDataGridView.RowCount - 1; j++)
+                        for (int j = 0; j <= dev2sup_ЗапросDataGridView.RowCount - 1; j++)
                         {
                             if (Convert.ToString(dev2sup_ЗапросDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2sup_ЗапросDataGridView[2, j].Value) == comboBox1.Text)
                                 ch = 1;
@@ -107,7 +107,7 @@ namespace SOFT_FOR_ACCESS
                     }
                     else
                     {
-                        for (int j = 0; j < dev2supDataGridView.RowCount - 1; j++)
+                        for (int j = 0; j <= dev2supDataGridView.RowCount - 1; j++)
                         {
                             if (Convert.ToString(dev2supDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2supDataGridView[2, j].Value) == comboBox1.Text)
                             {
@@ -139,10 +139,10 @@ namespace SOFT_FOR_ACCESS
             this.dev2sup_ЗапросBindingSource.Filter = "[id_sup] LIKE'" + comboBox1.Text + "'";
 
 
-            for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
             {
                 printerDataGridView[9, i].Value = "False";
-                for (int j = 0; j < dev2sup_ЗапросDataGridView.RowCount - 1; j++)
+                for (int j = 0; j <= dev2sup_ЗапросDataGridView.RowCount - 1; j++)
                 {
 
                     if (Convert.ToString(printerDataGridView[0, i].Value) == Convert.ToString(dev2sup_ЗапросDataGridView[1, j].Value))
@@ -154,7 +154,7 @@ namespace SOFT_FOR_ACCESS
 
         private void textBox_id_sup_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < supplyDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= supplyDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(supplyDataGridView[0, i].Value) == textBox_id_sup.Text)
                 {
@@ -220,6 +220,11 @@ namespace SOFT_FOR_ACCESS
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             load_sup_table();
+        }
+
+        private void connect_sup_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,7 +47,7 @@ namespace SOFT_FOR_ACCESS
         {
             try
             {
-                for (int i = 0; i < care_packDataGridView.RowCount - 1; i++)
+                for (int i = 0; i <= care_packDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(care_packDataGridView[0, i].Value) == textBox_id_gar.Text)
                     {
@@ -82,7 +82,7 @@ namespace SOFT_FOR_ACCESS
             try
             {
                 double ch = 0;
-                for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+                for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(printerDataGridView[9, i].Value) == "True")
                     {
@@ -103,7 +103,7 @@ namespace SOFT_FOR_ACCESS
                     }
                     else
                     {
-                        for (int j = 0; j < dev2careDataGridView.RowCount - 1; j++)
+                        for (int j = 0; j <= dev2careDataGridView.RowCount - 1; j++)
                         {
                             if (Convert.ToString(dev2careDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2careDataGridView[2, j].Value) == comboBox1.Text)
                             {
@@ -136,10 +136,10 @@ namespace SOFT_FOR_ACCESS
             this.dev2care_ЗапросBindingSource.Filter = "[Care_pack_id_gar] LIKE'" + comboBox1.Text + "'";
 
 
-            for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
             {
                 printerDataGridView[9, i].Value = "False";
-                for (int j = 0; j < dev2care_ЗапросDataGridView.RowCount - 1; j++)
+                for (int j = 0; j <= dev2care_ЗапросDataGridView.RowCount - 1; j++)
                 {
 
                     if (Convert.ToString(printerDataGridView[0, i].Value) == Convert.ToString(dev2care_ЗапросDataGridView[7, j].Value))
@@ -151,7 +151,7 @@ namespace SOFT_FOR_ACCESS
 
         private void textBox_id_gar_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < care_packDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= care_packDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(care_packDataGridView[0, i].Value) == textBox_id_gar.Text)
                 {

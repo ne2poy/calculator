@@ -50,6 +50,7 @@
             this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printerTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.PrinterTableAdapter();
             this.tableAdapterManager = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.TableAdapterManager();
+            this.button1 = new System.Windows.Forms.Button();
             this.printerDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +64,6 @@
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerDataGridView)).BeginInit();
@@ -82,15 +82,15 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(987, 11);
+            this.label36.Location = new System.Drawing.Point(999, 11);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(50, 13);
+            this.label36.Size = new System.Drawing.Size(55, 13);
             this.label36.TabIndex = 55;
-            this.label36.Text = "nagryzka";
+            this.label36.Text = "Нагрузка";
             // 
             // textBox_nagryzka
             // 
-            this.textBox_nagryzka.Location = new System.Drawing.Point(954, 27);
+            this.textBox_nagryzka.Location = new System.Drawing.Point(966, 27);
             this.textBox_nagryzka.Name = "textBox_nagryzka";
             this.textBox_nagryzka.Size = new System.Drawing.Size(104, 20);
             this.textBox_nagryzka.TabIndex = 54;
@@ -101,7 +101,7 @@
             this.textBox_tip_print.Items.AddRange(new object[] {
             "color",
             "mono"});
-            this.textBox_tip_print.Location = new System.Drawing.Point(838, 27);
+            this.textBox_tip_print.Location = new System.Drawing.Point(850, 27);
             this.textBox_tip_print.Name = "textBox_tip_print";
             this.textBox_tip_print.Size = new System.Drawing.Size(109, 21);
             this.textBox_tip_print.TabIndex = 53;
@@ -109,24 +109,24 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(871, 12);
+            this.label35.Location = new System.Drawing.Point(883, 12);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(27, 13);
+            this.label35.Size = new System.Drawing.Size(26, 13);
             this.label35.TabIndex = 52;
-            this.label35.Text = "type";
+            this.label35.Text = "Тип";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(761, 12);
+            this.label34.Location = new System.Drawing.Point(773, 12);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(27, 13);
+            this.label34.Size = new System.Drawing.Size(33, 13);
             this.label34.TabIndex = 51;
-            this.label34.Text = "cost";
+            this.label34.Text = "Цена";
             // 
             // textBox_cost
             // 
-            this.textBox_cost.Location = new System.Drawing.Point(728, 27);
+            this.textBox_cost.Location = new System.Drawing.Point(740, 27);
             this.textBox_cost.Name = "textBox_cost";
             this.textBox_cost.Size = new System.Drawing.Size(104, 20);
             this.textBox_cost.TabIndex = 50;
@@ -134,15 +134,15 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(651, 12);
+            this.label33.Location = new System.Drawing.Point(663, 12);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(36, 13);
+            this.label33.Size = new System.Drawing.Size(55, 13);
             this.label33.TabIndex = 49;
-            this.label33.Text = "speed";
+            this.label33.Text = "Скорость";
             // 
             // textBox_speed
             // 
-            this.textBox_speed.Location = new System.Drawing.Point(618, 27);
+            this.textBox_speed.Location = new System.Drawing.Point(630, 27);
             this.textBox_speed.Name = "textBox_speed";
             this.textBox_speed.Size = new System.Drawing.Size(104, 20);
             this.textBox_speed.TabIndex = 48;
@@ -150,15 +150,15 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(541, 12);
+            this.label32.Location = new System.Drawing.Point(553, 12);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(36, 13);
+            this.label32.Size = new System.Drawing.Size(49, 13);
             this.label32.TabIndex = 47;
-            this.label32.Text = "format";
+            this.label32.Text = "Формат";
             // 
             // textBox_format
             // 
-            this.textBox_format.Location = new System.Drawing.Point(508, 27);
+            this.textBox_format.Location = new System.Drawing.Point(520, 27);
             this.textBox_format.Name = "textBox_format";
             this.textBox_format.Size = new System.Drawing.Size(104, 20);
             this.textBox_format.TabIndex = 46;
@@ -166,16 +166,16 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(279, 11);
+            this.label31.Location = new System.Drawing.Point(291, 11);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(33, 13);
+            this.label31.Size = new System.Drawing.Size(57, 13);
             this.label31.TabIndex = 45;
-            this.label31.Text = "name";
+            this.label31.Text = "Название";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(89, 11);
+            this.label30.Location = new System.Drawing.Point(101, 11);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(15, 13);
             this.label30.TabIndex = 44;
@@ -183,7 +183,7 @@
             // 
             // textBox_name_dev
             // 
-            this.textBox_name_dev.Location = new System.Drawing.Point(160, 27);
+            this.textBox_name_dev.Location = new System.Drawing.Point(172, 27);
             this.textBox_name_dev.Name = "textBox_name_dev";
             this.textBox_name_dev.Size = new System.Drawing.Size(342, 20);
             this.textBox_name_dev.TabIndex = 43;
@@ -191,15 +191,15 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(13, 30);
+            this.label29.Location = new System.Drawing.Point(6, 30);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(30, 13);
+            this.label29.Size = new System.Drawing.Size(53, 13);
             this.label29.TabIndex = 42;
-            this.label29.Text = "print:";
+            this.label29.Text = "Принтер:";
             // 
             // textBox_id_dev
             // 
-            this.textBox_id_dev.Location = new System.Drawing.Point(49, 27);
+            this.textBox_id_dev.Location = new System.Drawing.Point(61, 27);
             this.textBox_id_dev.Name = "textBox_id_dev";
             this.textBox_id_dev.Size = new System.Drawing.Size(104, 20);
             this.textBox_id_dev.TabIndex = 41;
@@ -254,9 +254,20 @@
             this.tableAdapterManager.Копия_PrinterTableAdapter = null;
             this.tableAdapterManager.Ошибки_вставкиTableAdapter = null;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1183, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 58;
+            this.button1.Text = "обновить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // printerDataGridView
             // 
             this.printerDataGridView.AllowUserToAddRows = false;
+            this.printerDataGridView.AllowUserToDeleteRows = false;
             this.printerDataGridView.AutoGenerateColumns = false;
             this.printerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.printerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -274,126 +285,115 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.printerDataGridView.DataSource = this.printerBindingSource;
-            this.printerDataGridView.Location = new System.Drawing.Point(2, 54);
+            this.printerDataGridView.Location = new System.Drawing.Point(2, 66);
             this.printerDataGridView.Name = "printerDataGridView";
-            this.printerDataGridView.ReadOnly = true;
-            this.printerDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.printerDataGridView.Size = new System.Drawing.Size(1265, 472);
-            this.printerDataGridView.TabIndex = 57;
+            this.printerDataGridView.Size = new System.Drawing.Size(1255, 409);
+            this.printerDataGridView.TabIndex = 108;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_dev";
-            this.dataGridViewTextBoxColumn1.FillWeight = 51.8295F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "id_dev";
+            this.dataGridViewTextBoxColumn1.FillWeight = 82.08122F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "type";
-            this.dataGridViewTextBoxColumn2.FillWeight = 100.3153F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "type";
+            this.dataGridViewTextBoxColumn2.FillWeight = 82.08122F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Тип";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "name_dev";
-            this.dataGridViewTextBoxColumn3.FillWeight = 328.3918F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "name_dev";
+            this.dataGridViewTextBoxColumn3.FillWeight = 279.1878F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Название";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "id_sup";
-            this.dataGridViewTextBoxColumn4.FillWeight = 96.7928F;
             this.dataGridViewTextBoxColumn4.HeaderText = "id_sup";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "format";
-            this.dataGridViewTextBoxColumn5.FillWeight = 93.08195F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "format";
+            this.dataGridViewTextBoxColumn5.FillWeight = 82.08122F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Формат";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "speed";
-            this.dataGridViewTextBoxColumn6.FillWeight = 89.17262F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "speed";
+            this.dataGridViewTextBoxColumn6.FillWeight = 82.08122F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Скорость";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "type_print";
-            this.dataGridViewTextBoxColumn7.FillWeight = 85.05426F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "type_print";
+            this.dataGridViewTextBoxColumn7.FillWeight = 82.08122F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Тип";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "cost";
-            this.dataGridViewTextBoxColumn8.FillWeight = 80.71564F;
-            this.dataGridViewTextBoxColumn8.HeaderText = "cost";
+            this.dataGridViewTextBoxColumn8.FillWeight = 82.08122F;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Цена";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "kol-vo";
-            this.dataGridViewTextBoxColumn9.FillWeight = 76.14503F;
-            this.dataGridViewTextBoxColumn9.HeaderText = "kol-vo";
+            this.dataGridViewTextBoxColumn9.FillWeight = 82.08122F;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Кол-во";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "vote_dev";
-            this.dataGridViewCheckBoxColumn1.FillWeight = 71.33F;
-            this.dataGridViewCheckBoxColumn1.HeaderText = "vote_dev";
+            this.dataGridViewCheckBoxColumn1.FillWeight = 82.08122F;
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Выбрать";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "tip_print";
-            this.dataGridViewTextBoxColumn10.FillWeight = 66.25748F;
+            this.dataGridViewTextBoxColumn10.FillWeight = 82.08122F;
             this.dataGridViewTextBoxColumn10.HeaderText = "tip_print";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "nagryzka";
-            this.dataGridViewTextBoxColumn11.FillWeight = 60.9137F;
+            this.dataGridViewTextBoxColumn11.FillWeight = 82.08122F;
             this.dataGridViewTextBoxColumn11.HeaderText = "nagryzka";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1183, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 58;
-            this.button1.Text = "обновить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dataGridViewTextBoxColumn11.Visible = false;
             // 
             // print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1269, 529);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1260, 477);
             this.Controls.Add(this.printerDataGridView);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.add_print_button);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.textBox_nagryzka);
@@ -412,6 +412,8 @@
             this.Controls.Add(this.textBox_id_dev);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "print";
             this.Text = "print";
             this.Load += new System.EventHandler(this.print_Load);
@@ -445,8 +447,8 @@
         private System.Windows.Forms.BindingSource printerBindingSource;
         private Database2_TESTDataSetTableAdapters.PrinterTableAdapter printerTableAdapter;
         private Database2_TESTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView printerDataGridView;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView printerDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

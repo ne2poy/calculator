@@ -34,12 +34,14 @@ namespace SOFT_FOR_ACCESS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            { 
             string str;
             int rCnt;
             int cCnt;
 
             OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "Excel (*.XLS)|*.XLS";
+            opf.Filter = "Файл Excel|*.XLSX;*.XLS";
             opf.ShowDialog();
             System.Data.DataTable tb = new System.Data.DataTable();
             string filename = opf.FileName;
@@ -68,11 +70,17 @@ namespace SOFT_FOR_ACCESS
             releaseObject(ExcelWorkSheet);
             releaseObject(ExcelWorkBook);
             releaseObject(ExcelApp);
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show("Ошибка: " + ex.Message, "Ошибка при считывании excel файла", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
 
-        }
+
+}
 
 
-        private void releaseObject(object obj)
+private void releaseObject(object obj)
         {
             try
             {
@@ -94,7 +102,7 @@ namespace SOFT_FOR_ACCESS
         {
             try
             {
-                for (int i = 0; i < (dataGridView1.RowCount - 1); i++)
+                for (int i = 0; i <= (dataGridView1.RowCount - 1); i++)
 
                 {
                     this.database2_TESTDataSet.Printer.Rows.Add(dataGridView1[0, i].Value, "Printer", dataGridView1[2, i].Value, 0, dataGridView1[4, i].Value, dataGridView1[5, i].Value, dataGridView1[6, i].Value, dataGridView1[7, i].Value, 1, dataGridView1[9, i].Value, dataGridView1[10, i].Value, dataGridView1[11, i].Value);      //, 0, 

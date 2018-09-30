@@ -34,11 +34,13 @@ namespace SOFT_FOR_ACCESS
             try
             {
                 for (int i = 0; i < (dataGridView1.RowCount - 1); i++)
-
                 {
-
                     this.database2_TESTDataSet.LLC.Rows.Add(dataGridView1[0, i].Value, dataGridView1[1, i].Value, dataGridView1[2, i].Value, dataGridView1[3, i].Value, dataGridView1[4, i].Value, dataGridView1[5, i].Value, dataGridView1[6, i].Value, dataGridView1[7, i].Value, dataGridView1[8, i].Value, 1);     //, dataGridView1[6, i].Value, dataGridView1[7, i].Value, dataGridView1[8, i].Value, dataGridView1[9, i].Value
                     this.lLCTableAdapter.Update(this.database2_TESTDataSet.LLC);
+                }
+
+                for (int i = 0; i < (dataGridView3.RowCount - 1); i++)
+                { 
 
                     this.database2_TESTDataSet.Dev2LLC.Rows.Add(null, dataGridView3[1, i].Value, dataGridView3[2, i].Value);      //, 0, 
 
@@ -61,12 +63,14 @@ namespace SOFT_FOR_ACCESS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string str;
+            try
+            {
+ string str;
             int rCnt;
             int cCnt;
 
             OpenFileDialog opf1 = new OpenFileDialog();
-            opf1.Filter = "Excel (*.XLSX)|*.XLSX";
+            opf1.Filter = "Файл Excel|*.XLSX;*.XLS";
             opf1.ShowDialog();
             System.Data.DataTable tb1 = new System.Data.DataTable();
             string filename = opf1.FileName;
@@ -106,10 +110,18 @@ namespace SOFT_FOR_ACCESS
             releaseObject(ExcelWorkSheet);
             releaseObject(ExcelWorkBook);
             releaseObject(ExcelApp);
-        }
+            }
+                        
+            catch (Exception ex)
+            {
+                 MessageBox.Show("Ошибка: " + ex.Message, "Ошибка при считывании excel файла", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            }
 
 
-        private void releaseObject(object obj)
+}
+
+
+private void releaseObject(object obj)
         {
             try
             {

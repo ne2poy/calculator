@@ -40,9 +40,9 @@ namespace SOFT_FOR_ACCESS
         {
             double qty_m = 0;
             double qty_c = 0;
-            for (int i = 0; i < dev2sup_ЗапросDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= dev2sup_ЗапросDataGridView.RowCount - 1; i++)   
             {
-                if (Convert.ToString(dev2sup_ЗапросDataGridView[13, i].Value) == "True")
+                if (Convert.ToString(dev2sup_ЗапросDataGridView[14, i].Value) == "True")
                 {
 
                     if (Convert.ToString(dev2sup_ЗапросDataGridView[9, i].Value) == "True")                     //  если используется в MONO
@@ -67,20 +67,45 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
+        
+
         private void button2_Click(object sender, EventArgs e)
         {
-            sup_add2(Data.copy_m_proj, Data.copy_c_proj);
-            this.vibor1TableAdapter.Update(this.database2_TESTDataSet.vibor1);
-            this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+            double C = 0;
+            double M = 0;
+            double Y = 0;
+            double B = 0;
 
-            for (int i = 0; i < dev2sup_ЗапросDataGridView.RowCount - 1; i++)
+            string[] CMYB;
+            int check = 0;
+            for (int i = 0; i <= dev2sup_ЗапросDataGridView.RowCount - 1; i++)  
             {
-                if (Convert.ToString(dev2sup_ЗапросDataGridView[13, i].Value) == "True")
-                    this.DialogResult = DialogResult.OK;            
+                if (Convert.ToString(dev2sup_ЗапросDataGridView[14, i].Value) == "True")
+                {
+                    if (Convert.ToString(dev2sup_ЗапросDataGridView[13, i].Value) == "C") C++;
+                    if (Convert.ToString(dev2sup_ЗапросDataGridView[13, i].Value) == "M") M++;
+                    if (Convert.ToString(dev2sup_ЗапросDataGridView[13, i].Value) == "Y") Y++;
+                    if (Convert.ToString(dev2sup_ЗапросDataGridView[13, i].Value) == "B") B++;                   
+                    check++;                  
+                }
+                               
             }
 
-            if (DialogResult == DialogResult.OK)
-                this.Close();
+            if (Convert.ToString(check) == Data.Value3)
+            {
+                if ((Data.Value3 == "4" && C == 1 && M == 1 && Y == 1 && B == 1) || (Data.Value3 == "1" && C == 0 && M == 0 && Y == 0 && B == 1))
+                {
+                    sup_add2(Data.copy_m_proj, Data.copy_c_proj);
+                    this.vibor1TableAdapter.Update(this.database2_TESTDataSet.vibor1);
+                    this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+                    this.DialogResult = DialogResult.OK;
+                    //this.Close();
+                }
+                else
+                    MessageBox.Show("Выберите правильно supply!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+
+            }
             else
                 MessageBox.Show("Выберите supply!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
@@ -88,10 +113,5 @@ namespace SOFT_FOR_ACCESS
 
         }
 
-        private void vote_sup_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //MessageBox.Show("Ничего не добавлено!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-        }
     }
 }

@@ -46,10 +46,10 @@ namespace SOFT_FOR_ACCESS
             this.dev2LLC_ЗапросBindingSource.Filter = "[Dev2LLC_id_LLC] LIKE'" + comboBox1.Text + "'";
 
 
-            for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
             {
                 printerDataGridView[9, i].Value = "False";
-                for (int j = 0; j < dev2LLC_ЗапросDataGridView.RowCount - 1; j++)
+                for (int j = 0; j <= dev2LLC_ЗапросDataGridView.RowCount - 1; j++)
                 {
                     
                     if (Convert.ToString(printerDataGridView[0, i].Value) == Convert.ToString(dev2LLC_ЗапросDataGridView[1, j].Value))
@@ -74,12 +74,12 @@ namespace SOFT_FOR_ACCESS
             try
             {
                 double ch = 0;
-                for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+                for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(printerDataGridView[9, i].Value) == "True")
                     {
                         ch = 0;
-                        for (int j = 0; j < dev2LLC_ЗапросDataGridView.RowCount - 1; j++)
+                        for (int j = 0; j <= dev2LLC_ЗапросDataGridView.RowCount - 1; j++)
                         {
                             if (Convert.ToString(dev2LLC_ЗапросDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2LLC_ЗапросDataGridView[2, j].Value) == comboBox1.Text)
                                 ch = 1;
@@ -95,7 +95,7 @@ namespace SOFT_FOR_ACCESS
                     }
                     else
                     {
-                        for (int j = 0; j < dev2LLCDataGridView.RowCount - 1; j++)
+                        for (int j = 0; j <= dev2LLCDataGridView.RowCount - 1; j++)
                         {
                             if (Convert.ToString(dev2LLCDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2LLCDataGridView[2, j].Value) == comboBox1.Text)
                             {
@@ -123,7 +123,7 @@ namespace SOFT_FOR_ACCESS
 
         private void textBox_id_LLC_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < lLCDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= lLCDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(lLCDataGridView[0, i].Value) == textBox_id_LLC.Text)
                 {
@@ -150,7 +150,7 @@ namespace SOFT_FOR_ACCESS
         {
             try
             {
-                for (int i = 0; i < lLCDataGridView.RowCount - 1; i++)
+                for (int i = 0; i <= lLCDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(lLCDataGridView[0, i].Value) == textBox_id_LLC.Text)
                     {

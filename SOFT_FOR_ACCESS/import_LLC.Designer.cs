@@ -138,9 +138,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1000, 93);
+            this.button1.Location = new System.Drawing.Point(748, 456);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(80, 28);
             this.button1.TabIndex = 3;
             this.button1.Text = "ок";
             this.button1.UseVisualStyleBackColor = true;
@@ -160,10 +160,11 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
             this.dev2LLCDataGridView.DataSource = this.dev2LLCBindingSource;
-            this.dev2LLCDataGridView.Location = new System.Drawing.Point(1176, 280);
+            this.dev2LLCDataGridView.Location = new System.Drawing.Point(994, 165);
             this.dev2LLCDataGridView.Name = "dev2LLCDataGridView";
-            this.dev2LLCDataGridView.Size = new System.Drawing.Size(366, 248);
+            this.dev2LLCDataGridView.Size = new System.Drawing.Size(331, 170);
             this.dev2LLCDataGridView.TabIndex = 4;
+            this.dev2LLCDataGridView.Visible = false;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -195,24 +196,24 @@
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22,
             this.dataGridViewTextBoxColumn23});
-            this.dataGridView3.Location = new System.Drawing.Point(1156, 12);
+            this.dataGridView3.Location = new System.Drawing.Point(976, 3);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(368, 246);
+            this.dataGridView3.Size = new System.Drawing.Size(368, 447);
             this.dataGridView3.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn21
             // 
-            this.dataGridViewTextBoxColumn21.HeaderText = "Column8";
+            this.dataGridViewTextBoxColumn21.HeaderText = "id_connect";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             // 
             // dataGridViewTextBoxColumn22
             // 
-            this.dataGridViewTextBoxColumn22.HeaderText = "Column9";
+            this.dataGridViewTextBoxColumn22.HeaderText = "id_dev";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             // 
             // dataGridViewTextBoxColumn23
             // 
-            this.dataGridViewTextBoxColumn23.HeaderText = "Column10";
+            this.dataGridViewTextBoxColumn23.HeaderText = "id_LLC";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             // 
             // dataGridView1
@@ -228,61 +229,61 @@
             this.Column7,
             this.Column8,
             this.Column9});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(967, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(967, 447);
             this.dataGridView1.TabIndex = 8;
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Column1";
+            this.Column1.HeaderText = "id";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Column2";
+            this.Column2.HeaderText = "Тип";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Column3";
+            this.Column3.HeaderText = "Название";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Column4";
+            this.Column4.HeaderText = "В узле";
             this.Column4.Name = "Column4";
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Column5";
+            this.Column5.HeaderText = "Цена";
             this.Column5.Name = "Column5";
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Column6";
+            this.Column6.HeaderText = "Ресурс";
             this.Column6.Name = "Column6";
             // 
             // Column7
             // 
-            this.Column7.HeaderText = "Column7";
+            this.Column7.HeaderText = "В коробке";
             this.Column7.Name = "Column7";
             // 
             // Column8
             // 
-            this.Column8.HeaderText = "Column8";
+            this.Column8.HeaderText = "Цвет";
             this.Column8.Name = "Column8";
             // 
             // Column9
             // 
-            this.Column9.HeaderText = "Column9";
+            this.Column9.HeaderText = "Моно";
             this.Column9.Name = "Column9";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1000, 64);
+            this.button2.Location = new System.Drawing.Point(662, 456);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(80, 28);
             this.button2.TabIndex = 9;
             this.button2.Text = "импорт";
             this.button2.UseVisualStyleBackColor = true;
@@ -305,10 +306,11 @@
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewCheckBoxColumn8});
             this.lLCDataGridView.DataSource = this.lLCBindingSource;
-            this.lLCDataGridView.Location = new System.Drawing.Point(12, 280);
+            this.lLCDataGridView.Location = new System.Drawing.Point(12, 165);
             this.lLCDataGridView.Name = "lLCDataGridView";
-            this.lLCDataGridView.Size = new System.Drawing.Size(1158, 248);
+            this.lLCDataGridView.Size = new System.Drawing.Size(941, 170);
             this.lLCDataGridView.TabIndex = 9;
+            this.lLCDataGridView.Visible = false;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -380,13 +382,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1551, 533);
+            this.ClientSize = new System.Drawing.Size(1348, 488);
+            this.Controls.Add(this.dev2LLCDataGridView);
             this.Controls.Add(this.lLCDataGridView);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.dev2LLCDataGridView);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "import_LLC";
             this.Text = "import_LLC";
             this.Load += new System.EventHandler(this.import_LLC_Load);
@@ -417,19 +422,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.BindingSource lLCBindingSource;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView lLCDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
@@ -443,5 +436,17 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

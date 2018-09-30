@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.database2_TESTDataSet = new SOFT_FOR_ACCESS.Database2_TESTDataSet();
             this.dev2sup_ЗапросBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dev2sup_ЗапросTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.Dev2sup_ЗапросTableAdapter();
@@ -38,7 +38,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.vibor1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vibor1TableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.vibor1TableAdapter();
-            this.dev2sup_ЗапросDataGridView = new System.Windows.Forms.DataGridView();
             this.vibor1DataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,25 +55,31 @@
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dev2sup_ЗапросDataGridView = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2sup_ЗапросBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dev2sup_ЗапросDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dev2sup_ЗапросDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // database2_TESTDataSet
@@ -153,35 +158,6 @@
             // vibor1TableAdapter
             // 
             this.vibor1TableAdapter.ClearBeforeFill = true;
-            // 
-            // dev2sup_ЗапросDataGridView
-            // 
-            this.dev2sup_ЗапросDataGridView.AllowUserToAddRows = false;
-            this.dev2sup_ЗапросDataGridView.AllowUserToDeleteRows = false;
-            this.dev2sup_ЗапросDataGridView.AutoGenerateColumns = false;
-            this.dev2sup_ЗапросDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dev2sup_ЗапросDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dev2sup_ЗапросDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewCheckBoxColumn2,
-            this.dataGridViewCheckBoxColumn3,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewCheckBoxColumn4});
-            this.dev2sup_ЗапросDataGridView.DataSource = this.dev2sup_ЗапросBindingSource;
-            this.dev2sup_ЗапросDataGridView.Location = new System.Drawing.Point(0, 1);
-            this.dev2sup_ЗапросDataGridView.Name = "dev2sup_ЗапросDataGridView";
-            this.dev2sup_ЗапросDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dev2sup_ЗапросDataGridView.Size = new System.Drawing.Size(1249, 354);
-            this.dev2sup_ЗапросDataGridView.TabIndex = 5;
             // 
             // vibor1DataGridView
             // 
@@ -324,130 +300,207 @@
             this.textBox2.Size = new System.Drawing.Size(291, 20);
             this.textBox2.TabIndex = 41;
             // 
-            // dataGridViewTextBoxColumn1
+            // dev2sup_ЗапросDataGridView
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_svyaz";
-            this.dataGridViewTextBoxColumn1.FillWeight = 46.19291F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "id_svyaz";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dev2sup_ЗапросDataGridView.AllowUserToAddRows = false;
+            this.dev2sup_ЗапросDataGridView.AllowUserToDeleteRows = false;
+            this.dev2sup_ЗапросDataGridView.AutoGenerateColumns = false;
+            this.dev2sup_ЗапросDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dev2sup_ЗапросDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dev2sup_ЗапросDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewCheckBoxColumn5,
+            this.dataGridViewCheckBoxColumn6,
+            this.dataGridViewCheckBoxColumn7,
+            this.dataGridViewTextBoxColumn34,
+            this.dataGridViewTextBoxColumn36,
+            this.dataGridViewCheckBoxColumn8});
+            this.dev2sup_ЗапросDataGridView.DataSource = this.dev2sup_ЗапросBindingSource;
+            this.dev2sup_ЗапросDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dev2sup_ЗапросDataGridView.Name = "dev2sup_ЗапросDataGridView";
+            this.dev2sup_ЗапросDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dev2sup_ЗапросDataGridView.Size = new System.Drawing.Size(1249, 355);
+            this.dev2sup_ЗапросDataGridView.TabIndex = 42;
             // 
-            // dataGridViewTextBoxColumn2
+            // panel1
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "id_dev";
-            this.dataGridViewTextBoxColumn2.HeaderText = "id_dev";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(780, 368);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(20, 20);
+            this.panel1.TabIndex = 43;
             // 
-            // dataGridViewTextBoxColumn3
+            // panel2
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "id_sup";
-            this.dataGridViewTextBoxColumn3.FillWeight = 86.15675F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "id_sup";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(806, 368);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(20, 20);
+            this.panel2.TabIndex = 44;
             // 
-            // dataGridViewTextBoxColumn4
+            // panel3
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "type";
-            this.dataGridViewTextBoxColumn4.FillWeight = 86.15675F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "type";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Location = new System.Drawing.Point(832, 368);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(20, 20);
+            this.panel3.TabIndex = 44;
             // 
-            // dataGridViewTextBoxColumn10
+            // panel4
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "manufacturer";
-            this.dataGridViewTextBoxColumn10.FillWeight = 86.15675F;
-            this.dataGridViewTextBoxColumn10.HeaderText = "manufacturer";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Location = new System.Drawing.Point(858, 368);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(20, 20);
+            this.panel4.TabIndex = 44;
             // 
-            // dataGridViewTextBoxColumn5
+            // dataGridViewTextBoxColumn11
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "name_sup";
-            this.dataGridViewTextBoxColumn5.FillWeight = 306.0831F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "name_sup";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "id_svyaz";
+            this.dataGridViewTextBoxColumn11.FillWeight = 53.80255F;
+            this.dataGridViewTextBoxColumn11.HeaderText = "id";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // dataGridViewTextBoxColumn27
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "QTY_sup";
-            this.dataGridViewTextBoxColumn6.FillWeight = 86.15675F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "QTY_sup";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "id_dev";
+            this.dataGridViewTextBoxColumn27.HeaderText = "id_dev";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.Visible = false;
             // 
-            // dataGridViewTextBoxColumn7
+            // dataGridViewTextBoxColumn28
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "cost_sup";
-            this.dataGridViewTextBoxColumn7.FillWeight = 86.15675F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "cost_sup";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "id_sup";
+            this.dataGridViewTextBoxColumn28.FillWeight = 73.31607F;
+            this.dataGridViewTextBoxColumn28.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn8
+            // dataGridViewTextBoxColumn29
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "res_sup";
-            this.dataGridViewTextBoxColumn8.FillWeight = 86.15675F;
-            this.dataGridViewTextBoxColumn8.HeaderText = "res_sup";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "type";
+            this.dataGridViewTextBoxColumn29.FillWeight = 66.87466F;
+            this.dataGridViewTextBoxColumn29.HeaderText = "Тип";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.ReadOnly = true;
             // 
-            // dataGridViewCheckBoxColumn1
+            // dataGridViewTextBoxColumn35
             // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "inbox_sup";
-            this.dataGridViewCheckBoxColumn1.FillWeight = 86.15675F;
-            this.dataGridViewCheckBoxColumn1.HeaderText = "inbox_sup";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "manufacturer";
+            this.dataGridViewTextBoxColumn35.FillWeight = 103.0473F;
+            this.dataGridViewTextBoxColumn35.HeaderText = "Производитель";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.ReadOnly = true;
             // 
-            // dataGridViewCheckBoxColumn2
+            // dataGridViewTextBoxColumn30
             // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "for_sup_mono";
-            this.dataGridViewCheckBoxColumn2.FillWeight = 86.15675F;
-            this.dataGridViewCheckBoxColumn2.HeaderText = "for_sup_mono";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "name_sup";
+            this.dataGridViewTextBoxColumn30.FillWeight = 471.3064F;
+            this.dataGridViewTextBoxColumn30.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.ReadOnly = true;
             // 
-            // dataGridViewCheckBoxColumn3
+            // dataGridViewTextBoxColumn31
             // 
-            this.dataGridViewCheckBoxColumn3.DataPropertyName = "for_sup_color";
-            this.dataGridViewCheckBoxColumn3.FillWeight = 86.15675F;
-            this.dataGridViewCheckBoxColumn3.HeaderText = "for_sup_color";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "QTY_sup";
+            this.dataGridViewTextBoxColumn31.FillWeight = 79.66218F;
+            this.dataGridViewTextBoxColumn31.HeaderText = "В узле";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn9
+            // dataGridViewTextBoxColumn32
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "kol-vo";
-            this.dataGridViewTextBoxColumn9.FillWeight = 86.15675F;
-            this.dataGridViewTextBoxColumn9.HeaderText = "kol-vo";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "cost_sup";
+            this.dataGridViewTextBoxColumn32.FillWeight = 76.74202F;
+            this.dataGridViewTextBoxColumn32.HeaderText = "Цена";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.ReadOnly = true;
             // 
-            // dataGridViewCheckBoxColumn4
+            // dataGridViewTextBoxColumn33
             // 
-            this.dataGridViewCheckBoxColumn4.DataPropertyName = "vote_supl";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle7.NullValue = false;
-            this.dataGridViewCheckBoxColumn4.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewCheckBoxColumn4.FillWeight = 86.15675F;
-            this.dataGridViewCheckBoxColumn4.HeaderText = "vote_supl";
-            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "res_sup";
+            this.dataGridViewTextBoxColumn33.FillWeight = 73.71423F;
+            this.dataGridViewTextBoxColumn33.HeaderText = "Ресурс";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn5
+            // 
+            this.dataGridViewCheckBoxColumn5.DataPropertyName = "inbox_sup";
+            this.dataGridViewCheckBoxColumn5.FillWeight = 85.27919F;
+            this.dataGridViewCheckBoxColumn5.HeaderText = "В коробке";
+            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
+            this.dataGridViewCheckBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn6
+            // 
+            this.dataGridViewCheckBoxColumn6.DataPropertyName = "for_sup_mono";
+            this.dataGridViewCheckBoxColumn6.FillWeight = 67.31992F;
+            this.dataGridViewCheckBoxColumn6.HeaderText = "Моно";
+            this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
+            this.dataGridViewCheckBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn7
+            // 
+            this.dataGridViewCheckBoxColumn7.DataPropertyName = "for_sup_color";
+            this.dataGridViewCheckBoxColumn7.FillWeight = 63.94504F;
+            this.dataGridViewCheckBoxColumn7.HeaderText = "Цвет";
+            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
+            this.dataGridViewCheckBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "kol-vo";
+            this.dataGridViewTextBoxColumn34.FillWeight = 60.44577F;
+            this.dataGridViewTextBoxColumn34.HeaderText = "кол-во";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "id_color";
+            this.dataGridViewTextBoxColumn36.FillWeight = 40.16127F;
+            this.dataGridViewTextBoxColumn36.HeaderText = "tag";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn8
+            // 
+            this.dataGridViewCheckBoxColumn8.DataPropertyName = "vote_supl";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.NullValue = false;
+            this.dataGridViewCheckBoxColumn8.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewCheckBoxColumn8.FillWeight = 84.38351F;
+            this.dataGridViewCheckBoxColumn8.HeaderText = "Выбрать";
+            this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
             // 
             // vote_sup
             // 
             this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 397);
+            this.ClientSize = new System.Drawing.Size(1249, 401);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dev2sup_ЗапросDataGridView);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.vibor1DataGridView);
-            this.Controls.Add(this.dev2sup_ЗапросDataGridView);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -455,13 +508,12 @@
             this.MinimizeBox = false;
             this.Name = "vote_sup";
             this.Text = "vote_sup";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.vote_sup_FormClosed);
             this.Load += new System.EventHandler(this.vote_sup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dev2sup_ЗапросBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dev2sup_ЗапросDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vibor1DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dev2sup_ЗапросDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,7 +529,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource vibor1BindingSource;
         private Database2_TESTDataSetTableAdapters.vibor1TableAdapter vibor1TableAdapter;
-        private System.Windows.Forms.DataGridView dev2sup_ЗапросDataGridView;
         private System.Windows.Forms.DataGridView vibor1DataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
@@ -495,19 +546,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
+        private System.Windows.Forms.DataGridView dev2sup_ЗапросDataGridView;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
     }
 }

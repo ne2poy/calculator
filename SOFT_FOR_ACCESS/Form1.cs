@@ -68,15 +68,18 @@ namespace SOFT_FOR_ACCESS
         double absolut_color = 0;
         bool tab_ch = false;
         double count_sup = 0;
+        double first_print_check = 0;
+        bool pdf_file = false;
 
-        //List<Note> Notes;
-        //Notes = new List<Note>;
         public List<Note> Notes = new List<Note>();
-        //List<Note> Notes;
+
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            textBox12.Text = System.Environment.UserName;
+            textBox13.Text = System.Environment.MachineName;
+
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Care_pack". При необходимости она может быть перемещена или удалена.
             this.care_packTableAdapter.Fill(this.database2_TESTDataSet.Care_pack);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Dev2LLC". При необходимости она может быть перемещена или удалена.
@@ -151,6 +154,20 @@ namespace SOFT_FOR_ACCESS
         {
             clear_vibor();
             double dur_project = 0;
+
+            int counter = 0;
+            for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
+            {
+                if (Convert.ToString(printerDataGridView[11, i].Value) == "True") counter++;
+            }
+            if (counter != 1)
+            {
+                MessageBox.Show("Выберите 1 принтер!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
             if (comboBox9.Text.Length > 0)
                 dur_project = Convert.ToDouble(comboBox9.Text);
             else
@@ -174,14 +191,20 @@ namespace SOFT_FOR_ACCESS
                     MessageBox.Show("ПРИНТЕР НЕ ДОБАВЛЕН!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+
+
+
+
+
+
             filter_gar();
         }
 
 
         void filtri()
         {
-            //Notes = new List<Note>();
-            for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(printerDataGridView[11, i].Value) == "True")
                 {
@@ -200,11 +223,13 @@ namespace SOFT_FOR_ACCESS
 
                     if (Convert.ToString(printerDataGridView[9, i].Value) == "mono") count_sup = 1;
                     if (Convert.ToString(printerDataGridView[9, i].Value) == "color") count_sup = 4;
+                    Data.Value3 = Convert.ToString(count_sup);
                     this.database2_TESTDataSet.vibor1.Rows.Add(null, printerDataGridView[1, i].Value, printerDataGridView[2, i].Value, printerDataGridView[7, i].Value, printerDataGridView[8, i].Value);
 
-                    //List<Note> Notes;
-                    //Notes = new List<Note>();
-                    Notes.Add(new Note(Convert.ToString(printerDataGridView[1, i].Value), Convert.ToString(printerDataGridView[2, i].Value), Convert.ToString(printerDataGridView[7, i].Value), Convert.ToString(printerDataGridView[8, i].Value), Convert.ToString(quantity_textBox.Text), null, null, null, null, null, null, null, null, null));
+
+
+                    //Notes.Add(new Note(Convert.ToString(printerDataGridView[1, i].Value), Convert.ToString(printerDataGridView[2, i].Value), Convert.ToString(printerDataGridView[7, i].Value), Convert.ToString(printerDataGridView[8, i].Value), Convert.ToString(quantity_textBox.Text), null, null, null, null, null, null, null, null, null));
+
                     comboBox3.Text = Convert.ToString(printerDataGridView[0, i].Value);         // = АКТИВНАЯ МОДЕЛЬ ПРИНТЕРА
                     comboBox4.Text = Convert.ToString(printerDataGridView[2, i].Value);         // = АКТИВНАЯ МОДЕЛЬ ПРИНТЕРА
                     this.dev2care_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
@@ -213,6 +238,9 @@ namespace SOFT_FOR_ACCESS
                     this.dev2acc_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
                     this.dev2soft_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
                     this.dev2soft_serv_ЗапросBindingSource.Filter = "[id_dev] LIKE'" + comboBox3.Text + "%'";
+
+                    first_print_check = 1;
+
                     LLC_add();
 
                     if (dev2sup_ЗапросDataGridView.RowCount - 1 > count_sup)
@@ -226,16 +254,21 @@ namespace SOFT_FOR_ACCESS
 
         private void add_care_pack_Button_Click(object sender, EventArgs e)
         {
-            //Notes = new List<Note>();
-            for (int i = 0; i < dev2care_ЗапросDataGridView.RowCount - 1; i++)
+            if (first_print_check != 1)
+            {
+                MessageBox.Show("Сначала выберите принтер!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            for (int i = 0; i <= dev2care_ЗапросDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(dev2care_ЗапросDataGridView[8, i].Value) == "True")            //если (vote_gar == true)
                 {
 
                     this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2care_ЗапросDataGridView[2, i].Value, dev2care_ЗапросDataGridView[3, i].Value, dev2care_ЗапросDataGridView[4, i].Value, dev2care_ЗапросDataGridView[6, i].Value);
-                    //List<Note> Notes;
-                    //Notes = new List<Note>();
-                    Notes.Add(new Note ( Convert.ToString(dev2care_ЗапросDataGridView[2, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[3, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[6, i].Value), null, null, null, null, null, null, null, null, null, null));
+
+                    //Notes.Add(new Note ( Convert.ToString(dev2care_ЗапросDataGridView[2, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[3, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2care_ЗапросDataGridView[6, i].Value), null, null, null, null, null, null, null, null, null, null));
 
                 }
 
@@ -270,7 +303,7 @@ namespace SOFT_FOR_ACCESS
                 copy_m_proj = v_pech_mono * Convert.ToDouble(comboBox9.Text);    //объём_печати_моно_проект = объём_печати_моно * срок_контракта
                 copy_c_proj = v_pech_mono * Convert.ToDouble(comboBox9.Text);    //объём печати_цвет_проект = объём_печати_цвет * срок_контракта
             }
-            for (int i = 0; i < dev2LLC_ЗапросDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= dev2LLC_ЗапросDataGridView.RowCount - 1; i++)
             {       
                 dev2LLC_ЗапросDataGridView[13, i].Value = "True";       //ставим галку выбора для LLC
 
@@ -291,10 +324,8 @@ namespace SOFT_FOR_ACCESS
                     qty_c = 0;
 
                 this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2LLC_ЗапросDataGridView[4, i].Value, dev2LLC_ЗапросDataGridView[5, i].Value, dev2LLC_ЗапросDataGridView[7, i].Value, dev2LLC_ЗапросDataGridView[12, i].Value, qty_m, qty_c, dev2LLC_ЗапросDataGridView[6, i].Value, dev2LLC_ЗапросDataGridView[9, i].Value, copy_m_proj, copy_c_proj);
-
-                //List<Note> Notes;
-                //Notes = new List<Note>();
-                Notes.Add(new Note( Convert.ToString(dev2LLC_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[5, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[7, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[12, i].Value), Convert.ToString(qty_m), Convert.ToString(qty_c), Convert.ToString(dev2LLC_ЗапросDataGridView[6, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[9, i].Value), Convert.ToString(copy_m_proj), Convert.ToString(copy_c_proj), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text), null, null ));
+       
+                //Notes.Add(new Note( Convert.ToString(dev2LLC_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[5, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[7, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[12, i].Value), Convert.ToString(qty_m), Convert.ToString(qty_c), Convert.ToString(dev2LLC_ЗапросDataGridView[6, i].Value), Convert.ToString(dev2LLC_ЗапросDataGridView[9, i].Value), Convert.ToString(copy_m_proj), Convert.ToString(copy_c_proj), Convert.ToString(textBox1.Text), Convert.ToString(textBox2.Text), null, null ));
 
             }
 
@@ -308,7 +339,7 @@ namespace SOFT_FOR_ACCESS
             this.vibor1TableAdapter.Update(this.database2_TESTDataSet.vibor1);
             this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
             Data.Value1 = comboBox3.Text;
-            Data.Value2 = comboBox4.Text;
+            Data.Value2 = comboBox4.Text;          
             vote_sup vote_sup = new vote_sup();
             vote_sup.ShowDialog();
             if (vote_sup.DialogResult == DialogResult.OK)
@@ -339,7 +370,7 @@ namespace SOFT_FOR_ACCESS
                 copy_c_proj = v_pech_mono * Convert.ToDouble(comboBox9.Text);    //объём печати_цвет_проект = объём_печати_цвет * срок_контракта
             }
 
-            for (int i = 0; i < dev2sup_ЗапросDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= dev2sup_ЗапросDataGridView.RowCount - 1; i++)
             {
                     dev2sup_ЗапросDataGridView[12, i].Value = "True";               //ставим галку выбора для supply
 
@@ -360,7 +391,8 @@ namespace SOFT_FOR_ACCESS
                     qty_c = 0;
 
                 this.database2_TESTDataSet.vibor1.Rows.Add(null, dev2sup_ЗапросDataGridView[3, i].Value, dev2sup_ЗапросDataGridView[4, i].Value, dev2sup_ЗапросDataGridView[6, i].Value, dev2sup_ЗапросDataGridView[11, i].Value, qty_m, qty_c, dev2sup_ЗапросDataGridView[5, i].Value, dev2sup_ЗапросDataGridView[8, i].Value, copy_m_proj, copy_c_proj);
-                Notes.Add(new Note(Convert.ToString(dev2sup_ЗапросDataGridView[3, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[6, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[11, i].Value), Convert.ToString(qty_m), Convert.ToString(qty_c), Convert.ToString(dev2sup_ЗапросDataGridView[5, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[8, i].Value), Convert.ToString(copy_m_proj), Convert.ToString(copy_c_proj), null, null, null, null));
+
+                //Notes.Add(new Note(Convert.ToString(dev2sup_ЗапросDataGridView[3, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[4, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[6, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[11, i].Value), Convert.ToString(qty_m), Convert.ToString(qty_c), Convert.ToString(dev2sup_ЗапросDataGridView[5, i].Value), Convert.ToString(dev2sup_ЗапросDataGridView[8, i].Value), Convert.ToString(copy_m_proj), Convert.ToString(copy_c_proj), null, null, null, null));
 
             }
         }
@@ -369,7 +401,13 @@ namespace SOFT_FOR_ACCESS
 
         private void add_acc_Button_Click(object sender, EventArgs e)           //добавить акс
         {
-            for (int i = 0; i < dev2acc_ЗапросDataGridView.RowCount - 1; i++)
+            if (first_print_check != 1)
+            {
+                MessageBox.Show("Сначала выберите принтер!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            for (int i = 0; i <= dev2acc_ЗапросDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(dev2acc_ЗапросDataGridView[9, i].Value) == "True")
                 {
@@ -382,7 +420,7 @@ namespace SOFT_FOR_ACCESS
         void vivod()
         {
             int z = 0;
-            for (int i = 0; i < vibor1DataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= vibor1DataGridView.RowCount - 1; i++)
             {
                 vivodDataGridView[1, i].Value = vibor1DataGridView[1, i].Value;
                 vivodDataGridView[2, i].Value = vibor1DataGridView[2, i].Value;
@@ -406,7 +444,7 @@ namespace SOFT_FOR_ACCESS
         }
 
 
-        private void button9_Click(object sender, EventArgs e)          //кнопка РАСЧЁТ
+        private void CALCULATE ()
         {
             double cost_m_proj = 0;
             double cost_c_proj = 0;
@@ -427,67 +465,67 @@ namespace SOFT_FOR_ACCESS
             double cost_vith_LRF = 0;
             double LRF = 0;
             double nacenka_oboryd_p = 0;
-            
+
 
             double cost_one_m = 0;
             double cost_one_c = 0;
             double trash_2 = 0;
             double dur_project = 0;
 
-                try
+            try
+            {
+                if (radioButton5.Checked == true && comboBox6.Text.Length > 0)
+                    trash_2 = trash_2 + Convert.ToDouble(comboBox6.Text);              //добавили косты нашей работы в АРЕНДУ
+
+                if (radioButton7.Checked == true && comboBox5.Text.Length > 0)
+                    trash_2 = trash_2 + Convert.ToDouble(comboBox5.Text);              //добавили косты подряд работы в АРЕНДУ
+
+                if ((radioButton9.Checked == true && comboBox7.Text.Length > 0))
+                    trash_2 = trash_2 + Convert.ToDouble(comboBox7.Text);                //добавили косты командировочные в АРЕНДУ
+
+                if ((radioButton11.Checked == true && comboBox8.Text.Length > 0))
+                    trash_2 = trash_2 + Convert.ToDouble(comboBox8.Text);                //добавили косты доп услуг в АРЕНДУ
+
+                if ((radioButton6.Checked == true && comboBox6.Text.Length > 0))
+                    cost_contract = cost_contract + Convert.ToDouble(comboBox6.Text);   //добавили косты нашей работы в ОТПЕЧАТОК
+
+                if ((radioButton8.Checked == true && comboBox5.Text.Length > 0))
+                    cost_contract = cost_contract + Convert.ToDouble(comboBox5.Text);    //добавили косты подряд работы в ОТПЕЧАТОК
+
+                if ((radioButton10.Checked == true && comboBox7.Text.Length > 0))
+                    cost_contract = cost_contract + Convert.ToDouble(comboBox7.Text);        //добавили косты командировочные в ОТПЕЧАТОК
+
+                if ((radioButton12.Checked == true && comboBox8.Text.Length > 0))
+                    cost_contract = cost_contract + Convert.ToDouble(comboBox8.Text);        //добавили косты доп услуг в ОТПЕЧАТОК
+
+                if (comboBox9.Text.Length > 0)
+                    dur_project = Convert.ToDouble(comboBox9.Text);
+                else
                 {
-                    if (radioButton5.Checked == true && comboBox6.Text.Length > 0)
-                        trash_2 = trash_2 + Convert.ToDouble(comboBox6.Text);              //добавили косты нашей работы в АРЕНДУ
-
-                    if (radioButton7.Checked == true && comboBox5.Text.Length > 0)
-                        trash_2 = trash_2 + Convert.ToDouble(comboBox5.Text);              //добавили косты подряд работы в АРЕНДУ
-
-                    if ((radioButton9.Checked == true && comboBox7.Text.Length > 0))
-                        trash_2 = trash_2 + Convert.ToDouble(comboBox7.Text);                //добавили косты командировочные в АРЕНДУ
-
-                    if ((radioButton11.Checked == true && comboBox8.Text.Length > 0))
-                        trash_2 = trash_2 + Convert.ToDouble(comboBox8.Text);                //добавили косты доп услуг в АРЕНДУ
-
-                    if ((radioButton6.Checked == true && comboBox6.Text.Length > 0))
-                        cost_contract = cost_contract + Convert.ToDouble(comboBox6.Text);   //добавили косты нашей работы в ОТПЕЧАТОК
-
-                    if ((radioButton8.Checked == true && comboBox5.Text.Length > 0))
-                        cost_contract = cost_contract + Convert.ToDouble(comboBox5.Text);    //добавили косты подряд работы в ОТПЕЧАТОК
-
-                    if ((radioButton10.Checked == true && comboBox7.Text.Length > 0))
-                        cost_contract = cost_contract + Convert.ToDouble(comboBox7.Text);        //добавили косты командировочные в ОТПЕЧАТОК
-
-                    if ((radioButton12.Checked == true && comboBox8.Text.Length > 0))
-                        cost_contract = cost_contract + Convert.ToDouble(comboBox8.Text);        //добавили косты доп услуг в ОТПЕЧАТОК
-
-                    if (comboBox9.Text.Length > 0)
-                        dur_project = Convert.ToDouble(comboBox9.Text);
-                    else
-                    {
-                        MessageBox.Show("Не выбран срок контракта!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        return;
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("Ошибка ввода!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Не выбран срок контракта!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка ввода!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
 
             //-------------------------------------
 
-            for (int i = 0; i < vibor1DataGridView.RowCount - 1; i++)  
+            for (int i = 0; i <= vibor1DataGridView.RowCount - 1; i++)
             {
 
                 if (Convert.ToString(vibor1DataGridView[1, i].Value) == "Printer" || Convert.ToString(vibor1DataGridView[1, i].Value) == "accessory" || Convert.ToString(vibor1DataGridView[1, i].Value) == "Garanty")
                 {                                   //36*(0,1/12)
 
-                    straxovka = Convert.ToDouble(comboBox9.Text) * (Convert.ToDouble(textBox11.Text) / 12);     
-                    
+                    straxovka = Convert.ToDouble(comboBox9.Text) * (Convert.ToDouble(textBox11.Text) / 12);
+
                     //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта + наценка_оборудов_месяц * срок контракта
-                    cost_print = cost_print + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value)); 
+                    cost_print = cost_print + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value));
                     //цена_принт_акса_гарантии = цена_нименов * кол-во(1) * срок_проекта * LRf * dur_proj
-                    cost_vith_LRF =  cost_vith_LRF + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value) * Convert.ToDouble(comboBox11.Text) * Convert.ToDouble(comboBox9.Text));
+                    cost_vith_LRF = cost_vith_LRF + (Convert.ToDouble(vibor1DataGridView[3, i].Value) * Convert.ToDouble(vibor1DataGridView[4, i].Value) * Convert.ToDouble(comboBox11.Text) * Convert.ToDouble(comboBox9.Text));
 
                     //ТУТ БАГ???? входная строка неверного формата (lrf= ,.)
                     //straxovka = (Convert.ToDouble(textBox11.Text) * cost_print );
@@ -505,7 +543,7 @@ namespace SOFT_FOR_ACCESS
                 if (Convert.ToString(vibor1DataGridView[1, i].Value) == "soft")
                     cost_soft = cost_soft + Convert.ToDouble(vibor1DataGridView[3, i].Value);
 
-                if ( Convert.ToString(vibor1DataGridView[1, i].Value) == "soft_serv")
+                if (Convert.ToString(vibor1DataGridView[1, i].Value) == "soft_serv")
                     cost_serv_soft = cost_serv_soft + Convert.ToDouble(vibor1DataGridView[3, i].Value);
 
 
@@ -539,7 +577,7 @@ namespace SOFT_FOR_ACCESS
 
 
 
-                    vibor1DataGridView[11, i].Value = cost_m_proj; 
+                    vibor1DataGridView[11, i].Value = cost_m_proj;
                     vibor1DataGridView[12, i].Value = cost_c_proj;
 
                     qty1 = qty1 + qty_m_p2;        //кол-во всего моно LLC + supply для проекта
@@ -575,8 +613,8 @@ namespace SOFT_FOR_ACCESS
 
             {
                 //for (int i = 0; i < Convert.ToDouble(quantity_textBox.Text); i++)
-                                                                                      //   name                                      kol-vo          v_pech_mono    v_pech_color     cost_pech_month        цена_моно    цена_цвет  затраты_печать_п  затраты_аренд_п                 все_затраты
-                    this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, Convert.ToDouble(quantity_textBox.Text), textBox1.Text, textBox2.Text, cost_print / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print, LRF, strax, cost1 + cost2 + cost_vith_LRF + strax);
+                //   name                                      kol-vo          v_pech_mono    v_pech_color     cost_pech_month        цена_моно    цена_цвет  затраты_печать_п  затраты_аренд_п                 все_затраты
+                this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, Convert.ToDouble(quantity_textBox.Text), textBox1.Text, textBox2.Text, cost_print / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print, LRF, strax, cost1 + cost2 + cost_vith_LRF + strax);
 
             }
             else
@@ -591,7 +629,7 @@ namespace SOFT_FOR_ACCESS
             else
                 total_copy = (v_pech_mono) * dur_project;
 
-            cost_one_m = ((cost_contract * dur_project) / total_copy) + cost_one_m; 
+            cost_one_m = ((cost_contract * dur_project) / total_copy) + cost_one_m;
             cost_one_c = (cost_contract * dur_project / total_copy) + cost_one_c;
 
 
@@ -624,34 +662,49 @@ namespace SOFT_FOR_ACCESS
             nacenka_oboryd_p = (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text));
             double arenda_proj = cost_print2 - nacenka_oboryd_p;
 
-            MessageBox.Show("АРЕНДА_ПРОЕКТ(dev+acc+gar)*LRF= " + arenda_proj + 
+
+
+            //DialogResult dialogResult = MessageBox.Show("Сформировать коммерческое предложение?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (dialogResult == DialogResult.Yes)
+            //{
+            //    PDF();
+            //}
+
+
+
+
+            DialogResult dialogResult = MessageBox.Show("АРЕНДА_ПРОЕКТ(dev+acc+gar)*LRF= " + arenda_proj +
                 "\n + В АРЕНДУ_ПРОЕКТ(труд, командир, доп услуги)= " + trash_2 * dur_project +
                 "\n + НАКЛАДНЫЕ_месяц(усл_контр)= " + textBox3.Text +
                 "\n = ИТОГ АРЕНДА ПРОЕКТ= " + cost_print2 +
                 "\n" +
                 "\n аренда в месяц= " + cost_print2 / dur_project +
                 "\n" +
-                "\n kol-vo mono= " + qty1 + 
-                "\n cost_mono= " + cost1 + 
-                "\n kol-vo color= " + qty2 + 
+                "\n kol-vo mono= " + qty1 +
+                "\n cost_mono= " + cost1 +
+                "\n kol-vo color= " + qty2 +
                 "\n cost_color= " + cost2 +
                 "\n" +
-                "\n cost_one_mono + наценка= " + cost_one_m + 
+                "\n cost_one_mono + наценка= " + cost_one_m +
                 "\n cost_one_color + наценка= " + cost_one_c +
-                "\n страховка= " + strax,
+                "\n страховка= " + strax+
                 "\n" +
-                //"\n ЗАТРАТЫ НА ПРОЕКТ= " + cost_one_m +
-                "ТЕСТОВОЕ ОКНО!!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                "\n" +
+                "\n" +
+                "\n СФОРМИРОВАТЬ PDF файл??? ", 
+                "PDF", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
 
             try
-                
+
             {    //ВРЕМЕННО!!!!!!!!!!!!!!!!!!!!!!!!!
                 //ExportToExcel(1, textBox1.Text, textBox2.Text, last_cost / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print, cost_print + cost1 + cost2);
                 //vivod();
 
                 //int i = 0;
                 int z = 0;
-                for (int i = 0; i < vibor1DataGridView.RowCount - 1; i++)
+                for (int i = 0; i <= vibor1DataGridView.RowCount - 1; i++)
                 {
                     this.database2_TESTDataSet.vivod.Rows.Add(null, vibor1DataGridView[1, i].Value, vibor1DataGridView[2, i].Value, vibor1DataGridView[3, i].Value, vibor1DataGridView[9, i].Value, vibor1DataGridView[10, i].Value, "---", "---");
                     z = i;
@@ -668,7 +721,7 @@ namespace SOFT_FOR_ACCESS
                 if (radioButton13.Checked == true)          //НАЦЕНКИ
                 {
                     this.database2_TESTDataSet.vivod_itog.Rows.Add(null, vibor1DataGridView[2, 0].Value, quantity_textBox.Text, textBox1.Text, textBox2.Text, arenda_proj / dur_project, cost_one_m, cost_one_c, Convert.ToString(zatrati_print_nac), arenda_proj, (zatrati_print_nac + arenda_proj), vibor1DataGridView[1, 0].Value);
-                    for (int i = 0; i < vibor1DataGridView.RowCount - 1; i++)
+                    for (int i = 0; i <= vibor1DataGridView.RowCount - 1; i++)
                     {
                         if (Convert.ToString(vibor1DataGridView[1, i].Value) == "accessory")
                         {
@@ -683,6 +736,11 @@ namespace SOFT_FOR_ACCESS
                 //this.database2_TESTDataSet.vivod.Rows.Add(null, "---", "кол-во устройств", "объём печати моно в мес", "аренда в месяц", "цена копии моно", "затраты на печать проект");
 
                 //this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, textBox1.Text, textBox2.Text, cost_print / dur_project, cost_one_m, cost_one_c, cost1 + cost2, arenda_proj, cost1 + cost2 + arenda_proj);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    PDF();
+                }
 
             }
             catch
@@ -728,6 +786,16 @@ namespace SOFT_FOR_ACCESS
             textBox1.Clear();
             textBox2.Clear();
             comboBox9.Text = "";
+
+        }
+
+
+        private void button9_Click(object sender, EventArgs e)          //кнопка РАСЧЁТ
+        {
+            CALCULATE();
+ 
+
+
         }
 
 
@@ -780,6 +848,20 @@ namespace SOFT_FOR_ACCESS
             Notes[1].n6 = Convert.ToString(comboBox7.Text);
             Notes[1].n7 = Convert.ToString(more_service);
             Notes[1].n8 = Convert.ToString(comboBox8.Text);
+
+
+
+            FileStream file1 = new FileStream("1.txt", FileMode.Open); //создаем файловый поток
+            StreamWriter writer = new StreamWriter(file1); // создаем «потоковый читатель» и связываем его с файловым потоком
+
+            for (int i = 0; i < 2; i++)
+            {
+
+                writer.WriteLine(Notes[i].n1 + "_" + Notes[i].n2 + "_" + Notes[i].n3 + "_" + Notes[i].n4 + "_" + Notes[i].n5 + "_" + Notes[i].n6 + "_" + Notes[i].n7 + "_" + Notes[i].n8 + "_" + Notes[i].n9);
+                //Notes[i].n1
+            }
+
+            writer.Close(); //закрываем поток
 
 
 
@@ -850,7 +932,13 @@ namespace SOFT_FOR_ACCESS
 
         private void button12_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dev2soft_ЗапросDataGridView.RowCount - 1; i++)
+            if (first_print_check != 1)
+            {
+                MessageBox.Show("Сначала выберите принтер!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            for (int i = 0; i <= dev2soft_ЗапросDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(dev2soft_ЗапросDataGridView[9, i].Value) == "True")
                 {
@@ -861,7 +949,15 @@ namespace SOFT_FOR_ACCESS
 
         private void button13_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < dev2soft_ЗапросDataGridView.RowCount - 1; i++)
+
+            if (first_print_check != 1)
+            {
+                MessageBox.Show("Сначала выберите принтер!", "ОШИБКА", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            for (int i = 0; i <= dev2soft_ЗапросDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(dev2soft_serv_ЗапросDataGridView[9, i].Value) == "True")
                 {
@@ -870,249 +966,7 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
 
-            //Access.Application oAccess = null;
-
-            //string sAccPath = null; //path to msaccess.exe
-            //Process p = null;
-
-            // Start a new instance of Access for Automation:
-            //oAccess = new Access.ApplicationClass();         //ApplicationClass();
-
-            // Open a database in exclusive mode:
-            //oAccess.OpenCurrentDatabase(
-            // "C:\\Users\\evgeniy.barabash\\source\\repos\\SOFT_FOR_ACCESS\\SOFT_FOR_ACCESS\\Database2_TEST.accdb", //filepath
-            // true //Exclusive
-            //  );
-
-
-            // Preview a report named Sales:
-            //oAccess.DoCmd.OpenReport(
-            // "Access", //ReportName
-            //Access.AcView.acViewPreview, //View
-            //  System.Reflection.Missing.Value, //FilterName
-            //   System.Reflection.Missing.Value //WhereCondition
-            //   );
-
-
-
-            //// Select the Employees report in the database window:
-            //oAccess.DoCmd.SelectObject(
-            //   Access.AcObjectType.acReport, //ObjectType
-            //   "LAST_EZ", //ObjectName
-            //   true //InDatabaseWindow
-            //   );
-
-
-
-            //// Print 2 copies of the active object: 
-            //oAccess.DoCmd.PrintOut(
-            //   Access.AcPrintRange.acPrintAll, //PrintRange
-            //   System.Reflection.Missing.Value, //PageFrom
-            //   System.Reflection.Missing.Value, //PageTo
-            //   Access.AcPrintQuality.acHigh, //PrintQuality
-            //   2, //Copies
-            //   false //CollateCopies
-            //   );
-
-
-
-            //OpenFileDialog ofd = new OpenFileDialog();
-            //ofd.DefaultExt = "*.xls;*.xlsx";
-            //ofd.Filter = "Excel 2003(*.xls)|*.xls|Excel 2007(*.xlsx)|*.xlsx";
-            //ofd.Title = "Выберите документ для загрузки данных";
-
-            //if (ofd.ShowDialog() == DialogResult.OK)
-            //{
-            //    textBox1.Text = ofd.FileName;
-
-            //    String constr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + ofd.FileName + ";Extended Properties='Excel 12.0 XML;HDR=NO;IMEX = 1;';";
-
-            //    System.Data.OleDb.OleDbConnection con = new System.Data.OleDb.OleDbConnection(constr);
-            //    con.Open();
-
-            //    DataSet ds = new DataSet();
-            //    SD.DataTable schemaTable = con.GetOleDbSchemaTable(System.Data.OleDb.OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
-
-            //    string sheet1 = (string)schemaTable.Rows[0].ItemArray[2];
-            //    string select = String.Format("SELECT * FROM [{0}]", sheet1);
-
-            //    System.Data.OleDb.OleDbDataAdapter ad =    new System.Data.OleDb.OleDbDataAdapter(select, con);
-
-            //    ad.Fill(ds);
-
-            //    SD.DataTable tb = ds.Tables[0];
-            //    con.Close();
-            //    dataGridView1.DataSource = tb;
-            //    con.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Вы не выбрали файл для открытия",
-            //            "Загрузка данных...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
-
-
-
-
-
-
-
-            OpenFileDialog ofd = new OpenFileDialog();
-            //Задаем расширение имени файла по умолчанию.
-            ofd.DefaultExt = "*.xls;*.xlsx";
-            //Задаем строку фильтра имен файлов, которая определяет
-            //варианты, доступные в поле "Файлы типа" диалогового
-            //окна.
-            ofd.Filter = "Excel Sheet(*.xls)|*.xls";
-            //Задаем заголовок диалогового окна.
-            ofd.Title = "Выберите документ для загрузки данных";
-            ExcelObj.Application app = new ExcelObj.Application();
-            ExcelObj.Workbook workbook;
-            ExcelObj.Worksheet NwSheet;
-            ExcelObj.Range ShtRange;
-            SD.DataTable dt = new SD.DataTable();
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                textBox1.Text = ofd.FileName;
-
-                workbook = app.Workbooks.Open(ofd.FileName, Missing.Value,
-                Missing.Value, Missing.Value, Missing.Value, Missing.Value,
-                Missing.Value, Missing.Value, Missing.Value, Missing.Value,
-                Missing.Value, Missing.Value, Missing.Value, Missing.Value,
-                Missing.Value);
-
-                //Устанавливаем номер листа из котрого будут извлекаться данные
-                //Листы нумеруются от 1
-                NwSheet = (ExcelObj.Worksheet)workbook.Sheets.get_Item(1);
-                ShtRange = NwSheet.UsedRange;
-                for (int Cnum = 1; Cnum <= ShtRange.Columns.Count; Cnum++)
-                {
-                    dt.Columns.Add( new DataColumn((ShtRange.Cells[1, Cnum] as ExcelObj.Range).Value2.ToString()));
-                }
-                dt.AcceptChanges();
-
-                string[] columnNames = new String[dt.Columns.Count];
-                for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    columnNames[0] = dt.Columns[i].ColumnName;
-                }
-
-                for (int Rnum = 2; Rnum <= ShtRange.Rows.Count; Rnum++)
-                {
-                    DataRow dr = dt.NewRow();
-                    for (int Cnum = 1; Cnum <= ShtRange.Columns.Count; Cnum++)
-                    {
-                        if ((ShtRange.Cells[Rnum, Cnum] as ExcelObj.Range).Value2 != null)
-                        {
-                            dr[Cnum - 1] =
-                (ShtRange.Cells[Rnum, Cnum] as ExcelObj.Range).Value2.ToString();
-                        }
-                    }
-                    dt.Rows.Add(dr);
-                    dt.AcceptChanges();
-                }
-
-                dataGridView1.DataSource = dt;
-                app.Quit();
-            }
-            else
-                System.Windows.Forms.Application.Exit();
-
-
-
-
-
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-
-            //string filename = opf.FileName;
-            //Excel.Application exApp = new Excel.Application();
-            //Создаём приложение.
-            Microsoft.Office.Interop.Excel.Application ObjExcel = new Microsoft.Office.Interop.Excel.Application();
-            //Открываем книгу.     
-
-
-            OpenFileDialog openDialog = new OpenFileDialog();
-            openDialog.Filter = "Файл Excel|*.XLSX;*.XLS";
-            openDialog.ShowDialog();
-
-
-
-            //Microsoft.Office.Interop.Excel._Workbook ExcelWorkBook = 
-               // ObjExcel.Workbooks.Open(filename, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
-
-
-            //Microsoft.Office.Interop.Excel.Workbook ObjWorkBook = ObjExcel.Workbooks.Open(@"C:\file.xls", 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-            //Выбираем таблицу(лист).
-            Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet;
-            //ObjWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBook.Sheets[1];
-            //string[,] Telephons = new string[100];
-            //Выбираем первые сто записей из столбца.
-            Worksheet workSheet = (Worksheet)ObjExcel.ActiveSheet;
-
-            for (int i = 1; i < 4; i++)
-            {
-
-                //exApp.Workbooks.Open();
-
-                //workSheet.Cells[1, 1]
-
-
-                //Выбираем область таблицы. (в нашем случае просто ячейку)
-                //Microsoft.Office.Interop.Excel.Range range = ObjWorkSheet.get_Range(1 + i, 1 + i);
-                //Microsoft.Office.Interop.Excel.Range range2 = ObjWorkSheet.get_Range(1, 1);
-                //get_Range(2 + i.ToString(), 2 + i.ToString());
-                //Microsoft.Office.Interop.Excel.Range range3 = ObjWorkSheet.get_Range(3 + i.ToString(), 3 + i.ToString());
-                //Microsoft.Office.Interop.Excel.Range range4 = ObjWorkSheet.get_Range(4 + i.ToString(), 4 + i.ToString());
-                //care_packTableAdapter
-                //Microsoft.Office.Interop.Excel.Range range = 
-                //Добавляем полученный из ячейки текст.
-                //Telephons[i - 1] = range.Text.ToString();
-                this.database2_TESTDataSet.Care_pack.Rows.Add(null, workSheet.Cells[1, 1], workSheet.Cells[2, 1], workSheet.Cells[3, 1], workSheet.Cells[4, 1]);
-                //this.database2_TESTDataSet2.Care_pack.Rows.Add()
-
-               // this.dev2care_ЗапросDataGridView[1, i].Value = workSheet.Cells[i, 1];
-               // this.dev2care_ЗапросDataGridView[2, i].Value = workSheet.Cells[i, 2];
-               // this.dev2care_ЗапросDataGridView[3, i].Value = workSheet.Cells[i, 3];
-                //this.dev2care_ЗапросDataGridView[4, i].Value = workSheet.Cells[i, 4];
-                //this.dev2care_ЗапросDataGridView[5, i].Value = workSheet.Cells[i, 5];
-                //this.dev2care_ЗапросDataGridView[6, i].Value = workSheet.Cells[i, 6];
-            }
-        }
-
-
-
-
-
-        static IEnumerable<Metric> EnumerateMetrics(string xlsxpath)
-        {
-            // Открываем книгу
-            using (var workbook = new XLWorkbook(xlsxpath))
-            // Берем в ней первый лист
-            using (var worksheet = workbook.Worksheets.Worksheet(1))
-            {
-                // Перебираем диапазон нужных строк
-                for (int row = 2; row <= 3; ++row)
-                {
-                    // По каждой строке формируем объект
-                    var metric = new Metric
-                    {
-                        Alpha = worksheet.Cell(row, 1).GetValue<int>(),
-                        Beta = worksheet.Cell(row, 2).GetValue<int>(),
-                        Gamma = worksheet.Cell(row, 3).GetValue<int>(),
-                        Delta = worksheet.Cell(row, 4).GetValue<int>(),
-                    };
-                    // И возвращаем его
-                    yield return metric;
-                }
-            }
-        }
 
 
         private void printerDataGridView_Click(object sender, EventArgs e)
@@ -1212,6 +1066,7 @@ namespace SOFT_FOR_ACCESS
 
         private void button15_Click(object sender, EventArgs e)
         {
+            
             clear_vibor();
             textBox1.Clear();
             textBox2.Clear();
@@ -1222,12 +1077,21 @@ namespace SOFT_FOR_ACCESS
 
         void clear_vibor()
         {
-            while (vibor1DataGridView.Rows.Count > 1)
-                for (int i = 0; i < vibor1DataGridView.Rows.Count - 1; i++)
+            first_print_check = 0;
+            //for (int i = vibor1DataGridView.Rows.Count; i > 0; i++)
+                //Notes.RemoveAt(i);
+
+            while (vibor1DataGridView.Rows.Count >= 1)
+                for (int i = 0; i <= vibor1DataGridView.Rows.Count - 1; i++)
                     vibor1DataGridView.Rows.Remove(vibor1DataGridView.Rows[i]);
+
+            
+
 
             this.vibor1TableAdapter.Update(this.database2_TESTDataSet.vibor1);
             this.vibor1TableAdapter.Fill(this.database2_TESTDataSet.vibor1);
+
+            
         }
 
         private void printerBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -1348,97 +1212,7 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AppendToDocument("2.pdf", "Document.pdf", "TEST.pdf");
-            AppendToDocument("TEST.pdf", "3.pdf", "kp.pdf");
-        }
-
-
-
-        private void button5_Click_1(object sender, EventArgs e)
-        {
-            //OpenFileDialog opf = new OpenFileDialog();
-            //opf.Filter = "Файл Excel|*.XLSX;*.XLS";
-            //opf.ShowDialog();
-            //System.Data.DataTable tb = new System.Data.DataTable();
-            //string filename = opf.FileName;
-
-            //Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
-            //Microsoft.Office.Interop.Excel._Workbook ExcelWorkBook;
-            //Microsoft.Office.Interop.Excel.Worksheet ExcelWorkSheet;
-
-            //ExcelWorkBook = ExcelApp.Workbooks.Open(filename, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false,
-            //    false, 0, true, 1, 0);
-            //ExcelWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ExcelWorkBook.Worksheets.get_Item(1);
-
-            //printerDataGridView.Rows.Add(1);
-
-            //printerDataGridView.Rows[0].Cells[0].Value = ExcelApp.Cells[1, 1].Value;
-
-
-            OpenFileDialog openDialog = new OpenFileDialog();
-            openDialog.Filter = "Файл Excel|*.XLSX;*.XLS";
-            openDialog.ShowDialog();
-
-
-            Microsoft.Office.Interop.Excel.Application ObjExcel = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel._Workbook ObjWorkBook = ObjExcel.Workbooks.Open(openDialog.FileName);
-            Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet = ObjExcel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
-            Microsoft.Office.Interop.Excel.Range rg = null;
-
-            try
-            {
-                ObjExcel = new Microsoft.Office.Interop.Excel.Application();
-                ObjWorkBook = ObjExcel.Workbooks.Open(openDialog.FileName);
-                ObjWorkSheet = ObjExcel.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
-                rg = null;
-
-                //------------------------------
-
-                this.database2_TESTDataSet.Care_pack.Rows.Add(ObjWorkSheet.Cells[0, 1], ObjWorkSheet.Cells[1, 1], ObjWorkSheet.Cells[2, 1], ObjWorkSheet.Cells[3, 1], ObjWorkSheet.Cells[4, 1]);
-
-                //this.database2_TESTDataSet.Care_pack.
-
-                //---------------------------------
-
-                Int32 row = 1;
-                //printerDataGridView.Rows.Clear();
-                List<String> arr = new List<string>();
-                while (ObjWorkSheet.get_Range("a" + row, "a" + row).Value != null)
-                {
-                    rg = ObjWorkSheet.get_Range("a" + row, "u" + row);
-                    foreach (Microsoft.Office.Interop.Excel.Range item in rg)
-                    {
-                        try
-                        {
-                            arr.Add(item.Value.ToString().Trim());
-                        }
-                        catch { arr.Add(""); }
-                    }
-                    printerDataGridView.Rows.Add(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]);
-                    arr.Clear();
-                    row++;
-                }
-                MessageBox.Show("Файл успешно считан!", "Считывание файла", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex) { MessageBox.Show("Ошибка: " + ex.Message, "Ошибка при считывании excel файла", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            {
-
-                ObjWorkBook.Close(false, "", null);
-                ObjExcel.Quit();
-                ObjWorkBook = null;
-                ObjWorkSheet = null;
-                ObjExcel = null;
-            }
-            ObjWorkBook.Close(false, "", null);
-            ObjExcel.Quit();
-            ObjWorkBook = null;
-            ObjWorkSheet = null;
-            ObjExcel = null;
-        }
-
-        
+       
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1484,7 +1258,8 @@ namespace SOFT_FOR_ACCESS
 
         }
 
-        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void PDF ()
         {
             //PdfWriter.GetInstance(doc, new FileStream(path + "/Doc2.pdf", FileMode.Create));
             string myFont = @"C:\\Windows\\Fonts\\arial.ttf";
@@ -1497,6 +1272,15 @@ namespace SOFT_FOR_ACCESS
             var doc = new iTextSharp.text.Document(pgSize, -70, -70, 0, 0);
             //doc.SetPageSize(PageSize.A4.Rotate());      //albom arientation
             //doc.SetPageSize(PageSize.A4, 0, 0, 0, 0);
+
+
+            SaveFileDialog savef = new SaveFileDialog();
+            savef.Filter = "pdf|*.*";       
+            savef.Title = "Сохранить КП как...";
+            savef.DefaultExt = ".pdf";      
+            savef.OverwritePrompt = true;
+            savef.ShowDialog();
+            string filename = savef.FileName;
             PdfWriter.GetInstance(doc, new FileStream(System.Windows.Forms.Application.StartupPath + @"\Document.pdf", FileMode.Create));
             doc.Open();
             iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(System.Windows.Forms.Application.StartupPath + @"/prim_ras.jpg");
@@ -1507,8 +1291,8 @@ namespace SOFT_FOR_ACCESS
             PdfPCell cell0 = new PdfPCell(new Phrase("Тип", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
             PdfPCell cell1 = new PdfPCell(new Phrase("Название", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
             PdfPCell cell2 = new PdfPCell(new Phrase("Кол-во", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
-            PdfPCell cell3 = new PdfPCell(new Phrase("V моно печати", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
-            PdfPCell cell4 = new PdfPCell(new Phrase("V цвет печати", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell3 = new PdfPCell(new Phrase("Объём моно печати", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
+            PdfPCell cell4 = new PdfPCell(new Phrase("Объём цвет печати", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
             PdfPCell cell5 = new PdfPCell(new Phrase("Абон в месяц", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
             PdfPCell cell6 = new PdfPCell(new Phrase("Цена моно копии", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
             PdfPCell cell7 = new PdfPCell(new Phrase("Цена цвет копии", new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK)));
@@ -1551,24 +1335,8 @@ namespace SOFT_FOR_ACCESS
 
             //Math.Round(Convert.ToDouble(vivod_itogDataGridView[1, 0].Value), 2);
             int k = 1;
-            for (int i = 0; i < vivod_itogDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= vivod_itogDataGridView.RowCount - 1; i++)
             {
-                if (Convert.ToString(vivod_itogDataGridView[1, i].Value) == "Printer" && i > 0)
-                {
-                    table.AddCell("");
-                    table.AddCell("---");
-                    table.AddCell("---");
-                    table.AddCell("---");
-                    table.AddCell("---");
-                    table.AddCell("---");
-                    table.AddCell("---");
-                    table.AddCell("---");
-                    table.AddCell("---");
-                    table.AddCell("---");
-                    table.AddCell("---");
-                    table.AddCell("---");
-                }
-
                 if (Convert.ToString(vivod_itogDataGridView[1, i].Value) == "Printer")
                     table.AddCell(Convert.ToString(k++));
                 else
@@ -1618,23 +1386,88 @@ namespace SOFT_FOR_ACCESS
             //document.close();
 
             AppendToDocument("2.pdf", "Document.pdf", "TEST.pdf");
-            AppendToDocument("TEST.pdf", "3.pdf", "Commercial_offer.pdf");
+            AppendToDocument("TEST.pdf", "3.pdf", filename);            // + ".pdf"
 
             MessageBox.Show("commercial offer was created!", "Good", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PDF();
+        }
+
+
+        private void printerToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             import_print import_print = new import_print();
             import_print.Show();
-
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void lLCToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             import_LLC import_LLC = new import_LLC();
             import_LLC.Show();
+        }
+
+        private void supplyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            import_sup import_sup = new import_sup();
+            import_sup.Show();
+        }
+
+        private void accessoryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            import_acc import_acc = new import_acc();
+            import_acc.Show();
+        }
+
+        private void carepackToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            import_care_pack import_care_pack = new import_care_pack();
+            import_care_pack.Show();
+        }
+
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string s1 = null;
+            // File.Create("test.txt");
+            FileStream file1 = new FileStream("2_test.txt", FileMode.Open); //создаем файловый поток
+            StreamReader reader = new StreamReader(file1); // создаем «потоковый читатель» и связываем его с файловым потоком
+            for (int i = 0; i < 10; i++)
+            {
+                s1 = reader.ReadLine();
+                String[] words = s1.Split(new char[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+
+                if (words[0] == "Printer" && i != 0)
+                    CALCULATE();
+                //for (int j = 0; j < 2; j++)
+                {
+                    if (words[0] == "Printer")
+                        this.database2_TESTDataSet.vibor1.Rows.Add(null, words[0], words[1], words[2], words[3], words[4]);
+                    else
+                    this.database2_TESTDataSet.vibor1.Rows.Add(null, words[0], words[1], words[2], words[3], words[4], words[5], words[6], words[7], words[8]);
+                }
+            }
+            reader.Close(); //закрываем поток
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FileStream file1 = new FileStream("1.txt", FileMode.Append); //создаем файловый поток
+            StreamWriter writer = new StreamWriter(file1); // создаем «потоковый читатель» и связываем его с файловым потоком
+            for (int i = 2; i <= vibor1DataGridView.RowCount + 1; i++)
+            {
+
+                writer.WriteLine(Notes[i].n1 + "_" + Notes[i].n2 + "_" + Notes[i].n3 + "_" + Notes[i].n4 + "_" + Notes[i].n5 + "_" + Notes[i].n6 + "_" + Notes[i].n7 + "_" + Notes[i].n8 + "_" + Notes[i].n9);
+                //Notes[i].n1
+            }
+            writer.Close(); //закрываем поток
+
+
         }
     }
 
@@ -1657,6 +1490,7 @@ namespace SOFT_FOR_ACCESS
     {
         public static string Value1 { get; set; }
         public static string Value2 { get; set; }
+        public static string Value3 { get; set; }
         public static double copy_m_proj { get; set; }
         public static double copy_c_proj { get; set; }
 

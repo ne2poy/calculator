@@ -45,7 +45,7 @@ namespace SOFT_FOR_ACCESS
         {
             try
             {
-                for (int i = 0; i < accessoryDataGridView.RowCount - 1; i++)
+                for (int i = 0; i <= accessoryDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(accessoryDataGridView[0, i].Value) == textBox_id_acc.Text)
                     {
@@ -80,12 +80,12 @@ namespace SOFT_FOR_ACCESS
             try
             {
                 double ch = 0;
-                for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+                for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(printerDataGridView[9, i].Value) == "True")
                     {
                         ch = 0;
-                        for (int j = 0; j < dev2acc_ЗапросDataGridView.RowCount - 1; j++)
+                        for (int j = 0; j <= dev2acc_ЗапросDataGridView.RowCount - 1; j++)
                         {
                             if (Convert.ToString(dev2acc_ЗапросDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2acc_ЗапросDataGridView[2, j].Value) == comboBox1.Text)
                                 ch = 1;
@@ -101,7 +101,7 @@ namespace SOFT_FOR_ACCESS
                     }
                     else
                     {
-                        for (int j = 0; j < dev2accDataGridView.RowCount - 1; j++)
+                        for (int j = 0; j <= dev2accDataGridView.RowCount - 1; j++)
                         {
                             if (Convert.ToString(dev2accDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2accDataGridView[2, j].Value) == comboBox1.Text)
                             {
@@ -135,10 +135,10 @@ namespace SOFT_FOR_ACCESS
             this.dev2acc_ЗапросBindingSource.Filter = "[dev2acc_id_acc] LIKE'" + comboBox1.Text + "'";
 
 
-            for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
             {
                 printerDataGridView[9, i].Value = "False";
-                for (int j = 0; j < dev2acc_ЗапросDataGridView.RowCount - 1; j++)
+                for (int j = 0; j <= dev2acc_ЗапросDataGridView.RowCount - 1; j++)
                 {
 
                     if (Convert.ToString(printerDataGridView[0, i].Value) == Convert.ToString(dev2acc_ЗапросDataGridView[1, j].Value))
@@ -150,7 +150,7 @@ namespace SOFT_FOR_ACCESS
 
         private void textBox_id_acc_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < accessoryDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= accessoryDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(accessoryDataGridView[0, i].Value) == textBox_id_acc.Text)
                 {
@@ -188,9 +188,46 @@ namespace SOFT_FOR_ACCESS
                 textBox_name_dop.Enabled = true;
                 textBox_cost.Enabled = true;
                 checkBox1.Enabled = true;
-                load_acc_table();
+
+
+                textBox_id_acc.Text = "";
+                textBox_name_dop.Text = "";
+                textBox_cost.Text = "";
+
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
+                this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
+                //load_acc_table();
             }
-            else
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (del_acc.Checked == true)
+            {
+                printerDataGridView.Enabled = true;
+                button1.Enabled = true;
+
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
+                button3.Enabled = false;              
+                add_new_acc_button.Enabled = false;
+                textBox_id_acc.Enabled = false;
+                textBox_name_dop.Enabled = false;
+                textBox_cost.Enabled = false;
+                checkBox1.Enabled = false;
+
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
+                this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
+
+                //load_acc_table();
+            }
+
+        }
+
+        private void connect_acc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (connect_acc.Checked == true)
             {
                 printerDataGridView.Enabled = true;
                 comboBox1.Enabled = true;
@@ -205,6 +242,61 @@ namespace SOFT_FOR_ACCESS
                 checkBox1.Enabled = false;
                 load_acc_table();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double ch = 0;
+                for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
+                {
+                    if (Convert.ToString(printerDataGridView[9, i].Value) == "True")
+                    {
+                        ch++;
+                        //for (int j = 0; j <= dev2acc_ЗапросDataGridView.RowCount - 1; j++)
+                        {
+                            printerDataGridView.Rows.RemoveAt(i);
+                                //dgv.Rows.Remove(row);
+
+                            //if (Convert.ToString(dev2acc_ЗапросDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2acc_ЗапросDataGridView[2, j].Value) == comboBox1.Text)
+                            //ch = 1;
+                        }
+
+                        if (ch == 0)
+                        {
+                            //this.database2_TESTDataSet.Dev2acc.Rows.Add(null, printerDataGridView[0, i].Value, comboBox1.Text);
+                            //this.dev2accTableAdapter.Update(this.database2_TESTDataSet.Dev2acc);
+                            //this.dev2acc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос);
+                        }
+
+                    }
+                    else
+                    {
+                        for (int j = 0; j <= dev2accDataGridView.RowCount - 1; j++)
+                        {
+                            if (Convert.ToString(dev2accDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2accDataGridView[2, j].Value) == comboBox1.Text)
+                            {
+
+
+                                this.database2_TESTDataSet.Dev2acc.Rows[j].Delete();
+                                this.dev2accTableAdapter.Update(this.database2_TESTDataSet.Dev2acc);
+                                this.dev2acc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос);
+                            }
+                        }
+                    }
+
+
+                }
+                MessageBox.Show("Успех!", "Найс", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                load_acc_table();
+            }
+            catch
+            {
+                MessageBox.Show("Не добавлена связь!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+
+
         }
     }
 }

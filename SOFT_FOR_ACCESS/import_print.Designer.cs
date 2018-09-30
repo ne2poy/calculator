@@ -47,6 +47,8 @@
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.id_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,8 +61,6 @@
             this.vote_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tip_print = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nagryzka = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
@@ -69,6 +69,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_dev,
@@ -83,9 +86,9 @@
             this.vote_dev,
             this.tip_print,
             this.nagryzka});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1250, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(1250, 343);
             this.dataGridView1.TabIndex = 0;
             // 
             // database2_TESTDataSet
@@ -155,10 +158,11 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.printerDataGridView.DataSource = this.printerBindingSource;
-            this.printerDataGridView.Location = new System.Drawing.Point(12, 263);
+            this.printerDataGridView.Location = new System.Drawing.Point(12, 167);
             this.printerDataGridView.Name = "printerDataGridView";
-            this.printerDataGridView.Size = new System.Drawing.Size(1250, 220);
+            this.printerDataGridView.Size = new System.Drawing.Size(1228, 148);
             this.printerDataGridView.TabIndex = 2;
+            this.printerDataGridView.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -232,71 +236,11 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "nagryzka";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
-            // id_dev
-            // 
-            this.id_dev.HeaderText = "id_dev";
-            this.id_dev.Name = "id_dev";
-            // 
-            // type
-            // 
-            this.type.HeaderText = "type";
-            this.type.Name = "type";
-            // 
-            // name_dev
-            // 
-            this.name_dev.HeaderText = "name_dev";
-            this.name_dev.Name = "name_dev";
-            // 
-            // id_sup
-            // 
-            this.id_sup.HeaderText = "id_sup";
-            this.id_sup.Name = "id_sup";
-            // 
-            // format
-            // 
-            this.format.HeaderText = "format";
-            this.format.Name = "format";
-            // 
-            // speed
-            // 
-            this.speed.HeaderText = "speed";
-            this.speed.Name = "speed";
-            // 
-            // type_print
-            // 
-            this.type_print.HeaderText = "type_print";
-            this.type_print.Name = "type_print";
-            // 
-            // cost
-            // 
-            this.cost.HeaderText = "cost";
-            this.cost.Name = "cost";
-            // 
-            // kol_vo
-            // 
-            this.kol_vo.HeaderText = "kol_vo";
-            this.kol_vo.Name = "kol_vo";
-            // 
-            // vote_dev
-            // 
-            this.vote_dev.HeaderText = "vote_dev";
-            this.vote_dev.Name = "vote_dev";
-            // 
-            // tip_print
-            // 
-            this.tip_print.HeaderText = "tip_print";
-            this.tip_print.Name = "tip_print";
-            // 
-            // nagryzka
-            // 
-            this.nagryzka.HeaderText = "nagryzka";
-            this.nagryzka.Name = "nagryzka";
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(460, 234);
+            this.button1.Location = new System.Drawing.Point(551, 351);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(81, 33);
             this.button1.TabIndex = 3;
             this.button1.Text = "import";
             this.button1.UseVisualStyleBackColor = true;
@@ -304,23 +248,89 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(598, 234);
+            this.button2.Location = new System.Drawing.Point(643, 351);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(81, 33);
             this.button2.TabIndex = 4;
             this.button2.Text = "ok";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // id_dev
+            // 
+            this.id_dev.HeaderText = "id";
+            this.id_dev.Name = "id_dev";
+            // 
+            // type
+            // 
+            this.type.HeaderText = "Тип";
+            this.type.Name = "type";
+            // 
+            // name_dev
+            // 
+            this.name_dev.HeaderText = "Название";
+            this.name_dev.Name = "name_dev";
+            // 
+            // id_sup
+            // 
+            this.id_sup.HeaderText = "id_sup";
+            this.id_sup.Name = "id_sup";
+            this.id_sup.Visible = false;
+            // 
+            // format
+            // 
+            this.format.HeaderText = "Формат";
+            this.format.Name = "format";
+            // 
+            // speed
+            // 
+            this.speed.HeaderText = "Скорость";
+            this.speed.Name = "speed";
+            // 
+            // type_print
+            // 
+            this.type_print.HeaderText = "Тип";
+            this.type_print.Name = "type_print";
+            // 
+            // cost
+            // 
+            this.cost.HeaderText = "Цена";
+            this.cost.Name = "cost";
+            // 
+            // kol_vo
+            // 
+            this.kol_vo.HeaderText = "Кол-во";
+            this.kol_vo.Name = "kol_vo";
+            // 
+            // vote_dev
+            // 
+            this.vote_dev.HeaderText = "Выбрать";
+            this.vote_dev.Name = "vote_dev";
+            // 
+            // tip_print
+            // 
+            this.tip_print.HeaderText = "tip_print";
+            this.tip_print.Name = "tip_print";
+            this.tip_print.Visible = false;
+            // 
+            // nagryzka
+            // 
+            this.nagryzka.HeaderText = "nagryzka";
+            this.nagryzka.Name = "nagryzka";
+            this.nagryzka.Visible = false;
+            // 
             // import_print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 505);
+            this.ClientSize = new System.Drawing.Size(1255, 391);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.printerDataGridView);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "import_print";
             this.Text = "import_print";
             this.Load += new System.EventHandler(this.import_print_Load);
@@ -339,18 +349,6 @@
         private System.Windows.Forms.BindingSource printerBindingSource;
         private Database2_TESTDataSetTableAdapters.PrinterTableAdapter printerTableAdapter;
         private Database2_TESTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_dev;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name_dev;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_sup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn format;
-        private System.Windows.Forms.DataGridViewTextBoxColumn speed;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type_print;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kol_vo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vote_dev;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tip_print;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nagryzka;
         private System.Windows.Forms.DataGridView printerDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -366,5 +364,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_dev;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_dev;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_sup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn format;
+        private System.Windows.Forms.DataGridViewTextBoxColumn speed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type_print;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kol_vo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vote_dev;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tip_print;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nagryzka;
     }
 }

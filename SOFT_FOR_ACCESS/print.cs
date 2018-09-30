@@ -21,7 +21,7 @@ namespace SOFT_FOR_ACCESS
         {
             try
             {
-                for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+                for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(printerDataGridView[0, i].Value) == textBox_id_dev.Text)
                     {
@@ -79,7 +79,7 @@ namespace SOFT_FOR_ACCESS
 
         private void textBox_id_dev_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < printerDataGridView.RowCount - 1; i++)
+            for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
             {
                 if (Convert.ToString(printerDataGridView[0, i].Value) == textBox_id_dev.Text)
                 {
