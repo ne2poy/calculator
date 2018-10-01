@@ -798,8 +798,12 @@ namespace SOFT_FOR_ACCESS
 
         private void button9_Click(object sender, EventArgs e)          //кнопка РАСЧЁТ
         {
+            if (comboBox11.Text.Length > 0)
             CALCULATE();
- 
+            else
+                MessageBox.Show("Выберите срок проекта для изменения LRF!", "Ошибка LRF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
 
 
         }
