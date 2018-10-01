@@ -1469,6 +1469,41 @@ namespace SOFT_FOR_ACCESS
 
 
         }
+
+        private void delaccToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void carepackToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            del_care_pack del_care_pack = new del_care_pack();
+            del_care_pack.ShowDialog();
+        }
+
+        private void accessoryToolStripMenuItem2_Click_1(object sender, EventArgs e)
+        {
+            del_acc del_acc = new del_acc();
+            del_acc.ShowDialog();
+        }
+
+        private void printerToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            del_printer del_printer = new del_printer();
+            del_printer.ShowDialog();
+        }
+
+        private void lLCToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            del_LLC del_LLC = new del_LLC();
+            del_LLC.ShowDialog();
+        }
+
+        private void supplyToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            del_supply del_supply = new del_supply();
+            del_supply.ShowDialog();
+
+        }
     }
 
 

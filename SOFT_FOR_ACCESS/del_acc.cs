@@ -19,25 +19,38 @@ namespace SOFT_FOR_ACCESS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if (del_acc.Checked == true)
-            {
-                //printerDataGridView.Enabled = true;
-                //button1.Enabled = true;
+                    int ind = accessoryDataGridView.SelectedRows[0].Index;
+                    accessoryDataGridView.Rows.RemoveAt(ind);
+                    accessoryDataGridView.Refresh();
+        }
 
-                //comboBox1.Enabled = false;
-                //comboBox2.Enabled = false;
-                //button3.Enabled = false;
-                //add_new_acc_button.Enabled = false;
-                //textBox_id_acc.Enabled = false;
-                //textBox_name_dop.Enabled = false;
-                //textBox_cost.Enabled = false;
-                //checkBox1.Enabled = false;
-
-                //// TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
-                //this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
-
-            }
+        private void accessoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.accessoryBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.database2_TESTDataSet);
 
         }
+
+        private void del_acc_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Accessory". При необходимости она может быть перемещена или удалена.
+            this.accessoryTableAdapter.Fill(this.database2_TESTDataSet.Accessory);
+
+        }
+
+        private void del_acc_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            { 
+            this.accessoryTableAdapter.Update(this.database2_TESTDataSet.Accessory);
+            this.accessoryTableAdapter.Fill(this.database2_TESTDataSet.Accessory);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message, "Ошибка при удалении записи", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+}
     }
 }

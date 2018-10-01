@@ -369,7 +369,6 @@
             this.supplyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carepackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accessoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обАвореToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.импортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -378,12 +377,18 @@
             this.supplyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.accessoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.carepackToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.carepackToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.accessoryToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printerToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lLCToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplyToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printerDataGridView)).BeginInit();
@@ -3365,7 +3370,8 @@
             this.таблицаToolStripMenuItem,
             this.обАвореToolStripMenuItem,
             this.импортToolStripMenuItem,
-            this.справкаToolStripMenuItem});
+            this.справкаToolStripMenuItem,
+            this.удалитьToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1324, 24);
@@ -3385,11 +3391,10 @@
             this.lLCToolStripMenuItem,
             this.supplyToolStripMenuItem,
             this.carepackToolStripMenuItem,
-            this.accessoryToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
+            this.accessoryToolStripMenuItem});
             this.таблицаToolStripMenuItem.Name = "таблицаToolStripMenuItem";
-            this.таблицаToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.таблицаToolStripMenuItem.Text = "Добавить";
+            this.таблицаToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.таблицаToolStripMenuItem.Text = "Добавить/изменить";
             // 
             // printerToolStripMenuItem
             // 
@@ -3426,12 +3431,6 @@
             this.accessoryToolStripMenuItem.Text = "accessory";
             this.accessoryToolStripMenuItem.Click += new System.EventHandler(this.accessoryToolStripMenuItem_Click);
             // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.справкаToolStripMenuItem.Text = "справка";
-            // 
             // обАвореToolStripMenuItem
             // 
             this.обАвореToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -3462,37 +3461,67 @@
             // printerToolStripMenuItem1
             // 
             this.printerToolStripMenuItem1.Name = "printerToolStripMenuItem1";
-            this.printerToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.printerToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.printerToolStripMenuItem1.Text = "printer";
             this.printerToolStripMenuItem1.Click += new System.EventHandler(this.printerToolStripMenuItem1_Click);
             // 
             // lLCToolStripMenuItem1
             // 
             this.lLCToolStripMenuItem1.Name = "lLCToolStripMenuItem1";
-            this.lLCToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.lLCToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.lLCToolStripMenuItem1.Text = "LLC";
             this.lLCToolStripMenuItem1.Click += new System.EventHandler(this.lLCToolStripMenuItem1_Click);
             // 
             // supplyToolStripMenuItem1
             // 
             this.supplyToolStripMenuItem1.Name = "supplyToolStripMenuItem1";
-            this.supplyToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.supplyToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.supplyToolStripMenuItem1.Text = "supply";
             this.supplyToolStripMenuItem1.Click += new System.EventHandler(this.supplyToolStripMenuItem1_Click);
             // 
             // accessoryToolStripMenuItem1
             // 
             this.accessoryToolStripMenuItem1.Name = "accessoryToolStripMenuItem1";
-            this.accessoryToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.accessoryToolStripMenuItem1.Text = "accessory";
-            this.accessoryToolStripMenuItem1.Click += new System.EventHandler(this.accessoryToolStripMenuItem1_Click);
+            this.accessoryToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             // 
             // carepackToolStripMenuItem1
             // 
             this.carepackToolStripMenuItem1.Name = "carepackToolStripMenuItem1";
-            this.carepackToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.carepackToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.carepackToolStripMenuItem1.Text = "care_pack";
             this.carepackToolStripMenuItem1.Click += new System.EventHandler(this.carepackToolStripMenuItem1_Click);
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.справкаToolStripMenuItem.Text = "справка";
+            // 
+            // удалитьToolStripMenuItem1
+            // 
+            this.удалитьToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.printerToolStripMenuItem2,
+            this.lLCToolStripMenuItem2,
+            this.supplyToolStripMenuItem2,
+            this.carepackToolStripMenuItem2,
+            this.accessoryToolStripMenuItem2});
+            this.удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
+            this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(63, 20);
+            this.удалитьToolStripMenuItem1.Text = "Удалить";
+            // 
+            // carepackToolStripMenuItem2
+            // 
+            this.carepackToolStripMenuItem2.Name = "carepackToolStripMenuItem2";
+            this.carepackToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.carepackToolStripMenuItem2.Text = "Care_pack";
+            this.carepackToolStripMenuItem2.Click += new System.EventHandler(this.carepackToolStripMenuItem2_Click);
+            // 
+            // accessoryToolStripMenuItem2
+            // 
+            this.accessoryToolStripMenuItem2.Name = "accessoryToolStripMenuItem2";
+            this.accessoryToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.accessoryToolStripMenuItem2.Text = "accessory";
+            this.accessoryToolStripMenuItem2.Click += new System.EventHandler(this.accessoryToolStripMenuItem2_Click_1);
             // 
             // button1
             // 
@@ -3541,11 +3570,26 @@
             this.label33.TabIndex = 55;
             this.label33.Text = "USER:";
             // 
-            // удалитьToolStripMenuItem
+            // printerToolStripMenuItem2
             // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.printerToolStripMenuItem2.Name = "printerToolStripMenuItem2";
+            this.printerToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.printerToolStripMenuItem2.Text = "Printer";
+            this.printerToolStripMenuItem2.Click += new System.EventHandler(this.printerToolStripMenuItem2_Click);
+            // 
+            // lLCToolStripMenuItem2
+            // 
+            this.lLCToolStripMenuItem2.Name = "lLCToolStripMenuItem2";
+            this.lLCToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.lLCToolStripMenuItem2.Text = "LLC";
+            this.lLCToolStripMenuItem2.Click += new System.EventHandler(this.lLCToolStripMenuItem2_Click);
+            // 
+            // supplyToolStripMenuItem2
+            // 
+            this.supplyToolStripMenuItem2.Name = "supplyToolStripMenuItem2";
+            this.supplyToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.supplyToolStripMenuItem2.Text = "supply";
+            this.supplyToolStripMenuItem2.Click += new System.EventHandler(this.supplyToolStripMenuItem2_Click);
             // 
             // Form1
             // 
@@ -4002,7 +4046,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn107;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn105;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn106;
-        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem carepackToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem accessoryToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem printerToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem lLCToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem supplyToolStripMenuItem2;
     }
 }
 

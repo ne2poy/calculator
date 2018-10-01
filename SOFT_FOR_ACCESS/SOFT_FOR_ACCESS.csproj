@@ -130,6 +130,30 @@
     <Compile Include="del_acc.Designer.cs">
       <DependentUpon>del_acc.cs</DependentUpon>
     </Compile>
+    <Compile Include="del_care_pack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="del_care_pack.Designer.cs">
+      <DependentUpon>del_care_pack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="del_LLC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="del_LLC.Designer.cs">
+      <DependentUpon>del_LLC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="del_printer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="del_printer.Designer.cs">
+      <DependentUpon>del_printer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="del_supply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="del_supply.Designer.cs">
+      <DependentUpon>del_supply.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +224,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="del_acc.resx">
       <DependentUpon>del_acc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="del_care_pack.resx">
+      <DependentUpon>del_care_pack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="del_LLC.resx">
+      <DependentUpon>del_LLC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="del_printer.resx">
+      <DependentUpon>del_printer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="del_supply.resx">
+      <DependentUpon>del_supply.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
