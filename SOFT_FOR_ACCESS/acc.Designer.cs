@@ -91,8 +91,6 @@
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.del_acc = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.accessoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
@@ -130,7 +128,7 @@
             this.textBox_id_acc.Name = "textBox_id_acc";
             this.textBox_id_acc.Size = new System.Drawing.Size(104, 20);
             this.textBox_id_acc.TabIndex = 91;
-            this.textBox_id_acc.TextChanged += new System.EventHandler(this.textBox_id_acc_TextChanged);
+            this.textBox_id_acc.Leave += new System.EventHandler(this.textBox_id_acc_Leave);
             // 
             // label48
             // 
@@ -208,10 +206,10 @@
             this.add_acc.Checked = true;
             this.add_acc.Location = new System.Drawing.Point(747, 27);
             this.add_acc.Name = "add_acc";
-            this.add_acc.Size = new System.Drawing.Size(96, 17);
+            this.add_acc.Size = new System.Drawing.Size(81, 17);
             this.add_acc.TabIndex = 102;
             this.add_acc.TabStop = true;
-            this.add_acc.Text = "Добавить акс";
+            this.add_acc.Text = "Добавлять";
             this.add_acc.UseVisualStyleBackColor = true;
             this.add_acc.CheckedChanged += new System.EventHandler(this.add_acc_CheckedChanged);
             // 
@@ -624,36 +622,11 @@
             this.dataGridViewCheckBoxColumn5.HeaderText = "vote_dop";
             this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
             // 
-            // del_acc
-            // 
-            this.del_acc.AutoSize = true;
-            this.del_acc.Location = new System.Drawing.Point(747, 84);
-            this.del_acc.Name = "del_acc";
-            this.del_acc.Size = new System.Drawing.Size(65, 17);
-            this.del_acc.TabIndex = 108;
-            this.del_acc.TabStop = true;
-            this.del_acc.Text = "удалить";
-            this.del_acc.UseVisualStyleBackColor = true;
-            this.del_acc.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(879, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 109;
-            this.button1.Text = "удалить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // acc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 518);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.del_acc);
             this.Controls.Add(this.accessoryDataGridView);
             this.Controls.Add(this.dev2acc_ЗапросDataGridView);
             this.Controls.Add(this.dev2accDataGridView);
@@ -757,7 +730,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.RadioButton del_acc;
-        private System.Windows.Forms.Button button1;
     }
 }

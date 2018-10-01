@@ -30,6 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_sup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.format = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.speed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type_print = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kol_vo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vote_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tip_print = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nagryzka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.database2_TESTDataSet = new SOFT_FOR_ACCESS.Database2_TESTDataSet();
             this.printerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printerTableAdapter = new SOFT_FOR_ACCESS.Database2_TESTDataSetTableAdapters.PrinterTableAdapter();
@@ -49,18 +61,6 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.id_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_sup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.format = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type_print = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kol_vo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vote_dev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tip_print = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nagryzka = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).BeginInit();
@@ -90,6 +90,69 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1250, 343);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // id_dev
+            // 
+            this.id_dev.HeaderText = "id";
+            this.id_dev.Name = "id_dev";
+            // 
+            // type
+            // 
+            this.type.HeaderText = "Тип";
+            this.type.Name = "type";
+            // 
+            // name_dev
+            // 
+            this.name_dev.HeaderText = "Название";
+            this.name_dev.Name = "name_dev";
+            // 
+            // id_sup
+            // 
+            this.id_sup.HeaderText = "id_sup";
+            this.id_sup.Name = "id_sup";
+            this.id_sup.Visible = false;
+            // 
+            // format
+            // 
+            this.format.HeaderText = "Формат";
+            this.format.Name = "format";
+            // 
+            // speed
+            // 
+            this.speed.HeaderText = "Скорость";
+            this.speed.Name = "speed";
+            // 
+            // type_print
+            // 
+            this.type_print.HeaderText = "Тип";
+            this.type_print.Name = "type_print";
+            // 
+            // cost
+            // 
+            this.cost.HeaderText = "Цена";
+            this.cost.Name = "cost";
+            // 
+            // kol_vo
+            // 
+            this.kol_vo.HeaderText = "Кол-во";
+            this.kol_vo.Name = "kol_vo";
+            // 
+            // vote_dev
+            // 
+            this.vote_dev.HeaderText = "Выбрать";
+            this.vote_dev.Name = "vote_dev";
+            // 
+            // tip_print
+            // 
+            this.tip_print.HeaderText = "tip_print";
+            this.tip_print.Name = "tip_print";
+            this.tip_print.Visible = false;
+            // 
+            // nagryzka
+            // 
+            this.nagryzka.HeaderText = "nagryzka";
+            this.nagryzka.Name = "nagryzka";
+            this.nagryzka.Visible = false;
             // 
             // database2_TESTDataSet
             // 
@@ -242,7 +305,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 33);
             this.button1.TabIndex = 3;
-            this.button1.Text = "import";
+            this.button1.Text = "Обзор";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -252,72 +315,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 33);
             this.button2.TabIndex = 4;
-            this.button2.Text = "ok";
+            this.button2.Text = "Импорт";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // id_dev
-            // 
-            this.id_dev.HeaderText = "id";
-            this.id_dev.Name = "id_dev";
-            // 
-            // type
-            // 
-            this.type.HeaderText = "Тип";
-            this.type.Name = "type";
-            // 
-            // name_dev
-            // 
-            this.name_dev.HeaderText = "Название";
-            this.name_dev.Name = "name_dev";
-            // 
-            // id_sup
-            // 
-            this.id_sup.HeaderText = "id_sup";
-            this.id_sup.Name = "id_sup";
-            this.id_sup.Visible = false;
-            // 
-            // format
-            // 
-            this.format.HeaderText = "Формат";
-            this.format.Name = "format";
-            // 
-            // speed
-            // 
-            this.speed.HeaderText = "Скорость";
-            this.speed.Name = "speed";
-            // 
-            // type_print
-            // 
-            this.type_print.HeaderText = "Тип";
-            this.type_print.Name = "type_print";
-            // 
-            // cost
-            // 
-            this.cost.HeaderText = "Цена";
-            this.cost.Name = "cost";
-            // 
-            // kol_vo
-            // 
-            this.kol_vo.HeaderText = "Кол-во";
-            this.kol_vo.Name = "kol_vo";
-            // 
-            // vote_dev
-            // 
-            this.vote_dev.HeaderText = "Выбрать";
-            this.vote_dev.Name = "vote_dev";
-            // 
-            // tip_print
-            // 
-            this.tip_print.HeaderText = "tip_print";
-            this.tip_print.Name = "tip_print";
-            this.tip_print.Visible = false;
-            // 
-            // nagryzka
-            // 
-            this.nagryzka.HeaderText = "nagryzka";
-            this.nagryzka.Name = "nagryzka";
-            this.nagryzka.Visible = false;
             // 
             // import_print
             // 

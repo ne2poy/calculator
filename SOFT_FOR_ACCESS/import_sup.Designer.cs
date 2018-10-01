@@ -228,7 +228,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 26);
             this.button1.TabIndex = 4;
-            this.button1.Text = "import";
+            this.button1.Text = "Обзор";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -238,7 +238,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 26);
             this.button2.TabIndex = 5;
-            this.button2.Text = "ok";
+            this.button2.Text = "Импорт";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -385,7 +385,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1426, 455);
+            this.ClientSize = new System.Drawing.Size(1422, 455);
             this.Controls.Add(this.dev2supDataGridView);
             this.Controls.Add(this.supplyDataGridView);
             this.Controls.Add(this.button2);

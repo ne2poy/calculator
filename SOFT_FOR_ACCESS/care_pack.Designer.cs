@@ -118,7 +118,7 @@
             this.textBox_id_gar.Name = "textBox_id_gar";
             this.textBox_id_gar.Size = new System.Drawing.Size(88, 20);
             this.textBox_id_gar.TabIndex = 109;
-            this.textBox_id_gar.TextChanged += new System.EventHandler(this.textBox_id_gar_TextChanged);
+            this.textBox_id_gar.Leave += new System.EventHandler(this.textBox_id_gar_Leave);
             // 
             // label39
             // 
@@ -253,6 +253,7 @@
             this.connect_gar.TabIndex = 119;
             this.connect_gar.Text = "Связать";
             this.connect_gar.UseVisualStyleBackColor = true;
+            this.connect_gar.CheckedChanged += new System.EventHandler(this.connect_gar_CheckedChanged);
             // 
             // add_gar
             // 
@@ -260,10 +261,10 @@
             this.add_gar.Checked = true;
             this.add_gar.Location = new System.Drawing.Point(750, 39);
             this.add_gar.Name = "add_gar";
-            this.add_gar.Size = new System.Drawing.Size(126, 17);
+            this.add_gar.Size = new System.Drawing.Size(81, 17);
             this.add_gar.TabIndex = 118;
             this.add_gar.TabStop = true;
-            this.add_gar.Text = "Добавить гарантию";
+            this.add_gar.Text = "Добавлять";
             this.add_gar.UseVisualStyleBackColor = true;
             this.add_gar.CheckedChanged += new System.EventHandler(this.add_gar_CheckedChanged);
             // 

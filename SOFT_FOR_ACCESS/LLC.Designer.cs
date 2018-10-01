@@ -1,6 +1,6 @@
 ﻿namespace SOFT_FOR_ACCESS
 {
-    partial class Form2
+    partial class LLC
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LLC));
             this.button3 = new System.Windows.Forms.Button();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -170,7 +170,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(668, 28);
+            this.checkBox1.Location = new System.Drawing.Point(678, 28);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(32, 17);
             this.checkBox1.TabIndex = 75;
@@ -183,7 +183,7 @@
             this.add_new_LLC_button.Name = "add_new_LLC_button";
             this.add_new_LLC_button.Size = new System.Drawing.Size(75, 23);
             this.add_new_LLC_button.TabIndex = 74;
-            this.add_new_LLC_button.Text = "OK";
+            this.add_new_LLC_button.Text = "Добавить";
             this.add_new_LLC_button.UseVisualStyleBackColor = true;
             this.add_new_LLC_button.Click += new System.EventHandler(this.add_new_LLC_button_Click);
             // 
@@ -194,11 +194,12 @@
             this.textBox_id_LLC.Size = new System.Drawing.Size(88, 20);
             this.textBox_id_LLC.TabIndex = 73;
             this.textBox_id_LLC.TextChanged += new System.EventHandler(this.textBox_id_LLC_TextChanged);
+            this.textBox_id_LLC.Leave += new System.EventHandler(this.textBox_id_LLC_Leave);
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(651, 9);
+            this.label38.Location = new System.Drawing.Point(661, 9);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(59, 13);
             this.label38.TabIndex = 72;
@@ -616,6 +617,7 @@
             this.connect_LLC.TabIndex = 90;
             this.connect_LLC.Text = "СВЯЗАТЬ";
             this.connect_LLC.UseVisualStyleBackColor = true;
+            this.connect_LLC.CheckedChanged += new System.EventHandler(this.connect_LLC_CheckedChanged);
             // 
             // comboBox1
             // 
@@ -764,7 +766,7 @@
             this.dataGridViewTextBoxColumn21.ReadOnly = true;
             this.dataGridViewTextBoxColumn21.Visible = false;
             // 
-            // Form2
+            // LLC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -798,9 +800,8 @@
             this.Controls.Add(this.button3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
+            this.Name = "LLC";
+            this.Text = "LLC";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.printerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database2_TESTDataSet)).EndInit();

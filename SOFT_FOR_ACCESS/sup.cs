@@ -35,48 +35,66 @@ namespace SOFT_FOR_ACCESS
             this.dev2supTableAdapter.Fill(this.database2_TESTDataSet.Dev2sup);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
             this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
-
         }
+
+
+        private void clear_field()
+        {
+            textBox_id_sup.Text = "";
+            textBox_name_sup.Text = "";
+            textBox_qty_sup.Text = "";
+            textBox_cost_sup.Text = "";
+            textBox_res_sup.Text = "";
+            textBox1.Text = "";
+            comboBox3.Text = "";
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+        }
+
+
 
         private void add_new_sup_button_Click(object sender, EventArgs e)
         {
+            if (textBox_id_sup.Text.Length > 0 && textBox_name_sup.Text.Length > 0 && textBox_qty_sup.Text.Length > 0 && textBox_cost_sup.Text.Length > 0 && textBox_res_sup.Text.Length > 0 && textBox1.Text.Length > 0 && comboBox3.Text.Length > 0)
             try
             {
                 for (int i = 0; i <= supplyDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(supplyDataGridView[0, i].Value) == textBox_id_sup.Text)
                     {
-                        supplyDataGridView[2, i].Value = textBox_name_sup.Text;
-                        supplyDataGridView[3, i].Value = textBox_qty_sup.Text;
-                        supplyDataGridView[4, i].Value = textBox_cost_sup.Text;
-                        supplyDataGridView[5, i].Value = textBox_res_sup.Text;
-                        supplyDataGridView[6, i].Value = checkBox1.Checked;
-                        supplyDataGridView[7, i].Value = checkBox2.Checked;
-                        supplyDataGridView[8, i].Value = checkBox3.Checked;
-                        this.supplyTableAdapter.Update(this.database2_TESTDataSet.supply);
-                        this.supplyTableAdapter.Fill(this.database2_TESTDataSet.supply);
+                            //supplyDataGridView[2, i].Value = textBox_name_sup.Text;
+                            //supplyDataGridView[3, i].Value = textBox_qty_sup.Text;
+                            //supplyDataGridView[4, i].Value = textBox_cost_sup.Text;
+                            //supplyDataGridView[5, i].Value = textBox_res_sup.Text;
+                            //supplyDataGridView[6, i].Value = checkBox1.Checked;
+                            //supplyDataGridView[7, i].Value = checkBox2.Checked;
+                            //supplyDataGridView[8, i].Value = checkBox3.Checked;
+                            //this.supplyTableAdapter.Update(this.database2_TESTDataSet.supply);
+                            //this.supplyTableAdapter.Fill(this.database2_TESTDataSet.supply);
+                            //MessageBox.Show("sup запись изменена!", "успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-
-                        MessageBox.Show("sup запись изменена!", "успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-                        return;
+                            MessageBox.Show("Запись с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            clear_field();
+                            return;
                     }
                 }
-
-
-
-                //id_svyaz,     id_dev,     id_sup,             id_sup,              type,      name_sup,       QTY_sup,                             cost_sup,       res_sup,                       inbox_sup, for_color_sup, for_mono_sup, kol-vo, vote_gar
-
-
-                this.database2_TESTDataSet.supply.Rows.Add(textBox_id_sup.Text, "supply", textBox_name_sup.Text, Convert.ToDouble(textBox_qty_sup.Text), textBox_cost_sup.Text, Convert.ToDouble(textBox_res_sup.Text), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, 1);
+                this.database2_TESTDataSet.supply.Rows.Add(textBox_id_sup.Text, "supply", textBox_name_sup.Text, Convert.ToDouble(textBox_qty_sup.Text), textBox_cost_sup.Text, Convert.ToDouble(textBox_res_sup.Text), checkBox1.Checked, checkBox2.Checked, checkBox3.Checked, 1, null, textBox1.Text, comboBox3.Text);
                 this.supplyTableAdapter.Update(this.database2_TESTDataSet.supply);
 
                 MessageBox.Show("Запись добавлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-            catch
+                    comboBox1.Text = textBox_id_sup.Text;
+                    comboBox2.Text = textBox_name_sup.Text;
+                    clear_field();
+
+                }
+                catch
             {
                 MessageBox.Show("Не добавлено/отредактировано!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+            else
+                MessageBox.Show("Заполните все поля!", "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -152,27 +170,6 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-        private void textBox_id_sup_TextChanged(object sender, EventArgs e)
-        {
-            for (int i = 0; i <= supplyDataGridView.RowCount - 1; i++)
-            {
-                if (Convert.ToString(supplyDataGridView[0, i].Value) == textBox_id_sup.Text)
-                {
-                    MessageBox.Show("supply с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    textBox_name_sup.Text = Convert.ToString(supplyDataGridView[2, i].Value);
-                    textBox_qty_sup.Text = Convert.ToString(supplyDataGridView[3, i].Value);
-                    textBox_cost_sup.Text = Convert.ToString(supplyDataGridView[4, i].Value);
-                    textBox_res_sup.Text = Convert.ToString(supplyDataGridView[5, i].Value);
-                    if (Convert.ToString(supplyDataGridView[6, i].Value) == "True") checkBox1.Checked = true;
-                    else checkBox1.Checked = false;
-                    if (Convert.ToString(supplyDataGridView[7, i].Value) == "True") checkBox2.Checked = true;
-                    else checkBox2.Checked = false;
-                    if (Convert.ToString(supplyDataGridView[8, i].Value) == "True") checkBox3.Checked = true;
-                    else checkBox2.Checked = false;
-                    return;
-                }
-            }
-        }
 
         private void add_sup_CheckedChanged(object sender, EventArgs e)
         {
@@ -183,8 +180,6 @@ namespace SOFT_FOR_ACCESS
                 comboBox2.Enabled = false;
                 button3.Enabled = false;
 
-                //printerDataGridView.DefaultCellStyle.BackColor = "ControlDark";
-
                 add_new_sup_button.Enabled = true;
                 textBox_id_sup.Enabled = true;
                 textBox_name_sup.Enabled = true;
@@ -194,15 +189,27 @@ namespace SOFT_FOR_ACCESS
                 checkBox1.Enabled = true;
                 checkBox2.Enabled = true;
                 checkBox3.Enabled = true;
-                load_sup_table();
+                clear_field();
+
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
+                this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
+
             }
-            else
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            load_sup_table();
+        }
+
+        private void connect_sup_CheckedChanged(object sender, EventArgs e)
+        {
+            if (connect_sup.Checked == true)
             {
                 printerDataGridView.Enabled = true;
                 comboBox1.Enabled = true;
                 comboBox2.Enabled = true;
                 button3.Enabled = true;
-
 
                 add_new_sup_button.Enabled = false;
                 textBox_id_sup.Enabled = false;
@@ -215,15 +222,21 @@ namespace SOFT_FOR_ACCESS
                 checkBox3.Enabled = false;
                 load_sup_table();
             }
+
         }
 
-        private void comboBox1_TextChanged(object sender, EventArgs e)
+        private void textBox_id_sup_Leave(object sender, EventArgs e)
         {
-            load_sup_table();
-        }
-
-        private void connect_sup_CheckedChanged(object sender, EventArgs e)
-        {
+            if (textBox_id_sup.Text.Length > 0)
+                for (int i = 0; i <= supplyDataGridView.RowCount - 1; i++)
+            {
+                if (Convert.ToString(supplyDataGridView[0, i].Value) == textBox_id_sup.Text)
+                {
+                    MessageBox.Show("supply с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        clear_field();
+                    return;
+                }
+            }
 
         }
     }

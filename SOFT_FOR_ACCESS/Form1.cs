@@ -608,68 +608,74 @@ namespace SOFT_FOR_ACCESS
 
             //double arenda_proj = cost_print2 - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text));
 
-            //ВЫВОД В БЕЗ НАЦЕНКИ
-            if (radioButton13.Checked == true)
-
+            try
             {
-                //for (int i = 0; i < Convert.ToDouble(quantity_textBox.Text); i++)
-                //   name                                      kol-vo          v_pech_mono    v_pech_color     cost_pech_month        цена_моно    цена_цвет  затраты_печать_п  затраты_аренд_п                 все_затраты
-                this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, Convert.ToDouble(quantity_textBox.Text), textBox1.Text, textBox2.Text, cost_print / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print, LRF, strax, cost1 + cost2 + cost_vith_LRF + strax);
+                //ВЫВОД В БЕЗ НАЦЕНКИ
+                if (radioButton13.Checked == true)
+
+                {
+                    //for (int i = 0; i < Convert.ToDouble(quantity_textBox.Text); i++)
+                    //   name                                      kol-vo          v_pech_mono    v_pech_color     cost_pech_month        цена_моно    цена_цвет  затраты_печать_п  затраты_аренд_п                 все_затраты
+                    this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, Convert.ToDouble(quantity_textBox.Text), textBox1.Text, textBox2.Text, cost_print / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print, LRF, strax, cost1 + cost2 + cost_vith_LRF + strax);
+
+                }
+                else
+                    this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, (cost_print - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text))) / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text)), cost1 + cost2 + cost_print);
 
             }
-            else
-                this.database2_TESTDataSet.vivod_itog_2.Rows.Add(null, vibor1DataGridView[2, 0].Value, vibor1DataGridView[4, 0].Value, v_pech_mono, v_pech_mono, (cost_print - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text))) / dur_project, cost_one_m, cost_one_c, cost1 + cost2, cost_print - (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text)), cost1 + cost2 + cost_print);
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             double cost_print2 = cost_vith_LRF + strax + (trash_2 * dur_project);        //* total_copy  //  + накладные расходы на устройство //+ (Convert.ToDouble(textBox3.Text))
-            //cost_print2 = cost_print2 + trash_2;      //ПОЗЖЕ
-            double total_copy = 0;
-            if (radioButton13.Checked == true)
-                total_copy = (Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text)) * dur_project;
-            else
-                total_copy = (v_pech_mono) * dur_project;
+                                                                                             //cost_print2 = cost_print2 + trash_2;      //ПОЗЖЕ
+                double total_copy = 0;
+                if (radioButton13.Checked == true)
+                    total_copy = (Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text)) * dur_project;
+                else
+                    total_copy = (v_pech_mono) * dur_project;
 
-            cost_one_m = ((cost_contract * dur_project) / total_copy) + cost_one_m;
-            cost_one_c = (cost_contract * dur_project / total_copy) + cost_one_c;
-
-
-            cost_print2 = cost_print2 * ((Convert.ToDouble(textBox5.Text) / 100) + 1);                                //наценка на оборудование 15%
-            cost_one_m = (cost_one_m * ((Convert.ToDouble(textBox6.Text) / 100) + 1) + (Convert.ToDouble(textBox4.Text)));       //+ накладные расходы на копию (в ПРОЦЕНТАХ)     //(Convert.ToDouble(textBox4.Text) * total_copy)
-            cost_one_c = (cost_one_c * ((Convert.ToDouble(textBox7.Text) / 100) + 1) + (Convert.ToDouble(textBox4.Text)));
-
-            if (radioButton2.Checked == true)
-            {
-                cost_one_m = (cost_soft / total_copy) + cost_one_m;
-                cost_one_c = (cost_soft / total_copy) + cost_one_c;
-            }
-            else
-                cost_print2 = cost_print2 + cost_soft;
-
-            if (radioButton4.Checked == true)
-            {
-                cost_one_m = (cost_serv_soft / total_copy) + cost_one_m;
-                cost_one_c = (cost_serv_soft / total_copy) + cost_one_c;
-            }
-            else
-                cost_print2 = cost_print2 + cost_serv_soft;
+                cost_one_m = ((cost_contract * dur_project) / total_copy) + cost_one_m;
+                cost_one_c = (cost_contract * dur_project / total_copy) + cost_one_c;
 
 
-            //cost_one_m = cost_one_m * Convert.ToDouble(trashDataGridView[2, 0].Value);
-            //cost_one_c = cost_one_c * Convert.ToDouble(trashDataGridView[3, 0].Value);
+                cost_print2 = cost_print2 * ((Convert.ToDouble(textBox5.Text) / 100) + 1);                                //наценка на оборудование 15%
+                cost_one_m = (cost_one_m * ((Convert.ToDouble(textBox6.Text) / 100) + 1) + (Convert.ToDouble(textBox4.Text)));       //+ накладные расходы на копию (в ПРОЦЕНТАХ)     //(Convert.ToDouble(textBox4.Text) * total_copy)
+                cost_one_c = (cost_one_c * ((Convert.ToDouble(textBox7.Text) / 100) + 1) + (Convert.ToDouble(textBox4.Text)));
+
+                if (radioButton2.Checked == true)
+                {
+                    cost_one_m = (cost_soft / total_copy) + cost_one_m;
+                    cost_one_c = (cost_soft / total_copy) + cost_one_c;
+                }
+                else
+                    cost_print2 = cost_print2 + cost_soft;
+
+                if (radioButton4.Checked == true)
+                {
+                    cost_one_m = (cost_serv_soft / total_copy) + cost_one_m;
+                    cost_one_c = (cost_serv_soft / total_copy) + cost_one_c;
+                }
+                else
+                    cost_print2 = cost_print2 + cost_serv_soft;
 
 
-            //наценка_оборуд_проект = наценка_оборудов_месяц * срок контракта
-            nacenka_oboryd_p = (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text));
-            double arenda_proj = cost_print2 - nacenka_oboryd_p;
+                //cost_one_m = cost_one_m * Convert.ToDouble(trashDataGridView[2, 0].Value);
+                //cost_one_c = cost_one_c * Convert.ToDouble(trashDataGridView[3, 0].Value);
+
+
+                //наценка_оборуд_проект = наценка_оборудов_месяц * срок контракта
+                nacenka_oboryd_p = (Convert.ToDouble(textBox3.Text) * Convert.ToDouble(comboBox9.Text));
+                double arenda_proj = cost_print2 - nacenka_oboryd_p;
 
 
 
-            //DialogResult dialogResult = MessageBox.Show("Сформировать коммерческое предложение?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (dialogResult == DialogResult.Yes)
-            //{
-            //    PDF();
-            //}
-
+                //DialogResult dialogResult = MessageBox.Show("Сформировать коммерческое предложение?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //if (dialogResult == DialogResult.Yes)
+                //{
+                //    PDF();
+                //}
 
 
 
@@ -1226,31 +1232,31 @@ namespace SOFT_FOR_ACCESS
         private void printerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             print print = new print();
-            print.Show();
+            print.ShowDialog();
         }
 
         private void supplyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             sup sup = new sup();
-            sup.Show();
+            sup.ShowDialog();
         }
 
         private void lLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.Show();
+            LLC form2 = new LLC();
+            form2.ShowDialog();
         }
 
         private void carepackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             care_pack care_pack = new care_pack();
-            care_pack.Show();
+            care_pack.ShowDialog();
         }
 
         private void accessoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             acc acc = new acc();
-            acc.Show();
+            acc.ShowDialog();
         }
 
         private void dev2acc_ЗапросDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1504,6 +1510,13 @@ namespace SOFT_FOR_ACCESS
             del_supply.ShowDialog();
 
         }
+
+        //private void accessoryToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        //{
+        //    del_acc del_acc = new del_acc();
+        //    del_acc.ShowDialog();
+
+        //}
     }
 
 

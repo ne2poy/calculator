@@ -41,24 +41,35 @@ namespace SOFT_FOR_ACCESS
 
         }
 
+        private void clear_field ()
+        {
+            textBox_id_acc.Text = "";
+            textBox_name_dop.Text = "";
+            checkBox1.Checked = false;
+            textBox_cost.Text = "";
+        }
+
         private void add_new_acc_button_Click(object sender, EventArgs e)
         {
-            try
-            {
+            if (textBox_id_acc.Text.Length > 0 && textBox_name_dop.Text.Length > 0 && textBox_cost.Text.Length > 0)
+                try
+                {
                 for (int i = 0; i <= accessoryDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(accessoryDataGridView[0, i].Value) == textBox_id_acc.Text)
                     {
-                        accessoryDataGridView[0, i].Value = textBox_id_acc.Text;
-                        accessoryDataGridView[2, i].Value = textBox_name_dop.Text;
-                        accessoryDataGridView[3, i].Value = checkBox1.Checked;
-                        accessoryDataGridView[4, i].Value = textBox_cost.Text;
-                        this.accessoryTableAdapter.Update(this.database2_TESTDataSet.Accessory);
-                        this.accessoryTableAdapter.Fill(this.database2_TESTDataSet.Accessory);
-
-                        MessageBox.Show("accessory запись изменена!", "успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-                        return;
+                            //-----------------РЕДАКТИРОВАНИЕ----------------------------------------------------------------------
+                            //accessoryDataGridView[0, i].Value = textBox_id_acc.Text;
+                            //accessoryDataGridView[2, i].Value = textBox_name_dop.Text;
+                            //accessoryDataGridView[3, i].Value = checkBox1.Checked;
+                            //accessoryDataGridView[4, i].Value = textBox_cost.Text;
+                            //this.accessoryTableAdapter.Update(this.database2_TESTDataSet.Accessory);
+                            //this.accessoryTableAdapter.Fill(this.database2_TESTDataSet.Accessory);
+                            //MessageBox.Show("accessory запись изменена!", "успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            //-----------------------------------------------------------------------------------------------------
+                            MessageBox.Show("Запись с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            clear_field();
+                            return;
                     }
                 }
 
@@ -66,17 +77,25 @@ namespace SOFT_FOR_ACCESS
                 this.accessoryTableAdapter.Update(this.database2_TESTDataSet.Accessory);
 
                 MessageBox.Show("Запись добавлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-            catch
+                    comboBox1.Text = textBox_id_acc.Text;
+                    comboBox2.Text = textBox_name_dop.Text;
+                    clear_field();
+
+                }
+                catch
             {
                 MessageBox.Show("Не добавлено/отредактировано!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+            else
+                MessageBox.Show("Заполните все поля!", "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             //ТУТ БАГ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             //ЕСЛИ ДОБАВИТЬ и сразу удлаить одну и ту галку, то она не удаляется. хз поч.
+            
             try
             {
                 double ch = 0;
@@ -148,21 +167,7 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-        private void textBox_id_acc_TextChanged(object sender, EventArgs e)
-        {
-            for (int i = 0; i <= accessoryDataGridView.RowCount - 1; i++)
-            {
-                if (Convert.ToString(accessoryDataGridView[0, i].Value) == textBox_id_acc.Text)
-                {
-                    MessageBox.Show("accessory с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    textBox_name_dop.Text = Convert.ToString(accessoryDataGridView[2, i].Value);
-                    if (Convert.ToString(accessoryDataGridView[3, i].Value) == "True") checkBox1.Checked = true;
-                    else checkBox1.Checked = false;
-                    textBox_cost.Text = Convert.ToString(accessoryDataGridView[4, i].Value);
-                    return;
-                }
-            }
-        }
+
 
        
 
@@ -189,10 +194,7 @@ namespace SOFT_FOR_ACCESS
                 textBox_cost.Enabled = true;
                 checkBox1.Enabled = true;
 
-
-                textBox_id_acc.Text = "";
-                textBox_name_dop.Text = "";
-                textBox_cost.Text = "";
+                clear_field();
 
                 // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
                 this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
@@ -201,29 +203,6 @@ namespace SOFT_FOR_ACCESS
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (del_acc.Checked == true)
-            {
-                printerDataGridView.Enabled = true;
-                button1.Enabled = true;
-
-                comboBox1.Enabled = false;
-                comboBox2.Enabled = false;
-                button3.Enabled = false;              
-                add_new_acc_button.Enabled = false;
-                textBox_id_acc.Enabled = false;
-                textBox_name_dop.Enabled = false;
-                textBox_cost.Enabled = false;
-                checkBox1.Enabled = false;
-
-                // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
-                this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
-
-                //load_acc_table();
-            }
-
-        }
 
         private void connect_acc_CheckedChanged(object sender, EventArgs e)
         {
@@ -244,58 +223,20 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void textBox_id_acc_Leave(object sender, EventArgs e)
         {
-            try
+            if (textBox_id_acc.Text.Length > 0)
+            for (int i = 0; i <= accessoryDataGridView.RowCount - 1; i++)
             {
-                double ch = 0;
-                for (int i = 0; i <= printerDataGridView.RowCount - 1; i++)
+                if (Convert.ToString(accessoryDataGridView[0, i].Value) == textBox_id_acc.Text)
                 {
-                    if (Convert.ToString(printerDataGridView[9, i].Value) == "True")
-                    {
-                        ch++;
-                        //for (int j = 0; j <= dev2acc_ЗапросDataGridView.RowCount - 1; j++)
-                        {
-                            printerDataGridView.Rows.RemoveAt(i);
-                                //dgv.Rows.Remove(row);
-
-                            //if (Convert.ToString(dev2acc_ЗапросDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2acc_ЗапросDataGridView[2, j].Value) == comboBox1.Text)
-                            //ch = 1;
-                        }
-
-                        if (ch == 0)
-                        {
-                            //this.database2_TESTDataSet.Dev2acc.Rows.Add(null, printerDataGridView[0, i].Value, comboBox1.Text);
-                            //this.dev2accTableAdapter.Update(this.database2_TESTDataSet.Dev2acc);
-                            //this.dev2acc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос);
-                        }
-
-                    }
-                    else
-                    {
-                        for (int j = 0; j <= dev2accDataGridView.RowCount - 1; j++)
-                        {
-                            if (Convert.ToString(dev2accDataGridView[1, j].Value) == Convert.ToString(printerDataGridView[0, i].Value) && Convert.ToString(dev2accDataGridView[2, j].Value) == comboBox1.Text)
-                            {
-
-
-                                this.database2_TESTDataSet.Dev2acc.Rows[j].Delete();
-                                this.dev2accTableAdapter.Update(this.database2_TESTDataSet.Dev2acc);
-                                this.dev2acc_ЗапросTableAdapter.Fill(this.database2_TESTDataSet.Dev2acc_Запрос);
-                            }
-                        }
-                    }
-
-
+                        MessageBox.Show("Запись с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        clear_field();
+                        return;
                 }
-                MessageBox.Show("Успех!", "Найс", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                load_acc_table();
             }
-            catch
-            {
-                MessageBox.Show("Не добавлена связь!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-
 
         }
     }

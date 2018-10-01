@@ -43,24 +43,36 @@ namespace SOFT_FOR_ACCESS
 
         }
 
+
+        private void clear_field()
+        {
+            textBox_id_gar.Text = "";
+            textBox_tip_gar.Text = "";
+            textBox_cost_gar.Text = "";
+            textBox_dlit_gar.Text = "";
+        }
+
+
+
         private void add_new_gar_button_Click(object sender, EventArgs e)
         {
-            try
-            {
+            if (textBox_id_gar.Text.Length > 0 && textBox_tip_gar.Text.Length > 0 && textBox_cost_gar.Text.Length > 0 && textBox_dlit_gar.Text.Length > 0)
+                try
+                {
                 for (int i = 0; i <= care_packDataGridView.RowCount - 1; i++)
                 {
                     if (Convert.ToString(care_packDataGridView[0, i].Value) == textBox_id_gar.Text)
                     {
-                        care_packDataGridView[0, i].Value = textBox_id_gar.Text;
-                        care_packDataGridView[2, i].Value = textBox_tip_gar.Text;
-                        care_packDataGridView[3, i].Value = textBox_cost_gar.Text;
-                        care_packDataGridView[4, i].Value = textBox_dlit_gar.Text;
-                        this.care_packTableAdapter.Update(this.database2_TESTDataSet.Care_pack);
-                        this.care_packTableAdapter.Fill(this.database2_TESTDataSet.Care_pack);
+                        //care_packDataGridView[0, i].Value = textBox_id_gar.Text;
+                        //care_packDataGridView[2, i].Value = textBox_tip_gar.Text;
+                        //care_packDataGridView[3, i].Value = textBox_cost_gar.Text;
+                        //care_packDataGridView[4, i].Value = textBox_dlit_gar.Text;
+                        //this.care_packTableAdapter.Update(this.database2_TESTDataSet.Care_pack);
+                        //this.care_packTableAdapter.Fill(this.database2_TESTDataSet.Care_pack);
+                        //MessageBox.Show("garanty запись изменена!", "успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-
-                        MessageBox.Show("garanty запись изменена!", "успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
+                        MessageBox.Show("Запись с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        clear_field();
                         return;
                     }
                 }
@@ -68,11 +80,18 @@ namespace SOFT_FOR_ACCESS
                 this.care_packTableAdapter.Update(this.database2_TESTDataSet.Care_pack);
 
                 MessageBox.Show("Запись добавлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                comboBox1.Text = textBox_id_gar.Text;
+                comboBox2.Text = textBox_tip_gar.Text;
+                clear_field();
+
             }
             catch
             {
                 MessageBox.Show("Не добавлено/отредактировано!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+            else
+                MessageBox.Show("Заполните все поля!", "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -149,21 +168,6 @@ namespace SOFT_FOR_ACCESS
             }
         }
 
-        private void textBox_id_gar_TextChanged(object sender, EventArgs e)
-        {
-            for (int i = 0; i <= care_packDataGridView.RowCount - 1; i++)
-            {
-                if (Convert.ToString(care_packDataGridView[0, i].Value) == textBox_id_gar.Text)
-                {
-                    MessageBox.Show("care_pack с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    textBox_tip_gar.Text = Convert.ToString(care_packDataGridView[2, i].Value);
-                    textBox_cost_gar.Text = Convert.ToString(care_packDataGridView[3, i].Value);
-                    textBox_dlit_gar.Text = Convert.ToString(care_packDataGridView[4, i].Value);
-                    return;
-                }
-            }
-        }
-
         private void add_gar_CheckedChanged(object sender, EventArgs e)
         {
             if (add_gar.Checked == true)
@@ -179,9 +183,23 @@ namespace SOFT_FOR_ACCESS
                 textBox_tip_gar.Enabled = true;
                 textBox_cost_gar.Enabled = true;
                 textBox_dlit_gar.Enabled = true;
-                load_care_table();
+                //load_care_table();
+                clear_field();
+
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "database2_TESTDataSet.Printer". При необходимости она может быть перемещена или удалена.
+                this.printerTableAdapter.Fill(this.database2_TESTDataSet.Printer);
+
             }
-            else
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            load_care_table();
+        }
+
+        private void connect_gar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (connect_gar.Checked == true)
             {
                 printerDataGridView.Enabled = true;
                 comboBox1.Enabled = true;
@@ -196,11 +214,26 @@ namespace SOFT_FOR_ACCESS
                 textBox_dlit_gar.Enabled = false;
                 load_care_table();
             }
+
         }
 
-        private void comboBox1_TextChanged(object sender, EventArgs e)
+        private void textBox_id_gar_Leave(object sender, EventArgs e)
         {
-            load_care_table();
+            for (int i = 0; i <= care_packDataGridView.RowCount - 1; i++)
+            {
+                if (Convert.ToString(care_packDataGridView[0, i].Value) == textBox_id_gar.Text)
+                {
+                    MessageBox.Show("care_pack с таким id уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    clear_field();
+                    return;
+                }
+            }
         }
+
+
+
+
+
+
     }
 }
